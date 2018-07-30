@@ -1,0 +1,66 @@
+{
+"extEnable": true,
+"ext": {
+		"comment": "真机上extEnable为false仍然会读取到ext配置？",
+		"server_url2": "https://weixin.uctphp.com/?_uct_token=f0d5e069af96956026313cda0b147246&",
+		"prefix_url2": "https://weixin.uctphp.com",
+		"sp_name": "快马加鞭"
+	},
+"window":{
+    "navigationBarBackgroundColor2": "#FF327C",
+    "navigationBarTextStyle2":"white"
+},
+"tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#FF327C",
+    "backgroundColor": "#f4f5f5",
+    "list": [{
+      "pagePath": "page/index/index",
+      "text": "首页",
+      "iconPath": "page/resources/pic/homeIcon.png",
+      "selectedIconPath": "page/resources/pic/theme/pink/home.png"
+    },{
+      "pagePath2": "page/class/pages/newClass/newClass",
+      "pagePath": "page/class/class",
+      "text": "分类",
+      "iconPath": "page/resources/pic/classIcon.png",
+      "selectedIconPath": "page/resources/pic/theme/pink/category.png"
+    },{
+      "pagePath": "page/cart/cart",
+      "text": "购物车",
+      "iconPath": "page/resources/pic/cartIcon.png",
+      "selectedIconPath": "page/resources/pic/theme/pink/cart.png"
+    }, {
+      "pagePath": "page/my/my",
+      "text": "我的",
+      "iconPath": "page/resources/pic/myIcon.png",
+      "selectedIconPath": "page/resources/pic/theme/pink/me.png"
+    }]
+},
+"tabBar2": {
+    "color": "#8a8a8a",
+    "selectedColor": "#3CAE48",
+    "backgroundColor": "#f4f5f5",
+    "list": [{
+      "pagePath": "page/index/index",
+      "text": "首页",
+      "iconPath": "page/resources/pic/homeIcon.png",
+      "selectedIconPath": "page/resources/pic/theme/green/home.png"
+    },{
+      "pagePath": "page/class/pages/newClass/newClass",
+      "text": "分类",
+      "iconPath": "page/resources/pic/classIcon.png",
+      "selectedIconPath": "page/resources/pic/theme/green/category.png"
+    },{
+      "pagePath": "page/cart/cart",
+      "text": "购物车",
+      "iconPath": "page/resources/pic/cartIcon.png",
+      "selectedIconPath": "page/resources/pic/theme/green/cart.png"
+    }, {
+      "pagePath": "page/my/my",
+      "text": "我的",
+      "iconPath": "page/resources/pic/myIcon.png",
+      "selectedIconPath": "page/resources/pic/theme/green/me.png"
+    }]
+}
+}

@@ -1,0 +1,133 @@
+.main_body{
+	width: 1080px;
+	margin: 0 auto;
+}
+
+.lastest_news h2{
+	width: 100%;
+	height: 90px;
+	color: #333;
+	font-size: 28px;
+	line-height: 90px;
+	font-weight: 400;
+	overflow: hidden;
+}
+
+.lastest_news h2 span{
+	color: #666;
+	font-size: 20px;
+	line-height: 80px;
+	margin-left: 15px;
+}
+
+.lastest_news{
+	width: 100%;
+	overflow: hidden;
+	padding-bottom: 100px;
+}
+
+.news_box{
+	display: block;
+	width: 100%;
+	height: 130px;
+	border-bottom: 1px solid #ccc;
+	overflow: hidden;
+	-webkit-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	-ms-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	transition: all 0.4s;
+}
+
+.news_box img{
+	display: inline-block;
+	width: 200px;
+	height: 100px;
+	margin-top: 15px;
+	float: left;
+}
+
+.news_box div{
+	width: 620px;
+	float: left;
+	margin-left: 20px;
+}
+
+.news_box div h3{
+	font-size: 14px;
+	color: #333;
+	font-weight: 400;
+	line-height: 30px;
+	margin-top: 15px;
+}
+
+.news_box div p{
+	font-size: 14px;
+	color: #666;
+	line-height: 24px;
+}
+
+.news_box:hover{
+	background: #E8E8E8;
+}
+
+.news_cats{
+	width: 200px;
+	height: 300px;
+	float: left;
+}
+
+.news_cats li{
+	width: 200px;
+	height: 60px;
+	background: #b3b3b3;
+	margin-bottom: 32px;
+	color: #f5f5f5;
+	font-size: 14px;
+	text-align: center;
+	line-height: 60px;
+	-webkit-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	-ms-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	transition: all 0.4s;
+	cursor: pointer;
+}
+
+.news_cats li.notactive:hover{
+	background: #989797;
+}
+
+.news_cats li.active{
+	background: #ee6557;
+}
+
+.news_cont{
+	width: 840px;
+	float: left;
+	margin-top: -15px;
+	margin-left: 40px;
+	display: none;
+}
+
+.navheader{width: 94%;padding:0 3%;height: 80px;border-bottom:1px solid #ccc;}
+.Leftlogo{display: inline-block;position: relative;top: 40px;transform: translateY(-50%);font-size: 18px; }
+.iconContainer>div{float: right;}
+
+.iconContainer>div {
+    margin-right: 10px;
+    font-size: 18px;
+    line-height: 36px;
+}
+.iconContainer>div>hr{color: #3c3c3c;
+	display: block;
+	width: 30px;
+    height: 0px;
+    border: none;
+    border-bottom: 1px solid #3c3c3c;margin: 0; margin:4px 0;
+    margin-top: 4px;
+
+}
+.menuIcon{
+	margin-top: 10px;
+}

@@ -1,0 +1,60 @@
+<!--pages/home/pages/editIssue/editIssue.wxml-->
+<view class="page">
+	<view class="body">
+    <form bindsubmit="tapPost">
+      <view class="body-postCont-box">
+        <textarea class="weui-textarea" name="textarea" placeholder="请输入要发布的内容" style="height: 9em; font-size: 0.9em" />
+      </view>
+      <!-- 上传图片 -->
+      <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">最多只能上传6张图片</view>
+      <view class="weui-uploader">
+        <view class="weui-uploader__bd upload-box">
+          <view class="weui-uploader__files" id="uploaderFiles">
+            <block wx:for-items="{{files}}" wx:key="{{index}}">
+              <view class="weui-uploader__file" bindtap="previewImage" bindlongpress="deleteImg" id="{{index}}">
+                <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+              </view>
+            </block>
+          </view>
+          <view class="weui-uploader__input-box">
+            <view class="weui-uploader__input" bindtap="chooseImage"></view>
+          </view>
+        </view>
+      </view>
+      <view class="upload-hint">提示：长按删除图片(最多上传6张)</view>
+      <view class="section">
+        <view class="infoSection">
+          <image class="infoIcon" src="../../../resources/pic/location.png"></image>
+          <view class="location">
+            <input class="" data-id="address" value="{{currentAddress}}" bindinput="userInput" placeholder=""></input>
+          </view>
+          <view class="rightIcon" bindtap="getLocation">获取当前位置 〉</view>
+        </view>
+        <view class="infoSection topBorder">
+          <image class="infoIcon" src="../../../resources/pic/phone.png"></image>
+          <input class="input__loc" data-id="phone" type="number" placeholder="请输入您的电话号码" bindinput="userInput" value="{{phone}}"></input>
+        </view>
+      </view>
+      <view class="section">
+        <view class="pickSection">
+          <view class="infoSection-title">置顶</view>
+          <view class="weui-cell__ft">
+            <switch checked="{{buyTop}}" bindchange="switchChange" />
+          </view>
+        </view>
+        <view class="pickSection topBorder" hidden="{{!buyTop}}">
+          <view class="infoSection-titlel">选择置顶时间</view>
+          <picker class="picker-btn" bindchange="bindPickerChange" value="{{dateIndex}}" range="{{dates}}">
+            {{dates[dateIndex]}}
+          </picker>
+        </view>
+        <view class="pickSection topBorder" hidden="{{!buyTop}}">
+          <view class="infoSection-title">置顶价格</view>
+          <view class="price">¥ {{priceArr[dateIndex]}}</view>
+        </view>
+      </view>
+      <!-- <view class="post-price">发帖：<text class="price">{{price}}元</text>／条</view> -->
+      <button class="body-postBtn" formType="submit" style="background-color: {{mainColor}};">立即发布</button>
+    </form>
+	</view>
+</view>

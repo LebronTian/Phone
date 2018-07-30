@@ -1,0 +1,150 @@
+
+*{ margin: 0; padding: 0;}
+li{ list-style: none;}
+ul{ padding: 0;}
+input:focus{ outline: none;}
+body{ background-color: #5FBBE2;}
+.header{ width: 100%; height: 80px;}
+.logo{ margin-left: 70px; margin-top: 10px; width: 200px; float: left;}
+.header p{float: right; padding: 0; height: 30px; line-height: 30px; margin-top: 15px; font-size: 18px;}
+.header a{ color: #FFF; padding:0 20px;}
+.content{ width: 100%; height: 780px; position: relative;}
+.login_box{ width: 400px; height: 445px; position: absolute; left: 60%; 
+			top: 140px; border-radius: 10px; padding: 0 0 0 20px;}
+.logo_s{ clear: both; position: absolute; left: 60%;padding-left:20px; top: 18px; text-align: center;}
+.logo_text{ font-size: 20px; font-family: '微软雅黑';padding-left:20px;height: 30px; position: absolute;
+			 left: 60%; top: 64px; text-align: center; color: #FFF;}
+#account,#password{ width: 360px; height: 50px; border: 1px solid #CCC; border-radius: 5px; text-indent: 60px; margin-bottom: 25px;}
+#verifycode{ width: 158px; height: 50px; border: 1px solid #CCC; border-radius: 5px; text-indent: 60px; margin-bottom: 25px;}
+.account_icon,.password_icon,.confirm_icon,.phone_icon{ display: inline-block; 
+			   width: 50px; 
+			   height: 50px; 
+			   background: url(/app/sp/static/images/account.png) no-repeat center center;
+			   position: absolute; 
+			   left: 0;
+			   top: 0;
+			}
+.password_icon{background: url(/app/sp/static/images/password.png) no-repeat center center;}
+.confirm_icon{background: url(/app/sp/static/images/confirm.png) no-repeat center center;}
+.phone_icon{background: url(/app/sp/static/images/account.png) no-repeat center center;}
+.code{ display: inline-block; width: 145px; height: 48px; position: absolute; right: 50px;}
+.code img{ width: 145px; height: 48px;}
+.select_area label{ margin-left: 10px; font-weight: normal;}
+.select_area{ margin-bottom: 38px;}
+.am-btn{ background-color: #F76A7A; font-size: 24px; color: #FFF; width: 218px; height: 58px;}
+.am-btn:hover{ color: #FFF;}
+.register_btn{ text-decoration: underline; float: right; margin-right: 24px; margin-top: 32px; color: #FFF;}
+.img_box{ padding-top: 125px; padding-left: 40px;width:50%}
+.img_box>img{}
+.foot_text{ color: #000; margin: 0; text-align: center; font-size: 14px;}
+
+.foot_info{ width: 100%; padding: 20px 0; background-color: #FFF; min-height: 180px; padding-bottom: 20px; border-bottom: 1px solid #FFF;}
+.foot_info_cont{ width: 1000px;  min-height: 180px; margin: 0 auto; color: #000;}
+.foot_info_cont div{
+	width: 20%;
+	min-height: 200px;
+	float: left;
+}
+.foot_info_cont div ul{
+	width: 195px;
+}
+.foot_info_box p{
+	text-align: left;
+}
+
+.foot_info_box p span{
+	font-weight: bolder;
+	display: inline-block;
+	margin-right: 15px;
+}
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+.web_info_bar .meb_nav{
+	background: #fff;
+    width: 260px;
+    display: inline-block;
+    margin: 10px 0px 10px 0px;
+}
+.web_info_bar .meb_nav_box {
+    width: 165px;
+    margin: 21px auto;
+}
+.web_info_bar .meb_container {
+    background: #fff;
+    width: 725px;
+    display: inline-block;
+    margin: 10px 0 20px 0;
+}
+.web_info_bar .post_cont p{
+	padding: 1.6rem;
+    padding-top: 0;
+}
+.content_item{
+	background-color: white !important;
+}
+/*11.13*/
+.content_item>.post{
+    font-size: 14px;
+    line-height: 40px;
+}
+.content_item>.post>h1{
+    border-left: 2px solid #4168E2 !important;
+    background-color: white !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

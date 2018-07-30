@@ -1,0 +1,21 @@
+@font-face {font-family: "footer";
+  src: url('footer.eot'); /* IE9*/
+  src: url('footer.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('footer.woff') format('woff'), /* chrome, firefox */
+  url('footer.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('footer.svg#footer') format('svg'); /* iOS 4.1- */
+}
+
+.footer-icon {
+  font-family:"footer" !important;
+  font-size:1.3em;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-list:before { content: "\e609"; }
+.icon-home:before { content: "\e610"; }
+.icon-cart:before { content: "\e611"; }
+.icon-coupon:before { content: "\e613"; }
+.icon-message:before { content: "\e612"; }

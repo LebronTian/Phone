@@ -1,0 +1,48 @@
+<view class="container">
+  <view class="page__bd">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">姓名</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input id="realName" class="weui-input" bindinput="inputInfo" placeholder="请输入您的姓名" value="{{extraInfo.realName}}" />
+        </view>
+      </view>
+
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">开户行</view>
+        </view>
+        <view wx:if="{{needBank}}" class="weui-cell__bd rightBtn">
+            <picker bindchange="bindPickerChange" value="{{bankListIdx}}" range="{{bankList}}">
+                <view class="weui-input">{{bankList[bankListIdx]}}</view>
+            </picker>
+        </view>
+        <view wx:else class="weui-cell__bd">
+            <input id="bankName" class="weui-input" bindinput="inputInfo" placeholder="请输入提现银行卡开户行" value="{{extraInfo.bankName}}" />
+        </view>
+      </view>
+
+      <!-- <view  class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">开户行</view>
+        </view>
+        
+      </view> -->
+
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">银行卡号</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input id="bankId" class="weui-input" bindinput="inputInfo" type="number" placeholder="请输入提现银行卡号" value="{{extraInfo.bankId}}" />
+        </view>
+      </view>
+
+    </view>
+    <view class="weui-btn-area">
+      <button class="button" style="background-color: {{mainColor}}" type="primary" bindtap="postInfo">提交</button>
+    </view>
+  </view>
+</view>

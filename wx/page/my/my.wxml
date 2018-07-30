@@ -1,0 +1,47 @@
+<view class="container">
+  <view class="header" style="background-color: {{mainColor}}">
+  	<image class="header-avatar" src="{{(myInfo.profile && myInfo.profile.avatar) || myInfo.su.avatar}}" bindtap="navToEdit"></image>
+  	<text class="header-userName" bindtap="navToEdit">{{(myInfo.profile && myInfo.profile.realname) ? myInfo.profile.realname : myInfo.su.name}}</text>
+    <text class="vipTag" hidden="{{!vipName}}">{{vipName}}</text>
+    <view class="header-userWallet">
+      <navigator url="pages/pointDetail/pointDetail?from=point" class="header-userWallet-point">积分：{{showPoint}}</navigator>
+      <navigator url="pages/pointDetail/pointDetail?from=cash" class="header-userWallet-point">余额：{{showCash}}</navigator>
+    </view>
+  </view>
+  <view class="my-order">
+  	<navigator url="pages/myOrders/myOrders?index=0" class="my-subTitle">
+  	  <text>我的订单</text>
+  	  <text class="rightBtn"></text>
+  	</navigator>
+    <view class="my-orderStatus-box">
+      <block wx:for="{{orderStatus}}" wx:key="{{item.index}}">
+        <navigator class="my-orderStatus" url="{{item.url}}">
+          <image class="my-orderStatus-img" src="{{item.img}}"></image>
+          <text class="my-orderStatus-title" style="color: {{mainColor}}">{{item.title}}</text>
+          <view class="my-orderStatus-cnt" style="background-color: {{mainColor}}" hidden="{{!item.count}}">{{item.count}}</view>
+        </navigator>
+      </block>
+    </view>
+  </view>
+  <view class="my-setting-box">
+    <block wx:for="{{subTitles}}" wx:key="{{index}}">
+      <view class="my-subTitle rightBtn" bindtap="subHandle" id="{{item.url}}" hidden="{{!item.show}}">
+        <view class="my-subTitle-left">
+          <view class="my-subTitle-leftBox">
+        		<image class="my-subTitle-img" src="{{item.img}}"></image>
+            <text>{{item.title}}</text>
+          </view>
+          <text class="my-subTitle-content">{{item.content}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <view class="weui-footer" style="display:none;">    
+    <view class="weui-footer__links">
+        <navigator url="../index/pages/company/company" class="weui-footer__link">@深圳市快马加鞭科技有限公司 - 提供技术开发</navigator>
+    </view>
+    <view class="weui-footer__text">Copyright © 2015-2017 weixin.uctphp.com</view>
+  </view>
+
+</view>

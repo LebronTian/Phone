@@ -1,0 +1,62 @@
+/* page/class/pages/editAddress/editAddress.wxss */
+.receiver, .address {
+	margin-top: 30rpx;
+}
+
+.wechatAddress {
+	color: #fff;
+	width: 90%;
+	margin: 50rpx auto;
+}
+.vcode-btn {
+	box-sizing: content-box;
+	width: 180rpx;
+	text-align: center;
+}
+
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	width: calc(100% - 40rpx);
+	background-color: #fff;
+	border-top: 1px solid #efefef;
+	display: flex;
+	justify-content: space-between;
+	line-height: 2em;
+	padding: 10rpx 20rpx;
+}
+
+.confirm {
+	padding: 0 30rpx;
+	color: #fff;
+	background-color: #f80000;
+	border-radius: 5px;
+}
+
+.citypicker{
+  
+}
+.citybody {
+  position: fixed;
+  bottom: 0px;
+}
+
+.cityheader {
+  position: absolute;
+  top:0px;
+  width: 100%;
+  z-index: 4;
+}
+
+.city-cancel {
+  float: left;
+  margin: 20rpx;
+  color: #818181;
+}
+
+.city-true {
+  float: right;
+  margin: 20rpx;
+  color: #2FB42E
+}

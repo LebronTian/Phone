@@ -1,0 +1,119 @@
+
+
+.new-keyword-box{
+    padding-top: 0;
+}
+.new-keyword-box p{ margin: 0 }
+.new-keyword-box section{
+    border: thin solid #ddd;
+    border-top: none;
+    overflow: hidden;
+}
+
+.am-checkbox.am-checkbox-inline{
+    margin: 0 0.3em;
+}
+/**/
+.name-input{
+    padding: 0.3em;
+    border: thin solid #ddd;
+    width: 15em;
+}
+.section-title{
+    padding: 0.5em;
+    overflow: hidden;
+    border-top: thin solid #ddd;
+}
+.select2-container--default .select2-selection--multiple{
+    border: none;
+    padding: 0.5em;
+}
+.add-keywords{
+    width: 100%;
+    border: none;
+}
+.right-checkbox{
+    float: right;
+}
+.btn-box{
+    padding: 0.5em;
+    border-bottom: thin solid #ddd;
+}
+.bottom-section{
+    padding: 0.5em;
+    font-size: 93%;
+}
+.bottom-section button{
+    float: right;
+}
+
+.show-title{
+    display: inline-block;
+    width: 5em;
+}
+
+.reply-section{
+    border-bottom: thin dashed #ddd;
+    padding: 0.5em;
+    overflow: hidden;
+}
+.reply-section:last-child{
+    border-bottom: none;
+}
+
+.new-text-reply input{
+    padding: 0.5em;
+    width: 100%;
+}
+
+.show-tip{
+    background: #3bb4f2;
+    padding: .625em 1em;
+    color: #ffffff;
+    line-height: 2.5em;
+}
+.select2-container{
+    border-top: thin solid #ddd;
+}
+
+
+.show-section{
+    display: none;
+}
+.read-only{
+    border: none;
+}
+
+
+/*************/
+.upside_down{
+    animation: upside_down 1s alternate paused forwards infinite;
+    -moz-animation: upside_down 1s alternate paused forwards infinite;	/* Firefox */
+    -webkit-animation: upside_down 1s alternate paused forwards infinite;	/* Safari 和 Chrome */
+    -o-animation: upside_down 1s alternate paused forwards infinite;	/* Opera */
+}
+
+@keyframes upside_down {
+    0%		{transform: rotate(0deg)}
+    100%	{transform: rotate(-180deg)}
+}
+
+@-webkit-keyframes upside_down {
+    0%		{-webkit-transform: rotate(0deg)}
+    100%	{-webkit-transform: rotate(-180deg)}
+}
+
+@-moz-keyframes upside_down {
+    0%   {-moz-transform: rotate(0deg)}
+    100% {-moz-transform: rotate(-180deg)}
+}
+
+@-o-keyframes upside_down {
+    0%   {transform: rotate(0deg)}
+    100% {transform: rotate(-180deg)}
+}
+
+
+
+
+

@@ -1,0 +1,198 @@
+*{margin:0;padding: 0}
+  html{width: 100%;min-height: 100%}
+  body{width:100%;height:100%;background-color:#FFDF01}
+  .content{position:relative;}
+  .bg_img{width:100%;height:auto;position:absolute;left:0;top:0;z-index:-10}
+  .reward_go{position: absolute;width: 80%;left:10%;top:18%;opacity:0}
+  .minion3{width: 96%;position:absolute;left:2%;bottom:30px;}
+
+#minion_drop{
+    animation: drop 1s linear;
+    -webkit-animation: drop 1s linear;  /* Safari 和 Chrome */
+  }
+@keyframes drop
+{
+0%   {bottom:530px;transform:rotate(7deg);}
+20%  {bottom:430px;transform:rotate(-7deg);}
+40%  {bottom:330px;transform:rotate(7deg);}
+60%  {bottom:230px;transform:rotate(-7deg);}
+80%  {bottom:130px;transform:rotate(7deg);}
+100% {bottom:30px;transform:rotate(0deg);}
+}
+
+@-webkit-keyframes drop /* Safari 和 Chrome */
+{
+0%   {bottom:530px;-webkit-transform:rotate(7deg);}
+20%  {bottom:430px;-webkit-transform:rotate(-7deg);}
+40%  {bottom:330px;-webkit-transform:rotate(7deg);}
+60%  {bottom:230px;-webkit-transform:rotate(-7deg);}
+80%  {bottom:130px;-webkit-transform:rotate(7deg);}
+100% {bottom:30px;-webkit-transform:rotate(-7deg);}
+}
+
+#go_change{
+    animation: change 3s linear;
+    -moz-animation: change 3s linear; /* Firefox */
+    -webkit-animation: change 3s linear;  /* Safari 和 Chrome */
+    -o-animation: change 3s linear;
+    animation-iteration-count：infinite;
+    -webkit-animation-iteration-count:infinite;
+    -moz-animation-iteration-count:infinite;
+    -o-animation-iteration-count:infinite;
+}
+@keyframes change
+{
+0%   {width:60%;left:20%;top:20%;}
+20%  {width:70%;left:15%;top:17%;}
+40%  {width:50%;left:25%;top:23%;}
+60%  {width:70%;left:15%;top:17%;}
+80%  {width:50%;left:25%;top:23%;}
+100% {width:60%;left:20%;top:20%;}
+}
+
+@-moz-keyframes change /* Firefox */
+{
+0%   {width:60%;left:20%;top:20%;}
+20%  {width:70%;left:15%;top:17%;}
+40%  {width:50%;left:25%;top:23%;}
+60%  {width:70%;left:15%;top:17%;}
+80%  {width:50%;left:25%;top:23%;}
+100% {width:60%;left:20%;top:20%;}
+}
+
+@-webkit-keyframes change /* Safari 和 Chrome */
+{
+0%   {width:60%;left:20%;top:20%;}
+20%  {width:70%;left:15%;top:17%;}
+40%  {width:50%;left:25%;top:23%;}
+60%  {width:70%;left:15%;top:17%;}
+80%  {width:50%;left:25%;top:23%;}
+100% {width:60%;left:20%;top:20%;}
+}
+
+@-o-keyframes change /* Opera */
+{
+0%   {width:60%;left:20%;top:20%;}
+20%  {width:70%;left:15%;top:17%;}
+40%  {width:50%;left:25%;top:23%;}
+60%  {width:70%;left:15%;top:17%;}
+80%  {width:50%;left:25%;top:23%;}
+100% {width:60%;left:20%;top:20%;}
+}
+
+
+
+
+
+
+.progress {
+  position:absolute;
+  margin: 0 auto;
+  width: 40%;
+  left: 30%;
+  bottom:20%;
+}
+
+.progress {
+  padding: 1px;
+  background: black;
+  border-radius: 6px;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.progress-bar {
+  position: relative;
+  height: 10px;
+  border-radius: 4px;
+  -webkit-transition: 0.4s linear;
+  -moz-transition: 0.4s linear;
+  -o-transition: 0.4s linear;
+  transition: 0.4s linear;
+  -webkit-transition-property: width, background-color;
+  -moz-transition-property: width, background-color;
+  -o-transition-property: width, background-color;
+  transition-property: width, background-color;
+  -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
+}
+.progress-bar:before, .progress-bar:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.progress-bar:before {
+  bottom: 0;
+  border-radius: 4px 4px 0 0;
+}
+.progress-bar:after {
+  z-index: 2;
+  bottom: 45%;
+  border-radius: 4px;
+}
+#change{
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#F9EA31), to(#F16329));
+    animation: change1 3s linear;
+    -webkit-animation: change1 3s linear;  /* Safari 和 Chrome */
+}
+@keyframes change1
+{
+5%   {  width: 5%;
+  background-color: #f63a0f;}
+25%  { width: 25%;
+  background-color: #f27011;}
+50%  {  width: 50%;
+  background-color: #f2b01e;}
+75%  {  width: 75%;
+  background-color: #f2d31b;}
+100% {width: 100%;
+  background-color: #86e01e;}
+}
+
+
+@-webkit-keyframes change1 /* Safari 和 Chrome */
+{
+5%   {  width: 5%;background-color: #f63a0f;}
+25%  { width: 25%;
+  background-color: #f27011;}
+50%  {  width: 50%;
+  background-color: #f2b01e;}
+75%  {  width: 75%;
+  background-color: #f2d31b;}
+100% {width: 100%;
+  background-color: #86e01e;}
+}
+
+
+
+
+.loading_box{position:absolute;width:78%;left:11%;top:17%;display:none}
+.loading_box>img:first-child{width:100%;}
+.open_img{position:absolute;width:50%;left:25%;top:10%;}
+
+
+#open_rotate{
+    animation: openrotate 3s linear;
+    -webkit-animation: openrotate 3s linear;  /* Safari 和 Chrome */
+}
+@keyframes openrotate
+{
+0%   {transform:rotate(9deg);}
+20%  {transform:rotate(-9deg);}
+40%  {transform:rotate(9deg);}
+60%  {transform:rotate(-9deg);}
+80%  {transform:rotate(9deg);}
+100% {transform:rotate(-9deg);}
+}
+
+@-webkit-keyframes openrotate /* Safari 和 Chrome */
+{
+0%   {-webkit-transform:rotate(9deg);}
+20%  {-webkit-transform:rotate(-9deg);}
+40%  {-webkit-transform:rotate(9deg);}
+60%  {-webkit-transform:rotate(-9deg);}
+80%  {-webkit-transform:rotate(9deg);}
+100% {-webkit-transform:rotate(-9deg);}
+}

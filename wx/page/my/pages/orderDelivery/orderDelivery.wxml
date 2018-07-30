@@ -1,0 +1,34 @@
+<view class="container">
+	<view class="order-receiveInfo-box" wx:if="{{order.delivery_info}}">
+  	<view class="order-receiveInfo">
+  		<view class="order-messTitle">
+	  		订单编号:
+	  		<text class="order-mess"> {{order.uid}}</text>
+	  	</view>
+	  	<view class="order-messTitle">
+	  		订单状态:
+	  		<text class="order-mess"> {{order.status}}</text>
+	  	</view>
+	  	<view class="order-messTitle">
+	  		物流公司:
+	  		<text class="order-mess"> {{order.delivery_info['快递公司']}}</text>
+	  	</view>
+	  	<view class="order-messTitle">
+	  		运单号码:
+	  		<text class="order-mess"> {{order.delivery_info['快递单号']}}</text>
+	  	</view>
+  	</view>
+  </view>
+
+  <view hidden="{{!delivertArr}}" class="order-mess-box">
+  	<block wx:for="{{delivertArr}}" wx:key="{{index}}">
+  		<view class="delivery-info">
+	  		<view class="delivery-cont">{{item.info}}</view>
+	  		<view class="delivery-time">{{item.datetime}}</view>
+	  	</view>
+  	</block>
+  </view>
+  <view hidden="{{delivertArr}}" class="empty-delivery">
+  	无法查询到运单详细信息
+  </view>
+</view>

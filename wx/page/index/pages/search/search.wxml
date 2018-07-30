@@ -1,0 +1,39 @@
+<view class="container">
+	<!-- 搜索框 -->
+  <view class="weui-search-bar">
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus bindfocus="inputFocus" bindinput="inputTyping" bindconfirm="searchTap" confirm-type="search" />
+        <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+          <icon type="clear" size="14"></icon>
+        </view>
+      </view>
+    </view>
+    <navigator open-type="navigateBack" class="weui-search-bar__cancel-btn" style="color: #666">取消</navigator>
+  </view>
+  <!-- 搜索历史 -->
+  <view class="history" hidden="{{searchRecord.length == 0 || searchResult.length > 0}}">
+    <view class="history__header">
+      <view class="history__title">历史记录</view>
+      <image class="history__deleteImg" bindtap="clearRecord" src="../../../resources/pic/delete_8e.png"></image>
+    </view>
+    <view class="record-box">
+      <block wx:for="{{searchRecord}}" wx:key="{{index}}">
+        <view id="{{item}}" class="record" bindtap="tapRecord">{{item}}</view>
+      </block>
+    </view>
+  </view>
+	<!-- 搜索结果 -->
+   <view class="searchPage">
+    <view class="searchPage-goods-box">
+      <block wx:for="{{searchResult}}" wx:key="{{index}}">
+        <navigator url="/page/class/pages/goodDetail/goodDetail?uid={{item.uid}}" class="body-classGood searchResult-good">
+          <image class="body-goodImg searchResult-goodImg" src="{{item.img}}" />
+          <text class="body-goodTitle">{{item.title}} \n</text>
+          <text class="body-goodPrice">¥ {{item.price}}</text>
+        </navigator>
+      </block>
+    </view>
+  </view>
+</view>

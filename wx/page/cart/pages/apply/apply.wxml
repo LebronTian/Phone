@@ -1,0 +1,200 @@
+<view class="container">
+  <view class="page__bd">
+    <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">确认密码输入不一致，请重新输入</view>
+    <view class="weui-cells__title">商家注册</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">注册账号</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input id="account" bindinput="userInput" class="weui-input" placeholder="请输入商家注册账号"/>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">注册密码</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input id="passwd" password bindinput="userInput" class="weui-input" placeholder="请输入登录密码"/>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">确认密码</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input password bindblur="pswConfirm" class="weui-input" placeholder="请确认密码"/>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells__title">商家申请表单</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">商家名称</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input id="title" bindinput="userInput" class="weui-input" placeholder="请输入商家名称"/>
+        </view>
+      </view>
+
+      <view class="weui-cell weui-cell_select">
+        <view class="weui-cell__hd weui-cell__hd_in-select-after">
+          <view class="weui-label">类型</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker bindchange="bindAccountChange" value="{{accountIndex}}" range="{{accounts}}">
+            <view class="weui-select weui-select_in-select-after">{{accounts[accountIndex]}}</view>
+          </picker>
+        </view>
+      </view>
+
+      <view class="weui-cell weui-cell_input weui-cell_vcode">
+          <view class="weui-cell__hd">
+              <view class="weui-label">商家地址</view>
+          </view>
+          <view class="weui-cell__bd" bindtap="chooseLoc">
+            <input class="weui-input" disabled placeholder="请选择商家地址" hidden="{{postData.location}}" />
+            <view class="location-text" style="padding: {{postData.location ? '20rpx' : '0'}};">{{postData.location}}</view>
+          </view>
+          <view class="weui-cell__ft">
+              <view class="weui-vcode-btn" bindtap="clearLoc">清空</view>
+          </view>
+      </view>
+
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">营业时间</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input id="business_time" bindinput="userInput" class="weui-input" placeholder="输入营业时间如：24小时营业"/>
+        </view>
+      </view>
+
+    </view>
+
+    <view class="weui-cells">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view class="weui-uploader">
+            <view class="weui-uploader__hd">
+              <view class="weui-uploader__title">商家主图上传</view>
+            </view>
+            <view class="weui-uploader__bd">
+              <view class="weui-uploader__files" hidden="{{!mainImg}}">
+                <view class="weui-uploader__file" bindtap="previewImage">
+                  <image class="weui-uploader__img" src="{{mainImg}}" mode="aspectFill" />
+                </view>
+              </view>
+              <view class="weui-uploader__input-box">
+                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-cells__title">店铺设施</view>
+    <view class="weui-cells weui-cells_after-title">
+        <checkbox-group bindchange="checkboxChange" class="checkbox-group">
+            <label class="weui-cell weui-check__label checkbox-item" wx:for="{{checkboxItems}}" wx:key="value">
+                <checkbox class="weui-check" value="{{item.value}}" checked="{{item.checked}}"/>
+
+                <view class="weui-cell__hd weui-check__hd_in-checkbox">
+                    <icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{!item.checked}}"></icon>
+                    <icon class="weui-icon-checkbox_success" type="success" size="23" wx:if="{{item.checked}}"></icon>
+                </view>
+                <view class="weui-cell__bd">{{item.value}}</view>
+            </label>
+        </checkbox-group>
+        <!-- <view class="weui-cell weui-cell_link">
+            <view class="weui-cell__bd">添加更多</view>
+        </view> -->
+    </view>
+
+    <!-- 上传商家图片 -->
+    <view class="weui-cells">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view class="weui-uploader">
+            <view class="weui-uploader__hd">
+              <view class="weui-uploader__title">商家图片上传</view>
+            </view>
+            <view class="weui-uploader__bd upload-box">
+              <view class="weui-uploader__files" id="uploaderFiles">
+                <block wx:for-items="{{files}}" wx:key="{{index}}">
+                  <view class="weui-uploader__file" bindtap="previewShopImage" bindlongpress="deleteImg" id="{{index}}">
+                    <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                  </view>
+                </block>
+              </view>
+              <view class="weui-uploader__input-box">
+                <view class="weui-uploader__input" bindtap="chooseShopImage"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-cells__title">商家联系人信息</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">联系人姓名</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input id="contact" bindinput="userInput" class="weui-input" placeholder="请输入联系人姓名"/>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">身份证号</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input id="idcard" type="idcard" bindinput="userInput" class="weui-input" placeholder="请输入联系人身份证号"/>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input weui-cell_vcode">
+        <view class="weui-cell__hd">
+          <view class="weui-label">联系人电话</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input id="phone" type="number" bindinput="userInput" class="weui-input" placeholder="请输入联系人电话" />
+        </view>
+        <!-- <view class="weui-cell__ft">
+          <view class="weui-vcode-btn">获取验证码</view>
+        </view> -->
+      </view>
+    </view>
+    
+		<form bindsubmit="submitInfo">
+	    <view class="weui-cells__title">商家介绍</view>
+	    <view class="weui-cells weui-cells_after-title">
+	      <view class="weui-cell">
+	        <view class="weui-cell__bd">
+	          <textarea class="weui-textarea" name="textarea" placeholder="请输入商家介绍" style="height: 6.6em" />
+	          <!-- <view class="weui-textarea-counter">0/200</view> -->
+	        </view>
+	      </view>
+	    </view>
+	    <checkbox-group bindchange="bindAgreeChange">
+	      <label class="weui-agree" for="weuiAgree">
+	        <view class="weui-agree__text">
+	          <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+	          <view class="weui-agree__checkbox-icon">
+	            <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+	          </view>
+	          阅读并同意<navigator url="../../../index/pages/article/article?type_in=4" class="weui-agree__link">《相关条款》</navigator>
+	        </view>
+	      </label>
+	    </checkbox-group>
+
+	    <view class="weui-btn-area">
+	      <button formType="submit" class="weui-btn" type="primary" style="background-color: {{mainColor}}">确定</button>
+	    </view>
+	  </form>
+  </view>
+</view>

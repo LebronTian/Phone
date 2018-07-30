@@ -1,0 +1,27 @@
+@import '../../../my/pages/coupon/coupon.wxss';
+
+.coupon-content-box {
+	width: 50%;
+}
+
+.coupon-price-box {
+	width: 20%;
+}
+.coupon-getBtn {
+	width: calc(30% - 140rpx);
+	color: #fff;
+	/*background-color: #7d4690;*/
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 0.8em;
+	text-align: center;
+	padding: 8rpx;
+	border-left: 2px dashed #fff;
+}
+
+.coupon-getBtn-text {
+	width: 100%;
+}
+
+
+

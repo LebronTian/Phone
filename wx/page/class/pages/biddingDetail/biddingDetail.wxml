@@ -1,0 +1,176 @@
+<!--page/class/pages/biddingDetail/biddingDetail.wxml-->
+<import src="../../../common/wxParse/wxParse.wxml"/>
+
+<view class="container">
+	<view class="countdown-box">
+		<view class="countdown-text">{{detail.status + detail.remainTime}}</view>
+	</view>
+	<view class="weui-tab__panel" style="padding-top:0;">
+		<!-- 商品简介页面 -->
+    <view class="weui-tab__content">
+    	<view class="goodHeader-swiper-box">
+	      <swiper class="goodHeader-swiper" indicator-dots circular bindchange="swiperChange">
+	        <block wx:for="{{background}}" wx:key="{{index}}">
+	          <swiper-item>
+	            <view class="swiper-item" wx:if="{{item.img}}">
+	              <image class="goodHeader-swiperImg" src="{{item.img}}"></image>
+	            </view>
+	            <view class="header-vedio" wx:else>
+								<video class="classVedio vedio__fixed" id="myVideo" src="{{item.vedio}}" poster="{{background[1].img}}" binderror="videoErrorCallback" bindended="videoPlayEnd" hidden="{{isSelect}}"></video>
+							</view>
+	          </swiper-item>
+	        </block>
+	      </swiper>
+	    </view>
+	    <view class="goodIntro-box">
+	    	<view class="good-basicInfo">
+	    		<view class="bidding-title">{{detail.ap.title}}</view>
+		    	<view class="good-intro" hidden="{{!detail.title_second}}">{{detail.title_second}}</view>
+		    	<view class="good-price">
+		    		<text class="good-price-origin">当前价：</text>
+		    		<text class="good-price-group">¥ {{detail.price}} </text>
+		    	</view>
+	    	</view>
+	    	<view class="good-alarmBtn" wx:if="{{showAlarm}}">
+	    		<image class="good-clock-img" src="../../../resources/pic/clock.png"></image>
+	    		<text>提醒</text>
+	    	</view>
+	    	<view class="bidding-info">
+	    		<view class="bidding-time">
+		    		<view class="good-price-origin">开始：{{detail.startTime}}</view>
+		    		<view class="good-price-origin">结束：{{detail.endTime}}</view>
+		    	</view>
+		    	<!-- <view class="bidding-data-box">
+		    		<text class="good-price-origin">
+		    			<text class="bidding-data">-8</text>人报名 | <text class="bidding-data">-13</text>人围观 | <text class="bidding-data">-24</text>人设置提醒
+		    		</text>
+		    	</view> -->
+	    	</view>
+	    </view>
+
+	    <view class="goodSelect-box goodRight-box" hidden="{{!detail.bas_services || detail.bas_services.length == 0}}">
+	    	<block wx:for="{{detail.bas_services}}" wx:key="{{index}}">
+	    		<image class="rightIcon" src="../../../resources/pic/rightIcon.png"></image><text style="font-size: 0.8em;">{{item}}</text>
+	    	</block>
+	    </view>
+
+	    <view class="bidding-rule-box">
+	    	<view class="bidding-section">
+	    		<text class="good-price-origin">起拍价：</text>￥{{detail.min_price == '免费' ? '0.00' : detail.min_price}}
+	    	</view>
+	    	<view class="bidding-section">
+	    		<text class="good-price-origin">加价幅度：</text>￥{{detail.step_price == '免费' ? '0.00' : detail.step_price}}
+	    	</view>
+	    	<view class="bidding-section">
+	    		<text class="good-price-origin">延时周期：</text>{{detail.ap.add_time}}秒/次
+	    	</view>
+	    	<view class="bidding-section">
+	    		<text class="good-price-origin">拍卖类型：</text>升价拍
+	    	</view>
+	    	<view class="bidding-section">
+	    		<text class="good-price-origin">竞价代码：</text>
+	    		暂无代码
+	    	</view>
+		  </view>
+
+		  <view class="bidding-record-box">
+		  	<navigator class="rightBtn" url="../biddingUser/biddingUser?uid={{detail.uid}}">
+	    		<text class="good-price-origin">出价记录：</text>
+	    		<text class="bidding-num">{{recordCount}} </text>次出价
+		  	</navigator>
+		  	<view class="bidding-record-wrapper">
+		  		<scroll-view scroll-x style="width: 100%; white-space: nowrap;">
+						<block wx:for="{{recordList}}" wx:key="{{item.uid}}">
+				    	<view class="bidding-record">
+				    		<view class="bidding-record-status">{{index == 0 ? '领先' : '出局'}}</view>
+				    		<view class="bidding-record-code">No.{{item.uid}}</view>
+				    		<view class="bidding-record-price">￥{{item.price}}</view>
+				    	</view>
+				    </block>
+			    </scroll-view>
+		  	</view>
+		    <view class="bidding-user-box">
+		    	<view class="user-first" wx:if="{{firstUser}}">
+		    		<image class="user-avatar" src="{{firstUser.su.avatar ? firstUser.su.avatar : '/page/resources/pic/default.png'}}" />
+		    		<view class="">
+		    			<view class="user-name">{{firstUser.su.name}}</view>
+		    			<view class="user-price">若无人出价将以<text class="bidding-num">￥{{firstUser.price}}</text> 拍得本产品</view>
+		    		</view>
+		    	</view>
+		    	<view class="user-out" wx:if="{{otherUser && otherUser.length}}" wx:for="{{otherUser}}" wx:key="{{item.uid}}">
+		    		<image class="user-avatar" src="{{item.su.avatar ? item.su.avatar : '/page/resources/pic/default.png'}}" />
+		    		<view class="user-name">{{item.su.name}}</view>
+		    		<view class="user-status">出局</view>
+		    		<view class="">￥{{item.price}}</view>
+		    	</view>
+		    </view>
+		  </view>
+
+		  <view class="bidding-process-box">
+		  	<view class="section-title">竞价流程</view>
+		  	<view class="process-wrapper">
+			  		<view class="process-text">交保证金</view>
+				  	<text class="process-icon">></text>
+				  	<view class="process-text">竞价</view>
+				  	<text class="process-icon">></text>
+				  	<view class="process-text">付款</view>
+				  	<text class="process-icon">></text>
+				  	<view class="process-text">交割</view>
+				  	<text class="process-icon">></text>
+				  	<view class="process-text">完成</view>
+		  	</view>
+		  </view>
+
+			<!-- 商品详情页面 -->
+	    <view class="weui-tab__content good-info">
+	    	<view class='detail-extraInfo' hidden="{{!detail.extra_info || detail.extra_info.length == 0}}">
+	    		<block wx:for="{{detail.extra_info}}" wx:key="{{index}}">
+	    			<view class="extraInfo-item">
+	    				<view class="extraInfo-item__title">{{item.ukey}}</view>
+	    				<view class="extraInfo-item__content">{{item.data}}</view>
+	    			</view>
+	    		</block>
+	    	</view>
+	    	<view class="detail-content-box">
+					<template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+	    	</view>
+	    </view>
+
+	    <view class="body-good-box" hidden="{{!goodsList}}" style="margin: 20rpx 0;">
+	    	<view class="good-commentShow" style="line-height: 2.8em;">关联商品</view>
+	  		<view class="body-good-subBox">
+		  		<block wx:for="{{goodsList}}" wx:for-item="good" wx:key="{{index}}">
+		  			<view id="{{good.uid}}" class="body-good" bindtap="reload" >
+		  				<image class="body-goodImg" src="{{good.main_img}}"></image>
+		  				<text class="body-goodTitle">{{good.title}}</text>
+		  				<text class="body-goodPrice">¥ {{good.price}}</text>
+		  			</view>
+		  		</block>
+		  	</view>
+		  </view>
+    </view>    
+	</view>
+
+	<!-- 底部购买操作菜单 -->
+	<view class="" hidden="{{detail.status == '竞拍已结束'}}">
+		<view class="footer" wx:if="{{detail.can_i_quote}}">
+			<view class="footer-biddingPrice">
+				<view class="price-input-wrapper">
+					<input type="number" value='{{addPrice}}' bindinput="inputPrice" />
+				</view>
+				<view class="addPrice-unit">元</view>
+			</view>
+			<view class="footer-buyBtn" style="background-color: {{mainColor}}" bindtap="addBidding">
+				<text>出价</text>
+			</view>
+		</view>
+		<view class="footer" wx:else>
+			<view class="footer-addToCart">
+				<text>保证金￥{{detail.deposit_price}}</text>
+			</view>
+			<view class="footer-buyBtn" style="background-color: {{mainColor}}" bindtap="joinBidding">
+				<text>报名竞买</text>
+			</view>
+		</view>
+	</view>
+</view>

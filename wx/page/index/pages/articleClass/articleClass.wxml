@@ -1,0 +1,36 @@
+<!--page/index/pages/articleClass/articleClass.wxml-->
+<view class="container">
+	<view class="header">
+		<scroll-view scroll-x style="width: 100%">
+	    <view class="header-nav-box" style="width: {{navboxWidth}}px; height: 80rpx">
+	    	<block wx:for="{{tabs}}" wx:key="{{item.uid}}">
+		    	<view id="{{item.uid}}" class="header-navigator {{activeIndex == item.uid ? 'header-navigator-on' : ''}}" style="width: {{navWidth}}rpx; color: {{activeIndex == item.uid ? mainColor : '#8a8a8a'}};" bindtap="tabClick">
+		    		<view class="header-navTitle">{{item.title}}</view>
+		    	</view>
+	    	</block>
+        <view class="header-navbarSlider" style="background-color: {{mainColor}}; left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px); width: {{sliderWidth}}px"></view>
+	    </view>
+	  </scroll-view>
+  </view>
+  <scroll-view scroll-x style="background-color: #f4f5f5; height: 40px;" hidden="{{subclass.length == 0}}">
+    <view class="header-btns-box">
+    	<block wx:for="{{subclass}}" wx:key="{{index}}">
+	    	<view id="{{item.uid}}" class="header-btn" bindtap="tapSubClass">
+	    		<view class="header-btnTitle {{activeSubIndex == item.uid ? 'header-btn-selected' : ''}}" style="color: {{activeSubIndex == item.uid ? '#fff' : mainColor}}; background-color: {{activeSubIndex == item.uid ? mainColor : 'inherit'}}; border-color: {{mainColor}}">{{item.title}}</view>
+	    	</view>
+    	</block>
+    </view>
+  </scroll-view>
+  <view class="main">
+  	<view class="body-good-box">
+  		<view class="body-good-subBox">
+	  		<block wx:for="{{goodsList}}" wx:for-item="good" wx:key="{{*item}}">
+	  			<navigator class="body-good" url="../article/article?showId={{good.uid}}" >
+	  				<image class="body-goodImg" style="margin: 20rpx 0;" src="{{good.img}}"></image>
+	  				<text class="body-goodTitle">{{good.title}}</text>
+	  			</navigator>
+	  		</block>
+	  	</view>
+	  </view>
+  </view>
+</view>

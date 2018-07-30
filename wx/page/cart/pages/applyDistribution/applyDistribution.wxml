@@ -1,0 +1,23 @@
+<import src="../../../common/wxParse/wxParse.wxml"/>
+
+<view class="container">
+  <view class="header">
+    <view class="header-title">{{title}}</view>
+  </view>
+  <view class="main">
+    <template is="wxParse" data="{{wxParseData:content.nodes}}"/>   
+  </view>
+  <checkbox-group bindchange="bindAgreeChange">
+    <label class="weui-agree" for="weuiAgree">
+      <view class="weui-agree__text">
+        <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+        <view class="weui-agree__checkbox-icon">
+            <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+        </view>
+        阅读并同意以上协议
+      </view>
+    </label>
+	</checkbox-group>
+  <button class="apply-btn" bindtap="applyTap" disabled="{{!isAgree}}" style="background-color: {{isAgree ? mainColor : '#ccc'}}">申请加入分销商</button>
+  <button class="apply-btn" open-type="contact" style="background-color: {{mainColor}}">联系客服</button>
+</view>

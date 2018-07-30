@@ -1,0 +1,18 @@
+/* page/cart/pages/applyDistribution/applyDistribution.wxss */
+.header-title {
+	font-size: 1.2em;
+	text-align: center;
+	line-height: 2em;
+}
+.main {
+	width: 96%;
+	margin: 0 auto;
+	height: 750rpx;
+	overflow-y: scroll;
+}
+
+.apply-btn {
+	width: 80%;
+	margin: 30rpx auto;
+	color: #fff;
+}

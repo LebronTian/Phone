@@ -1,0 +1,15 @@
+
+    .margin-top-section{margin-top: 1.5rem;}
+    .addaddress-article .linear-input{padding: 1.2rem;padding-left: 7rem;background: #fff;}
+    .linear-select{
+        appearance: button;
+        -webkit-appearance: button;
+        -moz-appearance:button;
+    }
+    .select-section .linear-right img{
+        transform: rotate(90deg);
+        -ms-transform: rotate(90deg);		/* IE 9 */
+        -webkit-transform: rotate(90deg);	/* Safari and Chrome */
+        -o-transform: rotate(90deg);		/* Opera */
+        -moz-transform: rotate(90deg);		/* Firefox */
+    }

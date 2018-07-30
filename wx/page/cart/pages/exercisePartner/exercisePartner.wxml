@@ -1,0 +1,10 @@
+<view class="container">
+  <view class="partnerList">
+    <block wx:for="{{signedList}}" wx:key="{{index}}">
+      <view class="partner">
+        <image class="avatar" src="{{item.user.avatar}}"></image>
+        <view class="name">{{item.user.name}}</view>
+      </view>
+    </block>
+  </view>
+</view>

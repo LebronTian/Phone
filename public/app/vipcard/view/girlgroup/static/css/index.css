@@ -1,0 +1,148 @@
+body {
+    /*background-image: url("<?php echo  $static_path.'/images/bg.png'?>");*/
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+}
+.div-content {
+    text-align: center;
+    position: relative;
+    border-top: thin solid #3099d6;
+}
+.content-bottom-button {
+    padding: 0.5em 0.7em;
+    margin-top: 1em;
+    /*background: #7ccbef;*/
+    background: #f26821;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    margin-bottom: 2em;
+    position: relative;
+    z-index: 99999;
+}
+/*首页-start*/
+.index-content {
+}
+.index-vipcard-logo {
+    margin: 5% 0;
+    width: 30%;
+}
+.index-vipcard-describe {
+    line-height: 1.7;
+    /*margin: 0 auto;*/
+    text-align: center;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    /*text-indent: 2em;*/
+}
+.index-vipcard-code {
+    padding: 0.5em;
+    border-radius: 5px;
+    background: white;
+    margin-top: 2em;
+    width: 30%;
+}
+/*首页-end*/
+/*表单-start*/
+.form-box {
+    width: 70%;
+    margin: 2em auto 1em;
+    background: #efefef;
+    font-size: 0.85rem;
+    border: thin solid #e2e2e2;
+    border-radius: 7px;
+    padding: 0.5em;
+}
+.form-box section {
+    position: relative;
+    margin-bottom: 1px;
+}
+.form-title {
+    width: 5em;
+    height: 100%;
+    line-height: 1.9em;
+    text-align: right;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #808080;
+}
+.form-input {
+    border: none;
+    padding: 0.5em;
+    padding-left: 5em;
+    width: 100%;
+    background: none;
+}
+
+.upload-pic-box {
+}
+.upload-pic {
+    padding: 5em 7em;
+    background: white;
+    margin-bottom: 1em;
+}
+.uploaded-pic {
+    padding: 0.5em;
+    background: white;
+    margin-bottom: 1em;
+    width: 12em;
+    max-height: 10em;
+}
+.form-vipcard-logo {
+    width: 5em;
+    margin-top: 1em;
+}
+.loading-box{
+    position: absolute;
+    top: 0;left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    background: rgba(0,0,0,.5);
+    text-align: center;
+    display: none;
+}
+.loading-box img{
+    width: 30%;
+    margin-top: 10em;
+            animation: icon-spin 2s infinite linear;
+    -webkit-animation: icon-spin 2s infinite linear;
+}
+@-webkit-keyframes icon-spin {
+0% {
+    -webkit-transform: rotateZ(0deg);
+    }
+100% {
+    -webkit-transform: rotateZ(360deg);
+    }
+}
+
+
+/*表单-end*/
+/*生成-start*/
+.card-box {
+    margin: 4em auto 1em
+}
+.card-content .index-vipcard-describe {
+    font-size: 1rem;
+}
+
+.card-user-name {
+    font-size: 1.5rem;
+    margin: 0 0.3em;
+}
+.card-user-pic {
+    padding: 0.5em;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+    margin-bottom: 1em;
+    max-width: 60%;
+    max-height: 22em;
+}
+/*生成-end*/

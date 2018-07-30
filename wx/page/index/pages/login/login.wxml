@@ -1,0 +1,7 @@
+<!--page/index/pages/login/login.wxml-->
+<view class="container">
+	<!-- <view class="login-text">
+		点击下方登录按钮并授权，以使用小程序的完整功能！
+	</view> -->
+	<button class="loginBtn" style="background-color: {{mainColor}}" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" type="primary">授权登录</button>
+</view>

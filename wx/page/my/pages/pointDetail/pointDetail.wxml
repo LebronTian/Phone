@@ -1,0 +1,58 @@
+<view class="container">
+	<view class="header">
+		<view class="point__num">
+			{{from == "point" ? "积分余额" : "账户余额" }}：{{from == "point" ? (pointList[0].point_remain || 0) : (pointList[0].cash_remain/100 || 0) }}
+		</view>
+		<view class="btn-box">
+			<view id="charge" class="withdraw" hidden="{{from == 'point'}}" style="background-color: {{mainColor}}" bindtap="showModal">充值</view>
+			<view id="withdraw" class="withdraw" hidden="{{from == 'point' || pointList[0].cash_remain/100 <= 0}}" style="background-color: {{mainColor}}" bindtap="showModal">提现</view>
+		</view>
+	</view>
+	<view class="main">
+		<view class="main__empty" hidden="{{pointList.length > 0}}">
+			- 暂时没有相关记录 -
+		</view>
+		<view class="main-pointDetail-box">
+			<block wx:for="{{pointList}}" wx:key="{{index}}">
+				<view class="main-pointDetail">
+					<view class="main-pointDetail-info">
+						<view class="main-pointDetail-title">{{item.info}}</view>
+						<view class="main-pointDetail-time">{{item.time}}</view>
+					</view>
+					<view class="main-pointDetail-changeNum {{item.type == 1 ? '' : 'main-pointDetail-add'}}">
+						{{item.type == 1 ? '-' : '+'}} {{from == "point" ? item.point : item.cash }}
+					</view>
+				</view>
+			</block>
+		</view>
+	</view>
+	<view class="modal" hidden="{{!showWithdraw}}">
+		<view class="modal__title">请输入提现金额</view>
+    <view class="weui-cells__tips">
+    	<text hidden="{{maxPrice == 0}}">提现最高额度: {{maxPrice}} 元\n</text>
+    	<text hidden="{{maxPriceDay == 0}}">每日提现最高额度: {{maxPriceDay}} 元\n</text>
+    	<text hidden="{{minPrice == 0}}">提现最低额度: {{minPrice}} 元</text>
+    </view>
+
+		<view class="modal__input-box">
+			<text class="">¥</text>
+			<input class="modal__input" type="digit" focus="{{showWithdraw}}" bindinput="inputMoney" />
+		</view>
+		<view class="modal__btns">
+			<view class="modal__btn" bindtap="hideModal">取消</view>
+			<view class="modal__btn modal__btn-confirm" style="background-color: {{mainColor}}" bindtap="withdraw">确认</view>
+		</view>
+	</view>
+	<view class="modal" hidden="{{!showCharge}}">
+		<view class="modal__title">请输入充值金额</view>
+		<view class="modal__input-box">
+			<text class="">¥</text>
+			<input class="modal__input" type="digit" focus="{{showCharge}}" bindinput="inputMoney" />
+		</view>
+		<view class="modal__btns">
+			<view class="modal__btn" bindtap="hideModal">取消</view>
+			<view class="modal__btn modal__btn-confirm" style="background-color: {{mainColor}}" bindtap="charge">确认</view>
+		</view>
+	</view>
+	<view class="page-shadow {{(showWithdraw || showCharge) ? 'page-shadow-show' : ''}}" bindtap="hideModal"></view>
+</view>

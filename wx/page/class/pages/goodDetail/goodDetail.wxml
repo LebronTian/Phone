@@ -1,0 +1,270 @@
+<import src="../../../common/wxParse/wxParse.wxml"/>
+
+<view class="container">
+  <view class="header">
+  	<view class="weui-navbar2 header-nav-box" style="width:{{navboxWidth}}px;">
+	    <block wx:for-items="{{tabs}}" wx:key="{{index}}">
+	      <view id="{{index}}" class="header-navigator weui-navbar__item2 {{activeIndex == index ? 'header-navigator-on weui-bar__item_on2' : ''}}" style="width:{{navWidth}}px; color: {{activeIndex == index ? mainColor : '#8a8a8a'}};" bindtap="tabClick">
+	          <view class="weui-navbar__title">{{item}}</view>
+	      </view>
+	    </block>
+	    <view class="weui-navbar__slider2 header-navbarSlider" style="background-color: {{mainColor}}; left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);width:{{sliderWidth}}px"></view>
+		</view>
+  </view>
+
+	<view class="weui-tab__panel" style="padding-top:0;">
+		<!-- 商品简介页面 -->
+    <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+    	<view class="goodHeader-swiper-box">
+	      <swiper class="goodHeader-swiper" indicator-dots circular bindchange="swiperChange">
+	        <block wx:for="{{background}}" wx:key="{{index}}">
+	          <swiper-item>
+	            <view class="swiper-item" wx:if="{{item.img}}">
+	              <image class="goodHeader-swiperImg" src="{{item.img}}"></image>
+	            </view>
+	            <view class="header-vedio" wx:else>
+								<video class="classVedio vedio__fixed" id="myVideo" src="{{item.vedio}}" poster="{{background[1].img}}" binderror="videoErrorCallback" bindended="videoPlayEnd" hidden="{{isSelect}}"></video>
+							</view>
+	          </swiper-item>
+	        </block>
+	      </swiper>
+	    </view>
+			<!-- <view class="header-vedio" hidden="{{!vedioUrl}}" >
+				<video class="classVedio vedio__fixed" id="myVideo" src="{{vedioUrl}}" poster="{{background[0]}}" binderror="videoErrorCallback" bindended="videoPlayEnd" hidden="{{!vedioUrl || isSelect}}"></video>
+			</view> -->
+	    <view class="goodIntro-box">
+	    	<view class="goodIntro">
+	    		<view class="good-title">{{detail.title}}</view>
+		    	
+	    	</view>
+	    	<button open-type="share" class="good-shareBtn">
+	    		<image class="good-shareBtn-img" src="../../../resources/pic/share.png"></image>
+	    		分享
+	    	</button>
+	    	<view class="good-intro" hidden="{{!detail.title_second}}">{{detail.title_second}}</view>
+	    	<view class="good-price">
+	    		<text class="good-price-group">¥ {{detail.group_price == 0 ? detail.price : detail.group_price}} </text>
+	    		<text class="good-price-origin">¥ {{detail.ori_price/100}} </text>
+	    	</view>
+	    </view>
+	    <view class="goodSelect-box goodRight-box" hidden="{{!detail.bas_services || detail.bas_services.length == 0}}">
+	    	<block wx:for="{{detail.bas_services}}" wx:key="{{index}}">
+	    		<image class="rightIcon" src="../../../resources/pic/rightIcon.png"></image><text style="font-size: 0.8em;">{{item}}</text>
+	    	</block>
+	    </view>
+	    <view class="goodSelect-box">
+	    	<view class="good-score-box" hidden="{{detail.back_point == 0}}">
+		    	<view class="good-score">购买可获得 {{detail.back_point}} 积分</view>
+		    </view>
+		    <view class="good-specification-box" bindtap="showSelect">
+			    <view class="good-specification">已选择：
+						<text wx:for="{{specials}}" wx:key="{{index}}">{{item.list[item.selectedIndex] + '，'}} </text>{{selectedNum}}件
+			    </view>
+			    <text class="rightAngel-btn">〉</text>
+			  </view>
+		  </view>
+		  <view class="good-group-box" hidden="{{detail.group_price == 0 || groupList.length === 0}}">
+		  	<navigator url="../goodGroup/goodGroup?goodId={{goodId}}" class="good-group-header" disable="{{groupList.length === 0}}">
+		  		<view class="good-group-num">{{groupList.length}}人在开团</view>
+			    <text class="rightAngel-btn">查看更多〉</text>
+		  	</navigator>
+		  	<view class="good-group-main">
+		  		<block wx:for="{{groupList}}" wx:key="{{index}}">
+		  			<view class="good-group-partner">
+		  				<image class="good-group-partnerImg" src="{{item.user.avatar}}"></image>
+		  				<view class="good-group-partnerInfo">
+		  					<text class="good-group-name">{{item.user.name}}\n</text>
+		  					<text class="good-group-limit">还差{{item.remain_cnt}}人，{{item.leftTime > 0 ? "仅剩 " : ""}}{{item.remainTime}}</text>
+		  				</view>
+		  				<view id="{{item.uid}}" bindtap="navToGroupJoin" class="good-group-joinBtn" style="color: {{mainColor}}; border-color: {{mainColor}}">去参团</view>
+		  			</view>
+		  		</block>
+		  	</view>
+		  </view>
+	    <view class="good-commentShow">
+	    	<view class="good-commentShow-header" bindtap="viewComments">
+		    	<view class="good-commentShow-title">商品评价
+		    		<text>({{comments.length == 0 ? '暂无，购买后记得来评价哦' : comments.length}})</text>
+		    	</view>
+		    	<view class="rightAngel-btn" hidden="{{comments.length == 0}}">查看全部 〉</view>
+	    	</view>
+	    	<view hidden="{{comments.length == 0}}" class="good-commentEg-box">
+	    		<view class="good-commentEg">
+	    			<view class="good-commentEgHeader">
+		    			<image class="good-commentAvatar" src="{{comments[0].user.avatar}}"></image>
+		    			<text class="good-commentEgName">{{comments[0].name}}</text>
+		    			<image class="good-commentEg-tagImg" src="{{comments[0].degreeImg}}"></image>
+		    			<text class="good-commentEg-tag" style="color: {{mainColor}}">{{comments[0].degree}}</text>
+		    		</view>
+		    		<view class="good-commentEgBody">{{comments[0].brief}}</view>
+	    		</view>
+	    	</view>
+	    </view>
+
+			<!-- 商品详情页面 -->
+	    <view class="weui-tab__content good-info">
+	    	<view class='detail-extraInfo' hidden="{{!detail.extra_info || detail.extra_info.length == 0}}">
+	    		<block wx:for="{{detail.extra_info}}" wx:key="{{index}}">
+	    			<view class="extraInfo-item">
+	    				<view class="extraInfo-item__title">{{item.ukey}}</view>
+	    				<view class="extraInfo-item__content">{{item.data}}</view>
+	    			</view>
+	    		</block>
+	    	</view>
+	    	<view class="detail-content-box">
+					<template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+	    	</view>
+	    </view>
+
+
+	    <view class="body-good-box" hidden="{{!goodsList}}" style="margin: 20rpx 0;">
+	    	<view class="good-commentShow" style="line-height: 2.8em;">关联商品</view>
+		  	<!-- <block wx:for="{{goodsList}}" wx:key="{{item.id}}"> -->
+	  		<view class="body-good-subBox">
+		  		<block wx:for="{{goodsList}}" wx:for-item="good" wx:key="{{index}}">
+		  			<view id="{{good.uid}}" class="body-good" bindtap="reload" >
+		  				<image class="body-goodImg" src="{{good.main_img}}"></image>
+		  				<text class="body-goodTitle">{{good.title}}</text>
+		  				<text class="body-goodPrice">¥ {{good.price}}</text>
+		  			</view>
+		  		</block>
+		  	</view>
+		  	<!-- </block> -->
+		  </view>
+
+    </view>
+    
+    <!-- 商品评价页面 -->
+    <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+    	<view class="comment-empty empty-page" hidden="{{comments.length > 0}}">
+		    <image class="empty-img" src="../../../resources/pic/emptyComments.png"></image>
+		    <text class="empty-text">暂无评论，购买后记得来评价哦</text>
+		  </view>
+		  <view class="comment-show" hidden="{{comments.length == 0}}">
+		  	<view class="commnet-header">
+	    		<view class="comment-satisfation">
+	    			<text class="comment-satisfation-title">商品满意度</text>
+	    			<text class="comment-satisfation-degree" style="color: {{mainColor}}">5.0</text>
+	    		</view>
+	    		<view class="comment-tags-box">
+	    			<view class="comment-tag comment-tag-selected" style="border-color: {{mainColor}}; color: {{mainColor}}">全部({{comments.length}})</view>
+	    			<!-- <view class="comment-tag">有图(34)</view> -->
+	    		</view>
+	    	</view>
+	    	<view class="comment-body">
+	    		<block wx:for="{{comments}}" wx:key="{{index}}">
+		    		<view class="comment-item">
+		    			<view class="good-commentEgHeader">
+			    			<image class="good-commentAvatar" src="{{item.user.avatar}}"></image>
+			    			<text class="good-commentEgName">{{item.name}}</text>
+			    			<image class="good-commentEg-tagImg" src="{{item.degreeImg}}"></image>
+			    			<text class="good-commentEg-tag" style="color: {{mainColor}}">{{item.degree}}</text>
+			    		</view>
+			    		<view class="comment-itemBody">
+				    		<text class="comment-text">{{item.brief}}</text>
+				    		<view class="comment-imgs-box">
+				    			<image id="{{index + '-' + imgIndex}}" wx:for="{{item.images}}" wx:for-index="imgIndex" wx:key="{{imgIndex}}" class="comment-img" src="{{item}}" bindtap="previewImg"></image>
+				    			<!-- <image class="comment-img" src="../../../resources/pic/fry.jpg"></image> -->
+				    		</view>
+				    		<view class="comment-itemMess">
+				    			<!-- 商品规格 -->
+				    			<!-- <text class="comment-itemSpecial">颜色：橙色；尺寸：XL；数量：1件</text> -->
+				    			<text class="comment-itemTime">{{item.time}}</text>
+				    		</view>
+			    		</view>
+			    		<view hidden="{{!item.replies}}" class="comment-itemReceive-box">
+			    			<text class="comment-itemReceiver" style="color: {{mainColor}}">商家回复: \n</text>
+			    			<text class="comment-itemReceiveCont">{{item.replies.list[0].brief}}</text>
+			    		</view>
+		    		</view>
+					</block>
+	    	</view>
+		  </view>
+    </view>
+	</view>
+	<!-- 底部购买操作菜单 -->
+	<view class="footer">
+		<button open-type="contact" class="footer-service">
+			<image class="footer-cartImg" src="/page/resources/pic/service_gray.png"></image>
+			<!-- <image class="footer-cartImg" src="{{serviceImg}}"></image> -->
+			客服
+		</button>
+		<view class="footer-navToCart" bindtap="navToCart">
+			<image class="footer-cartImg" src="/page/resources/pic/cartIcon.png"></image>
+			<!-- <image class="footer-cartImg" src="{{cartImg}}"></image> -->
+			购物车
+		</view>
+		<view class="footer-addToFavorite" bindtap="addToFavorite">
+			<image class="footer-cartImg" src="{{ hasCollect ? '/page/resources/pic/favorite8a_fill.png' : '/page/resources/pic/favorite8a.png'}}"></image>
+			{{ hasCollect ? "已收藏" : "收藏"}}
+		</view>
+		<view class="footer-addToCart" style="color: {{mainColor}}" bindtap="showSelect">
+			<text class="price__btn" wx:if="{{group_price != 0}}">¥ {{detail.price}}</text>
+			<text>{{group_price != 0 ? "单独购买" : "加入购物车"}}</text>
+		</view>
+		<view class="footer-buyBtn" style="background-color: {{mainColor}}" bindtap="showSelect">
+			<text class="price__btn" wx:if="{{group_price != 0}}">¥ {{detail.group_price}}</text>
+			<text>{{group_price != 0 ? "立即开团" : "立即购买"}}</text>
+		</view>
+	</view>
+	<!-- 页面阴影视图层 -->
+	<view class="page-shadow {{isSelect ? 'page-shadow-show' : ''}}" bindtap="tapShadow"></view>
+	<!-- 选择商品规格页面 -->
+  <view class="selectSpecification {{isSelect ? 'selectSpecification-show' : ''}}" >
+  	<view class="select-main">
+	  	<view class="select-header">
+	  		<image class="select-goodImg" src="{{specialImg}}"></image>
+	  		<view class="select-header-content">
+	  			<view class="select-goodPrice">
+	  				<text class="{{detail.group_price == 0 ? '' : 'select-goodPrice-origin'}}">原价: ¥ {{price}} \n</text>
+	  				<text class="select-goodPrice-group" wx:if="{{detail.group_price != 0}}">团购价: ¥ {{detail.group_price}} </text>
+	  			</view>
+	  			<view class="select-goodStock">库存：{{quantity}}</view>
+	  			<view class="select-goodSpecial">已选择:
+						<text wx:for="{{specials}}" wx:key="{{index}}">{{item.list[item.selectedIndex] + ' '}}</text>
+						<text>{{selectedNum}}件</text>
+	  			</view>
+	  		</view>
+				<view class="select-cancelBtn">
+					<image class="select-cancelImg" src="../../../resources/pic/cancel.png" bindtap="tapShadow"></image>
+				</view>
+	  	</view>
+	  	<view class="select-body">
+	  		<view class="select-bodySpecial-box">
+					<block wx:for="{{specials}}" wx:for-item="special" wx:key="{{index}}">
+						<view class="select-bodySpecial">
+		  				<view class="select-bodySpecial-title">{{special.name}}</view>
+		  				<block wx:for="{{special.list}}" wx:for-index="idx" wx:key="{{idx}}">
+			  				<view id="{{special.name + ' ' + idx}}" class="select-bodySpecial-item {{special.selectedIndex == idx ? 'select-bodySpecial-selected' : ''}}" style="border-color: {{mainColor}}; background-color: {{special.selectedIndex == idx ? mainColor : 'inherit'}}; " bindtap="bindSelectSpecial">{{item}}</view>
+		  				</block>
+		  			</view>
+					</block>
+	  		</view>
+	  		<view class="select-bodyNum-box">
+	  			<text class="select-bodyNum-title">购买数量</text>
+	  			<!-- <form bindsubmit="subNavTap" report-submit>	  				 -->
+	  				<view class="select-bodyNumChg-box">
+		  				<button disabled="{{selectedNum <= 1}}" class="select-bodyNumChg-btn select-numPlusBtn" bindtap="substractNum">-</button>
+		          <input class="select-bodyNum" type="number" value="{{selectedNum}}" bindinput="inputNum" />
+		  				<button disabled="{{selectedNum >= quantity}}" class="select-bodyNumChg-btn select-numSunBtn" bindtap="addNum">+</button>
+		  			</view>
+	  			<!-- </form> -->
+	  		</view>
+	  	</view>
+	  </view>
+  	<view class="select-footer" hidden="{{detail.group_price != 0}}">
+  		<view class="select-footerCart" style="color: {{mainColor}}" bindtap="bindAddCart">加入购物车</view>
+  		<view class="select-footerBuy" style="background-color: {{mainColor}}" bindtap="navToOrder">立即购买</view>
+  	</view>
+  	<view class="select-footer" wx:if="{{detail.group_price != 0}}">
+  		<view class="select-footerCart" style="color: {{mainColor}}" bindtap="navToOrder">
+  			<text class="price__btn">¥ {{detail.price}}</text>
+  			<text>单独购买</text>
+  		</view>
+  		<view class="select-footerBuy" style="background-color: {{mainColor}}" bindtap="findGroup">
+  			<text class="price__btn">¥ {{detail.group_price}}</text>
+  			<text>立即开团</text>
+  		</view>
+  	</view>
+  </view>
+</view>

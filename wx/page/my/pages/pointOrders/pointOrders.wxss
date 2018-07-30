@@ -1,0 +1,2 @@
+/* page/my/pages/pointOrders/pointOrders.wxss */
+@import "../myOrders/myOrders.wxss"

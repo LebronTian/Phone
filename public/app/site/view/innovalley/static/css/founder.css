@@ -1,0 +1,21 @@
+.am-u-lg-7 > p{
+      margin: 0;font-weight:500
+    }
+    .am-u-lg-7 > h2{ margin:0}
+    .am-u-lg-7 > h3{ margin-top:10px}
+    .content{height:1750px}
+    .founder_detail{width:1170px;margin:0 auto;}
+    .founder_box{margin-top:30px;}
+    .left_pic{width:220px;height:150px;float:left;margin-right:30px}
+    .left_pic > img {width:220px;height:150px;}
+    .founder_intro{width:800px;float:left;}
+
+    .founder_intro > h2{margin-top:10px;margin-bottom:10px}
+    .founder_intro > h3{margin-top:0;margin-bottom: -30px}
+    .founder_title{width:800px;border-bottom:2px solid #ccc}
+    .founder_title > h1{margin-left:60px;margin-bottom:30px;}
+    .blog-content{border-bottom:2px solid #ccc;padding-top: 40px;margin-bottom:20px;padding-bottom:20px}
+    .am-u-lg-5 > p{width: 100%}
+    .am-u-lg-5 > p >img{width: 100%}
+    .last_cube{float:right}
+    .last_cube > img {width:350px;height:200px}

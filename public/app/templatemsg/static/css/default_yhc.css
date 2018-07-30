@@ -1,0 +1,110 @@
+.preview_box{
+    width: 430px;
+    margin-top: 10px;
+    height: 850px;
+    float: left;
+    background: url(/app/default/static/images/weixin2.png) no-repeat 0 0;
+    background-size: 100% 100%;
+    margin-left: 20px;
+}
+.select-btn{
+    text-align: center;
+    margin-left: 485px;
+    margin-top: 201px;
+    width: 215px;
+    padding: 15px 10px;
+    border: solid thin #dcdcdc;
+}
+.select-body{
+    overflow: hidden;
+}
+.right-choose-btn{
+    margin-top:10px;
+}
+.sel-box{
+    float: left;
+    border: thin solid #dcdcdc;
+    margin: 10px;
+    padding: 8px;
+    min-width: 160px;
+    text-align: left;
+    height: 45px;
+    cursor: pointer;
+}
+.select-page{
+    margin-left: 10px;
+}
+
+.select-pic-box{
+    float: left;
+    width: 290px;
+    border: 1px solid #CCC;
+    padding: 14px;
+    margin-right: 32px;
+}
+.s_appmsg_thumb{
+    height: auto;
+}
+.s_appmsg_title{
+    margin: 0;
+}
+.pic-min-box{
+    min-height: 300px;
+    max-height: 500px;
+    min-width: 300px;
+    text-align: left;
+    overflow-y: scroll;
+}
+
+.am-tabs-nav .am-active a{
+    background: #3bb4f2 !important;
+    color: white !important;
+}
+
+/*yhc调整多图文样式，仿真微信上的样式*/
+#appmsgItem1{
+    margin-right: 5px;
+    background-color: white;
+    width: 320px;
+    padding: 7px;
+}
+.appmsg_thumb{
+    height: auto;
+    width: 320px;
+}
+.small-msg:last-child{
+    border-bottom: 3px solid #ddd;
+}
+.msg_navLeft{
+     float: none;
+    width: 325px;
+    margin: 0 auto;
+}
+.for-phonePre{
+    margin-top: 185px;
+    margin-left: 39px;
+    width: 325px;
+}
+.text-box.for-phonePre{
+    padding: 10px;
+    background-color: white;
+    border-radius: 14px;
+    border: thin solid #eaeaea;
+}
+#appmsgItem1 .title{
+    left: 7px;
+    bottom: -3px;
+    width: 304px;
+}
+/*end*/
+
+
+
+
+
+
+
+
+
+
+

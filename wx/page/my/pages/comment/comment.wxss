@@ -1,0 +1,60 @@
+.container {
+	padding: 15px;
+	background-color: #fff;
+}
+.body-postCont-box {
+	padding: 10px 15px;
+	border: 1px solid #000;
+	overflow: hidden;
+	margin: 20px 0;
+}
+.product-info {
+	display: flex;
+	align-items: center;
+}
+.product-img {
+	width: 160rpx;
+	height: 160rpx;
+	margin-right: 30rpx;
+	border: 1px solid #ccc;
+}
+.product-title {
+	width: 80%;
+	font-size: 1.2em;
+}
+
+
+.product-score {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	margin-top: 30rpx;
+}
+.score__title {
+	font-size: 1.4em;
+	margin-left: 1em;
+}
+.score-box {
+	position: relative;
+}
+.score {
+	width: 50rpx;
+	height: 50rpx;
+}
+.score-box__fill {
+	position: absolute;
+	top: 0;
+}
+.footer-btn {
+	position: static;
+	width: 80%;
+	margin: 50rpx auto;
+}
+.footer-btn::after {
+	width: 0;
+	height: 0;
+}

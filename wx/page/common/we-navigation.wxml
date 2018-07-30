@@ -1,0 +1,8 @@
+<view class="weui-navbar" style="background-color: #fff;">
+    <block wx:for="{{tabs}}" wx:key="{{index}}">
+        <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title" style="color: {{activeIndex == index ? mainColor : '#8a8a8a'}};">{{item}}</view>
+        </view>
+    </block>
+    <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px); background-color: {{mainColor}};"></view>
+</view>

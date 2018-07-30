@@ -1,0 +1,132 @@
+/* page/cart/pages/distributionCenter/distributionCenter.wxss */
+.header {
+	padding: 50rpx;
+	display:flex;
+	flex-wrap: wrap;
+	align-items:center;
+}
+.header-avatar {
+	width: 120rpx;
+	height: 120rpx;
+	border-radius: 60rpx;
+}
+.header-userName {
+	color: #fff;
+	margin-left: 30rpx;
+	/*margin: 0 30rpx;*/
+	font-size: 0.9em;
+}
+.userTag {
+	font-size: 0.8em;
+	margin-left: 30rpx;
+	margin-top: 20rpx;
+	padding: 6rpx 30rpx;
+	background: rgba(155,155,155,0.5);
+	border-radius: 16rpx;
+}
+.header-box {
+	flex: 1;
+	color: #fff;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+	-ms-align-items: center;
+	align-items: center;
+}
+.joinTime-box {
+	margin-right: -30rpx;
+	text-align: right;
+	color: #fff;
+	font-size: 0.7em;
+}
+
+
+.main-box {
+	margin: 20rpx 0;
+	background-color: #fff;
+	padding-left: 30rpx;
+	border-bottom: 1px solid #ccc;
+}
+.main-section {
+	line-height: 3em;
+	border-bottom: 1px solid #ccc;
+	padding-right: 30rpx;
+	display: flex;
+	justify-content: space-between;
+}
+.main-section-rightBtn {
+	color: #ccc;
+}
+.main-section:last-child {
+	border-bottom: none;
+}
+
+/*.rightBtn*/
+.rightBtn {
+  padding-right: 26rpx;
+  position: relative;
+}
+.rightBtn:after {
+  content: " ";
+  display: inline-block;
+  height: 18rpx;
+  width: 18rpx;
+  border-width: 2rpx 2rpx 0 0;
+  border-color: #888888;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  position: absolute;
+  top: 50%;
+  margin-top: -8rpx;
+  right: 28rpx;
+}
+
+/*分销项目框开始*/
+.nav-box {
+	position: relative;
+	overflow: hidden;
+	margin-top: 20rpx;
+	background-color: #fff;
+	z-index: 0;
+}
+.nav-box::before {
+	content: '';
+	position: absolute;
+	left: 33.33%;
+	width: 33.33%;
+	height: 100%;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	z-index: -1;
+}
+.nav {
+	float: left;
+	width: 33.33%;
+	height: 33.33%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20rpx 0;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: -1px;
+	z-index: 10;
+}
+.navIcon {
+	display: block;
+	width: 80rpx;
+	height: 80rpx;
+}
+.navTitle {
+	color: #8a8a8a;
+	line-height: 2em;
+}
+.navInfo {
+	color: #bbb;
+}
+.navInfo-num {
+	color: #f80000;
+}
+/*分销项目框结束*/

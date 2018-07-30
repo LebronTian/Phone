@@ -1,0 +1,74 @@
+<view class="container">
+  <view class="page__bd">
+    <view class="weui-cells__title">个人资料编辑</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">昵称</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input id="name" bindinput="userInput" class="weui-input" placeholder="请输入您在商城的昵称" value="{{postData.name}}" />
+        </view>
+      </view>
+      <!-- <view class="weui-cell weui-cell_select">
+        <view class="weui-cell__hd weui-cell__hd_in-select-after">
+          <view class="weui-label">性别</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker bindchange="bindAccountChange" value="{{sexIndex}}" range="{{sexes}}">
+            <view class="weui-select weui-select_in-select-after">{{sexes[sexIndex]}}</view>
+          </picker>
+        </view>
+      </view> -->
+      <!-- <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">邮箱</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input id="email" bindinput="userInput" class="weui-input" placeholder="请输入您的邮箱" value="{{postData.email}}" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input weui-cell_vcode">
+        <view class="weui-cell__hd">
+          <view class="weui-label">联系电话</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input id="phone" bindinput="userInput" class="weui-input" placeholder="请输入您的电话" value="{{postData.phone}}" />
+        </view>
+        <view class="weui-cell__ft">
+          <view class="weui-vcode-btn">获取验证码</view>
+        </view>
+      </view> -->
+    </view>
+    <!-- <view class="weui-cells__tips">底部说明文字底部说明文字</view> -->
+    <view class="weui-cells">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view class="weui-uploader">
+            <view class="weui-uploader__hd">
+              <view class="weui-uploader__title">头像</view>
+              <!-- <view class="weui-uploader__info">{{files.length}}/2</view> -->
+            </view>
+            <view class="weui-uploader__bd">
+              <view class="weui-uploader__files" hidden="{{!mainImg}}">
+                <!-- <block wx:for-items="{{files}}" wx:key="{{index}}"> -->
+                <view class="weui-uploader__file" bindtap="previewImage">
+                  <image class="weui-uploader__img" src="{{mainImg}}" mode="aspectFill" />
+                </view>
+                <!-- </block> -->
+              </view>
+              <view class="weui-uploader__input-box">
+                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <form bindsubmit="postInfo">
+      <view class="weui-btn-area">
+        <button formType="submit" class="weui-btn" type="primary" style="background-color: {{mainColor}}">确定</button>
+      </view>
+    </form>
+  </view>
+</view>

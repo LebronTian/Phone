@@ -1,0 +1,5 @@
+<!--page/index/pages/bargainImg/bargainImg.wxml-->
+<view class="container">
+	<image class="shareImg" src="{{imgUrl}}" bindlongtap="saveNameCard" bindload="imageLoaded"></image>
+	<view class="footer">长按保存分享图片</view>
+</view>

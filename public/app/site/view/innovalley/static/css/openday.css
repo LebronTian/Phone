@@ -1,0 +1,28 @@
+
+.am-u-lg-7 > p{margin: 0;}
+.detail_brief{margin-top:30px;margin-left:-5px;margin-bottom: 30px;}
+.detail_brief > p{margin: 0;}
+.contact_people{font-weight: 600;}
+.cube{float:right}
+.cube > img{width:350px;height:200px}
+.content {height:1230px}
+.openday_detail{width:1170px;margin:0 auto;}
+.openday_box{margin-top:30px;}
+.left_pic{width:220px;height:150px;float:left;margin-right:30px}
+.left_pic > img{width:220px;}
+.openday_intro{width:800px;float:left;}
+.openday_title{width:800px;border-bottom:2px solid #ccc}
+.openday_title > h1{margin-left:60px;margin-bottom:30px}
+.blog-content{margin-bottom:20px;padding-bottom:20px;padding-top:40px;}
+.am-u-lg-7{width:50%!important}
+.am-u-lg-7 >img{width:100%}
+.am-u-lg-5 {margin-left:20px;}
+.am-u-lg-5 > p {line-height:20px}
+.am-u-lg-5 > p > span{margin-right:10px}
+.am-u-lg-5 > p > a > img{width:20px;margin-right:10px}
+.ticket{font-size:14px;}
+.type{margin-top:15px}
+.type > h2 > input{width:15px;height:15px}
+.ticket_tip{color:#F48484;font-size:14px}
+.open_content{margin-top:40px;width:600px;font-size:14px;}
+.active_title{margin:20px 0;}

@@ -1,0 +1,20 @@
+<view class="container">
+	<view class="header" style="background-color: {{mainColor}}">
+		<view class="header-point">
+			<text class="header-point-num">{{showPoint}}</text>
+			<text class="header-point-title">我的积分</text>
+		</view>
+		<view class="header-point">
+			<text class="header-point-num">{{showCash}}</text>
+			<text class="header-point-title">我的余额</text>
+		</view>
+	</view>
+	<view class="main">
+		<block wx:for="{{navTitles}}" wx:key="{{index}}">
+			<navigator class="main-section" url="{{item.url}}">
+				<text class="main-section-title">{{item.title}}</text>
+				<view class="rightBtn"></view>
+			</navigator>
+		</block>		
+	</view>
+</view>

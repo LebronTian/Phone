@@ -1,0 +1,20 @@
+<!--page/my/pages/qrcodePoster/qrcodePoster.wxml-->
+<view class="container">
+	<view class="main">
+		<image class="mainImg" src="{{posterUrl}}" bindtap="preview"></image>
+	</view>
+	<view class="footer">
+		<view class="footer-title">点击图片长按保存</view>
+		<scroll-view class="scroll-view_H" scroll-x style="width: 100%">
+			<view class="imgs-box">
+				<block wx:for="{{imgs}}" wx:key="{{index}}">
+					<view id="{{index}}" class="img-option-wrap" bindtap="selectImg">
+				    <image class="img-option" src="{{item.image}}"></image>
+				    <image class="selectedIcon" src="/page/resources/pic/selected.png" hidden="{{index != selectedIndex}}"></image>
+					</view>
+				</block>
+				<view class="empty" wx:if="{{imgs.length === 0}}">- 暂时没有海报图片 -</view>
+			</view>
+	  </scroll-view>
+	</view>
+</view>

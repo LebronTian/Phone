@@ -1,0 +1,2 @@
+/* page/my/pages/myBidding/myBidding.wxss */
+@import '/page/class/pages/biddingList/biddingList.wxss'

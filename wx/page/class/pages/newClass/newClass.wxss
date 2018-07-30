@@ -1,0 +1,68 @@
+@import '../classGoods/classGoods.wxss';
+
+page {
+	height: 100%;
+}
+.main {
+	height: 100%;
+	display: flex;
+	background-color: #fff;
+}
+.main__left {
+	width: calc(24% - 1px);
+	border-right: 1px solid #ccc;
+
+}
+.main__right {
+	width: 76%;
+}
+.class-title {
+	color: gray;
+	padding-top: 28rpx;
+	padding-bottom: 28rpx;
+	text-align: center;
+	font-size:13px;
+}
+.class-title__selected {
+	padding-leftt: 16px;
+	border-left-width: 6rpx;
+	border-left-style: solid;
+	color:#3CAE48;
+	background: #eee;
+	font-weight:bold;
+}
+.class-detail {
+	padding: 20rpx;
+}
+.class-img {
+	width: 100%;
+}
+.subClass-img {
+	width: 100%;
+	height: 160rpx;
+}
+.subClass-box {
+	display: flex;
+	flex-wrap: wrap;
+}
+.subClass-box navigator{
+	margin:2px;
+}
+
+.subClass {
+	width: 30%;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	margin: 20rpx 2rpx;
+}
+.subClass-title {
+	font-size: 0.8em;
+	color: #8a8a8a;
+	line-height: 2em;
+}
+
+.body-goodImg {
+	width: 240rpx;
+	height: 240rpx;
+}

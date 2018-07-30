@@ -1,0 +1,12 @@
+<import src="../../../common/wxParse/wxParse.wxml"/>
+
+<view class="container">
+	<view class="header">
+		<view class="header-title">{{article.title}}</view>
+		<view class="header-time" style="color: {{mainColor}}">{{article.time}}</view>
+	</view>
+	<view class="main">
+	    <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+	    <!-- <rich-text nodes="{{article.content}}" bindtap="tap"></rich-text> -->
+	</view>
+</view>

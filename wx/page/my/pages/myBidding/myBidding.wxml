@@ -1,0 +1,33 @@
+<!--page/my/pages/myBidding/myBidding.wxml-->
+<view class="container">
+	<view class="weui-navbar">
+      <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+              <view class="weui-navbar__title">{{item}}</view>
+          </view>
+      </block>
+      <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+  </view>
+  <view class="weui-tab__panel">
+		<view class="good-box1">
+  		<block wx:for="{{goodsList}}" wx:for-item="good" wx:key="{{good.uid}}">
+  			<navigator url="/page/class/pages/biddingDetail/biddingDetail?uid={{good.uid}}" class="good1 biddingGood">
+	        <image class="goodImg1" mode="widthFix" src="{{good.img}}"></image>
+	        <view class="goodInfo-box1 biddingGood-box">
+	          <view class="goodTitle1">{{good.ap.title}}</view>
+	          <view class="biddingInfo-box">
+	            <view class="bidding-info">
+		          	{{good.status == 1 ? '当前价格' : '成交价格'}}：￥<text class="goodPrice-num1">{{good.last_price}}</text>元
+		          </view>
+		          <view class="bidding-info" wx:if="{{good.hasStart}}">截止日期：{{good.last_time}}</view>
+		          <view class="bidding-info" wx:else>开始时间：{{good.startTime}}</view>
+		          <view class="bidding-info">已出价：{{good.record_cnt}}次</view>
+	          </view>
+	        </view>
+	        <view class="navBtn">查 看</view>
+	      </navigator>
+  		</block>
+  	</view>
+  </view>
+	<view class="empty-info" hidden="{{!showEmpty}}">-没有更多数据了-</view>
+</view>

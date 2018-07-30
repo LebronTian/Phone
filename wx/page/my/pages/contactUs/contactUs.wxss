@@ -1,0 +1,45 @@
+/* page/my/pages/contactUs/contactUs.wxss */
+page {
+	background-color: #fff;
+}
+
+
+.map {
+	width: 670rpx;
+	height: 670rpx;
+	margin: 40rpx;
+	box-sizing: border-box;
+	border: 1px solid #8a8a8a;
+}
+
+.info-box {
+	padding: 0 36rpx;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+.info-section {
+	display: -webkit-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	width: 50%;
+	padding: 10rpx 0;
+	font-size: 1.2em;
+}
+.info-section:first-child {
+	width: 100%;
+}
+.info-icon {
+	width: 50rpx;
+	height: 50rpx;
+	margin-right: 10rpx;
+}
+
+.contactBtn {
+	margin-top: 30rpx;
+	width: 30%;
+	color: #fff;
+	background-color: #1a99f6;
+}

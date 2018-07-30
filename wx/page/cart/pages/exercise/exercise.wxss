@@ -1,0 +1,38 @@
+/* page/cart/pages/exercise/exercise.wxss */
+.exercise-box {
+	background-color: #fff;
+	margin-bottom: 30rpx;
+}
+.exer-title {
+	font-size: 1.2em;
+	padding: 10rpx 20rpx;
+	display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.exer-img {
+	width: 750rpx;
+	height: 450rpx;
+}
+.info-box {
+	/*padding: 20rpx 10rpx;*/
+	padding-bottom: 20rpx;
+}
+.price {
+	font-size: 0.8em;
+	color: #fff;
+	border-radius: 4rpx;
+	margin: 20rpx;
+	padding: 6rpx 10rpx;
+}
+.time, .address {
+	font-size: 0.8em;
+	color: #8a8a8a;
+}
+.no-more {
+	line-height: 3em;
+	text-align: center;
+	color: #8a8a8a;
+}
+

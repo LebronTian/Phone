@@ -1,0 +1,17 @@
+.container {
+	background-color: #fff;
+}
+.header-title {
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.2em;
+	padding: 50rpx;
+}
+.header-time {
+	text-align: right;
+	padding-right: 30rpx;
+	/*color: #884898;*/
+}
+.main {
+  padding: 0 10px;
+}

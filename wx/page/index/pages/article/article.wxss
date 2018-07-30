@@ -1,0 +1,8 @@
+@import '../placard/placard.wxss';
+
+page {
+	background-color: #fff;
+}
+.main {
+	padding: 0 10px;
+}

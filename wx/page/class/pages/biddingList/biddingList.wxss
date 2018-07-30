@@ -1,0 +1,155 @@
+/* page/class/pages/biddingList/biddingList.wxss */
+@import '../classGoods/classGoods.wxss'
+@import '../custom/custom.wxss'
+
+/*边栏筛选*/
+.aside-sort {
+	opacity: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 999;
+	background-color: #FFFFFF;
+	line-height: 1.41176471;
+	font-size: 34rpx;
+	width: 0;
+    overflow: hidden;
+	/*background-color: red;*/
+	
+	transform: translateX(100%);
+	transition: .3s;
+}
+.aside-srot__show {
+	width: 80%;
+	/*height: 667px;*/
+	opacity: 1;
+	z-index: 9;
+    transform: translateX(0);
+}
+.aside-sort-section {
+	border-bottom: 1px solid #efefef;
+	font-size: 0.8em;
+}
+.sortSection-header {
+	padding: 0 20rpx;
+	line-height: 2.4em;
+	font-size: 1.2em;
+}
+.sortSection-title {
+
+}
+.sortSection-box {
+	padding: 0 16rpx;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-moz-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	-o-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+.sortSection-item {
+	background-color: #efefef;
+	border-radius: 6rpx;
+	text-align: center;
+	width: 30%;
+	/*line-height: 2.4em;*/
+	margin-right: 5%;
+	margin-bottom: 5%;
+	box-sizing: border-box;
+	padding: 16rpx 10rpx;
+
+	display: table;
+	/*display: flex;*/
+  /*justify-content: center;*/
+  /*flex-direction: column;*/
+}
+.sortSection-item:nth-of-type(3n+0) {
+	margin-right: 0;
+}
+.sortSection-item__selected {
+	color: #fff;
+	background-color: #66bd78;
+}
+.sortSection-item-text {
+	display: table-cell;
+	vertical-align: middle;
+}
+.picker {
+	padding-left: 20rpx;
+	font-size: 1.2em;
+	/*height: 2em;*/
+	line-height: 2em;
+}
+
+.aside-footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color: #fff;
+}
+.aside-footerBtn-box {
+	float: right;
+	margin: 20rpx 30rpx;
+	border-radius: 2em;
+	overflow: hidden;
+}
+.aside-btn {
+	background-color: #358a08;
+	color: #fff;
+	float: left;
+	padding: 16rpx 50rpx;
+
+}
+.aside-btn:first-child {
+	background-color: #66bd78;
+	border-right: 1px solid #fff;
+}
+/*边栏筛选结束*/
+
+
+.biddingGood {
+	padding: 10rpx;
+}
+.biddingGood-box {
+	width: 360rpx;
+	height: auto;
+}
+.biddingInfo-box {
+	line-height: 1.6em;
+	font-size: 0.8em;
+}
+.bidding-maxPrice {
+	font-size: inherit;
+	color: #f80000;
+}
+.navBtn {
+	/*background-color: #fff;*/
+	background-size: cover;
+	width: 190rpx;
+	height: 50rpx;
+	line-height: 50rpx;
+	border-radius: 25rpx;
+	color: #fff;
+	text-align: center;
+	font-size: 0.9em;
+}
+
+/*阴影部分*/
+.bigShadow {
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+.bigShadow-show {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	background-color: gray;
+	opacity: 0.5;
+}
+/*阴影部分结束*/

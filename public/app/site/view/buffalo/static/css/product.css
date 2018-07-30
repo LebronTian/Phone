@@ -1,0 +1,217 @@
+body{background: #f5f5f5;}
+a{color: inherit;}
+.contain>header{width:100%;height: 60px;background: #ee6557;margin-bottom: 40px;line-height: 60px;
+	color: #fff;
+ }
+.contain>header>span{margin-left: 10%;}
+
+.main_body{
+	width: 80%;
+	margin: 0 auto;
+	background: #f5f5f5;
+	min-height: 600px;
+}
+.galleryproduct{position: relative; bottom: 30px;}
+.product_right{position: relative; top: -40px;}
+
+.product_left{
+	width: 170px;
+	height: auto;
+	background: #f5f5f5;
+	float: left;
+}
+
+.product_left>li{
+	width: 170px;
+/*	height: 59px;//------------->*/
+	height: auto;
+	border-bottom: 1px solid #f5f5f5;
+	background: #b3b3b3;
+	color: #f5f5f5;
+	font-size: 14px;
+	line-height: 58px;
+	text-align: center;
+	cursor: pointer;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.galleryproduct {  overflow: hidden;}/*清除浮动*/
+.product_left li>span{display:block;width: inherit;height: 58px;}
+.product_left li>ul{display: none;background: #cccccc !important;}
+.product_left li.active>ul{display: block;}
+.product_left li.active>ul>li{border: none;height: inherit;text-align: left;}
+.product_left li.active>ul>li>b{margin-left: 45px;}
+.product_left li.active>span,.product_left li>span:hover{
+	background: #16a6b6;
+}
+
+.product_left li.notactive>ul{display: none;}
+.product_left li.notactive:hover{
+	background: #A7A4A4;
+}
+.product_right{
+	width: 60%;
+	float: left;
+}
+.product_right>header{width: 100%;text-align: center;}
+
+
+.product_box{
+	width: 896px;
+	margin-left: 14px;
+	display: none;
+	margin-bottom: 100px;
+	/*height: 548px;
+    overflow: hidden;*/
+}
+
+.product_info{
+	display: block;
+	width: 200px;
+	height: 274px;
+	margin-left: 24px;
+	float: left;
+	cursor: pointer;
+	position: relative;
+}
+
+.product_info img{
+	display: block;
+	width: 200px;
+	height: 200px;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.product_info span{
+	clear: both;
+	display: block;
+	font-size: 14px;
+	line-height: 24px;
+	color: #333;
+	margin: 12px 0;
+	text-align: center;
+}
+
+.product_info .product_show{
+	width: 380px;
+	height: 540px;
+	background: #fff;
+	box-shadow: 0 0 30px rgba(0,0,0,0.3);
+	position: absolute;
+	z-index: 99;
+	top: -100px;
+	left: 50%;
+	margin-left: -190px;
+	opacity: 0;
+	-webkit-transform: scale(0.7);
+	-moz-transform: scale(0.7);
+	-ms-transform: scale(0.7);
+	-o-transform: scale(0.7);
+	transform: scale(0.7);
+	-webkit-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	-ms-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	transition: all 0.4s;
+	-webkit-transform-origin: center 40%;
+	-moz-transform-origin: center 40%;
+	-ms-transform-origin: center 40%;
+	-o-transform-origin: center 40%;
+	transform-origin: center 40%;
+}
+
+.product_info .product_show_hover{
+	opacity: 1;
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	-o-transform: scale(1);
+	transform: scale(1);
+	z-index: 999;
+}
+
+.product_show span{
+	display: block;
+	border: none;
+	width: 380px;
+	height: 320px;
+	margin: 0;
+
+
+}
+
+.product_show h3{
+	font-size: 14px;
+	color: #333;
+	margin: 15px 15px 0 15px;
+	font-weight: 400;
+	text-align: center;
+}
+
+.product_show p{
+	width: 350px;
+	height: 90px;
+	margin: 10px auto;
+	font-size: 14px;
+	color: #333;
+	line-height: 20px;
+}
+
+.product_show a{
+	display: inline-block;
+	width: 100px;
+	height: 40px;
+	margin: 0 auto;
+	border-radius: 2px;
+	cursor: pointer;
+	text-decoration: none;
+	font-size: 14px;
+	color: #f5f5f5;
+	line-height: 40px;
+	text-align: center;
+	background: #16a6b6;
+	margin-left: 20px;
+}
+
+.product_show a:hover{
+	background: #108794;
+}
+.current,.product_left>li>ul>li:hover{color: #333 !important;}
+.current b,.product_left>li>ul>li:hover b{display:inline-block;width:0px;height:0px;
+	border:5px solid transparent; border-left:5px solid #333; }
+.current li{width: inherit;height: inherit;background:inherit; border: none;}
+
+
+/*导航*/
+.navheader{width: 94%;padding:0 3%;height: 80px;border-bottom:1px solid #ccc;margin-bottom: 30px;}
+.Leftlogo{display: inline-block;position: relative;top: 40px;transform: translateY(-50%);font-size: 18px; }
+.iconContainer>div{float: right;}
+
+.iconContainer>div {
+    margin-right: 10px;
+    font-size: 18px;
+    line-height: 36px;
+    cursor: pointer;
+}
+.iconContainer>div>hr{color: #3c3c3c;
+	display: block;
+	width: 30px;
+    height: 0px;
+    border: none;
+    border-bottom: 1px solid #3c3c3c;margin: 0; margin:4px 0;
+    margin-top: 4px;
+
+}
+.menuIcon{
+	margin-top: 10px;
+}
+/*----------------------------------------------------------------------------------------*/
+
+
+
+
+
+

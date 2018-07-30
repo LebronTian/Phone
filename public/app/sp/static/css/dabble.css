@@ -1,0 +1,420 @@
+*{
+			margin: 0;
+			padding: 0;
+		}
+		
+		a{
+			text-decoration: none;
+			color: #666;
+		}
+		a:hover{
+			text-decoration: underline;
+		}
+		.main_bd{
+			width: 980px;
+			
+			margin: 108px auto;
+			position: relative;
+		}
+		#appmsgItem1{
+			
+			border:1px solid #DDD;
+			border-bottom: none;
+			padding: 14px;
+			float: left;
+			margin-right: 20px;
+			position: relative;
+		}
+		
+		#appmsgItem1:hover .msg_edit_b{
+			display: block;
+			width: 318px;
+			height: 107px;
+			position: absolute;
+			left: 0;
+			top: 0;
+			text-align: center;
+			line-height: 160px;
+			color: #FFF;
+			border-color: #EEE;
+			background: rgba(193,193,193,0.5) url(app/sp/static/images/edit.png) no-repeat center center;
+		}
+		.appmsg_thumb{
+			width: 290px;
+			height: 160px;	
+			background: url(/app/sp/static//images/default.png) no-repeat;
+		}	
+		
+		#appmsgItem1 .title{
+			margin-bottom: 10px;
+			font-weight: normal;
+			background: rgba(0,0,0,0.5);
+			display: inline-block;
+			width: 290px;
+			color: #FFF;
+			line-height: 28px;
+			padding: 0 3px 0 9px;
+			position: absolute;
+			left: 14px;
+			bottom: 4px;
+			word-break:break-all;
+			overflow: auto;
+		}
+		input{
+			border: none;
+		}
+		input:focus,
+		textarea:focus{
+			outline: none;
+		}
+		i,em{
+			font-style: normal;
+		}
+		img{
+			border: 0;
+		}
+		.edit_area_b{
+			width: 570px;
+			padding: 20px;
+			border:1px solid #DDD;
+			background-color: #F4F5F9;
+			position: relative;
+            float: right;
+		}
+		.edit_area_s{
+			width: 570px;
+			padding: 20px;
+			border:1px solid #DDD;
+			background-color: #F4F5F9;
+			position: relative;
+			display: none;
+            margin-top: 188px;
+            float: right;
+		}
+		
+		.frm_input_box{
+			display: block;
+		}
+		.frm_input{
+			width: 486px;
+			height: 28px;
+			border:1px solid #DDD;
+			float: left;
+			margin: 10px 0;
+			padding: 0 40px 0 10px;
+		}
+		
+		.appmsg_edit_item{
+			position: relative;
+		}
+		.frm_counter{
+			position: absolute;
+			right: 46px;
+			bottom: 0px;
+			font-size: 14px;
+			color: #999;
+			font-family: '微软雅黑';
+		}
+		.zz{
+			bottom: -6px;
+		}
+		.zy_counter{
+			bottom: -14px;
+		}
+		.frm_textarea{
+			width: 516px;
+			height: 80px;
+			margin-top: 10px;
+			border-color: #DDD;
+			padding: 10px;
+		}
+		.clearfix:after{ content: "."; display: block; clear: both; height: 0; visibility: hidden;}
+		.bt_h,
+		.zz_h
+		{
+			height: 68px;
+            margin-top: 8px;
+		}
+		.fm_h,
+		.fm_h_s{
+		}
+		.zy_h{
+			margin-bottom: 10px;
+		}
+		.sl_enter{
+			color: #999;
+		}
+		#appmsgItem2{
+            background-color: white;
+			width: 320px;
+			padding: 14px;
+			height: 108px;
+			border:1px solid #DDD;
+			border-bottom: none;
+			clear: both;
+			line-height: 30px;
+			position: relative;
+
+		}
+		
+		#appmsgItem2 .msg_edit_s{
+			display: inline-block;
+			width: 198px;
+			height: 24px;
+			text-indent: 10px;
+		}
+
+		.appmsg_edit_mask{
+			width: 80px;
+			height: 80px;
+		}
+		#appmsgItem2 .title_s,
+		#appmsgItem3 .title_s,
+		#appmsgItem4 .title_s,
+		#appmsgItem5 .title_s,
+		#appmsgItem6 .title_s,
+		#appmsgItem7 .title_s,
+		#appmsgItem8 .title_s,
+		#appmsgItem9 .title_s,
+		#appmsgItem10 .title_s,
+		#appmsgItem11 .title_s,
+		#appmsgItem12 .title_s,
+		#appmsgItem13 .title_s,
+		#appmsgItem14 .title_s,
+		#appmsgItem15 .title_s,
+		#appmsgItem16 .title_s,
+		#appmsgItem17 .title_s,
+		#appmsgItem18 .title_s,
+		#appmsgItem19 .title_s,
+		#appmsgItem20 .title_s{
+			display: inline-block;
+            /*width: 200px;
+			height: 24px;
+			line-height: 24px;
+			margin-top: 18px;*/
+			padding: 0 0 0 6px;
+			word-break:break-all;
+            /*yhc*/
+            width: 238px;
+            height: 37px;
+            line-height: 37px;
+            margin-top: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+		}
+		#appmsgItem2 .msg_img{
+			display: inline-block;
+			width: 78px;
+			height: 78px;
+			float: right;
+			background: url(/app/sp/static//images/default2.png) no-repeat;
+			clear: both;
+		}
+		#appmsgItem2:hover .msg_edit_s,
+		#appmsgItem3:hover .msg_edit_s,
+		#appmsgItem4:hover .msg_edit_s,
+		#appmsgItem5:hover .msg_edit_s,
+		#appmsgItem6:hover .msg_edit_s,
+		#appmsgItem7:hover .msg_edit_s,
+		#appmsgItem8:hover .msg_edit_s,
+		#appmsgItem9:hover .msg_edit_s,
+		#appmsgItem10:hover .msg_edit_s,
+		#appmsgItem11:hover .msg_edit_s,
+		#appmsgItem12:hover .msg_edit_s,
+		#appmsgItem13:hover .msg_edit_s,
+		#appmsgItem14:hover .msg_edit_s,
+		#appmsgItem15:hover .msg_edit_s,
+		#appmsgItem16:hover .msg_edit_s,
+		#appmsgItem17:hover .msg_edit_s,
+		#appmsgItem18:hover .msg_edit_s,
+		#appmsgItem19:hover .msg_edit_s,
+		#appmsgItem20:hover .msg_edit_s{
+			display: block; 
+			width: 318px;
+			height: 53px;
+			background: rgba(193,193,193,0.5);
+			position: absolute;
+			left: 0px;
+			top: 0px;
+		}
+
+		#appmsgItem2:hover .msg_edit_s .edit_img,
+		#appmsgItem2:hover .msg_edit_s .trash_img,
+		#appmsgItem3:hover .msg_edit_s .edit_img,
+		#appmsgItem3:hover .msg_edit_s .trash_img,
+		#appmsgItem4:hover .msg_edit_s .edit_img,
+		#appmsgItem4:hover .msg_edit_s .trash_img,
+		#appmsgItem5:hover .msg_edit_s .edit_img,
+		#appmsgItem5:hover .msg_edit_s .trash_img,
+		#appmsgItem6:hover .msg_edit_s .edit_img,
+		#appmsgItem6:hover .msg_edit_s .trash_img,
+		#appmsgItem7:hover .msg_edit_s .edit_img,
+		#appmsgItem7:hover .msg_edit_s .trash_img,
+		#appmsgItem8:hover .msg_edit_s .edit_img,
+		#appmsgItem8:hover .msg_edit_s .trash_img,
+		#appmsgItem9:hover .msg_edit_s .edit_img,
+		#appmsgItem9:hover .msg_edit_s .trash_img,
+		#appmsgItem10:hover .msg_edit_s .edit_img,
+		#appmsgItem10:hover .msg_edit_s .trash_img,
+		#appmsgItem11:hover .msg_edit_s .edit_img,
+		#appmsgItem11:hover .msg_edit_s .trash_img,
+		#appmsgItem12:hover .msg_edit_s .edit_img,
+		#appmsgItem12:hover .msg_edit_s .trash_img,
+		#appmsgItem13:hover .msg_edit_s .edit_img,
+		#appmsgItem13:hover .msg_edit_s .trash_img,
+		#appmsgItem14:hover .msg_edit_s .edit_img,
+		#appmsgItem14:hover .msg_edit_s .trash_img,
+		#appmsgItem15:hover .msg_edit_s .edit_img,
+		#appmsgItem15:hover .msg_edit_s .trash_img,
+		#appmsgItem16:hover .msg_edit_s .edit_img,
+		#appmsgItem16:hover .msg_edit_s .trash_img,
+		#appmsgItem17:hover .msg_edit_s .edit_img,
+		#appmsgItem17:hover .msg_edit_s .trash_img,
+		#appmsgItem18:hover .msg_edit_s .edit_img,
+		#appmsgItem18:hover .msg_edit_s .trash_img,
+		#appmsgItem19:hover .msg_edit_s .edit_img,
+		#appmsgItem19:hover .msg_edit_s .trash_img,
+		#appmsgItem20:hover .msg_edit_s .edit_img,
+		#appmsgItem20:hover .msg_edit_s .trash_img{
+			display: block; 
+		}
+
+		#appmsgItem2 .msg_edit_s .edit_img,
+		#appmsgItem3 .msg_edit_s .edit_img,
+		#appmsgItem4 .msg_edit_s .edit_img,
+		#appmsgItem5 .msg_edit_s .edit_img,
+		#appmsgItem6 .msg_edit_s .edit_img,
+		#appmsgItem7 .msg_edit_s .edit_img,
+		#appmsgItem8 .msg_edit_s .edit_img,
+		#appmsgItem9 .msg_edit_s .edit_img,
+		#appmsgItem10 .msg_edit_s .edit_img,
+		#appmsgItem11 .msg_edit_s .edit_img,
+		#appmsgItem12 .msg_edit_s .edit_img,
+		#appmsgItem13 .msg_edit_s .edit_img,
+		#appmsgItem14 .msg_edit_s .edit_img,
+		#appmsgItem15 .msg_edit_s .edit_img,
+		#appmsgItem16 .msg_edit_s .edit_img,
+		#appmsgItem17 .msg_edit_s .edit_img,
+		#appmsgItem18 .msg_edit_s .edit_img,
+		#appmsgItem19 .msg_edit_s .edit_img,
+		#appmsgItem20 .msg_edit_s .edit_img{display:inline-block;display:none;width:16px;height:16px;position:absolute;top:18px;left:137px}
+
+		#appmsgItem2 .msg_edit_s .trash_img,
+		#appmsgItem3 .msg_edit_s .trash_img,
+		#appmsgItem4 .msg_edit_s .trash_img,
+		#appmsgItem5 .msg_edit_s .trash_img,
+		#appmsgItem6 .msg_edit_s .trash_img,
+		#appmsgItem7 .msg_edit_s .trash_img,
+		#appmsgItem8 .msg_edit_s .trash_img,
+		#appmsgItem9 .msg_edit_s .trash_img,
+		#appmsgItem10 .msg_edit_s .trash_img,
+		#appmsgItem11 .msg_edit_s .trash_img,
+		#appmsgItem12 .msg_edit_s .trash_img,
+		#appmsgItem13 .msg_edit_s .trash_img,
+		#appmsgItem14 .msg_edit_s .trash_img,
+		#appmsgItem15 .msg_edit_s .trash_img,
+		#appmsgItem16 .msg_edit_s .trash_img,
+		#appmsgItem17 .msg_edit_s .trash_img,
+		#appmsgItem18 .msg_edit_s .trash_img,
+		#appmsgItem19 .msg_edit_s .trash_img,
+		#appmsgItem20 .msg_edit_s .trash_img{display:inline-block;display:none;width:16px;height:16px;position:absolute;top:18px;left:168px}
+
+		#addItems{
+			margin-top: 4px;
+			width: 320px;
+			height: 80px;
+			padding: 20px 14px;
+			border: 2px dashed #DDD;
+			background: url(/app/sp/static//images/add.png) no-repeat center center;
+			cursor: pointer;
+		}
+		#addItems:hover{
+			border-color: #BBB;
+			background: url(/app/sp/static//images/add.png) no-repeat center center;
+		}
+
+	#codeImgBox{ position: relative;}
+	.appmsg_thumb_wrp{ background: url(/app/sp/static/images/default.png) no-repeat center center;}
+
+    .small-msg{
+        width: 320px;
+        padding: 14px;
+        height: 108px;
+        border:1px solid #DDD;
+        border-bottom: none;
+        clear: both;
+        line-height: 30px;
+        position: relative;
+    }
+
+
+/*yhc调整多图文样式，仿真微信上的样式*/
+#appmsgItem1{
+    margin-right: 5px;
+    background-color: white;
+    width: 320px;
+    padding: 7px;
+}
+.appmsg_thumb{
+    height: auto;
+    width: 320px;
+}
+.small-msg:last-child{
+    border-bottom: 3px solid #ddd;
+}
+.msg_navLeft{
+    float: none;
+    width: 325px;
+    margin: 0 auto;
+}
+.for-phonePre{
+    margin-top: 185px;
+    margin-left: 39px;
+    width: 325px;
+}
+.text-box.for-phonePre{
+    padding: 10px;
+    background-color: white;
+    border-radius: 14px;
+    border: thin solid #eaeaea;
+}
+#appmsgItem1 .title{
+    left: 7px;
+    bottom: -3px;
+    width: 304px;
+}
+.appmsg_thumb_wrp{
+    height: 92px;
+    overflow: hidden;
+}
+#appmsgItem2{
+    height: 53px;
+    padding: 7px;
+}
+#appmsgItem2 .msg_img{
+    height: 40px;
+    width: 40px;
+    background-size: 100%;
+}
+#appmsgItem2 .title_s{
+    height: 37px;
+    line-height: 37px;
+    margin-top: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 238px;
+}
+.appmsg_thumb_wrp{
+    background-size: 100%;
+}
+.small-msg{
+    height: 53px;
+    padding: 7px;
+}
+.small-msg .msg_img{
+    height: 40px;
+    width: 40px;
+    background-size: 100%;
+}

@@ -1,0 +1,174 @@
+<import src="../../../common/wxParse/wxParse.wxml"/>
+
+<view class="container">
+	<!-- 商家轮播图 -->
+	<view class="goodHeader-swiper-box" wx:if="{{businessData.images.length > 0}}">
+    <swiper class="goodHeader-swiper" autoplay indicator-dots circular>
+      <block wx:for="{{businessData.images}}" wx:key="*this">
+        <swiper-item>
+          <view class="swiper-item" wx:if="{{item}}">
+            <image class="goodHeader-swiperImg" src="{{item}}"></image>
+          </view>
+          <view class="header-vedio" wx:else>
+						<video class="classVedio vedio__fixed" id="myVideo" src="{{item.vedio}}" poster="{{background[1].img}}" binderror="videoErrorCallback" bindended="videoPlayEnd" hidden="{{isSelect}}"></video>
+					</view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+	<view class="header">
+		<view class="info-box">
+			<image class="header-img" src="{{businessData.main_img}}"></image>
+			<view class="header-title" style="color: {{mainColor}}">
+			<image wx:if="{{businessData.hadv == 1}}" class="business-vplus" src="../../../resources/pic/v.png" style="width:40rpx;height:40rpx;margin-right:10rpx;vertical-align:text-bottom;"></image>
+			{{businessData.title}}</view>
+			<view class="header-goodsNum-box">
+				<text class="header-goodsNum" style="color: {{mainColor}}">{{goodsCount}}</text>
+				<text class="header-goodsNum-title">在售商品</text>
+				<view class="fav-btn {{businessData.had_fav ? 'had-fav' : ''}}" style="border-color: {{mainColor}}; color: {{mainColor}}" data-id="{{businessData.had_fav}}" bindtap="favTap">{{businessData.had_fav ? "已关注" : "关注"}}</view>
+			</view>
+		</view>
+		<view class="handle-box">
+			<image bindtap="openMap" class="location-img" src="../../../resources/pic/location.png"></image>
+			<text bindtap="openMap" class="location-text">{{businessData.location}}</text>
+			<image class="phone-img" bindtap="phoneCall" src="../../../resources/pic/phone.png"></image>
+			<view class="share-btn-box">
+				<button open-type="share" class="share-btn">
+					<image class="share-img" src="../../../resources/pic/share.png"></image>
+				</button>
+			</view>
+		</view>
+	</view>
+
+		
+
+	<view class="main">
+	  <include src="../../../common/we-navigation.wxml"/>
+    <view class="weui-tab__panel">
+        <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+					<!-- 商家优惠券 -->
+        	<view class="coupon-box" wx:if="{{couponList && couponList.length > 0}}">
+        		<view class="coupon-title">优惠券（{{couponList.length}}）</view>
+        		<view class="coupon-list">
+        			<block wx:for="{{couponList}}" wx:key="{{index}}">
+        				<navigator url="../coupon/coupon?bizId={{options.uid}}&couponId={{item.uid}}" class="coupon">
+        					<image class="coupon-img" src="{{item.img}}"></image>
+        					<view class="coupon-info-box">
+        						<view class="coupon-name">{{item.title}}</view>
+        						<view class="coupon-time"></view>
+        					</view>
+        					<view class="coupon-btn-box">
+        						<view class="coupon-used">{{item.used_cnt}}人已领</view>
+        						<view class="{{item.coupon_can_get == 0 ? 'coupon-geted' : 'coupon-get-btn'}}" data-id="{{item.coupon_can_get == 0 ? '' : item.uid}}" style="background-color: {{item.coupon_can_get == 0 ? '#fff' : mainColor}}; color: {{item.coupon_can_get == 0 ? mainColor : '#fff'}}; border-color: {{mainColor}}" catchtap="drawCoupon">{{item.coupon_can_get == 0 ? "已领取" : "领取"}}</view>
+        					</view>
+        				</navigator>
+        			</block>
+        		</view>
+        	</view>
+			    <!-- 服务内容 -->
+			    <view class="goodSelect-box goodRight-box" hidden="{{!businessData.extra_info.bar_installation || businessData.extra_info.bar_installation.length == 0}}">
+			    	<block wx:for="{{businessData.extra_info.bar_installation}}" wx:key="{{item}}">
+			    		<view>
+				    		<image class="rightIcon" src="../../../resources/pic/rightIcon.png"></image><text style="font-size: 0.8em;">{{item}}</text>
+				    	</view>
+			    	</block>
+			    </view>
+
+				<!-- 服务内容 -->
+			    <view class="goodTime-box" hidden="{{!businessData.extra_info.business_time}}">
+						<text style="font-size: 0.8em;">营业时间： {{businessData.extra_info.business_time}}</text>
+			    </view>
+			    <view style="padding-top: 30rpx">
+						<template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+					</view>
+        </view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+        	<view class="main-goods-box">
+						<block wx:for="{{goods}}" wx:key="{{index}}">
+			        <navigator url="../../../class/pages/goodDetail/goodDetail?uid={{item.uid}}" class="main-classGood">
+			          <image class="main-goodImg" src="{{item.main_img}}" />
+			          <text class="main-goodTitle">{{item.title}} \n</text>
+			          <text class="main-goodPrice">¥ {{item.price}}</text>
+			        </navigator>
+			      </block>
+					</view>
+					<view class="footer" hidden="{{goods.length > 0}}">- 没有更多商品了 -</view>
+        </view>
+        <view class="weui-tab__content" hidden>
+        	<view class="body-questionList">
+						<block wx:for="{{showList}}" wx:key="{{index}}">
+	            <view class="quesList-item" url="pages/msgDetail/msgDetail?uid={{item.uid}}">
+	              <view class="quesItem-header">
+	                <view class="quesItem-pic-box">
+	                	<image src="{{businessData.main_img}}" class="quesItem-pic"></image>
+	                  <view class="posterName">{{businessData.title}}</view>
+	                </view>
+	                <view class="msg__tags-box">
+	                  <view id="{{item.tel}}" class="contactBtn" bindtap="phoneCall" wx:if="{{item.tel}}">联系Ta</view>
+	                  <view class="msg__top" hidden="{{item.top_time == 0}}">置顶</view>
+	                </view>
+	              </view>
+	              <navigator class="quesItem-body" url="../msgDetail/msgDetail?id={{item.uid}}">
+	  	            <view class="quesItem-content-box">
+	                  <view class="quesItem-content">
+	                    {{item.brief}}
+	                  </view>
+	                </view>
+	                <view class="quesItem-contPic-box" hidden="{{item.images.length == 0}}">
+	                  <image wx:for="{{item.images}}" wx:key="{{index}}" wx:for-item="img" wx:for-index="subIdx" id="{{index + '-' + subIdx}}" class="quesItem-contPic" catchtap="previewImages" src="{{img}}"></image>
+	                </view>
+	  	          </navigator>
+	              <view class="quesItem-footer">
+	                <view class="footer-location-box" wx:if="{{item.address}}">
+	                  <image class="locationIcon" src="../../../resources/pic/location.png"></image>
+	                  <text class="footer-location">{{item.address}}</text>
+	                </view>
+	                <view class="footer-info-box">
+	                  <view class="footer-time">{{item.time}}</view>
+	                  <view class="footer-btnArr">
+	                    <view class="footer-btn">
+	                      <image class="footer-btnIcon" style="width: 38rpx;" src="../../../resources/pic/view.png"></image>
+	                      <text>{{item.read_cnt}}</text>
+	                    </view>
+	                    <view id="{{item.uid}}" class="footer-btn" bindtap="commentTap">
+	                      <image class="footer-btnIcon" src="../../../resources/pic/comment.png"></image>
+	                      <text>{{item.comments.length}}</text>
+	                    </view>
+	                    <view id="{{item.uid}}" class="footer-btn" bindtap="likeTap">
+	                      <image class="footer-btnIcon" src="../../../resources/pic/{{item.su_good ? 'liked.png' : 'like.png'}}"></image>
+	                      <text>{{item.good_cnt}}</text>
+	                    </view>
+	                  </view>
+	                </view>
+	              </view>
+	              <view class="quesItem-comments" hidden="{{item.comments.length == 0}}">
+	                <block wx:for="{{item.comments}}" wx:for-item="comment" wx:key="{{index}}">
+	                  <view class="comment-item">
+	                    <text class="observer">{{comment.su.name}}：</text>
+	                    <text class="">{{comment.content}}</text>
+	                  </view>
+	                </block>
+	              </view>
+	            </view>
+	          </block>
+	          <view class="noMore">-没有更多数据了-</view>
+	        </view>
+        </view>
+    </view>
+    <!-- 评论框 -->
+	  <view class="shadow {{showCommentModal ? 'shadow-show' : ''}}"></view>
+	  <view class="modal-writeConment" hidden="{{!showCommentModal}}">
+	    <view class="modal-title">评论</view>
+	    <form bindsubmit="bindFormSubmit">
+	      <view class="modal-textarea-box">
+	        <textarea class="modal-textarea" placeholder="请输入提问内容" name="textarea"/>
+	      </view>
+	      <view class="modal-btnBox">
+	        <button class="modal-cancelBtn" bindtap="quitCommentTap">取消</button>
+	        <button class="modal-correctBtn" form-type="submit">评论</button>
+	      </view>
+	    </form>
+	  </view>
+	</view>
+</view>

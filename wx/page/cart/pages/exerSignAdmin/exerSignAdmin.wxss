@@ -1,0 +1,12 @@
+/*报名管理页面*/
+@import "../exercisePartner/exercisePartner.wxss";
+
+.status {
+    padding-right: 50rpx;
+    border-bottom: 1px solid #eee;
+    height: 3.6em;
+    line-height: 3.6em;
+}
+.status-icon {
+	line-height: 3.6em;
+}

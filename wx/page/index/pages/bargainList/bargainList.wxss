@@ -1,0 +1,5 @@
+@import '../seckill/seckill.wxss';
+
+.bargain-price {
+	font-size: 0.9em;
+}

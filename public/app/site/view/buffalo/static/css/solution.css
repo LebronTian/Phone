@@ -1,0 +1,46 @@
+.productShow{
+	width: 1111px;
+	margin:20px auto;
+	overflow: hidden;
+	margin-bottom: 100px;
+	margin-left: 50%;
+    transform: translateX(-50%);
+}
+.productShow>section{
+	width: 1111px;
+    margin: auto;
+    overflow: hidden;
+}
+.imgContainer{float: left;margin-left: 28px;margin-top: 14px;position: relative;display: table;}
+.imgContainer:before{content: " ";}
+.imgContainer:after{content: " ";}
+.textcontent{position: absolute;top: 0;left: 0;width: 100%;height: 100%;color: #fff;}
+.textcontent h1{font-size: 30px;width:100%;height:60px;text-align: center;
+	position:relative;top:50%;margin-top: -30px;}
+.textcontent h1 span{font-size: 14px;display: block;}
+.textcontent h1 span:hover{cursor: pointer;text-decoration: underline;}
+
+/*导航*/
+body{width: 100%;}
+.navheader{width: 94%;padding:0 3%;height: 80px;border-bottom:1px solid #ccc;}
+.Leftlogo{display: inline-block;position: relative;top: 40px;transform: translateY(-50%);font-size: 18px; }
+.iconContainer>div{float: right;}
+
+.iconContainer>div {
+    margin-right: 10px;
+    font-size: 18px;
+    line-height: 36px;
+}
+.iconContainer>div>hr{color: #3c3c3c;
+	display: block;
+	width: 30px;
+    height: 0px;
+    border: none;
+    border-bottom: 1px solid #3c3c3c;margin: 0; margin:4px 0;
+    margin-top: 4px;
+
+}
+.menuIcon{
+	margin-top: 10px;
+}
+/*----------------------------------------------------------------------------*/

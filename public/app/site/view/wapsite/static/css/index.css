@@ -1,0 +1,18 @@
+	.pic_swiper{left:0;width:100%;height:200px;}
+	.pic_swiper img{
+		width: 100%;height: 200px
+	}
+	.detail_box{
+		 width:100%;height: auto;margin-bottom: 50px;
+	}
+	.detail_content{
+		width:100%;height:auto;margin:0;
+	}
+	.content_box{
+ 		position:relative;width:30%;margin:10px 1% 0 2%;float:left;text-align: center;
+	}
+	.content_box img{
+	}
+	.content_box div{
+		width:100%;height:20px;/*color:#65ADC3;*/text-align:center;position: absolute;bottom: 0;
+	}

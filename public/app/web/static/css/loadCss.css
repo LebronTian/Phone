@@ -1,0 +1,153 @@
+.circle_1{
+	fill: transparent;
+	stroke: #fff;
+	opacity: 0.4;
+	stroke-width: 56;
+	stroke-dasharray: 0 900;
+	animation: fillup_1 0.5s linear;
+	-moz-animation: fillup_1 0.5s linear;
+	-webkit-animation: fillup_1 0.5s linear;
+	-o-animation: fillup_1 0.5s linear;
+	animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+}
+
+.circle_1_n{
+	fill: transparent;
+	stroke: #e43a72;
+	stroke-width: 3;
+	stroke-dasharray: 0 900;
+	animation: fillup_1_n 0.5s linear;
+	-moz-animation: fillup_1_n 0.5s linear;
+	-webkit-animation: fillup_1_n 0.5s linear;
+	-o-animation: fillup_1_n 0.5s linear;
+	animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+}
+
+.circle_2{
+	fill: transparent;
+	stroke: #fff;
+	opacity: 0.4;
+	stroke-width: 56;
+	stroke-dasharray: 0 900;
+	animation: fillup_2 1s linear;
+	-moz-animation: fillup_2 1s linear;
+	-webkit-animation: fillup_2 1s linear;
+	-o-animation: fillup_2 1s linear;
+	animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+}
+
+.circle_2_n{
+	fill: transparent;
+	stroke: #eec431;
+	stroke-width: 3;
+	stroke-dasharray: 0 900;
+	animation: fillup_2_n 1s linear;
+	-moz-animation: fillup_2_n 1s linear;
+	-webkit-animation: fillup_2_n 1s linear;
+	-o-animation: fillup_2_n 1s linear;
+	animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+}
+
+.circle_3{
+	fill: transparent;
+	stroke: #fff;
+	opacity: 0.4;
+	stroke-width: 56;
+	stroke-dasharray: 0 900;
+	animation: fillup_3 1.5s linear;
+	-moz-animation: fillup_3 1.5s linear;
+	-webkit-animation: fillup_3 1.5s linear;
+	-o-animation: fillup_3 1.5s linear;
+	animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+}
+
+.circle_3_n{
+	fill: transparent;
+	stroke: #27c1b1;
+	stroke-width: 3;
+	stroke-dasharray: 0 900;
+	animation: fillup_3_n 1.5s linear;
+	-moz-animation: fillup_3_n 1.5s linear;
+	-webkit-animation: fillup_3_n 1.5s linear;
+	-o-animation: fillup_3_n 1.5s linear;
+	animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+}
+
+.circle_4{
+	fill: transparent;
+	stroke: #fff;
+	opacity: 0.4;
+	stroke-width: 56;
+	stroke-dasharray: 0 900;
+	animation: fillup_4 2s linear;
+	-moz-animation: fillup_4 2s linear;
+	-webkit-animation: fillup_4 2s linear;
+	-o-animation: fillup_4 2s linear;
+	animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+}
+
+.circle_4_n{
+	fill: transparent;
+	stroke: #54a5db;
+	stroke-width: 3;
+	stroke-dasharray: 0 900;
+	animation: fillup_4_n 2s linear;
+	-moz-animation: fillup_4_n 2s linear;
+	-webkit-animation: fillup_4_n 2s linear;
+	-o-animation: fillup_4_n 2s linear;
+	animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+}
+.circle_5{
+	fill: transparent;
+	stroke: #fff;
+	opacity: 0.4;
+	stroke-width: 56;
+	stroke-dasharray: 0 900;
+	animation: fillup_5 2.5s linear;
+	-moz-animation: fillup_5 2.5s linear;
+	-webkit-animation: fillup_5 2.5s linear;
+	-o-animation: fillup_5 2.5s linear;
+	animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+}
+
+.circle_5_n{
+	fill: transparent;
+	stroke: #4168e2;
+	stroke-width: 3;
+	stroke-dasharray: 0 900;
+	animation: fillup_5_n 2.5s linear;
+	-moz-animation: fillup_5_n 2.5s linear;
+	-webkit-animation: fillup_5_n 2.5s linear;
+	-o-animation: fillup_5_n 2.5s linear;
+	animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+}

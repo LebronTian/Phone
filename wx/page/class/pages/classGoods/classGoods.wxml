@@ -1,0 +1,30 @@
+<view class="container">
+	<view class="header-btns">
+		<view class="sortBtn-box">
+			<view class="sortBtn" bindtap="openSort" style="color: {{selectedIndex == 0 ? mainColor : '#8a8a8a'}};">{{sortModeTitle}}</view>
+			<view id="0" class="sortBtn" bindtap="siftTap" style="color: {{selectedIndex == 1 ? mainColor : '#8a8a8a'}};">全部</view>
+			<view id="128" class="sortBtn" bindtap="siftTap" style="color: {{selectedIndex == 2 ? mainColor : '#8a8a8a'}};">推荐</view>
+			<view id="64" class="sortBtn" bindtap="siftTap" style="color: {{selectedIndex == 3 ? mainColor : '#8a8a8a'}};">热门</view>
+		</view>
+		<view class="srot-box {{showSortBtn ? 'srot-box__show' : ''}}">
+			<block wx:for="{{sortBtns}}" wx:key="{{index}}">
+				<view id="{{index}}" class="sort-item" bindtap="sortTap" style="color: {{sortMode == item.id ? mainColor : '#8a8a8a'}};">{{item.title}}</view>
+			</block>
+		</view>
+	</view>
+	<view class="body main">
+  	<view class="body-good-box">
+  		<view class="body-good-subBox">
+	  		<block wx:for="{{goodsList}}" wx:for-item="good" wx:key="{{*item}}">
+	  			<navigator class="body-good" url="../goodDetail/goodDetail?uid={{good.uid}}" >
+	  				<image class="body-goodImg" src="{{good.img}}"></image>
+	  				<text class="body-goodTitle">{{good.title}}</text>
+	  				<text class="body-goodPrice">¥ {{good.price}}</text>
+	  			</navigator>
+	  		</block>
+	  	</view>
+	  </view>
+		<view class="empty-info" hidden="{{!showEmpty}}">-没有更多商品了-</view>
+		<view class="shadow {{showShadow ? 'shadow-show' : ''}}" bindtap="tapShadow"></view>
+  </view>
+</view>

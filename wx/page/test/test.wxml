@@ -1,0 +1,54 @@
+<block wx:for="{{tpl_json}}" class="container">
+	<block wx:if="{{item.type=='search'}}">
+  		<navigator url="{{item.url || 'pages/search/search'}}" class="weui-search-bar">
+			<view class="weui-search-bar__form">
+			<view class="weui-search-bar__box">
+				<icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+				<input type="text" class="weui-search-bar__input" placeholder="{{item.placeholder}}" />
+			</view>
+			<label class="weui-search-bar__label">
+				<icon class="weui-icon-search" type="search" size="14"></icon>
+				<view class="weui-search-bar__text">{{item.search_btn || '搜索'}}</view>
+			</label>
+			</view>
+		</navigator>
+	</block>
+
+	<block wx:elif="{{item.type=='slide'}}">
+    <view class="header-swiper-box">
+      <swiper class="header-swiper" indicator-dots autoplay circular interval="{{3000}}" duration="{{300}}">
+        <block wx:for="{{item.background}}" wx:for-item="item2">
+          <swiper-item>
+            <view class="swiper-item">
+              <image class="header-swiperImg" src="{{item2.img}}"></image>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+	</block>
+
+	<block wx:elif="{{item.type=='placard'}}">
+    	<navigator class="header-placard-box" style="border-right: 1px solid" url="{{item.url || 'pages/placard/placard'}}">
+      <view class="header-placardImg-box">
+        <image class="header-placardImg" src="../resources/pic/placard.png"></image>
+      </view>
+      <view class="header-swiperCont">{{item.content}}</view>
+      <text class="rightBtn">〉</text>
+    </navigator>
+		
+	</block>
+
+	<block wx:else>
+	todo
+	</block>
+
+</block>
+
+  <view class="weui-footer">    
+    <view class="weui-footer__links">
+      <navigator url="pages/company/company" class="weui-footer__link">@深圳市快马加鞭科技有限公司 - 提供技术开发</navigator>
+    </view>
+    <view class="weui-footer__text">Copyright © 2012-2017 weixin.uctphp.com</view>
+  </view>
+

@@ -1,0 +1,51 @@
+<!-- <view class="container">
+  <view class="weui-cells weui-cells_after-title">
+		<view class="weui-cell weui-cell_input weui-cell_vcode">
+	    <view class="weui-cell__hd">
+	      <view class="weui-label">手机号</view>
+	    </view>
+	    <view class="weui-cell__bd">
+	      <input class="weui-input" bindinput="inputPhone" placeholder="请输入手机号" value="{{phone}}" />
+	    </view>
+	    <view class="weui-cell__ft">
+	      <view class="weui-vcode-btn vcode-btn" style="color: {{mainColor}}" hidden="{{showNum}}" bindtap="getCode">获取验证码</view>
+        <view class="weui-vcode-btn vcode-btn" style="color: {{mainColor}}" hidden="{{!showNum}}"> {{countDownNum}} s </view>
+	    </view>
+	  </view>
+	  <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">验证码</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" bindinput="inputCode" placeholder="请输入您手机上收到的验证码"/>
+      </view>
+    </view>
+	</view>
+	<button class="button" style="background-color: {{mainColor}}" bindtap="bindPhone">绑定手机号</button>
+</view> -->
+
+<view class="container">
+  <view class="weui-cells weui-cells_after-title">
+		<view class="weui-cell weui-cell_input weui-cell_vcode">
+	    <view class="weui-cell__hd">
+	      <view class="weui-label">手机号</view>
+	    </view>
+	    <view class="weui-cell__bd">
+	      <input class="weui-input" type="number" bindinput="inputPhone" placeholder="请输入手机号" value="{{phone}}" />
+	    </view>
+	    <view class="weui-cell__ft">
+	      <button class="weui-vcode-btn vcode-btn" open-type="getPhoneNumber" style="color: {{mainColor}}" bindgetphonenumber="getPhoneNumber">获取手机号</button>
+        <!-- <view class="weui-vcode-btn vcode-btn" style="color: {{mainColor}}" hidden="{{!showNum}}"> {{countDownNum}} s </view> -->
+	    </view>
+	  </view>
+	  <!-- <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">验证码</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" bindinput="inputCode" placeholder="请输入您手机上收到的验证码"/>
+      </view>
+    </view> -->
+	</view>
+	<button class="button" style="background-color: {{mainColor}}" bindtap="bindPhone">绑定手机号</button>
+</view>

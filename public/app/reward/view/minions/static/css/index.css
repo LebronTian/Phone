@@ -1,0 +1,182 @@
+*{margin:0;padding: 0}
+  html{width: 100%;min-height: 100%}
+  body{width:100%;height:100%;background-color:#FFDF01}
+  .content{position:relative;}
+  .bg_img{width:100%;height:auto;position:absolute;left:0;top:0;z-index:-10}
+  .minion1{position:absolute;bottom:30px;width:41%;right:5%;z-index: 1}
+  .minion2{position:absolute;bottom:1500px;width:50%;right:43%;z-index: 1}  
+  .open_box{width:80%;position:absolute;top:-1250px;left:10%;}
+  .open{position:absolute;left:0;width: 70%;}
+  .font{position:absolute;top:110px;width: 80%;left:10%;}
+  #minion_show{
+    animation: drop 1s linear;
+    -webkit-animation: drop 1s linear;  /* Safari 和 Chrome */
+  }
+@keyframes drop
+{/*
+0%   {bottom: 550px;transform:rotate(7deg);}
+20%  {bottom: 530px;transform:rotate(-7deg);}
+40%  {bottom: 470px;transform:rotate(7deg);}
+60%  {bottom: 370px;transform:rotate(-7deg);}
+80%  {bottom: 230px;transform:rotate(7deg);}
+100% {bottom: 50px;transform:rotate(-7deg);}*/
+0%   {bottom: 550px;right:100%}
+20%  {bottom: 530px;right:81%;}
+40%  {bottom: 470px;right:62%;}
+60%  {bottom: 370px;right:43%}
+80%  {bottom: 230px;right:24%}
+100% {bottom: 50px;right:5%}
+}
+
+@-webkit-keyframes drop /* Safari 和 Chrome */
+{/*
+0%   {bottom: 550px;-webkit-transform:rotate(7deg);}
+20%  {bottom: 530px;-webkit-transform:rotate(-7deg);}
+40%  {bottom: 470px;-webkit-transform:rotate(7deg);}
+60%  {bottom: 370px;-webkit-transform:rotate(-7deg);}
+80%  {bottom: 230px;-webkit-transform:rotate(7deg);}
+100% {bottom: 50px;-webkit-transform:rotate(-7deg);}*/
+0%   {bottom: 550px;right:100%}
+20%  {bottom: 530px;right:81%;}
+40%  {bottom: 470px;right:62%;}
+60%  {bottom: 370px;right:43%}
+80%  {bottom: 230px;right:24%}
+100% {bottom: 50px;right:5%}
+}
+
+
+#minion_show2{
+    animation: drop2 1s linear;
+    -webkit-animation: drop2 1s linear;  /* Safari 和 Chrome */
+  }
+@keyframes drop2
+{/*
+0%   {bottom: 550px;transform:rotate(7deg);}
+20%  {bottom: 530px;transform:rotate(-7deg);}
+40%  {bottom: 470px;transform:rotate(7deg);}
+60%  {bottom: 370px;transform:rotate(-7deg);}
+80%  {bottom: 230px;transform:rotate(7deg);}
+100% {bottom: 50px;transform:rotate(-7deg);}*/
+0%   {bottom: 550px;right:0%}
+20%  {bottom: 530px;right:8%;}
+40%  {bottom: 470px;right:17%;}
+60%  {bottom: 370px;right:26%}
+80%  {bottom: 230px;right:34%}
+100% {bottom: 50px;right:43%}
+}
+
+@-webkit-keyframes drop2 /* Safari 和 Chrome */
+{/*
+0%   {bottom: 550px;-webkit-transform:rotate(7deg);}
+20%  {bottom: 530px;-webkit-transform:rotate(-7deg);}
+40%  {bottom: 470px;-webkit-transform:rotate(7deg);}
+60%  {bottom: 370px;-webkit-transform:rotate(-7deg);}
+80%  {bottom: 230px;-webkit-transform:rotate(7deg);}
+100% {bottom: 50px;-webkit-transform:rotate(-7deg);}*/
+0%   {bottom: 550px;right:0%}
+20%  {bottom: 530px;right:8%;}
+40%  {bottom: 470px;right:17%;}
+60%  {bottom: 370px;right:26%}
+80%  {bottom: 230px;right:34%}
+100% {bottom: 50px;right:43%}
+}
+
+
+
+
+
+
+
+
+
+#box_show{
+    animation: boxdrop 1s linear;
+    -moz-animation: boxdrop 1s linear; /* Firefox */
+    -webkit-animation: boxdrop 1s linear;  /* Safari 和 Chrome */
+    -o-animation: boxdrop 1s linear;
+  }
+@keyframes boxdrop
+{
+0%   {top: -325px;}
+20%  {top: -250px;}
+40%  {top: -175px;}
+60%  {top: -100px;}
+80%  {top: -25px;}
+100% {top: 50px;}
+}
+
+@-moz-keyframes boxdrop /* Firefox */
+{
+0%   {top: -325px;}
+20%  {top: -250px;}
+40%  {top: -175px;}
+60%  {top: -100px;}
+80%  {top: -25px;}
+100% {top: 50px;}
+}
+
+@-webkit-keyframes boxdrop /* Safari 和 Chrome */
+{
+0%   {top: -325px;}
+20%  {top: -250px;}
+40%  {top: -175px;}
+60%  {top: -100px;}
+80%  {top: -25px;}
+100% {top: 50px;}
+}
+
+@-o-keyframes boxdrop /* Opera */
+{
+0%   {top: -325px;}
+20%  {top: -250px;}
+40%  {top: -175px;}
+60%  {top: -100px;}
+80%  {top: -25px;}
+100% {top: 50px;}
+}
+
+#open_rotate{
+    animation: openrotate 1s linear;
+    -moz-animation: openrotate 1s linear; /* Firefox */
+    -webkit-animation: openrotate 1s linear;  /* Safari 和 Chrome */
+    -o-animation: openrotate 1s linear;
+}
+@keyframes openrotate
+{
+0%   {transform:rotate(9deg);}
+20%  {transform:rotate(-9deg);}
+40%  {transform:rotate(9deg);}
+60%  {transform:rotate(-9deg);}
+80%  {transform:rotate(9deg);}
+100% {transform:rotate(-9deg);}
+}
+
+@-moz-keyframes openrotate /* Firefox */
+{
+0%   {-moz-transform:rotate(9deg);}
+20%  {-moz-transform:rotate(-9deg);}
+40%  {-moz-transform:rotate(9deg);}
+60%  {-moz-transform:rotate(-9deg);}
+80%  {-moz-transform:rotate(9deg);}
+100% {-moz-transform:rotate(-9deg);}
+}
+
+@-webkit-keyframes openrotate /* Safari 和 Chrome */
+{
+0%   {-webkit-transform:rotate(9deg);}
+20%  {-webkit-transform:rotate(-9deg);}
+40%  {-webkit-transform:rotate(9deg);}
+60%  {-webkit-transform:rotate(-9deg);}
+80%  {-webkit-transform:rotate(9deg);}
+100% {-webkit-transform:rotate(-9deg);}
+}
+
+@-o-keyframes openrotate /* Opera */
+{
+0%   {-o-transform:rotate(9deg);}
+20%  {-o-transform:rotate(-9deg);}
+40%  {-o-transform:rotate(9deg);}
+60%  {-o-transform:rotate(-9deg);}
+80%  {-o-transform:rotate(9deg);}
+100% {-o-transform:rotate(-9deg);}
+}

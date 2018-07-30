@@ -1,0 +1,19 @@
+<!--page/cart/pages/awardForm/awardForm.wxml-->
+<view class="container">
+  <view class="page__bd">
+    <view class="weui-cells__title">请填写获奖信息</view>
+    <view class="weui-cells weui-cells_after-title">
+    	<block wx:for="{{winRule.data}}" wx:key="{{index}}">
+    		<view class="weui-cell weui-cell_input">
+	        <view class="weui-cell__hd">
+	            <view class="weui-label">{{item}}</view>
+	        </view>
+	        <view class="weui-cell__bd">
+	            <input data-id="{{item}}" bindinput="userInput" class="weui-input" placeholder="请输入{{item}}"/>
+	        </view>
+	      </view>
+    	</block>
+    </view>    
+  </view>
+  <button class="postBtn" bindtap="postForm" style="background-color: {{mainColor}};">确认提交</button>
+</view>

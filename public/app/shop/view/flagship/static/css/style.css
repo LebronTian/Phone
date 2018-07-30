@@ -1,0 +1,206 @@
+*,body,p,ul,ol,h1,h2,h3,h4,h5,h6,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}
+html{font-size: 71.4%; font-weight: 400;}/*整体调整,默认:62.5% => 10px;75%=>12px*/
+
+
+p,span,div{word-wrap:break-word}/*断字*/
+img{ border: 0;max-height: 100%;max-width: 100%}  button{cursor: pointer}
+a:link{text-decoration:none;}       /* 指正常的未被访问过的链接*/
+a:visited{text-decoration:none;}    /*指已经访问过的链接*/
+a:hover{text-decoration:none;}      /*指鼠标在链接*/
+a:active{text-decoration:none;}     /* 指正在点的链接*/
+li{list-style:none}/*去点*/ em{font-style:normal}/*去除斜体*/
+table{  border-collapse:collapse;/*合并边框模型：*/border-spacing:0;/*边框间的距离*/}
+.clearfix:after {content: ".";display: block;height: 0;clear: both;visibility: hidden;}
+.clearfix {*zoom:1;} .overFlow{overflow: hidden} /*清除浮动*/
+.text-ellipsis{ white-space: nowrap; overflow: hidden; text-overflow: ellipsis;} /*单行自动打点*/
+.border-box{box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;}/*计算边框的盒子*/
+/*table布局,垂直居中*/
+.display-table{display: table;text-align: center;width: 100%;}  .display-table ul{display: table-row;}  .display-table ul li{width:25%;vertical-align: middle;display: table-cell;}
+/*定位盒子,子元素加vertical实现定位，可实现垂直*/
+.vertical-box:before {content: '';display: inline-block;height: 100%;vertical-align: middle;}
+/*todo:全局布局*/
+/*兼容大屏幕，考虑要不要用响应式，去掉中间白边的过程*/
+body{max-width: 600px;margin: 0 auto;}
+body>footer{max-width: 600px;margin: 0 auto;left: 0;right: 0;}
+/*顶部*/
+body>header{height: 3.75rem;text-align: center;position: relative;z-index: 250;}
+.header-title{vertical-align: middle;font-size: 1.7rem;}
+.header-left{position: absolute;top: 0;  left: 0;height: 100%;}
+.header-right{position: absolute;top: 0;right: 0;height: 100%;}
+body>header .img-btn{vertical-align: middle;width: 20px;padding: 1rem;}
+/*导航类的footer*/
+body>footer.nav-footer{
+    position: fixed;
+    bottom: 0;  left: 0;z-index: 100;
+    width:100%; height: 4.5rem;
+    border-top: thin solid #e1e1e1;
+    background: white;
+}
+.nav-footer-margin{
+    margin-bottom: 4.5rem;/*跟保持上面的height一样*/
+    padding-bottom: 1px;/*防止margin*/
+}
+.footer-group{
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: -6px;
+}
+.icon-title{
+    font-size: 1.2rem;
+    position: absolute;
+    bottom: -6px;
+    width: 3.6rem;
+    text-align: left;
+    margin: 0 auto;
+}
+/*按钮类footer*/
+
+body>footer.btn-footer{
+    position: fixed;
+    bottom: 0;  left: 0;z-index: 100;
+    width:100%; height: 4rem;
+    border-top: thin solid #e1e1e1;
+    background: white;
+    line-height: 4rem;
+    text-align: center;
+}
+.btn-footer-margin{
+    margin-bottom: 4rem;/*跟保持上面的height一样*/
+    padding-bottom: 1px;/*防止margin*/
+}
+footer.btn-footer button{
+    border: none;
+    border-radius: 3px;
+    padding: 8px;
+    width: 7rem;
+}
+body>footer.btn-footer.footer-one-btn button{padding: 5px}
+.btn-footer.footer-one-btn{text-align: center}
+.btn-footer.footer-one-btn button{ width: 94%;}
+.btn-footer.footer-two-btn{padding: 0 4%}
+.btn-footer.footer-two-btn button{width: 43%}
+.btn-footer.footer-two-btn button:first-child{float: left;margin-left: 0.8rem}
+.btn-footer.footer-two-btn button:last-child{float: right;margin-right: 0.8rem}
+
+/*mycount页面*/
+    .balance{color: #c2c2c2;margin-right: 10px;}
+    .mycount-countainer{width: 100%;}
+    .roundPie{width: 30%;height:30%;border-radius:15%;margin-left: 35%;background: #fda93f;}
+    .price-container{width: 7.14em;height: 7.14em;margin:2em auto 1em;background: #fba83f;
+        border-radius: 50%;text-align: center;color: white;}
+    .vertical-box:before {content: '';display: inline-block;height: 100%;vertical-align: middle;}/*定位盒子,子元素加vertical实现定位，可实现垂直*/
+    .vertical-box>.vertical-middle{display: inline-block;vertical-align: middle}
+    .text-xl{font-size: 1.2em} .text-xxl{font-size: 1.3em}
+    .account-operate button{color: white;padding:0.9em 0}
+    .account-operate button:first-child{background: #45bf18; margin-bottom: 10px;} 
+    .account-operate button:last-child{ background: #4bbbe5;}
+    .btn-container{padding: 0.8em;text-align: center}
+    .btn-container button{border: none;  border-radius: 3px;  padding: 10px 8px;}
+    .btn-long{width: 100%;}
+    .cut-of-line-container{padding:0 10px;color: #9c9c9c;}
+    /*分割线*/
+    .cut-of-line{width: 100%;border-top-width: 1px;border-top-style: solid;margin: 1.5em 0;position: relative;text-align: center}
+    .cut-of-container{  position: absolute;  top: -22px;  left:0;  width: 100%;  text-align: center;  }
+    .cut-of-title{  display: inline-block;  background: #eeeeee;  padding: 0.5em;  }
+    .cut-of-title .index-icon{  font-size: 1.5em;  margin-right: 0.2em;  vertical-align: middle;  }
+    .cut-of-title span{vertical-align: middle}
+    .line{height:4em;font-size: 1.1em;margin:0px; }
+    .line{border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;}
+    /*.line:last-child{border-top: 0px solid #ccc;}*/
+    .line-left{width: 68%;height:4em;color: #333; text-align: left; display: inline-block;padding:0.6em 0; }
+    .line-left>p{height: 1.4em;line-height: 1.4em;}
+    .line-right{width: 28%;text-align: right;display: inline-block;line-height: 4em;}
+    .line-left>p:last-child{color: #999;}
+    .text-green{color: #45c018;}
+    .clickLoad{height: 3em;line-height: 3em;color: #999;}
+/*recharge页面*/
+.weui_btn_warn{background: #fda93f !important;margin:10px 15px !important;}
+.withdrawRecord{color: #c2c2c2;margin-right: 8px;}
+
+.linerecord{background: #fff;padding:0 10px;}
+.text-right{text-align: right;}
+
+/*常用长条形section*/
+.linear-section{
+    border-top: thin solid #eee;
+    background: white;
+    position: relative;
+    min-height: 1rem
+}
+.linear-noinput{padding:0.834rem;}
+.last-liner-section{border-bottom: thin solid #e2e2e2}
+.linear-title{position: absolute;top: 0;left:0;height: 100%;margin-left: 0.834rem}
+.linear-title>span{vertical-align: middle}
+.linear-right{position: absolute;top: 3px;right:0;height: 100%;padding-right: 0.834rem;color: #999;}
+.linear-right>span{vertical-align: middle;display: inline-block}
+.linear-right>span>img{margin-left: 0.5rem}
+.linear-input{border: none;width: 100%;padding:0.834rem;}
+.margin-top{margin-top: 1rem}
+.margin-bottom{margin-bottom: 1.2rem}
+/*存放html代码的容器*/
+.html-box{ min-height: 4rem;line-height: 1.8;padding: 0 0.834rem;}
+/*常用左右型:待整合,margin型*/
+.left-right-section{position: relative}
+.left-right-section>.left-section{position: absolute;top: 0;left: 0}
+.list-bottom-tips{text-align: center}
+.fz-13{font-size: 13px;}
+.fz-16{font-size: 16px;}
+.marginl-5{margin-left:5%;}
+.hide{display: none;}
+.bor-e5{border: 1px solid #e5e5e5;}
+.c-w{color:#fff !important;}
+.c-red{color:#E71325;}
+.c-gray{color:#999;}
+.c-yellow{color:#e5cb61;}
+.b-red{background: #E71325;color: #fff;}
+.b-gray{background: #ccc;color: #fff;}
+.b-ccc{background: #ccc !important;}
+.b-ccc:before{
+    background-image: url(../images/slide-ccc.png) !important;
+}
+.b-ccc>.coupon-right:after{
+    background-image: url(../images/slide-ccc.png) !important;
+	}
+.b-ori{background: #fb9f11;color: #fff;}
+.f-right{float: right;}
+.b-main,.color-main,.active-bg,.bg-primary{background: #fff;color: #fff;}
+.c-green,.text-active,.secondary-font,.text-primary,.big-text .fa,.active-border{color:#fff;}
+.hand{cursor: pointer;}
+.chose{
+		border: 1px solid #ff7b7b !important;
+		color: #ff7b7b !important;
+	}
+.ori-price-style{color: #999;text-decoration: line-through;}
+
+    body{
+    	font-family: Arial, Helvetica, sans-serif,"微软雅黑";
+    }
+.days{display: block;max-height: 210px;overflow: auto;}
+.yuding-taocan-choose-btn{border-radius:5px;margin-bottom: 1rem;height: 4rem;line-height: 4rem;}
+.margin-b1{display: inline-block;margin-bottom: 1rem;}
+	.vertical-box a{position: relative;top: 0.2em;}
+	.footer-group .fa{font-size: 1.5em;position: relative;top: 0.1em;}
+	.footer-group p{font-size: .8em;white-space: nowrap;}
+	.fa-2x{font-size: 1.6em;}
+	.text-center{text-align: center;}
+.user-tips-img{
+	height: 1.6em;width:1.6em;display: block;margin: 0 auto;
+}
+.user-tips-img img{width: 100%;height: 100%;}
+.clear{overflow: hidden;}
+.fz12{font-size: 12px}.fz14{font-size: 14px}.fz16{font-size: 16px}.fz18{font-size: 18px}.fz20{font-size: 20px}
+.user-tips-img svg{width: 1.6em;height: 1.6em;}
+.min-w240{min-width: 240px;}
+.user-article section i{color: #333;font-size: 2rem;vertical-align: bottom;width: 2rem;}
+.fav-icon{height: 1.8em;width: 1.8em;vertical-align: middle;float: left;margin: 8px 0px 8px 6px;}
+.detail-footer-box button.sku-data{float: left}
+.user-article section svg{width: 1.6em;height: 1.6em;vertical-align: middle;fill:#333}
+.fize0{font-size: 0;}
+.lineh3{line-height: 3em}
+.margin-top{
+    margin-top:1em;
+}
+.margin-bottom{
+    margin-bottom:1em;
+}

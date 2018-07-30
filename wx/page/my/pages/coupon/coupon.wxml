@@ -1,0 +1,20 @@
+<view class="container">
+	<view class="couponList-box" hidden="{{couponList.length == 0}}">
+		<block wx:for="{{couponList}}" wx:key="{{index}}">
+			<view class="coupon">
+				<image class="coupon-img" src="{{item.image}}"></image>
+				<view class="coupon-info-box">
+					<view class="coupon-title">{{item.info.title}}</view>
+					<view class="coupon-time">到期时间：{{item.endTime}}</view>
+				</view>
+				<view class="coupon-price" style="background-color: {{mainColor}}">¥<text class="coupon-discount">{{item.price}}</text></view>
+			</view>
+		</block>
+		<navigator class="coupon-navToCouponCenter" style="background-color: {{mainColor}}" url="../../../index/pages/couponCenter/couponCenter">前往领券中心</navigator>
+	</view>
+	<view class="couponList-empty" hidden="{{couponList.length > 0}}">
+		<image class="couponList-empty-img" src="../../../resources/pic/couponEmpty.png"></image>
+		<text class="couponList-empty-text">暂时没有优惠券，去领券中心看看吧</text>
+		<navigator class="couponEmpty-navToCouponCenter" style="background-color: {{mainColor}}" url="../../../index/pages/couponCenter/couponCenter">去领取</navigator>
+	</view>
+</view>

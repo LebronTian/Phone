@@ -1,0 +1,28 @@
+	.cat_title{
+		width:100%;background-color:black;color:white;height:30px;position: fixed;
+	}
+	.cat_title div{
+		margin-left:10px;line-height:30px;font-weight:600
+	}
+	.cat_content{
+		width:100%;
+	}
+	.cat_list{
+		width:90%;margin-left:5%;}
+	.list_box{
+		float:left;width:46%;margin:0 2% 10px 2%;
+	}
+	.list_box a{
+		text-decoration:none;
+	}
+	.list_box a img{
+		width:100%;border-radius:15px
+	}
+	.list_box div{
+		width:100%;text-align:center;height:20px;margin-top:5px
+	}
+	.list_box div a {
+		font-size: 14px;
+		font-weight: 600;
+		color:black;
+	}

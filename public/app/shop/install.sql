@@ -1,0 +1,772 @@
+create table `shop` (
+	`uid` bigint unsigned not null auto_increment comment 'uid',
+	`sp_uid` bigint unsigned not null default '0' comment '对应的服务商id',
+
+	`status` tinyint unsigned not null default '0' comment '0 正常, 1 已下线',
+	`title` varchar(64) not null default '' comment '店铺名称',
+	`logo` varchar(255) not null default '' comment '店铺logo',
+
+	`create_time` int unsigned not null default '0' comment '创建时间',
+	`tpl` varchar(32) not null default '' comment '模板',
+	`language` varchar(8) not null default 'zh_cn' comment '默认语言zh_cn, en',
+
+	`notice` varchar(128) not null default '' comment '公告',
+	primary key (`uid`),
+	unique key (`sp_uid`)
+)engine=innodb default charset=utf8 auto_increment=1;
+
+create table `product_cats` (
+	`uid` bigint unsigned not null auto_increment comment '分类id',
+	`shop_uid` bigint unsigned not null default '0' comment '店铺uid',
+	`parent_uid` bigint unsigned not null default '0' comment '父分类uid',
+
+	`title` varchar(64) not null default '' comment '分类名称',
+	`title_en` varchar(128) not null default '' comment '分类名称英文',
+	`image` varchar(255) not null default '' comment '图片',
+
+	`create_time` int unsigned not null default '0' comment '创建时间',
+	`sort` int unsigned not null default '0' comment '排序,从大到小',
+	`status` tinyint unsigned not null default '0' comment '0 正常, 1 隐藏',
+
+	primary key (`uid`),
+	key `shop_uid`(`shop_uid`)
+)engine=innodb default charset=utf8 auto_increment=1;
+
+create table `product` (
+	`uid` bigint unsigned not null auto_increment comment '商品id',
+	`shop_uid` bigint unsigned not null default '0' comment '店铺uid',
+	`cat_uid` bigint unsigned not null default '0' comment '分类uid',
+	`biz_uid` bigint unsigned not null default '0' comment '商家uid',
+
+	`title` varchar(64) not null default '' comment '商品标题',
+	`title_second` varchar(64) not null default '' comment '二级标题',
+	`send_time` varchar(64) NOT NULL default '' COMMENT '配送时间{}',
+	`kill_time` varchar(256) NOT NULL default '' COMMENT '秒杀时间{start_time:,end_time}',
+	`content` text not null default '' comment '商品详情',
+	`main_img` varchar(255) not null default '' comment '商品主图',
+	`images` text not null default '' comment '商品图片,分号分开多张图片',
+
+	`like_cnt` int unsigned not null default '0' comment '点赞数',
+	`fav_cnt` int unsigned not null default '0' comment '收藏数',
+	`comment_cnt` int unsigned not null default '0' comment '评论数',
+	`click_cnt` int unsigned not null default '0' comment '点击数',
+	`sell_cnt` int unsigned not null default '0' comment '总销量',
+	`score_cnt` int unsigned not null default '0' comment '评分次数',
+	`score_total` int unsigned not null default '0' comment '总评分',
+
+	`price` int unsigned not null default '0' comment '价格,单位为分',	
+	`ori_price` int unsigned not null default '0' comment '原价,单位为分',	
+	`quantity` int unsigned not null default '0' comment '库存',	
+
+	`group_price` int unsigned not null default '0' comment '团购价,单位为分',	
+	`group_cnt` int unsigned not null default '0' comment '成团人数',	
+
+	`product_code` varchar(64) not null default '' comment '商家编码,可用于搜索',
+	`info` tinyint unsigned not null default '0' comment '从低到高默认 0 不货到付款, 1不包邮 2不开发票 3不保修 4不退换货 5不是新品 6不是热销 7不是推荐',
+	`back_point` int unsigned not null default '0' comment '购买返还积分',	
+	`point_price` int unsigned not null default '0' comment '积分换购所需分数',	
+	`buy_limit` int unsigned not null default '0' comment '限购数,0不限购',	
+
+	`virtual_info` text not null default '' comment '虚拟产品',
+
+	`sku_table` text not null default '' comment 'sku表json字符串,空表示没有sku, 如{table:[{尺寸:[X,M,L]}], info: }',	
+
+	`location` varchar(255) not null default '' comment '货物所在地址json {country:中国,province:广东,city:深圳,town:南山区,address:工业六路}',
+	`delivery_uid` int not null default '0' comment '运费模板uid, 不设置将免运费',
+
+	`create_time` int unsigned not null default '0' comment '创建时间',
+	`modify_time` int unsigned not null default '0' comment '编辑时间',
+	`sort` int unsigned not null default '0' comment '排序,从大到小',
+	`status` tinyint unsigned not null default '0' comment '0 正常, 1 下架',
+	`else_info` text not null default '' COMMENT '其他信息(肉品与重量)',
+  `video_url` varchar(512) NOT NULL default '' COMMENT '视频地址',
+  `product_uids` varchar(256) NOT NULL default '' COMMENT '关联商品uid(逗号隔开)',
+  `bas_services` varchar(512) NOT NULL DEFAULT '' COMMENT '基础服务',
+
+	primary key (`uid`),
+	key `shop_uid`(`shop_uid`, `cat_uid`)
+)engine=innodb default charset=utf8 auto_increment=1;
+
+create table `product_extra_info` (
+	`uid` bigint unsigned not null auto_increment comment 'id',
+	`shop_uid` bigint unsigned not null default '0' comment '店铺uid',
+	`product_uid` bigint unsigned not null default '0' comment '商品uid',
+	`sort` int unsigned not null default '0' comment '排序,从大到小',
+
+    `ukey` varchar(32) not null comment '键',
+    `data` varchar(512) not null  comment '值',
+
+	primary key (`uid`),
+	key `shop_uid`(`shop_uid`, `product_uid`)
+)engine=innodb default charset=utf8 auto_increment=1 comment '商品更多信息表';
+
+create table `product_affilate` (
+	`product_uid` bigint unsigned not null default '0' comment '商品uid',
+	`affilate_rule` text not null default '' comment '{level1: 1200, level2: 1000, leevel3: 800}',
+
+	primary key (`product_uid`)
+)engine=innodb default charset=utf8 auto_increment=1 comment '单个商品分佣';
+
+create table `product_comment` (
+	`uid` bigint unsigned not null auto_increment comment '评论id',
+	`shop_uid` bigint unsigned not null default '0' comment '店铺uid',
+	`product_uid` bigint unsigned not null default '0' comment '商品id',
+	`order_uid` bigint unsigned not null default '0' comment '订单id',
+	`parent_uid` bigint unsigned not null default '0' comment '父级id',
+	`user_id` bigint unsigned not null default '0' comment '用户id',
+
+	`status` tinyint unsigned not null default '0' comment '0 未审核, 1 审核成功, 20 审核失败',
+	`create_time` int unsigned not null default '0' comment '创建时间',
+	`images` text not null default '' comment '晒图,分号分开多张图片',
+	`score` tinyint unsigned not null default '5' comment '用户打分, 1 ~ 5 星',
+	`brief` text not null default '' comment '回复内容',
+
+	primary key (`uid`),
+	key `po`(`product_uid`, `order_uid`)
+)engine=innodb default charset=utf8 auto_increment=1 comment '评论';
+
+create table `product_sell` (
+	`uid` bigint unsigned not null auto_increment comment '交易id',
+	`shop_uid` bigint unsigned not null default '0' comment '店铺uid',
+	`product_uid` bigint unsigned not null default '0' comment '商品id',
+	`order_uid` bigint unsigned not null default '0' comment '订单id',
+	`user_id` bigint unsigned not null default '0' comment '用户id',
+
+	`create_time` int unsigned not null default '0' comment '创建时间',
+	`paid_price` int unsigned not null default '0' comment '下单价格',
+	`quantity` int unsigned not null default '1' comment '下单数目',
+	`detail` text not null default '' comment '商品信息{sku_uid:"pruduct_uid;尺寸:X;颜色:红色"}',
+
+	primary key (`uid`),
+	key `po`(`product_uid`, `order_uid`)
+)engine=innodb default charset=utf8 auto_increment=1 comment '交易记录';
+
+create table `product_fav` (
+	`uid` bigint unsigned not null auto_increment comment '收藏id',
+	`user_id` bigint unsigned not null default '0' comment '用户id',
+	`product_uid` bigint unsigned not null default '0' comment '商品id',
+
+	`create_time` int unsigned not null default '0' comment '创建时间',
+	`notify_price` int not null default '0' comment '低于此价格时需要降价通知',
+	`email` varchar(32) not null default '' comment '邮件',
+	`phone` varchar(16) not null default '' comment '电话',
+
+	primary key (`uid`),
+	key `user_id`(`user_id`)
+)engine=innodb default charset=utf8 auto_increment=1 comment '商品收藏';
+
+create table `shop_coupon` (
+	`uid` int unsigned not null auto_increment comment '优惠券id',
+	`shop_uid` bigint unsigned not null default '0' comment '店铺uid',
+
+	`create_time` int unsigned not null default '0' comment '创建时间',
+	`duration` int unsigned not null default '0' comment '有效期, 单位为秒, 0表示长期有效',
+	`publish_cnt` int unsigned not null default '0' comment '总发放数量',
+	`used_cnt` int unsigned not null default '0' comment '已发放数量',
+
+	`title` varchar(32) not null default '' comment '优惠券名称',
+	`img` varchar(255) not null default '' comment '优惠券图片',
+	`brief` varchar(256) not null default '' comment '优惠券说明',
+	`valuation` tinyint unsigned not null default '0' comment '类型, 0 现金券, 1 折扣券',
+	`rule` text not null default '' comment '计费json {discount: 1000}',
+
+	primary key (`uid`),
+	key `su`(`shop_uid`)
+)engine=innodb default charset=utf8 auto_increment=1 comment '优惠券';
+
+create table `shop_user_coupon` (
+	`uid` int unsigned not null auto_increment comment '用户优惠券id',
+	`shop_uid` bigint unsigned not null default '0' comment '店铺uid',
+	`user_id` bigint unsigned not null default '0' comment '用户id',
+
+	`create_time` int unsigned not null default '0' comment '创建时间',
+	`expire_time` int unsigned not null default '0' comment '到期时间,0表示永不过期',
+	`order_uid` bigint unsigned not null default '0' comment '使用的订单id, 0表示未使用',
+	`read_time` int unsigned not null default '0' comment '领取时间 或 阅读时间',
+
+	`coupon_uid` bigint unsigned not null default '0' comment '优惠券id',
+	`info` text not null default '' comment '计费json {title: 10元, img: xxx, valuation: 0, rule{discount: 1000}}',
+
+	primary key (`uid`),
+	key `su`(`shop_uid`, `user_id`)
+)engine=innodb default charset=utf8 auto_increment=1 comment '优惠券';
+
+create table `shop_delivery` (
+	`uid` int unsigned not null auto_increment comment '运费模板id',
+	`shop_uid` bigint unsigned not null default '0' comment '店铺uid',
+
+	`create_time` int unsigned not null default '0' comment '创建时间',
+
+	`title` varchar(32) not null default '' comment '模板名称',
+	`brief` varchar(256) not null default '' comment '模板说明',
+	`valuation` tinyint unsigned not null default '0' comment '计费方式, 0 固定邮费, 1 计件',
+	`rule` text not null default '' comment '计费json {express: {normal:{start:2,start_fee:10,add:1, add_fee:12}, custom:{location:[{}],}}}',
+
+	primary key (`uid`),
+	key `shop_uid`(`shop_uid`)
+)engine=innodb default charset=utf8 auto_increment=1;
+
+create table `shop_cart` (
+	`uid` int unsigned not null auto_increment comment 'id',
+	`shop_uid` bigint unsigned not null default '0' comment '店铺uid',
+	`user_id` bigint unsigned not null default '0' comment '顾客uid',
+
+	`create_time` int unsigned not null default '0' comment '创建时间',
+
+	`sku_uid` varchar(128) not null comment '格式 pruduct_uid;尺寸:X;颜色:红色',
+	`quantity` int unsigned not null default '1' comment '件数',
+	`date_time` varchar(260) NOT NULL default '' comment '套餐日期时间',
+	primary key (`uid`),
+	unique key `sus`(`shop_uid`, `user_id`, `sku_uid`)
+)engine=innodb default charset=utf8 auto_increment=1 comment '购物车';
+
+create table `shop_order` (
+	`uid` int unsigned not null auto_increment comment 'id',
+	`shop_uid` bigint unsigned not null default '0' comment '店铺uid',
+	`biz_uid` bigint unsigned not null default '0' comment '商家uid',
+	`user_id` bigint unsigned not null default '0' comment '顾客uid',
+
+	`go_uid` bigint unsigned not null default '0' comment '团购订单uid',
+	`remain_cnt` bigint unsigned not null default '0' comment '待成团人数',
+	`product_uid` bigint unsigned not null default '0' comment '团购商品uid',
+
+	`create_time` int unsigned not null default '0' comment '下单时间',
+	`paid_time` int unsigned not null default '0' comment '支付时间',
+	`send_time` int unsigned not null default '0' comment '发货时间',
+	`recv_time` int unsigned not null default '0' comment '收货时间',
+
+	`paid_fee` int unsigned not null default '0' comment '最终支付的总价, 单位为分',
+	`discount_fee` int unsigned not null default '0' comment '已优惠的价格, 是会员折扣, 现金券,积分抵用 之和',
+	`delivery_fee` int unsigned not null default '0' comment '邮费',
+	`cash_fee` int unsigned not null default '0' comment '使用余额抵扣的部分',
+
+	`use_point` int unsigned not null default '0' comment '使用了多少积分',
+	`back_point` int unsigned not null default '0' comment '返了多少积分',
+
+	`status` tinyint unsigned not null default '1' comment '1 待付款, 2 待发货, 3 已发货, 4 已收货, 5 维权完成, 8 维权中, 10 已取消',
+	`pay_type` tinyint unsigned not null default '0' comment '0 未设置, 1 免费无需付款 , 2 货到付款, 10 支付宝, 11 微信支付',
+	`pay_info` varchar(512) not null default '' comment '根据pay_type有不同的数据',
+
+	`address` varchar(512) not null default '' comment '收货信息json {province:广东,city:深圳,town:南山区,address:工业六路,name:猴子,phone:15822222222, delivery:express}',
+	`delivery_info` varchar(512) not null default '' comment '发货信息 {name:顺丰快递, order:12333333}',
+	`info` text not null default '' comment '信息 {remark: 买家留言, fapiao: 发票抬头}',
+
+	`products` text not null default '' comment '商品信息[{sku_uid:"pruduct_uid;尺寸:X;颜色:红色", paid_price:100, quantity:2, title:iphone,main_img:xxxxxx}]',
+
+	primary key (`uid`),
+	key `su`(`shop_uid`, `user_id`)
+)engine=innodb default charset=utf8 auto_increment=1 comment '订单';
+
+create table `shop_user_address` (
+	`uid` int unsigned not null auto_increment comment 'id',
+	`shop_uid` bigint unsigned not null default '0' comment '店铺uid',
+	`user_id` bigint unsigned not null default '0' comment '顾客uid',
+
+	`modify_time` int unsigned not null default '0' comment '最后使用时间',
+
+	`name` varchar(64) not null comment '收货人姓名',
+	`phone` varchar(16) not null default '' comment '电话',
+	`province` varchar(16) not null default '' comment '省',
+	`city` varchar(16) not null default '' comment '市',
+	`town` varchar(16) not null default '' comment '县',
+	`address` varchar(64) not null default '' comment '详细地址',
+  `lat` float(9,6) NOT NULL DEFAULT '0.000000' COMMENT '地理位置 维度',
+  `lng` float(9,6) NOT NULL DEFAULT '0.000000' COMMENT '地理位置 经度',
+	primary key (`uid`),
+	key `su`(`shop_uid`, `user_id`)
+)engine=innodb default charset=utf8 auto_increment=1 comment '收货地址';
+
+create table `shop_refund` (
+	`uid` int unsigned not null auto_increment comment '退款记录uid',
+	`order_uid` varchar(32) not null comment '订单uid',
+	`shop_uid`  bigint unsigned not null default '0' comment '店铺uid',
+	`user_id` bigint unsigned not null default '0' comment '顾客uid',
+
+	`status` tinyint unsigned not null default '0' comment '0 待卖家确定, 1 待退款, 2 卖家拒绝退款, 3 已退款',
+	`o_status` tinyint unsigned not null default '11' comment '订单之前状态, 2 待发货, 3 已发货, 4 已收货, 5 已评价, 8 维权中, 11带卖家确认',
+	`create_time` int unsigned not null default '0' comment '申请退款时间',
+	`accept_time` int unsigned not null default '0' comment '商家确认时间',
+	`refund_time` int unsigned not null default '0' comment '退款时间',
+
+	`refund_fee` int unsigned not null default '0' comment '退款金额',
+	`refund_info` text not null default '' comment '退款信息 {reason: 退款理由, images: [图片], sp_reason: 商家拒绝理由}',
+
+	primary key (`uid`),
+	unique key (`order_uid`),
+	key `shop_uid`(`shop_uid`),
+	key `user_id`(`user_id`)
+)engine=innodb default charset=utf8 comment '退款记录';
+
+create table `shop_slides` (
+	`uid` bigint unsigned not null auto_increment comment '幻灯片id',
+	`shop_uid` bigint unsigned not null default '0' comment '店铺uid',
+
+	`image` varchar(255) not null default '' comment '幻灯片图片',
+	`title` varchar(64) not null default '' comment '图片说明',
+	`link` varchar(255) not null default '' comment '链接地址',
+
+	`create_time` int unsigned not null default '0' comment '创建时间',
+	`sort` int unsigned not null default '0' comment '排序,从大到小',
+	`status` tinyint unsigned not null default '0' comment '0 正常, 1 隐藏',
+ 	`slides_in` tinyint(3) NOT NULL default '1' comment '主页/其他轮播',
+	primary key (`uid`),
+	key `shop_uid`(`shop_uid`)
+)engine=innodb default charset=utf8 auto_increment=1;
+
+create table `shop_messages` (
+	`uid` bigint unsigned not null auto_increment comment '留言id',
+	`shop_uid` bigint unsigned not null default '0' comment '店铺uid',
+
+	`parent_uid` bigint unsigned not null default '0' comment '父级id',
+	`reply_cnt` int unsigned not null default '0' comment '评论数',
+
+	`user_id` bigint unsigned not null default '0' comment '用户id, 0表示商户回复',
+	`extra_info` text not null default '' comment '其他信息',
+	`brief` text not null default '' comment '留言',
+
+	`create_time` int unsigned not null default '0' comment '创建时间',
+	`status` tinyint unsigned not null default '0' comment '0 待审核, 1 审核成功,  2 审核失败',
+	`good` int(4) NOT NULL default '0' comment '点赞数',
+	primary key (`uid`),
+	key `shop_uid`(`shop_uid`),
+	key `parent_uid`(`parent_uid`)
+)engine=innodb default charset=utf8 auto_increment=1;
+
+create table `shop_distribution` (
+	`uid` int unsigned not null auto_increment comment '分销uid',
+	`shop_uid` bigint unsigned not null default '0' comment '店铺uid',
+
+	`status` tinyint unsigned not null default '0' comment '0 开启, 1 关闭',
+	`create_time` int unsigned not null default '0' comment '创建时间',
+	`rule_data` text not null default '' comment '分销规则 json {"0":"100","1":"100","2":"100","3"："100"}',
+	`need_check` tinyint unsigned not null default '0' comment '0 不需要审核, 1 需要审核',
+
+  `need_vip` tinyint(3) NOT NULL DEFAULT '0' COMMENT '是否会员专享 0 不是 1是',
+
+  `model` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '返利模式 0 支付立即返利；1 确认收货返利',
+  `fullprice` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '满返金额',
+
+	primary key (`uid`),
+	key `shop_uid`(`shop_uid`)
+)engine=innodb default charset=utf8 auto_increment=1;
+
+CREATE TABLE `shop_distribution_product` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '分销uid',
+  `shop_uid` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '店铺uid',
+  `p_uid` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '商品uid',
+  `status` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '0 开启, 1 关闭',
+  `create_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '创建时间',
+  `rule_data` text NOT NULL COMMENT '分销规则 json {"0":"100","1":"100","2":"100","3"："100"}',
+  PRIMARY KEY (`uid`),
+  KEY `shop_uid` (`shop_uid`),
+  KEY `p_uid` (`p_uid`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+create table `shop_distribution_record` (
+	`uid` int unsigned not null auto_increment comment '分销记录uid',
+	`su_uid` bigint unsigned not null default '0' comment '顾客uid',
+	`order_uid` bigint unsigned not null default '0' comment '订单uid',
+	`cash` int unsigned not null default '0' comment '佣金金额',
+	`weight` int unsigned not null default '0' comment '比例 万分之N',
+	`fix` int unsigned not null default '0' comment '固定佣金',
+	`paid_fee` int unsigned not null default '0' comment '支付价格',
+	`create_time` int unsigned not null default '0' comment '创建时间',
+	`parent_su_uid` bigint unsigned not null default '0' comment '来源用户',
+
+	`level` tinyint unsigned not null default '0' comment '分销等级 0,1,2,3',
+
+	primary key (`uid`),
+	key `su_uid`(`su_uid`,`order_uid`)
+)engine=innodb default charset=utf8 auto_increment=1;
+
+create table `user_distribution` (
+   `su_uid` bigint unsigned not null default '0' comment '用户uid',
+   `parent_su_uid` bigint unsigned not null default '0' comment '来源用户',
+   `status` tinyint unsigned not null default '0' comment '审核情况 0等待审核 1通过 2不通过',
+   `cash_sum` int unsigned not null default '0' comment '佣金总数',
+   `own_order_fee_sum` int unsigned not null default '0' comment '自己的订单总额',
+   `family_order_fee_sum` int unsigned not null default '0' comment '家族订单总额',
+   `own_order_count` int unsigned not null default '0' comment '自己的订单总数',
+   `family_order_count` int unsigned not null default '0' comment '家族订单总数',
+   `L1_cnt` int unsigned not null default '0' comment '下级数量',
+   `L2_cnt` int unsigned not null default '0' comment '下下级数量',
+   `L3_cnt` int unsigned not null default '0' comment '下下下级数量',
+   `create_time` int unsigned not null default '0' comment '创建时间',
+
+   `rule_data` text NOT NULL COMMENT '用户分销规则 json {"0":"100","1":"100","2":"100","3"："100"}',
+
+   primary key (`su_uid`),
+   key `parent_su_uid`(`parent_su_uid`)
+) engine=innodb default charset=utf8 comment '分销用户信息';
+
+create table `shop_agent_product`(
+	`uid` int unsigned not null default '0' comment '商品uid',
+	`shop_uid` bigint unsigned not null default '0' comment '店铺uid',
+	`price_hweight` int unsigned not null default '0' comment '代理可配置的价格区间,最高',
+	`price_lweight` int unsigned not null default '0' comment '代理可配置的价格区间，最低',
+	`price_h` int unsigned not null default '0' comment '最高价格',
+	`price_l` int unsigned not null default '0' comment '最低价格',
+	`status` tinyint unsigned not null default '0' comment '0 启用, 1 不启用',
+	`modify_time` int unsigned not null default '0' comment '编辑时间',
+	`rule_data` text not null default '' comment '分红规则 json',
+	primary key (`uid`)
+)engine=innodb default charset=utf8 comment '代理设置的商品信息';
+
+create table `shop_agent_to_user_product`(
+
+	`uid` int unsigned not null auto_increment comment '代理商品uid',
+	`p_uid` int unsigned not null default '0' comment '商品uid',
+	`a_uid` bigint unsigned not null default '0' comment '属于哪个代理商uid',
+
+	`price` int unsigned not null default '0' comment '价格,单位为分',
+	`ori_price` int unsigned not null default '0' comment '原价,单位为分',
+	`title` varchar(64) not null default '' comment '商品标题',
+	`content` text not null default '' comment '商品详情',
+	`main_img` varchar(255) not null default '' comment '商品主图',
+	`images` text not null default '' comment '商品图片,分号分开多张图片',
+	`modify_time` int unsigned not null default '0' comment '编辑时间',
+	`status` tinyint unsigned not null default '0' comment '0 正常, 1 下架',
+	primary key (`uid`),
+	unique key `a_uid`(`a_uid`,`p_uid`)
+
+)engine=innodb default charset=utf8 auto_increment=1 comment '代理设置的商品信息';
+
+create table `shop_agent_order`(
+
+	`order_uid` bigint unsigned not null default '0' comment '订单uid',
+	`a_uid` int unsigned not null default '0' comment '属于哪个代理商uid',
+	`bonus` int unsigned not null default '0' comment '佣金数额',
+
+	primary key (`order_uid`),
+	key (`a_uid`)
+)engine=innodb default charset=utf8 comment '代理的订单信息';
+
+create table `shop_agent_user`(
+
+	`su_uid` bigint unsigned not null default '0' comment '用户uid',
+	`uid` int unsigned not null default '0' comment '属于哪个代理商uid',
+	`create_time` int unsigned not null default '0' comment '创建时间',
+
+	primary key su_uid(`su_uid`,`uid`)
+)engine=innodb default charset=utf8 comment '代理的用户';
+
+create table `shop_agent`(
+
+	`uid` int unsigned not null auto_increment comment '代理商uid',
+	`su_uid` bigint unsigned not null default '0' comment '用户uid',
+	`shop_uid` bigint unsigned not null default '0' comment '店铺uid',
+    `create_time` int unsigned not null default '0' comment '创建时间',
+    `status` int unsigned not null default '0' comment '状态 0 通过审核 1等待审核 2不通过审核',
+    `cash_sum` int unsigned not null default '0' comment '佣金总数',
+	`order_fee_sum` int unsigned not null default '0' comment '自己的订单总额',
+	`order_count` int unsigned not null default '0' comment '自己的订单总数',
+	`user_count` int unsigned not null default '0' comment '自己的用户总数',
+
+	`title` varchar(64) not null default '' comment '店铺名称',
+	`notice` varchar(128) not null default '' comment '公告',
+
+	primary key (`uid`),
+	key (`su_uid`)
+)engine=innodb default charset=utf8 auto_increment=1 comment '代理信息';
+
+create table `shop_agent_set` (
+	`shop_uid` int unsigned not null default '0' comment '商城uid',
+	`status` tinyint unsigned not null default '0' comment '0 启用, 1 不启用',
+	`rule_data` text not null default '' comment '默认分红规则 json{"cost":{"status"：1},"paid_fee":{"status":"1","weight":"100"},"bonus":{"status":"1","value":"100"}}',
+	`need_check` tinyint unsigned not null default '0' comment '0 不需要审核, 1 需要审核',
+	primary key (`shop_uid`)
+)engine=innodb default charset=utf8 comment '商城代理基本设置';
+
+create table `shop_visit_record`(
+	`uid` int unsigned not null auto_increment comment '访问记录id',
+	`shop_uid` bigint unsigned not null default '0' comment '店铺uid',
+	`su_uid` bigint unsigned not null default '0' comment '用户uid',
+	`user_ip` varchar(16)  comment '用户ip地址',
+	`create_time` int unsigned not null default '0' comment '创建时间',
+	`s_a_uid` bigint unsigned not null default '0' comment '代理uid',
+	`product_uid` int unsigned not null default '0' comment '商品uid',
+	primary key (`uid`),
+	key (`shop_uid`)
+)engine=innodb default charset=utf8 auto_increment=1 comment '流量统计';
+
+
+create table `product_indiana` (
+	`uid` bigint unsigned not null auto_increment comment '夺宝期号id',
+	`shop_uid` bigint unsigned not null default '0' comment '店铺uid',
+	`product_uid` int unsigned not null default '0' comment '商品uid',
+
+	`price_cnt` int unsigned not null default '0' comment '总共需要参与人次',	
+	`min_cnt` int unsigned not null default '1' comment '最低1次',	
+
+	`total_cnt` int unsigned not null default '0' comment '已参与人次, 含未付款',	
+	`code_cnt` int unsigned not null default '0' comment '已分配幸运号码, 支付后才分配，不支持退出',	
+
+	`create_time` int unsigned not null default '0' comment '创建时间',
+	`full_time` int unsigned not null default '0' comment '参与满员时间',
+
+	`win_info` text not null default '' comment '{win_user_id: ,win_user_ip:, win_record_id, win_code: , 
+									calc_a:, calc_b:, win_time:, calc_b_info:}',
+
+	primary key (`uid`),
+	key `shop_uid`(`shop_uid`, `product_uid`)
+) engine=innodb default charset=utf8 auto_increment=1 comment '夺宝商品设置';
+
+create table `product_indiana_record` (
+	`uid` bigint unsigned not null auto_increment comment '夺宝记录uid',
+	`i_uid` bigint unsigned not null default '0' comment '期号id',
+
+	`su_uid` bigint unsigned not null default '0' comment '用户uid',
+	`user_ip` varchar(16)  comment '用户ip地址',
+	`create_time` int unsigned not null default '0' comment '创建时间',
+	`create_time_ms` int unsigned not null default '0' comment '创建时间毫秒, 如141734123表示14:17:34.123用于计算数值A',
+	`code` int unsigned not null default '0' comment '幸运号码',
+	`sp_remark` tinyint unsigned not null default '0' comment '0 未中奖， 1 已中奖',
+
+	primary key (`uid`),
+	key `isuid` (`i_uid`, `su_uid`)
+) engine=innodb default charset=utf8 auto_increment=1 comment '夺宝记录';
+
+create table `product_indiana_order` (
+	`uid` int unsigned not null auto_increment comment 'id',
+	`shop_uid` bigint unsigned not null default '0' comment '店铺uid',
+	`user_id` bigint unsigned not null default '0' comment '顾客uid',
+	`user_ip` varchar(16)  comment '用户ip地址',
+
+	`create_time` int unsigned not null default '0' comment '下单时间',
+
+	`use_cash` int unsigned not null default '0' comment '使用了多少余额, 单位为分',
+
+	`paid_time` int unsigned not null default '0' comment '支付时间',
+	`paid_time_ms` int unsigned not null default '0' comment '支付时间毫秒, 如141734123表示14:17:34.123用于计算数值A',
+	`status` tinyint unsigned not null default '1' comment '1 待支付, 2 待开奖，3 未中奖, 4 已中奖, 10 已取消',
+
+	`i_uid` bigint unsigned not null default '0' comment '期号uid',
+	`quantity` int unsigned not null default '1' comment '购买份数',
+	`start_code` int unsigned not null default '0' comment '第一个幸运编号, 在付款后生成',
+
+	primary key (`uid`),
+	key `su`(`shop_uid`, `user_id`)
+)engine=innodb default charset=utf8 auto_increment=1 comment '订单';
+
+
+CREATE TABLE `shop_activity` (
+  `uid` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '活动id',
+  `shop_uid` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '店铺uid',
+  `p_uid` varchar(255) NOT NULL DEFAULT '0' COMMENT '活动商品id',
+  `title` varchar(64) NOT NULL DEFAULT '' COMMENT '活动标题',
+  `content` text NOT NULL COMMENT '活动介绍',
+  `act_img` varchar(255) NOT NULL DEFAULT '' COMMENT '活动图',
+  `start_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '开始时间',
+  `end_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '结束时间',
+  `type` tinyint(2) unsigned NOT NULL DEFAULT '0' COMMENT '活动类型',
+  PRIMARY KEY (`uid`),
+  KEY `shop_uid` (`shop_uid`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COMMENT '商城活动';
+
+CREATE TABLE `shop_order_delivery` (
+  `uid` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `su_uid` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '配送员id',
+	`order_uid` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '订单id',
+  `create_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '创建时间',
+  `sort` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '排序',
+   `status` tinyint(3) NOT NULL COMMENT '0 配送中 1 已配送',
+  PRIMARY KEY (`uid`),
+  KEY `su_uid` (`su_uid`),
+	KEY `order_uid` (`order_uid`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COMMENT '配送员订单';
+
+CREATE TABLE `shop_support_address` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `shop_uid` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '店铺uid',
+  `puid` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '父级ID',
+  `address` varchar(64) NOT NULL COMMENT '地址名称',
+  `sort` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '排序',
+  `latitude` float(16,10) NOT NULL COMMENT '经度',
+  `longitude` float(16,10) NOT NULL COMMENT '纬度',
+  PRIMARY KEY (`uid`),
+  KEY `shop_uid` (`shop_uid`),
+  KEY `puid` (`puid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT '多级地址';
+
+CREATE TABLE `shop_document` (
+  `uid` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '文档id',
+  `shop_uid` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '店铺uid',
+  `title` varchar(255) NOT NULL DEFAULT '' COMMENT '文档的标题',
+  `content` text NOT NULL COMMENT '文档内容',
+  `create_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '创建时间',
+  `type_in` tinyint(3) NOT NULL DEFAULT '0' COMMENT '文档所属',
+  `link` varchar(255) NOT NULL DEFAULT '' COMMENT '链接',
+  PRIMARY KEY (`uid`),
+  KEY `shop_uid` (`shop_uid`),
+  KEY `type_in` (`type_in`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT '商城广告/购前须知';
+
+create table `shop_biz` (
+    `uid` bigint unsigned not null auto_increment comment 'id',
+    `su_uid` bigint unsigned  comment '对应用户uid',
+    `account` varchar(32) DEFAULT NULL COMMENT '登陆账号',
+    `passwd` varchar(32) DEFAULT NULL COMMENT '登陆密码md5',
+
+    `shop_uid` bigint unsigned not null default '0' comment '店铺uid',
+
+    `title` varchar(64) not null default '' comment '商家标题',
+    `main_img` varchar(255) not null default '' comment '商家主图',
+    `images` text NOT NULL COMMENT '商品图片,分号分开多张图片',
+
+    `type` varchar(64) not null default '' comment '分类 如 采购商 供货商 物流',
+
+    `create_time` int unsigned not null default '0' comment '创建时间',
+    `status` tinyint unsigned not null default '0' comment '0 待审核, 1 审核成功,  2 审核失败',
+    `is_closed`tinyint unsigned not null default '0' comment '0 开业, 1 暂停营业',
+
+    `location` varchar(255) not null default '地址',
+    `contact` varchar(255) not null default '联系人',
+    `phone` varchar(255) not null default '联系电话',
+    `extra_info` text not null default '' comment '{营业执照：，身份证：身份证反面：,...}',
+    `brief` text not null default '' comment '店铺简介',
+
+    `cash_remain` int unsigned not null default '0' comment '账户余额, 可提现余额',
+    `cash_transfered` int unsigned not null default '0' comment '已提现总数',
+
+    `lat` float(9,6) not null default '0' comment '地理位置 维度',
+    `lng` float(9,6) not null default '0' comment '地理位置 经度',
+    `geohash` varchar(16) not null default '' comment '经纬度hash',
+
+    `score_cnt` int unsigned not null default '0' comment '评分次数',
+    `score_total` int unsigned not null default '0' comment '总评分',
+    `fav_cnt` int unsigned not null default '0' comment '收藏数',
+    `read_cnt` int unsigned not null default '0' comment '浏览次数',
+    `hadv` tinyint unsigned not null default '0' comment '是否加V(vip)',
+    `hadrecommend` tinyint unsigned not null default '0' comment '是否推荐',
+    `per_cost` int(10) unsigned not null default '0' comment '人均消费',
+    `sort` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '排序',
+    `admin_uids` text NOT NULL DEFAULT '' COMMENT '管理员uids',
+
+    primary key (`uid`),
+    unique key `su_uid` (`shop_uid`, `su_uid`)
+)engine=innodb default charset=utf8 auto_increment=1 comment '商家入驻';
+
+create table `product_group_order_record` (
+    `uid` bigint unsigned not null auto_increment comment 'id',
+	`go_uid` bigint unsigned not null default '0' comment '团购订单uid',
+	`product_uid` bigint unsigned not null default '0' comment '商品uid',
+	
+    primary key (`uid`),
+    key `product_uid`(`product_uid`)
+)engine=innodb default charset=utf8 auto_increment=1 comment '商品成团记录';
+
+CREATE TABLE `biz_cats` (
+  `uid` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '分类id',
+  `shop_uid` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '店铺uid',
+  `parent_uid` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '父分类uid',
+  `title` varchar(64) NOT NULL DEFAULT '' COMMENT '分类名称',
+  `title_en` varchar(128) NOT NULL DEFAULT '' COMMENT '分类名称英文',
+  `image` varchar(255) NOT NULL DEFAULT '' COMMENT '图片',
+  `create_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '创建时间',
+  `sort` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '排序,从大到小',
+  `status` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '0 正常, 1 隐藏',
+  PRIMARY KEY (`uid`),
+  KEY `shop_uid` (`shop_uid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `guguji` (
+  `uid` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `sp_uid` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '服务商uid',
+  `name` varchar(64) NOT NULL DEFAULT '' COMMENT '设备名称',
+  `ak` varchar(255) NOT NULL DEFAULT '' COMMENT '秘钥',
+  `memobirdid` varchar(255) NOT NULL DEFAULT '' COMMENT '设备编号',
+  `useridentifying` varchar(255) NOT NULL DEFAULT '' COMMENT 'app用户ID',
+  `status` tinyint(4) NOT NULL COMMENT '0.禁用 1.使用',
+  `create_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '创建时间',
+
+  `type` varchar(64) NOT NULL DEFAULT '' COMMENT '设备型号, gugug2',
+  `count` tinyint(4) NOT NULL default '1' COMMENT '每次打印份数',
+
+  `params` text  COMMENT '不同打印机类型不同参数',
+
+  PRIMARY KEY (`uid`),
+  KEY `sp_uid` (`sp_uid`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COMMENT='打印机';
+
+CREATE TABLE `shop_index` (
+  `uid` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `shop_uid` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '店铺uid',
+  `mks` text NOT NULL  COMMENT '页面模块(array)',
+  `create_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '创建时间',
+  `status` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '0 使用, 1禁用',
+  PRIMARY KEY (`uid`),
+  KEY `shop_uid` (`shop_uid`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='商城自定义首页';
+
+CREATE TABLE `shop_index_set` (
+  `uid` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '页面',
+  `sp_uid` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '服务商uid',
+  `content` text NOT NULL COMMENT 'json页面内容',
+  `status` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '0 未审核, 1 审核成功, 20 审核失败',
+  `create_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '创建时间',
+  PRIMARY KEY (`uid`),
+  KEY `sp_uid` (`sp_uid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='页面内容设置';
+
+CREATE TABLE `biz_fav` (
+  `uid` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '收藏id',
+  `user_id` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '用户id',
+  `biz_uid` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '店铺id',
+  `create_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '创建时间',
+  PRIMARY KEY (`uid`),
+  KEY `user_id` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商店收藏'
+
+CREATE TABLE `biz_coupon` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '优惠券id',
+  `biz_uid` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '商家uid',
+  `create_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '创建时间',
+  `duration` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '有效期, 单位为秒, 0表示长期有效',
+  `publish_cnt` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '总发放数量',
+  `used_cnt` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '已发放数量',
+  `title` varchar(32) NOT NULL DEFAULT '' COMMENT '优惠券名称',
+  `img` varchar(255) NOT NULL DEFAULT '' COMMENT '优惠券图片',
+  `brief` varchar(256) NOT NULL DEFAULT '' COMMENT '优惠券说明',
+  `valuation` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '类型, 0 现金券, 1 折扣券',
+  `rule` text NOT NULL COMMENT '计费json {discount: 1000}',
+  `status` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '0 上线, 1 下线',
+  PRIMARY KEY (`uid`),
+
+  KEY `su` (`biz_uid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='商家优惠券';
+
+CREATE TABLE `biz_user_coupon` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '用户优惠券id',
+  `biz_uid` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '商家uid',
+  `user_id` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '用户id',
+  `create_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '创建时间',
+  `expire_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '到期时间,0表示永不过期',
+  `use_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '使用时间',
+  `coupon_uid` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '优惠券id',
+  `info` text NOT NULL COMMENT '计费json {title: 10元, img: xxx, valuation: 0, rule{discount: 1000}}',
+  `read_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '领取时间 或 阅读时间',
+  `status` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '0 正常,20 小程序端删除/不显示',
+  PRIMARY KEY (`uid`),
+  KEY `su` (`biz_uid`,`user_id`),
+  KEY `coupon_uid` (`coupon_uid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='优惠券';
+
+CREATE TABLE `shop_address` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '地址uid',
+  `shop_uid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '商户uid',
+  `address_data` text NOT NULL COMMENT '商家位置json',
+  `create_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '创建时间',
+  PRIMARY KEY (`uid`),
+  KEY `shop_uid` (`shop_uid`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='地址';
+
+/*评论积分管理表*/
+CREATE TABLE `shop_comment_ponit` (
+  `uid` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '评论积分管理uid',
+  `shop_uid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '店铺uid',
+  `text_point` int(5) NOT NULL DEFAULT '0' COMMENT '文字评论获得积分',
+  `img_point` int(5) NOT NULL DEFAULT '0' COMMENT '图片评论获得积分',
+ 
+  PRIMARY KEY (`uid`),
+  KEY `shop_uid` (`shop_uid`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='评论积分管理';

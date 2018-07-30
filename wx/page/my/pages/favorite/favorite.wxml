@@ -1,0 +1,58 @@
+<view class="container">
+	<view class="header">
+    <include src="../../../common/we-navigation.wxml"/>
+  </view>
+
+  <view class="weui-tab__panel">
+	  	<!-- 收藏商品 -->
+      <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+      	<view class="empty-page" hidden="{{favlist.length > 0}}">
+			    <image class="empty-img" src="../../../resources/pic/emptyCart.png"></image>
+			    <text class="empty-text"> -您还没有收藏过商品- </text>
+			  </view>
+				<view class="main-favoriteList" hidden="{{favlist.length == 0}}">
+					<blocx wx:for="{{favlist}}" wx:key="{{index}}">
+						<navigator class="main-favoriteGood" url="../../../class/pages/goodDetail/goodDetail?uid={{item.product.uid}}">
+							<image class="main-favoriteGood-img" src="{{item.product.main_img}}"></image>
+							<view class="main-favoriteGood-info">
+								<view class="main-favoriteGood-title">{{item.product.title}}</view>
+								<view class="main-favoriteGood-cont">
+									<view class="main-favoriteGood-price">
+										¥<text class="main-favoriteGood-priceNum">{{item.price}}</text>
+									</view>
+									<!-- <view class="main-favoriteGood-cartBox"> -->
+										<image class="main-favoriteGood-cart" src="{{cartImg}}"></image>
+									<!-- </view> -->
+								</view>
+							</view>
+						</navigator>
+					</blocx>
+				</view>
+				<!-- <view class="main-empty">
+					<text class="main-empty-text"> -您还没有收藏过商品- </text>
+					<navigator class="main-empty-nav">去逛逛</navigator>
+				</view> -->
+      </view>
+      <!-- 收藏商家 -->
+      <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+			    <view class="empty-text" hidden="{{bizList.length > 0}}"> -您还没有收藏过商品- </view>
+
+				<view class="business-list-box">
+					<block wx:for="{{bizList}}" wx:key="{{index}}">
+						<navigator url="/page/index/pages/businessDetail/businessDetail?uid={{item.biz.uid}}" class="business-box">
+							<image class='business-img' src="{{item.biz.main_img}}"></image>
+							<view class='business-info-box'>
+								<view class="business-title-box">
+									<image wx:if="{{item.biz.hadv == 1}}" class="business-vplus" src="../../../resources/pic/v.png"></image>
+									<text class="business-title">{{item.biz.title}}</text>
+								</view>
+								<view class="business-location" wx:if="{{item.biz.location}}">地址：{{item.biz.location}}</view>
+								<view class="view-cnt" >浏览次数：{{item.biz.read_cnt}}</view>
+								<view class="product-cnt">在售商品：{{item.biz.product_number}}</view>
+							</view>
+						</navigator>
+					</block>
+				</view>
+      </view>
+  </view>	
+</view>

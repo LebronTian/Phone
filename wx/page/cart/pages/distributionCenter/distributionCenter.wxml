@@ -1,0 +1,37 @@
+<!--page/cart/pages/distributionCenter/distributionCenter.wxml-->
+<view class="container">
+	<view class="header" style="background-color: {{mainColor}}">
+  	<image class="header-avatar" src="{{avatar}}"></image>
+    <view class="header-box">
+    	<view class="userInfo-box">
+    		<view class="header-userName">{{name}}</view>
+    		<view class="userTag" hidden="{{!vipName}}">{{vipName}}</view>
+    	</view>
+    	<view class="joinTime-box" hidden="{{!joinTime}}">
+    		<text class="joinTime-title">加入时间</text>
+    		<view class="joinTime">{{joinTime}}</view>
+    	</view>
+    </view>
+  </view>
+	<view class="main">
+    <!-- <view class="main-box">
+      <block wx:for="{{navTitles}}" wx:key="{{index}}">
+        <navigator class="main-section" url="{{item.url}}">
+          <text class="main-section-title">{{item.title}}</text>
+          <view class="rightBtn"></view>
+        </navigator>
+      </block>
+    </view> -->
+
+    <view class="nav-box">
+      <navigator class="nav" wx:for="{{navList}}" wx:key="{{index}}" url="{{item.link}}">
+        <image class="navIcon" src="{{item.imgUrl}}" />
+        <view class="navTitle">{{item.title}}</view>
+        <view class="navInfo">
+          <text class="navInfo-num">{{item.num}} </text>
+          <text class="navInfo-text">{{item.text}}</text>
+        </view>
+      </navigator>
+    </view>
+	</view>
+</view>

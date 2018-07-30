@@ -1,0 +1,111 @@
+.header {
+	padding:60rpx;
+	display:flex;
+	flex-wrap: wrap;
+	/*flex-direction:column;*/
+	align-items:center;
+	/*background-color:#7d4690;*/
+	border-bottom-left-radius: 75%;
+	border-bottom-right-radius: 75%;
+}
+.header-avatar {
+	width: 120rpx;
+	height: 120rpx;
+	/*margin-right: : 30rpx;*/
+	/*margin-bottom: 30rpx;*/
+	border-radius: 60rpx;
+}
+.header-userName {
+	color: #fff;
+	margin: 0 30rpx;
+	/*width: calc(100% - 180rpx);*/
+}
+.vipTag {
+	font-size: 0.8em;
+	color: #fff;
+	border:1px solid #fff;
+	padding: 0 15rpx;
+	line-height: 1.4em;
+}
+.header-userWallet {
+	margin-left: 150rpx;
+	display: flex;
+}
+.header-userWallet-point {
+	color: #fff;
+	margin-right: 30rpx;
+}
+
+
+
+.my-order, .my-setting-box {
+	background-color: #fff;
+	margin-top: 30rpx;
+	padding: 0 20rpx;
+}
+.my-subTitle {
+	display: flex;
+	justify-content: space-between;
+	padding: 20rpx 0;
+	border-bottom: 1px solid #ccc;
+}
+.my-subTitle:last-child {
+	border-bottom: none;
+}
+.my-subTitle-left {
+	width: 90%;
+	display: flex;
+	justify-content: space-between;
+}
+.my-subTitle-leftBox {
+	display: flex;
+	align-items: center;
+}
+.my-subTitle-img {
+	width: 40rpx;
+	height: 40rpx;
+	margin-right: 20rpx;
+}
+.my-subTitle-content {
+	color: #8a8a8a;
+}
+.rightBtn {
+	color: #8a8a8a;
+}
+.my-orderStatus-box {
+	display: flex;
+	font-size: 0.8em;
+	padding: 20rpx 0;
+}
+.my-orderStatus {
+	width: 25%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+}
+.my-orderStatus-img {
+	width: 60rpx;
+	height: 60rpx;
+}
+/*.my-orderStatus-title {
+	color: #884898;
+}*/
+.my-orderStatus-cnt {
+	width: 40rpx;
+	height: 40rpx;
+	/*background-color: #884898;*/
+	line-height: 40rpx;
+	text-align: center;
+	color: #fff;
+	border-radius: 20rpx;
+	position: absolute;
+	right: 18%;
+	top: -10rpx;
+}
+
+
+.weui-footer {
+	margin-top: 60rpx;
+	margin-bottom: 100rpx;
+}

@@ -1,0 +1,165 @@
+  html,body,*{margin:0;padding:0;}
+    body{background-color:#f05c31;overflow-x:hidden;max-width:100%}
+	.loading{background:-webkit-gradient(linear, 0 0, 0 100%, from(#fee960), to(#f05c31));width:100%;height:100%;position:fixed;top:0;z-index:1000;}
+	.loading>img{width:60%;margin-left:20%;margin-top:50%}
+	.loading>div{margin-top:30%;text-align:center;color:white;}
+	.content{position:relative;width:100%;}
+	.bg_img{position:absolute;top:0;z-index:-1;width:100%;}
+	.logo_box{height:49px;width:auto;position:absolute;left:6.25%;top:0;background-color:#028aa6;border-bottom-left-radius:10px ;border-bottom-right-radius:10px ;}
+	.logo_box>img{height:17px;padding:16px 10px;}
+	.go_img{width:31.875%;position:absolute;right:11.25%;top:34.375%;}
+	.rule_img{position:absolute;top:61%;left:26%;width:48%}
+	.reward_box{font-size:14px;position:absolute;left:6.25%;top:87.5%;height:16px;overflow:hidden;width:100%}
+	.reward_list{
+		position:absolute;
+		top:0;
+	}
+	.reward_list1{
+		position:absolute;
+		top:0;
+		animation: slide1 1s infinite;
+    	-webkit-animation: slide1 1s infinite;
+	}
+	@keyframes slide1{
+		0%{top:0;}
+		100%{top:0px;}
+	}
+
+	@-webkit-keyframes slide1{
+		0%{top:0;}
+		100%{top:0px;}
+	}
+	.reward_list2{
+		position:absolute;
+		top:0;
+		animation: slide2 2s infinite;
+    	-webkit-animation: slide2 2s infinite;
+	}
+	@keyframes slide2{
+		0%{top:0;}
+		100%{top:-16px;}
+	}
+
+	@-webkit-keyframes slide2{
+		0%{top:0;}
+		100%{top:-16px;}
+	}
+	.reward_list3{
+		position:absolute;
+		top:0;
+		animation: slide3 3s infinite;
+    	-webkit-animation: slide3 3s infinite;
+	}
+	@keyframes slide3{
+		0%{top:0;}
+		100%{top:-32px;}
+	}
+
+	@-webkit-keyframes slide3{
+		0%{top:0;}
+		100%{top:-32px;}
+	}
+	.reward_list4{
+		position:absolute;
+		top:0;
+		animation: slide4 4s infinite;
+    	-webkit-animation: slide4 4s infinite;
+	}
+	@keyframes slide4{
+		0%{top:0;}
+		100%{top:-48px;}
+	}
+
+	@-webkit-keyframes slide4{
+		0%{top:0;}
+		100%{top:-48px;}
+	}
+	.reward_list5{
+		position:absolute;
+		top:0;
+		animation: slide5 5s infinite;
+    	-webkit-animation: slide5 5s infinite;
+	}
+	@keyframes slide5{
+		0%{top:0;}
+		100%{top:-64px;}
+	}
+
+	@-webkit-keyframes slide5{
+		0%{top:0;}
+		100%{top:-64px;}
+	}
+	.reward_list6{
+		position:absolute;
+		top:0;
+		animation: slide6 6s infinite;
+    	-webkit-animation: slide6 6s infinite;
+	}
+	@keyframes slide6{
+		0%{top:0;}
+		100%{top:-80px;}
+	}
+
+	@-webkit-keyframes slide6{
+		0%{top:0;}
+		100%{top:-80px;}
+	}
+	.reward_list>li{height:18px;line-height:18px}
+	/*活动规则弹出框*/
+	.rule_box{position:absolute;top:0;width:100%;height:100%;z-index:20;display:none}
+	.rule_bg{position:absolute;top:0;width:100%;height:100%;z-index:-1;background-color:rgba(0,0,0,0.5)}
+	.rule_detail{width:87.5%;margin:50px 6.25%;position:relative;}
+	.rule_detail>img{width:100%;}
+	.rule_info{position:absolute;left:3.5%;width:93%;top:18.5%;height:73%;overflow-y:auto}
+	/*没有中奖弹出框*/
+	.empty_box{position:absolute;top:0;width:100%;height:100%;z-index:20;display:none}
+	.empty_bg{position:absolute;top:0;width:100%;height:100%;z-index:-1;background-color:rgba(0,0,0,0.5)}
+	.empty_detail{width:76%;margin:67px 12%;position:relative;}
+	.empty_detail>img{width:100%;}
+	.empty_info{background-color:white;position:absolute;top:29.7%;left:11%;width:78%;height:43%;overflow:hidden;}
+	.empty_info>img{width:100%;height:100%}
+	.empty_detail>button{position:absolute;width:86%;height:11%;left:7%;bottom:6.5%;border:0;border-radius:5px;background-color:#F05C31;color:#FBEF95;}
+	/*中奖弹出框*/
+	.win_box{position:absolute;top:0;width:100%;height:100%;z-index:20;display:none}
+	.win_bg{position:absolute;top:0;width:100%;height:100%;z-index:-1;background-color:rgba(0,0,0,0.5)}
+	.win_detail{width:76%;margin:67px 12%;position:relative;}
+	.win_detail>img{width:100%}
+	.win_info{background-color:white;position:absolute;top:29.7%;left:11%;width:78%;height:43%;overflow:hidden;}
+	.win_info>img{width:100%;height:100%}
+	.win_detail>button{position:absolute;width:86%;height:11%;left:7%;bottom:6.5%;border:0;border-radius:5px;background-color:#F05C31;color:#FBEF95;}
+	.win_title{position:absolute;width:100%;height:36px;top:65%;text-align:center;background-color:#F05C31;color:white;line-height:36px;}
+    /*没中奖弹出框*/
+    .noreward_box{position:absolute;top:0;width:100%;height:100%;z-index:20;display:none}
+    .noreward_bg{position:absolute;top:0;width:100%;height:100%;z-index:-1;background-color:rgba(0,0,0,0.5)}
+    .noreward_detail{width:76.6%;margin:90px 12.7%;position:relative;}
+    .noreward_detail>img{width:100%;}
+    /*分享提示弹出框*/
+    .share_box{position:absolute;top:0;width:100%;height:100%;z-index:20;display:none;}
+    .share_bg{position:absolute;top:0;width:100%;height:100%;z-index:-1;background-color:rgba(0,0,0,0.5)}
+    .share_detail{width:76.6%;margin:90px 12.7%;position:relative;}
+    .share_detail>img{width:100%;}
+    /*个人信息提交表单*/
+    .info_box{position:absolute;top:0;width:100%;height:100%;z-index:20;display:none}
+    .info_bg{position:absolute;top:0;width:100%;height:100%;z-index:-1;background-color:rgba(0,0,0,0.5)}
+    .info_detail{width:76.6%;margin:90px 11.7%;position:relative;}
+    .info_detail>img{width:100%;}
+    .input_box1{height:100%;}
+    .input_box1>div{font-size:24px;margin-top:20%}
+    .input_box1>input{border:thin;height:20%;margin-top:10%;width:100%}
+    .input_box2{height:50%;}
+    .input_box2>div{font-size:24px;}
+    .input_box2>input{border:thin;height:40%;margin-top:5%;width:100%}
+    .input_box3{height:33.33%;}
+    .input_box3>div{font-size:20px;}
+    .input_box3>input{border:thin;height:40%;margin-top:3%;width:100%}
+    .input_box4{height:25%;}
+    .input_box4>div{font-size:16px;}
+    .input_box4>input{border:thin;height:50%;margin-top:1%;width:100%}
+    .btn_submit{position:absolute;height:12.66%;width:86.6%;left:6.7%;bottom:7%;border:0;border-radius:5px;background-color:#F05C31;color:#FBEF95;}
+
+
+
+
+
+
+

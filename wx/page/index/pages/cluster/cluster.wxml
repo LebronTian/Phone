@@ -1,0 +1,22 @@
+<view class='container'>
+	<view class="header"></view>
+	<view class="main">
+		<view class="cluster-goods-box">
+			<block wx:for="{{goodList}}" wx:key="{{key}}">
+				<navigator class="cluster-good" url="../../../class/pages/goodDetail/goodDetail?uid={{item.uid}}">
+					<image class="cluster-good-img" src="{{item.main_img}}"></image>
+					<view class="cluster-good-info">
+						<view class="cluster-good-title">{{item.title}}</view>
+						<view class="cluster-good-num">{{item.group_cnt}}人团</view>
+						<text class="cluster-good-price" style="color: {{mainColor}}">
+							¥ <text class="cluster-good-priceNum">{{item.price}} </text>
+							<text class="cluster-good-originPrice"> ¥ {{item.ori_price / 100}}</text>
+						</text>
+						<view bindtap="openCluster" class="cluster-good-btn" style="background-color: {{mainColor}}">去开团</view>
+					</view>
+				</navigator>
+			</block>
+		</view>
+	</view>
+	<view class="footer" hidden="{{!showNoMore}}">-没有更多商品了-</view>
+</view>

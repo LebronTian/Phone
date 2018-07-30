@@ -1,0 +1,105 @@
+
+
+
+
+.wx_btn{border: 1px solid #CCC; width:130px; height: 32px; background-color: #0E90D2; color: #FFF; font-size: 14px; margin: 10px;}
+.wx_mask{ position: fixed; width: 100%; height: 100%; left: 0; top: 0; background: rgba(0,0,0,0.7); z-index: 9990; display: none;}
+.wx_edit_close{ display: inline-block; font-size: 40px; width: 40px; height: 40px; cursor: pointer; color: #0E90D2; position: absolute; left: 50%; margin-left: 440px; top: 64px; z-index: 9998; display: none;}
+.wx_edit_nav li{ list-style: none; float: left; width: 100px; height: 32px; margin-right: 1px; line-height: 32px; text-align: center; cursor: pointer;}
+.select{ background-color: #0E90D2; color: #FFF;}
+.wx_edit_box{ padding: 20px 14px; background-color: #FFF; width: 945px; height: auto; position: absolute; top: 80px; left: 50%; margin-left: -475px; z-index: 9997; display: none;}
+.wx_edit_nav{ height: 32px; }
+.wx_edit_face{ margin-left: 67px; margin-top: 5px;}			
+.wx_edit_sigle{ margin-left: 320px; margin-top: 5px;}
+.wx_edit_dabble{ margin-left: 347px; margin-top: 5px;}
+.wx_err_info{ width: 300px; height: 32px; background-color: orange; text-align: center; line-height: 32px; color: #FFF; position: fixed; left: 50%; margin-left: -150px; top: 0; display: none; z-index: 9998;}
+
+/*预览*/
+.preview_box{ width: 500px;padding: 14px 20px;margin: 0 auto}
+.preview_box .tit{ text-align: center;}
+.prev_face{ margin-top: 10px;}
+.prev_sigle{ width: 240px; margin: 10px auto; border: 1px solid #CCC;}
+.prev_sigle p{ padding: 0 14px;}
+.prev_sigle .title,.prev_sigle .foot{ height: 24px; line-height: 24px;}
+.prev_sigle .img_box{ width: 240px; height: 140px; padding: 0 15px;}
+.prev_sigle img{ width: 240px; height: 140px;}
+
+.other_box{float: left;margin: 5px;cursor: pointer}
+
+
+/*new yhc*/
+.s_preview_area{
+    float: none;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

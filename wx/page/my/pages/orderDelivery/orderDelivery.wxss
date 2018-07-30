@@ -1,0 +1,25 @@
+@import '../orderDetail/orderDetail.wxss'
+
+
+.delivery-info {
+	width: 90%;
+	margin: 0 auto;
+	padding: 10rpx 0;
+	font-size: 0.9em;
+	border-bottom: 1px solid #ccc;
+}
+.delivery-info:last-child {
+	border-bottom: none;
+}
+.delivery-time {
+	font-size: 0.9em;
+	color: #8a8a8a;
+	line-height: 2.4em;
+}
+
+.empty-delivery {
+	text-align: center;
+	line-height: 3em;
+	font-size: 1.2em;
+	color: #8a8a8a;
+}

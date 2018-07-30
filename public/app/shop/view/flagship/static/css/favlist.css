@@ -1,0 +1,25 @@
+.header-right{border-left: 1px solid #ccc;padding: 0 0.8em;}
+.container{padding: 0}
+.favlist-list{position: relative;}
+.favlist-list-a a{background-color:#fff;color: #333;overflow: hidden;display: flex;position: relative;}
+.favlist-list-aL,.favlist-list-aR,.favlist-list-edit{float: left}
+.favlist-list-aL{width: 35%;position: relative;display: block;overflow: hidden;padding-bottom: 35%;margin-top: 1%;}
+.favlist-list-aL img{position: absolute;width: 100%;height: 100%}
+.favlist-list-aR{width: 65%;padding-bottom:36%;margin-top:1%;background-color:#fff;position: relative;display: block;overflow: hidden;border-bottom: 1px solid #eee;}
+.favlist-list-title{position: absolute;top: 5%;left:5%;width: 90%;}
+.favlist-list-RB{position: absolute;bottom: 5%;left: 5%;width:90%;}
+.favlist-list-del{float: right;border: 1px solid #ff3c53;border-radius: 100px;padding: 1px 6px;}
+
+
+.favlist-list-edit{width: 10%;background-color:#fff;position: relative;overflow: hidden;justify-content: center;align-items: center;}
+.favlist-list-edit i{font-size: 2rem;color: #ff6b00;}
+
+.bw90{width: 100%;overflow: hidden}
+.favlist-all-del{
+	position: fixed;bottom: 0;
+	width: 100%;max-width: 600px;
+	background-color:#ff6b00;
+	text-align: center;
+	font-size: 1.7rem;color: #fff;line-height: 2.2;
+}
+.no-list{text-align: center;margin-top: 2em;}

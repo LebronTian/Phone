@@ -1,0 +1,10 @@
+<!--page/class/pages/biddingUser/biddingUser.wxml-->
+<view class="container">
+	<view class="user" wx:for="{{userList}}" wx:key="{{item.uid}}">
+		<image class="avatar" src="{{item.avatar ? item.avatar : '/page/resources/pic/default.png'}}" />
+		<view class="name">{{item.su.name}}</view>
+		<view class="status">{{index == 0 ? '领先' : '出局'}}</view>
+		<view class="price">￥{{item.price}}</view>
+	</view>
+	<view class="empty" wx:if="{{showEmpty}}">-没有更多记录了-</view>
+</view>

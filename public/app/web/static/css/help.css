@@ -1,0 +1,110 @@
+.am-btn{
+ color: #444;
+ width: 200x;
+ height: 60px;
+ font-size: 16px;
+}
+
+select.am-btn:hover{
+	color: #444;
+}
+
+.am-btn-default{
+ 	color: #444;
+}
+
+.search_input{
+	float: left;
+	width: 120px;
+	height: 40px;
+	margin-top:10px;
+}
+
+.search_btn{
+	display: inline-block;
+	float: left;
+	width: 60px;
+	height: 40px;
+	margin-top: 10px;
+	background: #e6e6e6;
+	border: 1px solid #ccc;
+}
+
+.search_btn:hover{
+	background: #E0E0E0;
+}
+
+.search_btn:active{
+	border: none;
+}
+
+.case_box{
+	width: 100%;
+	height: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	/*overflow: hidden;*/
+}
+.case{
+/*	margin-top:100px;*/
+	float: left;
+	display: inline-block;
+	width: 25%;
+	padding: 20px 2.5%;
+	height: auto;
+	text-decoration: none;
+	color: #444;
+	position: relative;
+	/*cursor: pointer;*/
+	margin-bottom: 50px;
+}
+
+.case img{
+	width: 100%;
+	height: auto;
+}
+
+.case p{
+	margin-top: 5px;
+	width: 100%;
+	text-align: center;
+}
+
+.case_intro{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0%;
+	background: rgba(0,0,0,0.7);
+/*	transform-origin: center;
+	transform: scale(1.2);*/
+	padding: 10px;
+	z-index: 99;
+	color: #fff;
+	display: none;
+}
+
+.case:hover>.case_intro{
+	display: block;
+}
+
+.case_intro img{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-bottom: 10px;
+}
+
+.case_intro span{
+	font-size: 16px;
+	line-height: 20px;
+	margin-bottom: 10px;
+}
+
+.case_intro p{
+	margin:0;
+	font-size: 14px;
+	line-height: 20px;
+	text-align: left;
+}

@@ -1,0 +1,6 @@
+/* page/index/pages/articleClass/articleClass.wxss */
+@import "../../../class/class.wxss"
+
+.main {
+	background-color: #fff;
+}

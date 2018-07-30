@@ -1,0 +1,19 @@
+      .company_detail{
+          width:1000px;margin: 50px 0 25px 170px;
+      }
+      .company_detail > p{margin: 0}
+      .company_contact{ width:1000px;margin-left: 170px}
+      .company_contact > p{
+        margin: 0;
+      }
+      .company_map{
+         width:1000px;margin-left: 170px;margin-top:30px;height: 400px;
+      }
+      #map{
+         float:left;width:350px;height:250px;border:#ccc solid 1px;font-size:12px;
+      }
+      .contact_content {margin:0 auto;width:1170px;}
+      .cube{width:550px;height:350px;float:right}
+      .cube > img{width:550px;height:350px} 
+      .last_img {width:1170px;position:relative;}
+      .last_img > img {position:absolute;left:480px;bottom:30px;width:200px}

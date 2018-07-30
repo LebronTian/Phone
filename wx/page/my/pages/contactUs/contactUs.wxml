@@ -1,0 +1,29 @@
+<!--page/my/pages/contactUs/contactUs.wxml-->
+<view class="container">
+	<view class="map-box">
+		<map id="map" class="map" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location></map>
+	</view>
+	<view class="info-box">
+		<view class="info-section">
+			<image class="info-icon" src="/page/resources/pic/location.png"></image>
+			<text class="info-content">广州市花都区</text>
+		</view>
+		<view class="info-section">
+			<image class="info-icon" src="/page/resources/pic/location.png"></image>
+			<text class="info-content">广州市花都区</text>
+		</view>
+		<view class="info-section">
+			<image class="info-icon" src="/page/resources/pic/location.png"></image>
+			<text class="info-content">广州市花都区</text>
+		</view>
+		<view class="info-section">
+			<image class="info-icon" src="/page/resources/pic/location.png"></image>
+			<text class="info-content">广州市花都区</text>
+		</view>
+		<view class="info-section">
+			<image class="info-icon" src="/page/resources/pic/location.png"></image>
+			<text class="info-content">广州市花都区</text>
+		</view>
+	</view>
+	<button class="contactBtn" open-type="contact">在线咨询</button>
+</view>

@@ -1,0 +1,105 @@
+body, div, img, ul, li{
+    margin: 0;
+    padding: 0;
+}
+
+ul, ul li{
+    list-style: none;
+}
+
+.clear{
+    clear: both;
+}   
+
+.hexagon{
+    position: relative;
+    width: 1020px;
+    padding-top: 80px;
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+    /*overflow: hidden;*/
+}
+
+.hexagon_box{
+    float: left;
+    margin-left: 20px;
+    margin-top: -50px;
+}
+
+.boxF, .boxS, .boxT, .overlay, .overlay_full{
+    width: 180px;
+    height: 225px;
+    /*长宽5:4*/
+    overflow: hidden;
+}
+
+.boxF, .boxS{
+    visibility: hidden;
+    /*FS两层不可见，但占据位置*/
+}
+
+.boxF{
+    transform: rotate(120deg);
+    -o-transform: rotate(120deg);
+    -ms-transform: rotate(120deg);
+    -moz-transform: rotate(120deg);
+    -webkit-transform: rotate(120deg);
+}
+
+.boxS{
+    transform: rotate(-60deg);
+    -o-transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+    -moz-transform: rotate(-60deg);
+    -webkit-transform: rotate(-60deg);
+}
+
+.boxT{
+    transform: rotate(-60deg);
+    background: no-repeat 50% center;
+    background-size: 125% auto;
+    -o-transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+    -moz-transform: rotate(-60deg);
+    -webkit-transform: rotate(-60deg);
+    visibility: visible;
+    display: none;
+    /*T层可见*/
+}
+
+.overlay{
+    display: block;
+    background: #16a6b6;
+    opacity: 0;
+}
+
+.overlay a{
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.hexagon_box .overlay_icon{
+    display: inline-block;
+    margin: 50px 0 15px;
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+    width: 100%;
+}
+
+.hexagon_box .overlay_title{
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    line-height: 20px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+

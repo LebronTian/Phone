@@ -1,0 +1,107 @@
+/*单图文*/
+
+		.s_main_bd{
+			width: 960px;
+			margin: 50px auto;
+		
+		}
+		.s_preview_area{
+			width: 290px;
+			border:1px solid #CCC;
+			padding: 14px;
+			float: left;
+			margin-right: 20px;
+		}
+
+		.s_appmsg_thumb{
+			width: 290px;
+			height: 160px;
+			
+		}
+		.s_appmsg_title{
+			margin-bottom: 10px;
+			font-weight: normal;
+		}
+
+		.s_appmsg_title a{
+			height: 28px;
+			color: #666;
+			word-break:break-all;
+			overflow: auto;
+		}
+		
+		.s_edit_area{
+			width: 570px;
+			padding: 20px;
+			border:1px solid #CCC;
+			float: left;
+			margin-left: 10px;
+			background-color: #F4F5F9;
+		}
+		.s_frm_input_box{
+			display: block;
+
+		}
+		.s_frm_input{
+			width: 518px;
+			height: 28px;
+			border:1px solid #CCC;
+			float: left;
+			margin: 10px 0;
+			padding: 0 40px 0 10px;
+		}
+		.s_frm_label{
+			display: inline-block;
+		}
+		.s_appmsg_edit_item{
+			position: relative;
+		}
+		.frm_counter{
+			position: absolute;
+			right: 15px;
+			font-size: 14px;
+			color: #999;
+			font-family: '微软雅黑';
+		}
+		.frm_counter_bt,
+		.frm_counter_zz{
+			position: absolute;
+			right: 15px;
+			font-size: 14px;
+			color: #999;
+			font-family: '微软雅黑';
+		}
+		.frm_counter_bt{ top: 44px;}
+		.frm_counter_zz{ top: 53px;}
+		.zy_counter{
+			bottom: 0px;
+		}
+		.s_frm_textarea{
+			width: 516px;
+			height: 80px;
+			margin-top: 10px;
+			border-color: #CCC;
+			padding: 10px;
+			word-break:break-all;
+			
+		}
+		.clearfix:after{ content: "."; display: block; clear: both; height: 0; visibility: hidden;}
+		.bt_h,
+		.zz_h
+		{
+			height: 68px;
+		}
+		.s_fm_h{
+		}
+		.zy_h{
+			margin-bottom: 10px;
+		}
+		.sl_enter{
+			color: #999;
+		}
+		p{margin: 0;}
+		.delete_img,
+		.delete_img_s{ display:inline-block; color: #0E90D2; position: absolute; bottom: 0; left: 112px;}
+		#s_codeImgBox{ display: none; position: relative;}
+
+		.s_appmsg_thumb_wrp{ background: url(/app/sp/static/images/default.png) no-repeat center center;}

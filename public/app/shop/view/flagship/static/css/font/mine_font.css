@@ -1,0 +1,27 @@
+
+@font-face {font-family: "mine";
+  src: url('mine.eot'); /* IE9*/
+  src: url('mine.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('mine.woff') format('woff'), /* chrome, firefox */
+  url('mine.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('mine.svg#mine') format('svg'); /* iOS 4.1- */
+}
+
+.icon-mine {
+  font-family:"mine" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-mine-1:before { content: "\e670"; }
+.icon-mine-2:before { content: "\e671"; }
+.icon-mine-3:before { content: "\e672"; }
+.icon-mine-4:before { content: "\e673"; }
+.icon-mine-5:before { content: "\e674"; }
+.icon-mine-6:before { content: "\e675"; }
+.icon-mine-7:before { content: "\e676"; }
+.icon-mine-8:before { content: "\e677"; }
+.icon-mine-9:before { content: "\e678"; }
+.icon-mine-10:before { content: "\e679"; }

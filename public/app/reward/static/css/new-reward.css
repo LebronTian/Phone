@@ -1,0 +1,210 @@
+
+body{
+    font-size: 14px;
+}
+input[type="text"]{
+	font-size: 1.4rem;
+}
+.uploadify-button {
+    line-height: 25px !important;
+}
+.am-checkbox{
+    margin-top: 3px;
+}
+.time-label{
+    height: 46px;
+    line-height: 41px;
+}
+.time-label .am-ucheck-icons{
+    top: 10px;
+}
+.time-label input[type='datetime-local']{
+    display: inline-block;
+}
+.reward-limit-box .am-ucheck-icons{
+    top:10px;
+}
+.reward-limit-box label{
+    height: 46px;
+    line-height: 41px;
+}
+.reward-limit-box input[type='number']{
+    display: inline-block;
+    width: 8em;
+    text-align: center;
+}
+
+.select2-search__field{
+	padding:2px!important
+}
+.addreward-bar p{
+    margin-bottom: 0;
+}
+.reward-setting,
+.probability-setting{
+    margin-bottom: 10px;
+    position: relative;
+    padding: 0 0 5px 0;
+    border-bottom: 1px solid #DDDDDD;
+}
+.reward-setting img{
+	display: inline-block;
+	width: 100px;
+	height: 75px;
+}
+.reward-setting .delete_btn,
+.probability-setting .delete_btn{
+	position: absolute;
+	right: -15px;
+	top: 10px;
+}
+.reward-setting .probability-input{
+	position: relative;
+	text-align: center;
+}
+.reward-setting .probability-input span{
+	position: absolute;
+	right: 0;
+	top: 10px;
+}
+.reward-setting .probability-input button{
+	margin-bottom: 5px;
+}
+.reward-setting p,
+.probability-setting p{
+    margin:0;
+    text-align: center;
+}
+.other-setting{
+    padding:0;
+    line-height:41px;
+    margin-bottom:10px;
+}
+.other-setting .left{
+    text-align: right;
+}
+
+
+.huodongjiesao{
+	background-color: #FF8F8F;
+	padding: 10px;
+	margin: 10px 0;
+}
+.must-input{
+	display: inline-block;
+	color: red;
+	padding: 0 3px;
+	text-align: center;
+}
+.reward-step-1{
+	margin-top: 60px;
+}
+.reward-setting .select-img-bar{
+	position: relative;
+	text-align: center;
+}
+.reward-setting .select-img-bar a{
+	display: none;
+	width: 100px;
+	height: 75px;
+	font-size: 16px;
+	text-align: center;
+	line-height: 75px;
+	position: absolute;
+	left: 50%;
+	margin-left: -50px;
+	top: 0;
+	background: rgba(0,0,0,0.5);
+	/* background-color: #000;
+	opacity: 0.5; */
+	color: #FFFFFF;
+}
+.reward-setting .reward-name{
+	position: relative;
+}
+.reward-setting .reward-name span{
+	position: absolute;
+	left: -15px;
+	top: 9px;
+}
+.activity-title{
+	margin-bottom: 15px;
+}
+.start-end-time{
+	margin-bottom: 15px;
+}
+
+.step-status-bars{
+	padding-bottom: 0;
+	margin-bottom: 0;
+	font-size: 16px;
+	overflow: hidden;
+}
+.step-status-bars li{
+	float: left;
+	margin-right: 10px;
+	 padding: 5px 15px;
+	margin-right: 5px; 
+	background-color: #EEE;  
+}
+ .step-status-bars li a{
+	color: #333;
+} 
+.step-status-bars li.active{
+	background-color: #0E90D2;
+}
+.step-status-bars li.active a{
+	color: #FFF;
+}
+.step-status-bars li.disabled{
+	background-color: #EEE;
+	color: #CCC;
+}
+.step-status-bars li.disabled a{
+	color: #CCC;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

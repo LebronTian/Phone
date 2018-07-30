@@ -1,0 +1,83 @@
+<view class="container">
+  <view class="order-receiveInfo-box" wx:if="{{order.address}}">
+  	<view class="order-receiveTitle">收货地址</view>
+  	<view class="order-receiveInfo">
+  		<view class="order-receiver">
+  			<text class="order-receiverName">{{order.address.name}}</text>
+  			<text class="order-receiverPhone">{{order.address.phone}}</text>
+  		</view>
+  		<view class="order-addressArea">
+  			<text class="order-addressArea">{{order.address.province}} </text>
+  			<text class="order-addressArea">{{order.address.city}} </text>
+  			<text class="order-addressArea">{{order.address.town}} </text>
+  		</view>
+  		<view class="order-addressDetail">{{order.address.address}}</view>
+  	</view>
+  </view>
+  <view class="order-goods-box">
+  	<block wx:for="{{order.products}}" wx:key="{{index}}">
+  		<view class="order-good">
+  			<image class="order-goodImg" src="{{item.img}}"></image>
+  			<view class="order-goodInfo-box">
+  				<view class="order-goodInfo">
+  					<view class="order-goodTitle">{{item.title}}</view>
+  					<view class="order-goodSpecial" hidden="{{!item.specials}}">{{item.specials}}</view>
+  				</view>
+  				<view class="order-goodPrice-box">
+            <text class="order-goodPrice" wx:if="{{options.from === 'pointGood'}}">{{item.paid_point}} 积分</text>
+  					<text class="order-goodPrice" wx:else>¥ {{item.price}}</text>
+  					<text class='order-goodNum'> x {{item.quantity}}</text>
+  				</view>
+  			</view>
+  		</view>
+  	</block>
+  </view>
+
+  <view class="order-receiveInfo-box">
+  	<view class="order-receiveTitle">订单备注</view>
+  	<view class="order-receiveInfo">
+  		<view class="order-addressDetail">{{(order.info && order.info.remark) ? order.info.remark : '无'}}</view>
+  	</view>
+  </view>
+
+  <navigator url="../orderDelivery/orderDelivery?orderId={{options.uid}}" class="order-receiveInfo-box" wx:if="{{order.delivery_info}}">
+  	<view class="order-receiveTitle rightBtn">
+      配送信息
+      <!-- <text class="rightBtn"></text> -->
+    </view>
+  	<view class="order-receiveInfo">
+  		<view class="order-messTitle" wx:for="{{order.delivery_info}}" wx:key="{{index}}">
+    		<text class="order-receiverName">{{index}}</text>:
+    		<text class="order-mess">{{item}}</text>
+  		</view>
+  	</view>
+  </navigator>
+
+  <view class="order-mess-box">
+  	<view class="order-messCont">
+	  	<view class="order-messTitle">
+	  		订单编号:
+	  		<text class="order-mess">{{order.uid}}</text>
+	  	</view>
+	  	<view class="order-messTitle">
+	  		下单时间:
+	  		<text class="order-mess">{{order.time}}</text>
+	  	</view>
+	  </view>
+	  <view class="order-price-box" wx:if="{{options.from === 'pointGood'}}">
+	  	<text class="order-priceTitle">订单积分</text>
+	  	<text class="order-price">{{order.paid_point}} 积分</text>
+	  </view>
+    <view class="order-price-box" wx:else>
+      <text class="order-priceTitle">订单金额</text>
+      <text class="order-price">¥ {{order.price}}</text>
+    </view>
+  </view>
+  <view class="footer">
+  	<!-- <view class="order-footerBtn">删除订单</view> -->
+    <!-- <view class="order-footerBtn">再来一单</view> -->
+    <!-- <form bindsubmit="handleOrder" report-submit> -->
+      <button id="{{handle + ' ' + order.uid}}" open-type="{{handle == '联系发货' ? 'contact' : ''}}" class="order-footerBtn {{handle == '去付款' ? 'order-footerBtn-red' : ''}}" wx:for="{{order.handles}}" wx:key="{{index}}" wx:for-item="handle" bindtap="handleOrder">{{handle}}</button>
+    <!-- </form> -->
+  </view>
+</view>

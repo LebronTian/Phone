@@ -1,0 +1,39 @@
+@import '../cluster/cluster.wxss';
+
+.goodInfo-header {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+}
+.seckill-good-title {
+	display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.good-price {
+	text-align: right;
+}
+.good-oriPrice {
+	line-height: 1em;
+	color: #8a8a8a;
+	text-decoration: line-through;
+}
+.seckill-time {
+	font-size: 0.8em;
+	line-height: 2em;
+}
+.time {
+	font-size: 1.2em;
+	/*text-align: right;*/
+}
+.seckill-time__title {
+	font-size: 1.2em;
+}
+
+/*.goodInfo-footer {
+	margin-top: 30rpx;
+}*/

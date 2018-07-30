@@ -1,0 +1,184 @@
+@import '../../../my/pages/coupon/coupon.wxss';
+
+.header {
+	margin-top: 30rpx;
+	background-color: #fff;
+}
+.getAddress {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.navToEditAddress {
+	border-bottom: 1px solid #ccc;
+}
+.orderInfo-box {
+	width: 90%;
+	line-height: 2em;
+	padding: 20rpx 10rpx;
+}
+.orderInfo-receiver {
+	display: flex;
+	justify-content: space-between;
+}
+.orderInfo-address {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+.orderInfo-subtitle, .rightBtn {
+	color: #8a8a8a;
+}
+
+
+.body-goods-box {
+	padding-bottom: 150rpx;
+}
+.cart-goods {
+	padding:0 20rpx;
+	background-color:#fff;
+	margin-top:30rpx;
+	/*border-bottom: 1px solid #ccc;*/
+    overflow: hidden;
+}
+.cart-goodsClass {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid #ccc;
+	color: #8a8a8a;
+	line-height: 2.4em;
+}
+/*.cart-goodsClass-title {
+	color: #7d4690;
+}*/
+
+.cart-goodItem {
+	display: flex;
+	align-items: center;
+	padding: 20rpx 0;
+	border-bottom: 1px solid #ccc;
+}
+.cart-goods .cart-goodItem:last-child {
+	border-bottom: none;
+}
+.cart-selectedIcon-box {
+	width: 30rpx;
+	height: 30rpx;
+	border: 1px solid #efefef;
+	border-radius: 15rpx;
+	line-height: 30rpx;
+}
+.cart-selectedIcon {
+	width: 30rpx;
+	height: 30rpx;
+}
+.cart-goodImg {
+	width: 160rpx;
+	height: 160rpx;
+	border: 1px solid #ccc;
+	margin-right: 20rpx;
+}
+.cart-goodInfo {
+	width: 75%;
+}
+.cart-goodInfo-title {
+	width: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+.cart-goodInfo-special {
+	color: #999;
+	width: 100%;
+}
+.cart-goodInfo-price, .order-delivery {
+	color: #f80000;
+}
+
+
+
+.order-delivery-box {
+	display: flex;
+	justify-content: space-between;
+	line-height: 3em;
+	border-bottom: 1px solid #ccc;
+}
+.order-message {
+	display: flex;
+	padding: 11px 0;
+	border-bottom: 1px solid #ccc;
+}
+.order-message__last {
+	border-bottom: none;
+}
+.order-userMessageInput {
+	width: 72%;
+}
+.order-sumUp {
+	float: right;
+	line-height: 3em;
+}
+.order-coupon {
+	display: flex;
+	justify-content: space-between;
+	line-height: 3em;
+	border-bottom: 1px solid #ccc;
+}
+
+
+
+.footer {
+	position:fixed;
+	bottom:0;
+	left:0;
+	padding:20rpx;
+	width: calc(100% - 40rpx);
+	background-color:#fff;
+	border-top: 1px solid #ccc;
+	z-index: 999;
+}
+.footer-accountBtn-box {
+	float: right;
+	display: flex;
+	align-items: center;
+}
+.footer-accountBtn {
+	background-color: #fc363c;
+	color: #fff;
+	margin-left: 20rpx;
+	padding: 10rpx 30rpx;
+	line-height: 1.6em;
+	border-radius: 3px;
+}
+
+
+.aside-coupon {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #f4f5f5;
+	overflow: scroll;
+	transform: translateX(100%);
+	transition: 0.3s;
+}
+.aside-coupon-show {
+	z-index: 99999;
+	transform: translateX(0);
+}
+.aside-coupon-cancel {
+	z-index: 99999;
+	position: fixed;
+	width: 80%;
+	text-align: center;
+	bottom: 30rpx;
+	left: 10%;
+	/*background-color: #7d4690;*/
+	color: #fff;
+	font-size: 1.2em;
+	border-radius: 10px;
+	line-height: 2.4em;
+}

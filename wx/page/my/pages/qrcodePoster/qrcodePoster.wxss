@@ -1,0 +1,49 @@
+/* page/my/pages/qrcodePoster/qrcodePoster.wxss */
+.main {
+	background-color: #333;
+	padding: 50rpx 0;
+}
+.mainImg {
+	width: 500rpx;
+	height: 888rpx;
+	display: block;
+	margin: 0 auto;
+	border-radius: 20rpx;
+}
+.empty {
+	text-align: center;
+	color: #8a8a8a;
+	line-height: 3em;
+	width: 100%;
+}
+
+
+.footer-title {
+	text-align: center;
+	font-size: 0.9em;
+	color: #8a8a8a;
+	line-height: 2.4em;
+}
+
+.imgs-box {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+.img-option-wrap {
+	position: relative;
+}
+.img-option {
+	width: 100rpx;
+	height: 100rpx;
+	margin: 20rpx;
+}
+.selectedIcon {
+	width: 40rpx;
+	height: 40rpx;
+	position: absolute;
+	left: calc(50% - 20rpx);
+	top: calc(50% - 20rpx);
+}

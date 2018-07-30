@@ -1,0 +1,5 @@
+/* page/index/pages/vedioPage/vedioPage.wxss */
+
+.vedio {
+	width: 100%;
+}

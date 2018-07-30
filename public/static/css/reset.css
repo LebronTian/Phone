@@ -1,0 +1,63 @@
+@charset "utf-8";
+/* reset */  
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button {margin:0;padding:0}  /* 初始化标签在所有浏览器中的margin、padding值 */  
+ul{font-size: 0} /*让ul下的li没有间隙*/
+fieldset,img {border:0 none}  /* 重置fieldset（表单分组）、图片的边框为0*/  
+dl,ul,ol,menu,li {list-style:none}   /* 重置类表前导符号为onne,menu在HTML5中有效 */  
+blockquote, q {quotes: none}   /* 重置嵌套引用的引号类型 */  
+blockquote:before, blockquote:after,q:before, q:after {content:'';content:none}  /* 重置嵌套引用*/  
+input,select,textarea,button {vertical-align:middle}  /* 重置表单控件垂直居中*/  
+button {border:0 none;background-color:transparent;cursor:pointer}  /* 重置表单button按钮效果 */  
+body {background:#fff}   /* 重置body 页面背景为白色 */  
+body,th,td,input,select,textarea,button {font-size:12px;line-height:1 ;font-family:Arial, Helvetica, sans-serif,"微软雅黑","黑体","宋体";color:#666} /* 重置页面文字属性 */  
+a {color:#666;text-decoration:none}  /* 重置链接a标签 */  
+a:active, a:hover {text-decoration:none}   /* 重置链接a标签的鼠标滑动效果 */  
+address,caption,cite,code,dfn,em,var {font-style:normal;font-weight:normal}  /* 重置样式标签的样式 */  
+caption {display:none;}    /* 重置表格标题为隐藏 */  
+table {width:100%;border-collapse:collapse;border-spacing:0;table-layout:fixed;}    /* 重置table属性 */  
+img{vertical-align:middle}  /* 图片在当前行内的垂直位置 */  
+input[type="submit"],input[type="reset"],input[type="button"],select,button{-webkit-appearance: none;} /*重置下拉框样式*/   
+/* 页面设置 */  
+   
+  /* 取消a标签点击后的虚线框 */  
+a {outline: none;}    
+a:active {star:expression(this.onFocus=this.blur());}  
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+select::-ms-expand{display: none;}
+   
+ /* 设置页面文字等在拖动鼠标选中情况下的背景色与文字颜色 */  
+/*   
+::selection {color: #fff;background-color: #4C6E78;}      
+::-moz-selection {color: #fff;background-color: #4C6E78;}   
+*/  
+  
+/*清除浮动*/  
+.clear{clear: both !important;zoom:1;overflow:hidden}  
+  
+/*清除浮动--推荐使用*/  
+.clearfix:before,.clearfix:after{content: '';display: table}  
+.clearfix:after{clear: both;}
+
+[h]{display: none !important;}    /*隐藏*/
+[b]{box-sizing: border-box !important;}    /*内边（border ,  padding）*/
+[f0]{font-size:0}
+
+/*单词跨行*/
+.break-word{word-wrap: break-word;}
+
+/*字母跨行*/
+.break-all{word-wrap: break-all;}
+
+/*单行超出省略*/
+.ellipsis{white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+
+/*鼠标手势*/
+.hand{cursor: pointer !important;}
+
+/*无法选中文字*/
+.no-copy{-webkit-user-select: none;-ms-user-select: none;-moz-user-select: none;user-select: none}
+
+/*ie浏览器兼容*/
+abbr,article,aside,audio,canvas,datalist,details,dialog,eventsource,figure,footer,header,hgroup,mark,menu,meter,nav,output,progress,section,time,video{display: block;}
+.c-white{color:#fff}.c-black{color:#333}.c-red{color:#ff3c53}.c-gray{color:#999}
+.fz12{font-size: 12px}.fz14{font-size: 14px}.fz16{font-size: 16px}.fz18{font-size: 18px}.fz20{font-size: 20px}

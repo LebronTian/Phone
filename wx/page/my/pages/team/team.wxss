@@ -1,0 +1,40 @@
+.user__num {
+	line-height: 2.4em;
+	text-indent: 1.3em;
+	color: #8a8a8a;
+}
+.main-user {
+	padding: 5%;
+	width: 90%;
+	display: flex;
+	justify-content: space-between;
+	background-color: #fff;
+	border-bottom: 1px solid #ccc;
+}
+.main-user-avatar {
+	width: 120rpx;
+	height: 120rpx;
+	margin-right: 20rpx;
+}
+.main-user-info {
+	width: calc(100% - 140rpx);
+}
+.main-user-name {
+	text-align: left;
+}
+.main-user-time {
+	font-size: 0.8em;
+	color: #bfbfbf;
+	text-align: right;
+}
+.footer {
+	text-align: center;
+	line-height: 3.6em;
+	color: #ccc;
+	font-size: 0.9em;
+}
+.noMore {
+	text-align: center;
+	line-height: 3em;
+	color: #8a8a8a;
+}

@@ -1,0 +1,8 @@
+<!--page/class/pages/custom/custom.wxml-->
+<import src="/page/common/indexNodes.wxml"/>
+
+<view class="template-container" wx:if="{{nodes && nodes.length > 0}}">
+  <block wx:for="{{nodes}}" wx:for-item="item" wx:key="{{index}}">
+    <template is="{{item.component}}" data="{{...item.nodedata}}" />
+  </block>
+</view>

@@ -1,0 +1,125 @@
+.mess-bodyList {
+	background-color: #2d3037;
+	padding: 50rpx;
+	padding-bottom: 50px;
+	min-height: 600rpx;
+}
+.mess-listTitle-box {
+	display: flex;
+}
+.mess-listTitle, .mess-listSubTitle {
+	font-weight: bold;
+	color: #7a7a7a;
+}
+.mess-listTitle {
+	width: 70%;
+}
+.mess-listEditComment {
+	text-align: right;
+	font-size: 0.9em;
+	color: #fff;
+}
+.mess-listItem, .mess-listItem-admin {
+	display: flex;
+	padding: 40rpx 0;
+}
+.mess-listItem-admin {
+	background-color: #f5f5f5;
+	padding: 30rpx;
+}
+.mess-itemAvatar-box {
+	width: 20%;
+}
+.mess-itemAvatar {
+	width: 40px;
+	height: 40px;
+}
+.mess-itemInfo-box {
+	width: 80%;
+	display: flex;
+	flex-wrap: wrap;
+}
+.mess-itemName {
+	width: 65%;
+	color: #707070;
+}
+.mess-like-box {
+	width: 25%;
+	color: #8a8a8a;
+	font-size: 0.8em;
+	line-height: 1.2em;
+}
+.mess-likeNum {
+	margin: 20rpx;
+}
+.mess-likeBtn, .mess-deleteBtn {
+	width: 20px;
+	height: 20px;
+	vertical-align: text-bottom;
+}
+.mess-delete-box {
+	width: 10%;
+}
+
+.mess-itemContent {
+	width: 100%;
+	color: #bfbfbf;
+	overflow-wrap: break-word;
+}
+.mess-listItem-admin .mess-itemContent {
+	color: #666;
+}
+.message-footer {
+	position: fixed;
+	bottom: 5px;
+	width: 100%;
+	z-index: 9999;
+}
+.message-footerBtn {
+	width: 90%;
+}
+
+/*写评论弹窗*/
+.modal-writeConment {
+	width: 90%;
+	position: fixed;
+	top: 100px;
+	left: 5%;
+	background-color: #fff;
+	text-align: center;
+	border-radius: 5px;
+	z-index: 99999;
+}
+.modal-title {
+	margin: 10px;
+}
+.modal-textarea-box {
+	border: 1px solid #cdcdcd;
+	margin: 10px auto;
+	padding: 15px;
+	width: 80%;
+}
+.modal-textarea {
+	width: 100%;
+	height: 5em;
+	text-align: left;
+}
+.modal-prompt {
+	color: #8a8a8a;
+	font-size: 0.8em;
+	line-height: 3em;
+}
+.modal-btnBox {
+	font-size: 1.1em;
+	height: 40px;
+	display: flex;
+}
+.modal-cancelBtn, .modal-correctBtn {
+	width: 50%;
+	border-radius: 5px;
+	line-height: 40px;
+}
+.modal-correctBtn {
+	color: #26ab28;
+}
+

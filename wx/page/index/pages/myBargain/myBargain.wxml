@@ -1,0 +1,44 @@
+<view class='container'>
+	<view class="header">
+  	<view class="weui-navbar" style="background-color: #fff">
+    <block wx:for-items="{{tabs}}" wx:key="{{index}}">
+      <view data-id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" style="color: {{activeIndex == index ? mainColor : '#8a8a8a'}};" bindtap="tabClick">
+          <view class="weui-navbar__title">{{item}}</view>
+      </view>
+    </block>
+    <view class="weui-navbar__slider" style="background-color: {{mainColor}}; left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px); width: 6em"></view>
+		</view>
+  </view>
+	<view class="main">
+		<view class="cluster-goods-box">
+			<block wx:for="{{list}}" wx:key="{{key}}">
+				<navigator class="cluster-good" url="../bargain/bargain?id={{item.bargain.uid}}">
+					<image class="cluster-good-img" src="{{item.bargain.product_info.img}}"></image>
+					<view class="cluster-good-info">
+						<view class="goodInfo-header">
+							<view class="cluster-good-title">{{item.bargain.title}}</view>
+						</view>
+						<view class="good-price" style="color: {{mainColor}}">
+							<view class="price-box">
+								最低砍购价：¥ 
+								<text class="cluster-good-priceNum">{{item.price}} </text>
+								<text class="good-oriPrice"> ¥ {{item.ori_price}}</text>
+							</view>
+							
+						</view>
+						<view class="goodInfo-footer" hidden="{{item.bargain.rule.end_time == 0}}">
+							<view class="seckill-time remain-time" wx:if="{{item.status == 0}}">
+								仅剩 <text style="color: {{mainColor}};">{{item.remainTime}}</text>
+							</view>
+							<view class="seckill-time remain-time" wx:else>
+								砍价已过期
+							</view>
+							<!-- <navigator url="../../../class/pages/goodDetail/goodDetail?uid={{item.uid}}" hidden="{{item.seckillStatus != 1}}" class="cluster-good-btn" style="background-color: {{mainColor}}">立即开砍</navigator> -->
+					  </view>
+					</view>
+				</navigator>
+			</block>
+		</view>
+	</view>
+	<view class="footer" hidden="{{!showNoMore}}">-没有更多商品了-</view>
+</view>

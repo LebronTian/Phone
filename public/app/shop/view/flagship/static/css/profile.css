@@ -1,0 +1,15 @@
+		.container{
+			background: #fff;padding: 0;
+		}
+		.container p{
+			border-bottom:1px solid #eee;
+			padding:  0.5em;
+		}
+		.container p .textRight{
+			float: right;color: #999;
+		}
+		.container p input.phone,.container p input.recommend{padding: 0.5em 0;float:right;border: none;text-align: right;color: #999;font-size: 1.4rem;position: relative;top: -2px;width: 7em;}
+		.container p input.recommend{
+			border: 1px solid #eee;border-radius: 5px;outline:none;width: 5em;
+		}
+		.phone_okBtn,.recommend_okBtn{border: 1px solid #ccc;background: #eee;padding: 2px 4px;border-radius: 4px;}

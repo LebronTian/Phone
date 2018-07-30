@@ -1,0 +1,43 @@
+<!--pages/coupon/coupon.wxml-->
+<import src="../../../common/wxParse/wxParse.wxml"/>
+
+<view class="container">
+	<view class="{{couponData.coupon_can_get == 1 ? 'header' : ''}}">
+		<view class="header-info-box" style="padding-bottom: {{couponData.coupon_can_get == 1 ? '' : '60rpx'}}">
+			<image class="shop-img" src="{{businessData.main_img}}"></image>
+			<text class="shop-title">{{businessData.title}}</text>
+			<text class="coupon-discount">{{couponData.coupon_can_get == 1 ? '给你发了一个红包' : couponData.title}}</text>
+			<text class="coupon-time" hidden="{{couponData.coupon_can_get == 1}}">{{couponData.time}}</text>
+		</view>
+		<!-- 打开红包 -->
+		<view wx:if="{{couponData.coupon_can_get == 1}}" class="open-box">
+			<image class="open-img {{open ? 'open-img-rotate' : ''}}" src="../../image/open.png" bindtap="openTap"></image>
+		</view>
+		<!-- 红包二维码 -->
+		<view wx:else class="qrcode-box">
+			<text class="qrcode-title">核销二维码</text>
+			<image class="qrcode-img" src="{{qrcode}}" bindtap="previewCode" wx:if="{{couponData.user_coupon}}"></image>
+			<text wx:else class="">商家已下架该活动</text>
+		</view>
+	</view>
+	<view class="main">
+		<!-- 店铺信息 -->
+		<view class="shop-info-box">
+			<view class="shop-phone">
+				<image class="phone-img" src="../../../resources/pic/phone.png"></image>
+				<text class="phone-number">{{businessData.phone}}</text>
+			</view>
+			<view class="shop-address">
+				<image class="phone-img" src="../../../resources/pic/location.png"></image>
+				<text class="address-text">{{businessData.location}}</text>
+			</view>
+		</view>
+		<!-- 使用说明 -->
+		<view class="instruction-box">
+			<view class="instruction-title">使用说明</view>
+			<view class="instruction-text">
+				<template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+			</view>
+		</view>
+	</view>
+</view>

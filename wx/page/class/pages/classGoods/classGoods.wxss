@@ -1,0 +1,77 @@
+@import '../../class.wxss';
+.sortBtn-box {
+	background-color: #fff;
+	padding: 20rpx 0;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	text-align: center;
+	justify-content: space-around;
+}
+.sortBtn {
+	/*padding: 0 30rpx;*/
+	/*width: 20%;*/
+}
+
+.header-btns {
+	position: relative;
+}
+.srot-box {
+	opacity: 0;
+	position: absolute;
+	top: 100%;
+	z-index: 999;
+	background-color: #FFFFFF;
+	line-height: 1.41176471;
+	font-size: 34rpx;
+	height: 0;
+    overflow: hidden;
+	
+	transform: translateY(-50%);
+	transition: .3s;
+}
+.srot-box__show {
+	width: 100%;
+	height: auto;
+
+	opacity: 1;
+    transform: translateY(0);
+}
+
+.sort-item {
+	margin-left: 40rpx;
+	line-height: 3.6em;
+	border-bottom: 1px solid #ccc;
+}
+.sort-item:last-child {
+	border-bottom: none;
+}
+
+.main {
+	position: relative;
+  margin-top:4px;
+}
+
+/*阴影页面样式*/
+.shadow {
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+.shadow-show {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	background-color: gray;
+	opacity: 0.5;
+}
+
+.empty-info {
+	text-align: center;
+	color: #8a8a8a;
+	/*margin: 30rpx 0;*/
+	line-height: 3.6em;
+}
+

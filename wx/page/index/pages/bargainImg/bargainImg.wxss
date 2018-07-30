@@ -1,0 +1,10 @@
+/* page/index/pages/bargainImg/bargainImg.wxss */
+.shareImg {
+	width: 750rpx;
+	height: 1330rpx;
+}
+.footer {
+	font-size: 0.8em;
+	line-height: 2em;
+	text-align: center;
+}

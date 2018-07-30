@@ -1,0 +1,605 @@
+<!--基础元素-->
+<!-- 搜索框 -->
+<template name="search">
+  <navigator url="/page/index/pages/search/search" class="weui-search-bar" style="{{styleText}}">
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" placeholder="搜索" />
+      </view>
+      <label class="weui-search-bar__label">
+        <icon class="weui-icon-search" type="search" size="14"></icon>
+        <view class="weui-search-bar__text">搜索</view>
+      </label>
+    </view>
+  </navigator>
+</template>
+
+
+<!-- 轮播图 -->
+<template name="swiper">
+  <view class="header-swiper-box" style="{{styleText}}">
+    <swiper class="header-swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" interval="{{interval}}" duration="{{duration}}" vertical="{{vertical}}">
+      <block wx:for="{{list}}" wx:key="{{index}}">
+        <swiper-item>
+          <view class="swiper-item" data-link="{{item.link}}" bindtap="subNavTap">
+            <image class="header-swiperImg" src="{{item.img}}"></image>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</template>
+
+
+
+
+
+<!-- 文本框（标题） -->
+<template name="text">
+  <view class="header-title-box" style="{{styleText}}" bindtap="subNavTap" data-link="{{list[0].link}}">
+    <text>{{list[0].title}}</text>
+  </view>
+</template>
+
+
+<!-- 小导航栏 -->
+<template name="navigations">
+  <view class="body-subNavs-box" style="{{styleText}}">
+    <button wx:for="{{list}}" wx:key="{{index}}" class="body-subNav" data-link="{{item.link}}" open-type="{{item.contact ? 'contact' : ''}}" bindtap="subNavTap" style="{{itemStyleText}}">
+      <image class="body-subNav-img" src="{{item.img}}" style="{{imgStyleText}}"></image>
+      <text class="body-subNav-title">{{item.title}}</text>
+    </button>
+  </view>
+</template>
+
+<!-- 商品列表 三列 -->
+<template name="goods">
+  <view class="body-class-box">
+      <view class="body-classGoods-box">
+        <block wx:for="{{list}}" wx:for-item="good" wx:key="{{index}}">
+          <navigator url="/page/class/pages/goodDetail/goodDetail?uid={{good.uid}}" class="body-classGood">
+            <image class="body-goodImg" mode="aspectFit" src="{{good.main_img}}" />
+            <text class="body-goodTitle">{{good.title}} \n</text>
+            <view class="body-classGoods-footer">
+              <text class="body-goodPrice">¥ {{good.price}}</text>
+              <text class="body-goodSell">销量 {{good.sell_cnt}}</text>
+            </view>
+          </navigator>
+        </block>
+      </view>
+  </view>
+</template>
+
+<!-- 商品列表 二列 -->
+<template name="goods2">
+  <view class="good-box2">
+    <block wx:for="{{list}}" wx:key="{{index}}">
+      <navigator url="/page/class/pages/goodDetail/goodDetail?uid={{item.uid}}" class="good2">
+        <image class="goodImg2" src="{{item.main_img}}"></image>
+        <view class="goodInfo-box2">
+          <view class="goodTitle2">{{item.title}}</view>
+          <view class="goodPrice-box2" style="color: {{mainColor}};">
+              ¥<text class="goodPrice-num2">{{item.price}}</text>
+            <text class="good-sellCnt2">{{item.sell_cnt}}人付款</text>
+          </view>
+        </view>          
+      </navigator>
+    </block>
+  </view> 
+</template>
+
+<!-- 商品列表 一列 -->
+<template name="goods1">
+  <view class="good-box1">
+    <block wx:for="{{list}}" wx:key="{{index}}">
+      <navigator url="/page/class/pages/goodDetail/goodDetail?uid={{item.uid}}" class="good1">
+        <image class="goodImg1" src="{{item.main_img}}"></image>
+        <view class="goodInfo-box1">
+          <view class="goodTitle1">{{item.title}}</view>
+          <view class="goodPrice-box1" style="color: {{mainColor}};">
+              ¥<text class="goodPrice-num1">{{item.price}}</text>
+            <text class="good-sellCnt1">{{item.sell_cnt}}人付款</text>
+          </view>
+        </view>          
+      </navigator>
+    </block>
+  </view>
+</template>
+
+<!-- 推广图片 -->
+<template name="image1">
+  <view class="newImage-box">
+      <image class="big-img" bindtap="tapImg" data-link="{{list[0].link}}" src="{{list[0].url}}" style="{{styleText}}"></image>
+  </view>
+</template>
+
+
+<template name="image2">
+  <view class="newImage-box">
+      <image class="two-img" bindtap="tapImg" data-link="{{list[0].link1}}" src="{{list[0].url1}}"></image>
+      <image class="two-img" bindtap="tapImg" data-link="{{list[0].link2}}" src="{{list[0].url2}}"></image>
+  </view>
+</template>
+
+
+<template name="image3">
+  <view class="newImage-box">
+      <image class="new-img" bindtap="tapImg" data-link="{{list[0].link1}}" src="{{list[0].url1}}"></image>
+      <image class="new-subImg" bindtap="tapImg" data-link="{{list[0].link2}}" src="{{list[0].url2}}"></image>
+      <image class="new-subImg" bindtap="tapImg" data-link="{{list[0].link3}}" src="{{list[0].url3}}"></image>
+  </view>
+</template>
+
+
+<template name="image4">
+  <view class="newImage-box" >
+      <image class="four-img" bindtap="tapImg" data-link="{{list[0].link1}}" src="{{list[0].url1}}"></image>
+      <image class="four-img" bindtap="tapImg" data-link="{{list[0].link2}}" src="{{list[0].url2}}"></image>
+      <image class="four-img" bindtap="tapImg" data-link="{{list[0].link3}}" src="{{list[0].url3}}"></image>
+      <image class="four-img" bindtap="tapImg" data-link="{{list[0].link4}}" src="{{list[0].url4}}"></image>
+  </view>
+</template>
+
+
+<!-- 视频播放器 -->
+<template name="video">
+  <view class="video-container">
+    <video class="vedio" src="{{src}}" initial-time="{{initialTime || 0}}" controls="{{options.controls || true}}" autoplay="{{autoplay || false}}" loop="{{loop || false}}" muted="{{muted || false}}" style="{{styleText}}"></video>
+  </view>
+</template>
+
+
+
+
+
+
+
+
+
+<!-- ******************************** 新版组件 ******************************** -->
+
+<!-- 功能插件 -->
+
+
+<!-- 轮播图 -->
+<template name="lunBo">
+  <view style="margin-top: {{checkeda ? '10px' : 0}}" class="swiper-box node-item">
+    <swiper class="swiper" indicator-dots autoplay circular>
+      <block wx:for="{{list}}" wx:key="{{index}}">
+        <swiper-item>
+          <view class="swiper-item" data-link="{{item.link}}" bindtap="subNavTap">
+            <image class="swiperImg" src="{{item.imgUrl}}"></image>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</template>
+
+
+<!-- 图标 / 小导航 -->
+<template name="tuBiao">
+  <form bindsubmit="subNavTap" report-submit>
+    <view style="margin-top: {{checkeda ? '10px' : 0}}" class="subNavs-box node-item">
+        <button wx:for="{{list}}" wx:key="{{index}}" class="subNav" data-link="{{item.link}}" open-type="{{item.contact ? 'contact' : ''}}" formType="{{item.contact ? '' : 'submit'}}">
+          <image class="subNav-img" src="{{item.imgUrl}}"></image>
+          <text class="subNav-title">{{item.title}}</text>
+        </button>
+    </view>
+  </form>
+</template>
+
+<!-- 一张预览大图 -->
+<template name="yiTuPreview">
+  <view style="margin-top: {{checkeda ? '10px' : 0}}" class="newImage-box node-item">
+    <image class="big-img" mode="widthFix" bindtap="previewImg" data-src="{{imgUrl}}" src="{{imgUrl}}"></image>
+  </view>
+</template>
+
+<!-- 一张大图 -->
+<template name="yiTu">
+  <view style="margin-top: {{checkeda ? '10px' : 0}}" class="newImage-box node-item">
+    <image class="big-img" mode="widthFix" bindtap="subNavTap" data-link="{{link}}" src="{{imgUrl}}"></image>
+  </view>
+</template>
+
+<!-- 两张大图 -->
+<template name="erTu">
+  <view style="margin-top: {{checkeda ? '10px' : 0}}" class="multiImage-box node-item">
+    <image wx:for="{{list}}" wx:key="{{index}}" class="two-img" mode="widthFix" bindtap="subNavTap" data-link="{{item.link}}" src="{{item.imgUrl}}"></image>
+  </view>
+</template>
+
+<!-- 三张大图 -->
+<template name="sanTu">
+  <view style="margin-top: {{checkeda ? '10px' : 0}}" class="multiImage-box node-item">
+    <image wx:for="{{list}}" wx:key="{{index}}" class="three-img" mode="widthFix" bindtap="subNavTap" data-link="{{item.link}}" src="{{item.imgUrl}}"></image>
+  </view>
+</template>
+
+
+<!-- 多张图片及标题 -->
+<template name="duoTu">
+  <view style="margin-top: {{checkeda ? '10px' : 0}}" class="newImage-box node-item">
+    <image wx:for="{{list}}" wx:key="{{index}}" class="sixImg-normal {{index == 0 ? 'sixImg-big' : ''}}" bindtap="subNavTap" data-link="{{item.link}}" src="{{item.imgUrl}}"></image>
+  </view>
+</template>
+
+
+<!-- 四张图 -->
+<template name="siTu">
+  <view style="margin-top: {{checkeda ? '10px' : 0}}" class="newImage-box node-item">
+    <image wx:for="{{list}}" wx:key="{{index}}" class="four-img" bindtap="subNavTap" data-link="{{item.link}}" src="{{item.imgUrl}}"></image>
+  </view>
+</template>
+
+
+<!-- 九宫格 -->
+<template name="jiuTu">
+  <view style="margin-top: {{checkeda ? '10px' : 0}}" class="newImage-box node-item">
+    <image wx:for="{{list}}" wx:key="{{index}}" class="nine-img" bindtap="subNavTap" data-link="{{item.link}}" src="{{item.imgUrl}}"></image>
+  </view>
+</template>
+
+
+<!-- 左右滑动组件 -->
+<template name="huaDong">
+  <scroll-view style="margin-top: {{checkeda ? '10px' : 0}}" scroll-x="true" class="node-item">
+    <view class="slide-box">
+      <block wx:for="{{list}}" wx:key="{{index}}">
+        <navigator class="slide-item" url="{{item.link}}">
+          <image class="slide-item-img" src="{{item.imgUrl}}"></image>
+          <!-- <text class="slide-item-title">title</text> -->
+        </navigator>
+      </block>
+    </view>
+  </scroll-view>
+</template>
+
+<!-- 复合标题 -->
+<!-- <template name="biaoTi">
+  <view class="xcx_title">
+    <view class="title1">title</view>
+    <view class="title2">title</view>
+    <view class="title3">
+      <view class="title_bd_lt"></view><text class="titlt_ct">title</text>
+      <view class="title_bd_rt"></view>
+    </view>
+  </view>
+</template> -->
+
+<!-- 商城公告 -->
+<template name="gongGao">
+  <view style="margin-top: {{checkeda ? '10px' : 0}}" class="placard-box" hidden="{{!list.length}}">
+    <view class="placardImg-box">
+      <!-- <image class="header-placardImg" src="{{icon}}" style="{{imgStyleText}}"></image> -->
+      <image class="placardImg" src="https://weixin.uctphp.com/?_uct_token=00759ef40eee1d3f971ffabcf901e1df&_u=common.img&name=board.png"></image>
+    </view>
+    <swiper class="swiperCont" autoplay circular vertical>
+      <block wx:for="{{list}}" wx:for-item="ele" wx:key="{{index}}">
+        <swiper-item class="swiperCont-item">
+          <navigator class="radio-item" url="pages/placard/placard?articleId={{ele.uid}}">{{ele.title}}</navigator>
+        </swiper-item>
+      </block>
+    </swiper>
+    <text class="rightBtn"></text>
+  </view>
+</template>
+
+
+<!-- 文本标题组件 -->
+<template name="biaoTi">
+  <view style="margin-top: {{checkeda ? '10px' : 0}}; background-color: {{moduleStyle.backgroundColor}}; color: {{moduleStyle.color}}; font-size: {{moduleStyle.fontSize + 'px'}};" class="title-box node-item" bindtap="subNavTap" data-link="{{link}}">
+    <text>{{title}}</text>
+  </view>
+</template>
+
+
+<!-- 搜索组件 -->
+<template name="souSuo">
+  <navigator url="/page/index/pages/search/search" class="weui-search-bar">
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" placeholder="搜索" />
+      </view>
+      <label class="weui-search-bar__label">
+        <icon class="weui-icon-search" type="search" size="14"></icon>
+        <view class="weui-search-bar__text">{{title}}</view>
+      </label>
+    </view>
+  </navigator>
+</template>
+
+
+<!-- 新闻组件 todo -->
+<template name="xinWen">
+  <view style="margin-top: {{checkeda ? '10px' : 0}}" class="xcx_news node-item">
+    <navigator class="news" wx:for="{{list}}" wx:key="{{index}}" url="/page/index/pages/article/article?newsId={{item.uid}}">
+      <view class="lt">
+        <view class="title">{{item.title}}</view>
+        <view class="intro">{{item.digest}}</view>
+        <view class="info"><text>{{item.cat.title ? item.cat.title : "其他"}}</text><text>{{item.addTime}}</text></view>
+      </view>
+      <view class="rt">
+        <image src="{{item.main_img}}"></image>
+      </view>
+    </navigator>
+  </view>
+</template>
+
+
+<!-- 单行组件 -->
+<template name="danHang">
+  <view style="margin-top: {{checkeda ? '10px' : 0}}" class="xcx_imagetext node-item" bindtap="subNavTap" data-link="{{link}}">
+    <view class="imagetext-img">
+      <image src="{{imgUrl}}"></image>
+    </view>
+    <view class="imagetext-title ellipsis">{{title}}</view>
+    <view class="glyphicon glyphicon glyphicon-chevron-right imagetext-icon"></view>
+  </view>
+</template>
+
+
+<!-- 多行组件 -->
+<template name="duoHang">
+  <view style="margin-top: {{checkeda ? '10px' : 0}}" class="xcx_phototitle node-item">
+    <view class="multi-item" wx:for="{{list}}" wx:key="{{index}}" bindtap="subNavTap" data-link="{{item.link}}">
+      <image src="{{item.imgUrl}}"></image>
+      <text>{{item.title}}</text>
+    </view>
+  </view>
+</template>
+
+
+<!-- 复制图文组合 -->
+<template name="fuZa">
+  <view style="margin-top: {{checkeda ? '10px' : 0}}" class="xcx_fztw node-item">
+    <image class="fztw-img" src="{{imgUrl}}"></image>
+    <view class="fztw-detail">
+      <view class="fztw-titleone ellipsis">{{title1}}</view>
+      <view class="fztw-titletwo ellipsis">{{title2}}</view>
+      <view class="fztw-titlethree ellipsis">
+        <text>{{keyword1}}</text>
+      </view>
+    </view>
+    <view class="fztw-btn" bindtap="subNavTap" data-link="{{link}}">{{button}}</view>
+  </view>
+</template>
+
+
+<!-- 视频组件 -->
+<template name="shiPin">
+  <view style="margin-top: {{checkeda ? '10px' : 0}}" class="video-container node-item">
+    <video class="vedio" src="{{vedioUrl}}"></video>
+  </view>
+</template>
+
+
+
+
+<!-- 营销组件 -->
+<!-- 活动 -->
+<template name="huoDong">
+  <view style="margin-top: {{checkeda ? '10px' : 0}}" class="node-item">
+    <navigator wx:for="{{list}}" wx:key="{{index}}" class="exercise-box" url="/page/cart/pages/exerciseDetail/exerciseDetail?f_uid={{item.uid}}">
+      <image class="exer-img" src="{{item.main_img}}"></image>
+      <view class="exer-title">{{item.title}}</view>
+      <view class="info-box">
+        <text class="price">￥ {{item.price}}</text>
+        <text class="time">{{item.date}}</text>
+        <text class="address">-{{item.access_rule.address}}</text>
+      </view>
+    </navigator>
+  </view>
+</template>
+
+
+<!-- 按钮组 -->
+<template name="anNiu">
+  <view style="margin-top: {{checkeda ? '10px' : 0}}" class="xcx_button node-item">
+    <view class="clearfix">
+      <view class="li" wx:for="{{list}}" wx:key="{{index}}" bindtap="subNavTap" data-link="{{item.link}}">
+        <image src="{{item.imgUrl}}" />
+        <text class="ellipsis">{{item.title}}</text>
+      </view>
+    </view>
+  </view>
+</template>
+
+<!-- 门店信息展示组件 todo -->
+<template name="menDian">
+  <view style="margin-top: {{checkeda ? '10px' : 0}}" class="xcx_mendian node-item">
+    <view class="mendian">
+      <view class="lt">
+        <image class="menDian-img" src="{{imgUrl}}"></image>
+      </view>
+      <view class="rt">
+        <view class="name">{{title}}</view>
+        <view class="time">营业时间:<text class="span">{{time}}</text></view>
+      </view>
+    </view>
+    <view class="addr">
+      <view class="lt location-box" data-title="{{title}}" data-address="{{address}}" data-lat="{{lat}}" data-lng="{{lng}}" bindtap="navToLoc">
+        <image class="mendian-locationIcon" src="/page/resources/pic/location.png"></image>
+        <text class="address ellipsis">{{address}}</text>
+      </view>
+      <view class="ct">|</view>
+      <view class="rt" data-phone="{{phone}}" bindtap="makePhone">
+        <image class="mendian-phoneIcon" src="/page/resources/pic/phone.png"></image>
+      </view>
+    </view>
+  </view>
+</template>
+
+<!-- 砍价商品 -->
+<template name="kanJia">
+  <view style="margin-top: {{checkeda ? '10px' : 0}}" class="node-item">
+    <navigator wx:for="{{list}}" wx:key="{{index}}" class="kanjia" url="/page/index/pages/bargain/bargain?id={{item.uid}}">
+      <view class="photo">
+        <image class="good-img" src="{{item.main_img}}"></image>
+        <view class="bottom">
+          <view class="lt">
+            <text>最低砍价：¥ </text>
+            <text>{{item.price}} </text>
+            <text style="text-decoration: line-through;"> ¥ {{item.ori_price}}</text>
+          </view>
+          <view class="rt">立即开砍</view>
+        </view>
+      </view>
+      <view class="info">
+        <view class="title">{{item.title}}</view>
+        <view class="binfo">
+          <view class="" wx:if="{{item.rule.end_time == 0}}">
+            <text style="color: {{mainColor}};">无限期</text>
+          </view>
+          <view class="" wx:else>
+            仅剩 <text style="color: #f80000;">{{item.remainTime}}</text>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</template>
+
+<!-- 拼团组件 -->
+<template name="pinTuan">
+  <view style="margin-top: {{checkeda ? '10px' : 0}}" class="node-item">
+    <navigator wx:for="{{list}}" wx:key="{{index}}" class="pintuan" url="/page/class/pages/goodDetail/goodDetail?uid={{item.uid}}">
+      <view class="photo">
+        <image class="cluster-good-img" src="{{item.main_img}}"></image>
+      </view>
+      <view class="bview">
+        <view class="name">{{item.title}}</view>
+        <view class="info">
+          <view class="price">
+            <view class="cost" style="color: {{mainColor}}">{{item.price}}</view>
+            <view class="discount"> ¥ {{item.ori_price}}</view>
+          </view>
+          <view class="btns">
+            <view class="num">{{item.group_cnt}}人团</view>
+            <view class="pt" style="background-color: {{mainColor}}">去拼团</view>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</template>
+
+<!-- 商品陈列组件 -->
+<template name="chanPin">
+  <view wx:if="{{selecteda === 'xcx_product'}}" style="margin-top: {{checkeda ? '10px' : 0}}" class="xcx-good-subBox node-item">
+    <navigator wx:for="{{list}}" wx:key="{{index}}" class="xcx-good" url="/page/class/pages/goodDetail/goodDetail?uid={{item.uid}}" >
+      <image class="xcx-goodImg" src="{{item.main_img}}"></image>
+      <text class="xcx-goodTitle">{{item.title}}</text>
+      <view class="xcx-good-footer">
+        <text class="xcx-goodPrice">¥ {{item.price}}</text>
+        <text class="xcx-goodSell">销量 {{item.sell_cnt}}</text>
+      </view>
+      
+    </navigator>
+  </view>
+  <view wx:if="{{selecteda === 'xcx_producta'}}" style="margin-top: {{checkeda ? '10px' : 0}}" class="good-box1">
+    <block wx:for="{{list}}" wx:key="{{index}}">
+      <navigator url="/page/class/pages/goodDetail/goodDetail?uid={{item.uid}}" class="good1">
+        <image class="goodImg1" src="{{item.main_img}}"></image>
+        <view class="goodInfo-box1">
+          <view class="goodTitle1">{{item.title}}</view>
+          <view class="goodPrice-box1">
+              ¥ <text class="goodPrice-num1">{{item.price}}</text>
+            <view class="good-sellCnt1">销量 {{item.sell_cnt}}</view>
+          </view>
+        </view>          
+      </navigator>
+    </block>
+  </view>
+  <view wx:if="{{selecteda === 'xcx_productb'}}" style="margin-top: {{checkeda ? '10px' : 0}}" class="good-box1Big">
+    <block wx:for="{{list}}" wx:key="{{index}}">
+      <navigator url="/page/class/pages/goodDetail/goodDetail?uid={{item.uid}}" class="good1-big">
+        <image class="goodImg1-big" src="{{item.main_img}}"></image>
+        <view class="">
+          <view class="goodTitle1">{{item.title}}</view>
+          <view class="goodPrice-box1">
+              ¥ <text class="goodPrice-num1">{{item.price}}</text>
+            <view class="good-sellCnt1">销量 {{item.sell_cnt}}</view>
+          </view>
+        </view>          
+      </navigator>
+    </block>
+  </view>
+</template>
+
+<!-- 团队预约 -->
+<template name="tuanDui">
+  <view style="margin-top: {{checkeda ? '10px' : 0}}" class="xcx_team node-item">
+    <view class="team" wx:for="{{list}}" wx:key="{{index}}">
+      <view class="tview">
+        <view class="face"><image class="team-avatar" src="{{item.main_img}}" /></view>
+        <view class="lt">
+          <view class="name">{{item.title}}</view>
+          <view class="position">{{item.job}}</view>
+        </view>
+        <view class="rt">
+          <view class="price"><text>¥</text>{{item.price}}</view>
+          <view class="discount">预约特惠价格</view>
+        </view>
+      </view>
+      <view class="bview">
+        <view class="bv01">
+          <view class="tags">
+            <view class="tag" hidden="{{!item.tag1}}">{{item.tag1}}</view>
+            <view class="tag" hidden="{{!item.tag2}}">{{item.tag2}}</view>
+            <view class="tag" hidden="{{!item.tag3}}">{{item.tag3}}</view>
+          </view>
+          <navigator url="/page/my/pages/contactPost/contactPost?uid={{item.uid}}" class="yuyue">预约TA</navigator>
+        </view>
+        <view class="bv02 text-center"><text>好评率：{{item.praiseNum ? item.praiseNum : 0}}</text><text>评论数：{{item.commentNum ? item.commentNum : 0}}</text><text>已被约：{{item.bookNum ? item.bookNum : 0}}</text></view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<!-- 预约组件 -->
+<template name="yuYue">
+  <view style="margin-top: {{checkeda ? '10px' : 0}}" class="book-box node-item">
+    <block wx:for="{{list}}" wx:key="{{index}}">
+      <view class="book-title">免费预约 - {{item.title}}</view>
+      <view class="module-main">
+        <form bindsubmit="submitInfo" data-id="{{item.uid}}" class="msg-form">
+          <input name="name" class="msg-input" placeholder="请输入预约姓名"/>
+          <input name="phone" class="msg-input" type="number" placeholder="请输入预约手机号"/>
+          <button class="msg-btn" form-type="submit">立即预约</button>
+        </form>  
+      </view>
+    </block>
+  </view>
+</template>
+
+<!-- 秒杀组件 -->
+<template name="miaoSha">
+  <view style="margin-top: {{checkeda ? '10px' : 0}}" class="node-item">
+    <navigator wx:for="{{list}}" wx:key="{{index}}" class="miaosha" url="/page/class/pages/goodDetail/goodDetail?uid={{item.uid}}">
+      <view class="photo">
+        <image class="good-img" src="{{item.main_img}}"></image>
+      </view>
+      <view class="bview">
+        <view class="name ellipsis">{{item.title}}</view>
+        <view class="info">
+          <view class="price">
+            <view class="cost">¥ {{item.price}}</view>
+            <view class="discount">¥ {{item.ori_price}}</view>
+          </view>
+          <view class="btns">
+            <view class="num" wx:if="{{item.seckillStatus == 1}}">
+              距离秒杀 {{item.seckillStatus == 0 ? '开始' : '结束'}} 还有:
+              <view>{{item.seckillStatus == 0 ? item.startTime : item.endTime}}</view>
+            </view>
+            <view class="pt" hidden="{{item.seckillStatus != 1}}">立即秒杀</view>
+            <view class="pt" wx:if="{{item.seckillStatus != 1}}">已过期</view>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</template>

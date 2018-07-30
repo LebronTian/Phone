@@ -1,0 +1,20 @@
+<view class="container">
+  <view class="order-receiveInfo-box">
+  	<view class="order-receiveTitle">选择评论的商品</view>
+  </view>
+  <view class="order-goods-box">
+  	<block wx:for="{{order.products}}" wx:key="{{index}}">
+  		<view class="order-good">
+  			<image class="order-goodImg" src="{{item.img}}"></image>
+  			<view class="order-goodInfo-box">
+					<view class="order-goodTitle">{{item.title}}</view>
+  				<view class="order-goodPrice-box">
+  					<text class="order-goodPrice">¥ {{item.price}}</text>
+  					<text class='order-goodNum'> x {{item.quantity}}</text>
+  				</view>
+  				<navigator class="navToComment" url="../comment/comment?order_id={{order.uid}}&uid={{item.id}}">去评论</navigator>
+  			</view>
+  		</view>
+  	</block>
+  </view>
+</view>

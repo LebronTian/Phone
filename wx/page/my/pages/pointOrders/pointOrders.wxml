@@ -1,0 +1,44 @@
+<!--page/my/pages/pointOrders/pointOrders.wxml-->
+<view class="container">
+    <!-- 订单为空页面 -->
+    <view class="empty-page" hidden="{{!orderEmpty}}">
+      <image class="empty-img" src="../../../resources/pic/orderEmpty.png"></image>
+      <text class="empty-text">您没有相关订单 去逛逛</text>
+    </view>
+		<!-- 商品简介页面 -->
+    <view class="weui-tab__content" hidden="{{orderEmpty}}">
+      <block wx:for="{{orderList}}" wx:key="{{item.uid}}">
+        <view class="order">
+          <navigator url="../orderDetail/orderDetail?from=pointGood&uid={{item.uid}}">
+            <view class="order-header">
+              <view class="order-date">{{item.date}}</view>
+            </view>
+            <view class="order-body">
+              <image class="order-bodyImg" src="{{item.img}}"></image>
+              <view class="order-bodyInfo-box">
+                <view class="order-id-box">
+                  <text class="order-subTitle">订单编号：</text>
+                  <text class="order-id"> {{item.uid}}</text>
+                </view>
+                <view class="order-price-box">
+                  <text class="order-subTitle">订单积分：</text>
+                  <text class="order-price"> {{item.paid_point}}</text>
+                </view>
+                <view class="order-status-box">
+                  <text class="order-subTitle">订单状态：</text>
+                  <text class="order-status"> {{item.status}}</text>
+                </view>
+              </view>
+            </view>
+          </navigator>
+          <view class="order-footer">
+            <view class="order-footerBtn {{handle == '去付款' ? 'order-footerBtn-red' : ''}}" wx:for="{{item.handles}}" wx:key="{{index}}" wx:for-item="handle">
+              <button class="order-footerBtn-handle" wx:if="{{handle == '联系发货'}}" open-type="contact">联系发货</button>
+              <button id="{{item.uid}}" class="order-footerBtn-handle" wx:elif="{{handle == '分享好友参团'}}" open-type="share">分享好友参团</button>
+              <button id="{{handle + ' ' + item.uid}}" class="order-footerBtn-handle" wx:else bindtap="handleOrder">{{handle}}</button>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+</view>

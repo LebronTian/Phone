@@ -1,0 +1,11 @@
+<!--page/my/pages/register/register.wxml-->
+<view class="container">
+	<view class="register-btn">点击签到</view>
+	<view class="register-record">
+		<block wx:for="{{[1,2,3,4,5,6]}}" wx:key="{{index}}">
+			<view class="record">
+				2017-12-31-15:34:31
+			</view>
+		</block>
+	</view>
+</view>

@@ -1,0 +1,26 @@
+<view class="container">
+  <view class="header">
+    <include src="../../../common/we-navigation.wxml"/>
+  </view>
+  <view class="main">
+    <view class="weui-tab__panel">
+      <view class="user__num">共 {{num}} 人</view>
+      <view class="main-userList-box">
+        <block wx:for="{{userList}}" wx:key="{{index}}">
+          <view class="main-user">
+            <image class="main-user-avatar" src="{{item.avatar}}"></image>
+            <view class="main-user-info">
+              <view class="main-user-name">{{item.name}}\n</view>
+              <view class="main-user-paidCash">消费金额：{{item.cash}}</view>
+              <view class="main-user-time">{{item.time}}</view>
+            </view>
+          </view>
+        </block>
+      </view>
+      <view class="noMore" hidden="{{!showNomore}}">没有更多数据了</view>
+    </view>
+  </view>
+  <view class="footer" hidden="{{!userList.length == 0}}">
+    -没有更多数据了-
+  </view>
+</view>

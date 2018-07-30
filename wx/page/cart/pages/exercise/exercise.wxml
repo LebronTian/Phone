@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="main">
+    <view class="exercise-list">
+      <block wx:for="{{list}}" wx:key="{{index}}">
+        <navigator class="exercise-box" url="../exerciseDetail/exerciseDetail?f_uid={{item.uid}}">
+          <image class="exer-img" src="{{item.img}}"></image>
+        	<!-- <image class="exer-img" src="https://weixin.uctphp.com/?_a=upload&_u=index.out&uidm=182260790"></image> -->
+        	<view class="exer-title">{{item.title}}</view>
+        	<view class="info-box">
+        		<text class="price" style="background-color: {{mainColor}};">￥ {{item.price}}</text>
+            <text class="time">{{item.date}}</text>
+        		<text class="address">-{{item.access_rule.address}}</text>
+        	</view>
+        </navigator>
+      </block>
+      <view class="no-more" wx:if="{{noMore}}">-没有更多活动了-</view>
+    </view>
+  </view>
+</view>

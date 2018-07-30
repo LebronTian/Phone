@@ -1,0 +1,97 @@
+#headNav{
+	height: 42px;
+	line-height: 42px;
+	border-bottom: 1px solid #e5e5e5;
+	width: 100%;
+}
+body{background-color:#52B4D1}
+.search_bar{
+	height: 38px;
+	width: 300px;
+	
+	float: right;
+}
+#navBar{
+	width: 100%;
+	height: 75px;
+	line-height: 75px;
+	border-bottom: 1px solid #e5e5e5;
+}
+#navBar a{
+	display: inline-block;
+	height: 75px;
+	padding: 0 24px;
+	color: #000;
+	font-size: 14px;
+}
+#navBar a:hover{
+	text-decoration: none;
+	background-color: #E91B23;
+	color: #FFF;
+}
+#mainBody{
+	background-color: #f0f0f0;
+	padding-top: 20px;
+	margin-bottom: 20px;
+}
+.buy-list-box {
+  padding: 0px;
+  list-style-type: none;
+  border: solid 1px #d3d3d3;
+  background-color: #FFFFFF;
+}
+.buy-list-box li {
+  padding: 15px 10px;
+  font: 15px bold;
+  border-bottom: solid 1px #d3d3d3;
+}
+.selected {
+  color: #af1616;
+}
+.content{
+	background-color: rgba(255,255,255,0.7);
+	border:1px solid #cccccc;
+}
+.content tr td{
+	padding-top:10px;
+	border-right:1px solid #cccccc;
+	border-bottom:1px solid #cccccc;
+}
+#footer{
+	height: 190px;
+	width: 100%;
+	background-color: #52B4D1;
+	padding: 40px 60px 0 60px;
+}
+#footer p{
+	color: #FFF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

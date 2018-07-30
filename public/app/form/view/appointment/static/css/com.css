@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+	width: 100%;
+	height: 100%;
+}
+li{
+	list-style: none;
+}
+a:link,a:hover,a:visited,a:active{
+	text-decoration: none;
+}
+@font-face { 
+	font-family: Lovelo-Black;
+	src: url('../font/fonts.TTF');
+} 
+.font-size-18{
+	font-size: 18px;
+}
+input:focus,
+button:focus{
+	outline: none;
+}
+body{ 
+	font-size: 16px;
+	font-family: '微软雅黑';
+}
+.box-sizing{ box-sizing:border-box; -moz-box-sizing:border-box; /* Firefox */ -webkit-box-sizing:border-box; /* Safari */}

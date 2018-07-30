@@ -1,0 +1,69 @@
+<!--page/cart/pages/exerSigner/exerSigner.wxml-->
+<view class="page">
+  <!-- <form bindsubmit="submitSignInfo"> -->
+    <view class="sign-main">
+      <view class="sign-title">报名信息</view>
+      <block wx:for="{{infoData}}" wx:for-item="item" wx:key="{{index}}">
+          <template is="{{item.type}}" data="{{...item}}"/>
+      </block>
+    </view>
+    <view class="weui-btn-area">
+        <button style="margin-bottom: 100rpx; color: #fff; background-color: {{mainColor}}" bindtap="handleSign">报名操作</button>
+    </view>
+  <!-- </form> -->
+</view>
+
+
+<!-- 单行输入框 -->
+<template name="text">
+  <view class="sign-cell">
+    <view class="sign-cellTitle">
+      <view class="sign-cellTitle-label">
+        {{name}}
+        <text class="required-tag">({{required ? "必填" : "选填"}})</text>
+      </view>
+    </view>
+    <view class="sign-cellInput-box">
+      <input name="{{id}}" class="sign-cell-input" bindinput="inputInfo" />
+    </view>
+  </view>
+</template>
+<!-- 多行输入框 -->
+<template name="text_multi">
+  <view class="sign-cell">
+    <view class="sign-cellTitle">
+      <view class="sign-cellTitle-label">
+        {{name}}
+        <text class="required-tag">({{required ? "必填" : "选填"}})</text>
+      </view>
+    </view>
+    <view class="sign-cellTextarea-box">
+      <textarea name="{{id}}" class="sign-textarea" placeholder="" style="height: 7.2em" />
+    </view>
+  </view>
+</template>
+<!-- 图片上传框 -->
+<template name="file_img">
+  <view class="sign-cell">
+    <view class="sign-cellTitle">
+      <view class="sign-cellTitle-label">
+        {{name}}
+        <text class="required-tag">({{required ? "必填" : "选填"}})</text>
+      </view>
+    </view>
+    <!-- <view class="sign-cellInput-box"> -->
+    <view class="weui-uploader__bd upload-box">
+      <view class="weui-uploader__files" hidden="{{!value}}">
+        <!-- <block wx:for-items="{{files}}" wx:key="{{index}}"> -->
+        <view class="weui-uploader__file" bindtap="previewImage">
+          <image class="weui-uploader__img" src="{{value}}" mode="aspectFill" />
+        </view>
+        <!-- </block> -->
+      </view>
+      <view class="weui-uploader__input-box">
+        <view data-id="{{id}}" class="weui-uploader__input" bindtap="chooseImage"></view>
+      </view>
+    </view>
+    <!-- </view> -->
+  </view>
+</template>

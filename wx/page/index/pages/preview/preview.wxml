@@ -1,0 +1,9 @@
+<!--page/index/pages/preview/preview.wxml-->
+<!-- 模版生成页面 -->
+<import src="/page/common/indexNodes.wxml"/>
+
+<view class="container">
+	<block wx:for="{{nodes}}" wx:for-item="item" wx:key="{{index}}">
+    <template is="{{item.component}}" data="{{...item.nodedata}}"/>
+  </block>
+</view>

@@ -1,0 +1,34 @@
+<view class='container'>
+	<view class="main">
+		<view class="cluster-goods-box">
+			<block wx:for="{{goodList}}" wx:key="{{key}}">
+				<navigator class="cluster-good" url="../bargain/bargain?id={{item.uid}}">
+					<image class="cluster-good-img" src="{{item.product_info.img}}"></image>
+					<view class="cluster-good-info">
+						<view class="goodInfo-header">
+							<view class="cluster-good-title">{{item.title}}</view>
+						</view>
+						<view class="good-price" style="color: {{mainColor}}">
+							<view class="bargain-price">
+								最低砍购价：¥ 
+								<text class="cluster-good-priceNum">{{item.price}} </text>
+								<text class="good-oriPrice"> ¥ {{item.ori_price}}</text>
+							</view>
+							
+						</view>
+						<view class="goodInfo-footer">
+							<view class="seckill-time" wx:if="{{item.rule.end_time == 0}}">
+								<text style="color: {{mainColor}};">无限期</text>
+							</view>
+							<view class="seckill-time" wx:else>
+								仅剩 <text style="color: {{mainColor}};">{{item.remainTime}}</text>
+							</view>
+							<view class="cluster-good-btn" style="background-color: {{mainColor}}">立即开砍</view>
+					  </view>
+					</view>
+				</navigator>
+			</block>
+		</view>
+	</view>
+	<view class="footer" hidden="{{!showNoMore}}">-没有更多商品了-</view>
+</view>

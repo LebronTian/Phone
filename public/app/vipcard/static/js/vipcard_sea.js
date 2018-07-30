@@ -1,0 +1,10 @@
+seajs.config({
+    paths:{
+        "public":"/static/js/",
+        "app":"/app/vipcard/static/js/"
+    },
+    alias:{
+        "imglist":"public/imglist_new",
+        "jquery2.1":"public/jquery2.1.min"
+    }
+});

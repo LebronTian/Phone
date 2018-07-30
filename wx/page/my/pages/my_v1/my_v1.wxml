@@ -1,0 +1,71 @@
+<!--page/my/pages/my_v1/my_v1.wxml-->
+<view class="container">
+  <view class="header" style="background-color: {{mainColor}}">
+  	<view class="avatar-box">
+	  	<image class="header-avatar" src="{{(myInfo.profile && myInfo.profile.avatar) || myInfo.su.avatar}}"></image>
+	  	<!-- <view class="vipTag-box">v</view> -->
+  	</view>
+  	<view class="header-userName">{{(myInfo.profile && myInfo.profile.realname) ? myInfo.profile.realname : myInfo.su.name}}</view>
+    <image class="setting-tag" src="/page/resources/pic/setting_fff.png" bindtap="navToEdit"></image>
+  </view>
+  <view class="my-order">
+  	<navigator url="/page/my/pages/myOrders/myOrders?index=0" class="my-order-title ">
+  	  <text>我的订单</text>
+  	  <view class="all-orders">全部订单 ></view>
+  	</navigator>
+    <view class="my-orderStatus-box">
+      <block wx:for="{{orderStatus}}" wx:key="{{item.index}}">
+        <navigator class="my-orderStatus" url="{{item.url}}">
+          <image class="my-orderStatus-img" src="{{item.img}}"></image>
+          <text class="my-orderStatus-title">{{item.title}}</text>
+          <!-- <view class="my-orderStatus-cnt" style="background-color: {{mainColor}}">43</view> -->
+          <view class="my-orderStatus-cnt" hidden="{{!item.count}}" style="background-color: {{mainColor}}">{{item.count}}</view>
+        </navigator>
+      </block>
+      <button class="my-orderStatus" open-type="contact">
+        <image class="my-orderStatus-img" src="/page/resources/pic/refund.png"></image>
+        <text class="my-orderStatus-title">退款/售后</text>
+        <view class="my-orderStatus-cnt" hidden>{{item.count}}</view>
+      </button>
+    </view>
+    <view class="my-orderStatus-box">
+      <navigator class="my-orderStatus my-wallet-info" url="/page/my/pages/wallet/wallet">
+        <text class="my-orderStatus-title" >我的钱包</text>
+        <view class="wallet-num">{{showCash}}</view>
+      </navigator>
+      <navigator class="my-orderStatus my-wallet-info" url="/page/my/pages/pointDetail/pointDetail?from=point">
+        <text class="my-orderStatus-title" >会员积分</text>
+        <view class="wallet-num">{{showPoint}}</view>
+      </navigator>
+      <!-- <navigator class="my-orderStatus my-wallet-info" url="/page/my/pages/pointDetail/pointDetail?from=cash">
+        <text class="my-orderStatus-title" >我的红包</text>
+        <view class="wallet-num">{{showCash}}</view>
+      </navigator> -->
+      <navigator class="my-orderStatus my-wallet-info" url="/page/my/pages/favorite/favorite">
+        <text class="my-orderStatus-title" >我的收藏</text>
+        <view class="wallet-num">{{favNum}}</view>
+      </navigator>
+    </view>
+  </view>
+  <view class="my-setting-box">
+    <block wx:for="{{subTitles}}" wx:key="{{index}}">
+      <button class="my-subTitle" bindtap="subHandle" id="{{item.url}}" hidden="{{!item.show}}" open-type="{{item.url === 'contact' ? 'contact' : ''}}">
+        <view class="my-subTitle-left rightBtn">
+          <view class="my-subTitle-leftBox">
+        		<image class="my-subTitle-img" src="{{item.img}}"></image>
+            <text>{{item.title}}</text>
+          </view>
+          <text class="my-subTitle-content">{{item.content}}</text>
+        </view>
+      </button>
+    </block>
+  </view>
+
+  <view class="weui-footer" style="display:none;">    
+    <view class="weui-footer__links">
+        <navigator url="../index/pages/company/company" class="weui-footer__link">@深圳市快马加鞭科技有限公司 - 提供技术开发</navigator>
+    </view>
+    <view class="weui-footer__text">Copyright © 2017-2022 weixin.uctphp.com</view>
+  </view>
+
+</view>

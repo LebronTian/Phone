@@ -1,0 +1,77 @@
+<import src="../../../common/wxParse/wxParse.wxml"/>
+
+<view class="container">
+	<navigator class="header" url="../../../class/pages/goodDetail/goodDetail?uid={{goodData.product_info.p_uid}}" style="background-image: url({{goodData.image}}); background-size: 100% 100%;">
+		<view class="bargin-info">
+			<view class="bargin-price-box">
+				最低砍购价
+				<text class="bargin-price" style="color: {{mainColor}};">¥ {{goodData.lowest_price}}</text>
+				<text class="origin-price">¥{{goodData.ori_price}}</text>
+			</view>
+			<view class="bargin-num">现有{{goodData.join_cnt}}人在抢购（剩余库存{{goodData.quantity}}件）</view>
+		</view>
+	</navigator>
+	<view class="main">
+		<view class="bargin__detail-box">
+			<view class="goodTitle">{{goodData.title}}</view>
+			<view class="remainTime">
+				<text hidden="{{goodData.rule.end_time == 0}}">{{time.remainTime}}</text>
+			</view>
+			<view class="bargin__progress-box" hidden="{{!bargainUser}}">
+				<image class="avatar" src="{{bargainUser.su.avatar}}"></image>
+				<text class="bargin__progress">砍价进度：商城价{{goodData.ori_price}}元，已砍至{{bargainUser.current_price ? bargainUser.current_price : goodData.ori_price}}元</text>
+			</view>
+			<view wx:if="{{bargainStatus == 0}}">
+				<view class="barginBtn-box" hidden="{{!isMine}}">
+					<button class="barginBtn" bindtap="applyBargain">{{bargainUser ? '找人帮砍' : '发起砍价'}}</button>
+					<button class="buyBtn" bindtap="buyTap">我要购买</button>
+				</view>
+				<view class="barginBtn-box" hidden="{{isMine}}">
+					<button class="{{bargainHelp ? 'barginHelpedBtn' : 'barginHelpBtn'}}" bindtap="helpBargain">{{bargainHelp ? '已帮忙砍价' : '帮砍一刀'}}</button>
+				</view>
+			</view>
+			<view wx:else>
+				<view class="barginBtn-box">
+					<button class="barginHelpedBtn">砍价已过期</button>
+				</view>
+			</view>
+		</view>
+		<!-- 商品介绍 -->
+		<view class="good-intro-box">
+			<view class="good-intro__title" bindtap="showIntro">
+				<text>商品介绍</text>
+				<text hidden="{{isShowIntro}}">></text>
+			</view>
+			<!-- 商品介绍文本 -->
+			<view class="good-intro {{isShowIntro ? 'good-intro-show' : ''}}">
+				<view class="good-intro-quit" bindtap="showIntro">×</view>
+				<view class="good-intro-text">
+					<template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+				</view>
+			</view>
+		</view>
+		<view class="nav-box">
+			<navigator class="nav" open-type="redirect" url="../bargainList/bargainList">更多砍价商品</navigator>
+			<navigator class="nav" open-type="redirect" url="../myBargain/myBargain">我的砍价清单</navigator>
+		</view>
+		<view class="barginRecord">
+			<view class="barginRecord-title">砍价记录（已有{{helpList.length}}位好友帮忙砍价）</view>
+			<view class="barginRecord-list">
+				<block wx:for="{{helpList}}" wx:key="{{index}}">
+					<view class="barginRecord-item">
+						<view class="barginRecord-item__content">
+							<image class="bargain-avatar" src="{{item.su.avatar}}"></image>
+							<view class="barginRecord-text">{{item.su.name}}帮忙砍下了{{item.fee}}元</view>
+						</view>
+						<view class="barginRecord-item__time">{{item.time}}</view>
+					</view>
+				</block>
+			</view>
+		</view>
+	</view>
+	<view class="shadow {{isShare ? 'shadow-show' : ''}}" bindtap="tapShadow"></view>
+	<view class="custom-action-sheet {{isShare ? 'action-sheet-show' : ''}}">
+		<button class="shareBtn" open-type="share">转发给好友</button>
+		<button class="shareBtn" bindtap="navToShareImg">生成图片</button>
+	</view>
+</view>

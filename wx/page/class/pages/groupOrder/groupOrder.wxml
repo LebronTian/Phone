@@ -1,0 +1,144 @@
+<view class="container">
+	<view class="header">
+		<view class="getAddress" bindtap="navToAddress">
+			<view class="orderInfo-box">
+				<view class="orderInfo-receiver">
+					<view class="orderInfo-receiverName">
+						<text class="orderInfo-subtitle">收货人：</text>
+						{{address.name}}
+					</view>
+					<text class="orderInfo-receiverPhone">{{address.phone}}</text>
+				</view>
+				<view class="orderInfo-address">
+					<text class="orderInfo-subtitle">收货地址：</text>
+					<text hidden="{{!address}}">{{address.province + address.city + address.town + address.address}}</text>
+				</view>
+			</view>
+			<text class="rightBtn"></text>
+		</view>
+	</view>
+	<form bindsubmit="postOrder" report-submit>
+		<view class="body">
+			<view class="body-goods-box" wx:if="{{from === 'pointGood'}}">
+				<view class="cart-goods">
+		  	  <view class="cart-goodsClass">
+		  	  	<view class=""><text class="cart-goodsClass-title" style="color: {{mainColor}}">积分商品</text> 〉</view>
+		  	  </view>
+			  	  <view class="cart-goodItem">
+			  	  	<image class="cart-goodImg" src="{{detail.main_img}}"></image>
+			  	  	<view class="cart-goodInfo">
+			  	  		<view class="cart-goodInfo-title">{{detail.title}}</view>
+			  	  		<text class="cart-goodInfo-price">{{detail.point_price}} 积分</text>
+			  	  	</view>
+			  	  </view>
+	  		</view>
+	  		<view class="cart-goods">	  	  
+					<view class="order-delivery-box">
+						<view class="order-deliveryMode">
+							<text class="orderInfo-subtitle">配送方式：</text>
+							快递
+						</view>
+						<text class="order-delivery">{{deliveryPrice}}</text>
+					</view>
+					<view class="order-message order-message__last">
+						<text class="orderInfo-subtitle">备注留言：</text>
+						<input class="order-userMessageInput" placeholder="(选填)" bindinput="inputMsg"/>
+					</view>
+	  		</view>
+		  </view>
+
+		  <view class="body-goods-box" wx:elif="{{from === 'bidding'}}">
+				<view class="cart-goods">
+		  	  <view class="cart-goodsClass">
+		  	  	<view class=""><text class="cart-goodsClass-title" style="color: {{mainColor}}">竞拍商品</text> 〉</view>
+		  	  </view>
+			  	  <view class="cart-goodItem">
+			  	  	<image class="cart-goodImg" src="{{detailData.main_img}}"></image>
+			  	  	<view class="cart-goodInfo">
+			  	  		<view class="cart-goodInfo-title">{{detailData.ap.title}}</view>
+			  	  		<text class="cart-goodInfo-price">¥ {{showPrice}}</text>
+			  	  		<text class="cart-goodInfo-num"> x 1</text>
+			  	  	</view>
+			  	  </view>
+	  		</view>
+	  		<view class="cart-goods">	  	  
+					<view class="order-delivery-box">
+						<view class="order-deliveryMode">
+							<text class="orderInfo-subtitle">配送方式：</text>
+							快递
+						</view>
+						<text class="order-delivery">{{deliveryPrice}}</text>
+					</view>
+					<view class="order-message order-message__last">
+						<text class="orderInfo-subtitle">备注留言：</text>
+						<input class="order-userMessageInput" placeholder="(选填)" bindinput="inputMsg"/>
+					</view>
+	  		</view>
+		  </view>
+
+			<view class="body-goods-box" wx:else>
+				<block wx:for="{{catList}}" wx:key="{{item.uid}}">
+					<view class="cart-goods">
+			  	  <view class="cart-goodsClass">
+			  	  	<view class=""><text class="cart-goodsClass-title" style="color: {{mainColor}}">{{item.title}}</text> 〉</view>
+			  	  </view>
+			  	  <block wx:for="{{item.list}}" wx:for-item="good" wx:key="{{good.uid}}">
+				  	  <view class="cart-goodItem">
+				  	  	<image class="cart-goodImg" src="{{good.img}}"></image>
+				  	  	<view class="cart-goodInfo">
+				  	  		<view class="cart-goodInfo-title">{{good.detailData.title}}</view>
+				  	  		<view class="cart-goodInfo-special">
+		                <text wx:for="{{good.specials}}" wx:key="{{index}}">{{item.list[item.selectedIndex] + ' '}}</text>   
+				  	  		</view>
+				  	  		<text class="cart-goodInfo-price">¥ {{good.price}}</text>
+				  	  		<text class="cart-goodInfo-num"> x {{good.selectedNum}}</text>
+				  	  	</view>
+				  	  </view>
+				  	</block>
+						<view class="order-sumUp">共计{{item.list.length}}件商品 合计：<text class="cart-goodInfo-price">¥ {{item.account}}</text></view>
+		  		</view>
+		  	</block>
+		  	<view class="cart-goods">	  	  
+					<view class="order-message order-message__last" style="border-bottom: none;">
+						<text class="orderInfo-subtitle">余额抵消：</text>
+						<input class="order-userMessageInput" type="digit" placeholder="最多可使用 {{cashRemain}} 余额" disabled="{{!useCash}}" bindinput="inputCash"/>
+					</view>
+	  		</view>
+	  		<view class="cart-goods">	  	  
+					<view class="order-delivery-box">
+						<view class="order-deliveryMode">
+							<text class="orderInfo-subtitle">配送方式：</text>
+							快递
+						</view>
+						<text class="order-delivery">{{deliveryPrice}}</text>
+					</view>
+					<view class="order-message order-message__last">
+						<text class="orderInfo-subtitle">备注留言：</text>
+						<input class="order-userMessageInput" placeholder="(选填)" bindinput="inputMsg"/>
+					</view>
+	  		</view>
+		  </view>
+
+		</view>
+		<view class="footer">
+			<view class="footer-accountBtn-box" wx:if="{{from === 'pointGood'}}">
+				<text>合计：</text>
+				<text class="cart-goodInfo-price">{{detail.point_price}} 积分</text>
+				<!-- <view class="footer-accountBtn" bindtap="postOrder">提交订单</view> -->
+				<button class="footer-accountBtn" formType="submit">提交订单</button>
+			</view>
+			<view class="footer-accountBtn-box" wx:elif="{{from === 'bidding'}}">
+				<text>合计：</text>
+				<text class="cart-goodInfo-price">¥ {{showPrice}}</text>
+				<!-- <view class="footer-accountBtn" bindtap="postOrder">提交订单</view> -->
+				<button class="footer-accountBtn" formType="submit">提交订单</button>
+			</view>
+			<view class="footer-accountBtn-box" wx:else>
+				<text>合计：</text>
+				<text class="cart-goodInfo-price">¥ {{showPrice}}</text>
+				<!-- <view class="footer-accountBtn" bindtap="postOrder">提交订单</view> -->
+				<button class="footer-accountBtn" formType="submit">提交订单</button>
+			</view>
+		</view>
+	</form>
+</view>

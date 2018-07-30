@@ -1,0 +1,197 @@
+	body,
+	ul,
+	ol,
+	li,
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	form,
+	fieldset,
+	table,
+	td,
+	img,
+	div,
+	dl,
+	dt,
+	dd,
+	input {
+		margin: 0;
+		padding: 0;
+	}
+	
+	body {
+		font-size: 16px;
+	}
+	
+	img {
+		border: none;
+	}
+	
+	input,
+	select,
+	textarea {
+		outline: none;
+	}
+	
+	textarea {
+		resize: none;
+	}
+	
+	a {
+		text-decoration: none;
+	}
+	
+	li {
+		list-style: none;
+	}
+	
+	.basic-info {
+		width: 500px;
+		margin: 45px auto;
+		padding: 24px 30px;
+		border-radius: 20px;
+		border: 1px solid #bbb;
+	}
+	
+	.title {
+		padding-bottom: 15px;
+		border-bottom: 1px solid #bbb;
+		height: 24px;
+		line-height: 24px;
+		color: #101010;
+		font-size: 16px;
+		font-family: Roboto;
+	}
+	
+	.basic-info main {
+		padding: 10px;
+	}
+	/*信息设置单元*/
+	
+	.setting {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		margin-top: 15px;
+	}
+	
+	.setting-title {
+		width: 100px;
+	}
+	/*自定义单选框*/
+	
+	.setting-pos input[type="checkbox"]+label::before {
+		content: "\a0";
+		/*不换行空格*/
+		display: inline-block;
+		vertical-align: middle;
+		/*font-size: 18px;*/
+		width: 20px;
+		height: 20px;
+		margin-right: 10px;
+		border-radius: 50%;
+		padding: 0;
+		border: 1px solid #bbb;
+		/*text-indent: .15em;*/
+		/*line-height: 1; */
+	}
+	
+	.setting-pos input[type="checkbox"]:checked+label::before {
+		/*background-color: #01cd78;*/
+		background: url(select.png) center center;
+		background-origin: border-box;
+		/*background: url(select.png) no-repeat to;*/
+		/*background-clip: content-box;*/
+		background-size: 24px 24px;
+		padding: 0;
+		border: 1px solid #1296DB;
+	}
+	
+	.setting-pos input[type="checkbox"] {
+		position: absolute;
+		clip: rect(0, 0, 0, 0);
+	}
+	
+	.setting-pos label {
+		margin-right: 10px;
+	}
+	
+	.setting-pos>div,
+	.setting-cont>div{
+		margin-bottom: 10px;
+	}
+	
+	.setting-pos p {
+		font-size: 14px;
+	}
+	
+	.setting-cont label,
+	.setting-pos label{
+		position: relative;
+		cursor: pointer;
+	}
+	.setting-cont label input[type="checkbox"] {
+		cursor: pointer;
+	}
+	
+	.setting-cont label input:checked+.show-box {
+		background: #1296DB;
+	}
+	
+	.setting-cont .show-box {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 16px;
+		height: 16px;
+		margin-top: 2px;
+		border-radius: 2px;
+		border: 1px solid #d8d8d8;
+		background: white;
+		/*这里取个巧，与下面颜色一样而已*/
+	}
+	
+	.setting-cont .show-box:before {
+		/*使用了 absolute 所以无所谓是 before 还是 after*/
+		content: '';
+		/*空白内容占位，当做盒模型处理，见下面*/
+		position: absolute;
+		top: 2px;
+		left: 6px;
+		width: 3px;
+		/*勾的短边*/
+		height: 8px;
+		/*勾的长边*/
+		border: solid white;
+		/*勾的颜色*/
+		border-width: 0 2px 2px 0;
+		/*勾的宽度*/
+		transform: rotate(45deg);
+		/*定制宽高加上旋转可以伪装内部的白色勾*/
+	}
+	.setting-cont span{
+		margin-left: 10px;
+	}
+	.setting-cont .input50{
+		width: 50px;
+	}
+	#discountnum{
+		margin-left: 10px;
+	}
+	.vip-btn-group{
+		margin-top: 20px;
+		text-align: center;
+	}
+	.vip-btn-group input:not(:first-child){
+		margin-left: 10px;
+	}
+	#notice{
+		width: 300px;
+		height: 80px;
+	}

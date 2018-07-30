@@ -1,0 +1,101 @@
+/* pages/contactPost/contactPost.wxss */
+@i.contact-box {
+	background-color: #fff;
+	margin-bottom: 30rpx;
+	padding: 30rpx;
+}
+
+.contact-header {
+	overflow: auto;
+	padding-bottom: 40rpx;
+	border-bottom: 1px solid #efefef;
+}
+.contact-img {
+	float: left;
+	border-radius: 50%;
+	margin-right: 30rpx;
+	width: 120rpx;
+	height: 120rpx;
+}
+.sub-btn {
+	float: right;
+	font-size: 0.8em;
+	color: #884898;
+	border: 1px solid #884898;
+	margin-left: 10rpx;
+	padding: 0 10rpx;
+}
+.contact-title {
+	margin-bottom: 10rpx;
+}
+.feature {
+	font-size: 0.7em;
+	color: #ccc;
+	border: 1px solid #ccc;
+	margin-right: 6rpx;
+	padding: 6rpx 8rpx;
+}
+
+
+.contact-main {
+	padding-top: 20rpx;
+}
+.contact-comment-box {
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:flex;
+	justify-content: space-around;
+	text-align: center;
+}
+.comment-grade {
+	color: #f80000;
+}
+.comment-title {
+	font-size: 0.8em;
+	color: #aaa;
+}
+
+.contact-btn {
+	position: fixed;
+	right: 5%;
+	bottom: 10%;
+	padding: 0;
+	color: #fff;
+	text-align: center;
+	/*line-height: 90rpx;*/
+	font-size: 0.9em;
+	border-radius: 50%;
+	width: 80rpx;
+	height: 80rpx;
+	background-color: #884898;
+}
+.contact-btn-img {
+	width: 60%;
+	height: 60%;
+	vertical-align: middle;
+}
+
+.post-title {
+	text-indent: 1em;
+	color: #ccc;
+	margin-bottom: 30rpx;
+	/*font-size: 0.9em;*/
+}
+
+.form-box {
+	background-color: #fff;
+}
+.picker-box {
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:flex;
+}
+.date-picker {
+	margin-right: 20rpx;
+}
+.postBtn {
+	margin: 40rpx auto;
+	width: 90%;
+	color: #fff;
+	background-color: #884898;
+}

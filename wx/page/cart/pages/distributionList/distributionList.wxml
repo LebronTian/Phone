@@ -1,0 +1,33 @@
+<!--page/cart/pages/distributionList/distributionList.wxml-->
+<view class="container">
+	<!-- 商品简介页面 -->
+  <view class="weui-tab__content">
+    <block wx:for="{{orderList}}" wx:key="{{item.uid}}">
+      <view class="order">
+        <!-- <view> -->
+          <view class="order-body">
+            <image class="order-bodyImg" src="{{item.img}}"></image>
+            <view class="order-bodyInfo-box">
+              <view class="order-id-box">
+                <text class="order-subTitle">订单编号：</text>
+                <text class="order-id"> {{item.uid}}</text>
+              </view>
+              <view class="order-price-box">
+                <text class="order-subTitle">佣金金额：</text>
+                <text class="order-price"> {{item.price}}</text>
+              </view>
+              <view class="order-status-box">
+                <text class="order-subTitle">购买粉丝：</text>
+                <text class="order-status"> {{item.user.name}}</text>
+              </view>
+            </view>
+            <view class="order-header">
+	            <view class="order-date">{{item.date}}</view>
+	          </view>
+          </view>
+        <!-- </view> -->
+      </view>
+    </block>
+    <view class="noMore" hidden="{{!noMore}}">没有更多订单了</view>
+  </view>
+</view>

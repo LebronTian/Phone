@@ -1,0 +1,60 @@
+/*@import '../../../home/pages/plan/plan.wxss';*/
+/*@import '../../../common/style/header.wxss';*/
+
+page {
+	background-color: #f8f8f8;
+}
+
+.sign-main {
+	padding: 0 40rpx;
+}
+.sign-title {
+	font-size: 1.4em;
+	line-height: 3em;
+}
+.required-tag {
+	color: #8a8a8a;
+}
+.upload-box {
+	margin: 20rpx 0;
+}
+.sign-cellInput-box {
+	padding-left: 0.8em;
+	background-color: #fff;
+	border: 1px solid #efefef;
+	border-radius: 10px;
+	margin: 20rpx 0;
+}
+.sign-cell-input {
+	height: 2.5em;
+	min-height: 2.5em;
+	line-height: 2.5em;
+	background-color: #fff;
+	width: 95%;
+}
+.sign-cellTextarea-box {
+	font-size: 0.9em;
+	padding: 0 0.8em;
+	background-color: #fff;
+	border: 1px solid #efefef;
+	border-radius: 10px;
+	margin: 20rpx 0;
+}
+.sign-textarea {
+	width: 100%;
+	height: 3em;
+	line-height: 2.5em;
+	min-height: 3em;
+}
+.sign-btn {
+	width: 55%;
+	margin: 50rpx auto;
+	margin-bottom: 100rpx;
+	background-color: #36c254;
+	color: #fff;
+	border-bottom: 1px solid #feffff;
+	border-right: 1px solid #feffff;
+	box-shadow: 3px 3px 5px #dddddd;
+	font-size: 0.8em;
+	line-height: 2.4em;
+}

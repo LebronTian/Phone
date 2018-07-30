@@ -1,0 +1,62 @@
+<view class="container">
+	<!-- 商品轮播图 -->
+    <view class="header-swiper-box">
+      <swiper class="header-swiper" indicator-dots autoplay circular interval="{{3000}}" duration="{{300}}">
+        <block wx:for="{{background}}" wx:key="{{index}}">
+          <swiper-item>
+            <view class="swiper-item" data-set="{{item}}" bindtap="subNavTap">
+              <image class="header-swiperImg" src="{{item.image}}"></image>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+	<view class="recommend">
+		<view class="recommend-header">
+			<view class="recommend-title">推荐商家</view>
+			<navigator class="join" style="background-color: {{mainColor}};" url="/page/cart/pages/businessCenter/businessCenter">申请入驻</navigator>
+		</view>
+		<scroll-view scroll-x="true">
+			<view class="recommend-box">
+				<block wx:for="{{recommendList}}" wx:key="{{index}}">
+		    	<navigator class="recommend-shop" url="../businessDetail/businessDetail?uid={{item.uid}}">
+		    		<image class="recommend-shop-img" src="{{item.main_img}}"></image>
+		    		<text class="recommend-shop-title">{{item.title}}</text>
+		    	</navigator>
+		    </block>
+			</view>
+    </scroll-view>
+	</view>
+	<view class="header">
+		<scroll-view scroll-x="true" style="width: 100%">
+		    <view class="header-nav-box" style="width: {{navboxWidth}}px">
+		    	<block wx:for="{{tabs}}" wx:key="{{index}}">
+			    	<view id="{{index}}" class="header-navigator {{activeIndex == index ? 'header-navigator-on' : ''}}" style="width: {{navWidth}}rpx; color: {{activeIndex == index ? mainColor : '#8a8a8a'}}" bindtap="tabClick" data-type="{{item.title}}">
+			    		<view class="header-navTitle">{{item.title}}</view>
+			    	</view>
+		    	</block>
+	        <view class="header-navbarSlider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px); width: {{sliderWidth}}px; background-color: {{mainColor}}"></view>
+		    </view>
+    </scroll-view>
+  </view>
+  <view class="main">
+  	<view class="business-list-box">
+			<block wx:for="{{businessList}}" wx:key="{{index}}">
+				<navigator url="../businessDetail/businessDetail?uid={{item.uid}}" class="business-box">
+					<image class='business-img' src="{{item.main_img}}"></image>
+					<view class='business-info-box'>
+						<view class="business-title-box">
+							<image wx:if="{{item.hadv == 1}}" class="business-vplus" src="../../../resources/pic/v.png"></image>
+							<text class="business-title">{{item.title}}</text>
+						</view>
+						<view class="business-location" wx:if="{{item.location}}">地址：{{item.location}}</view>
+						<view class="view-cnt" >浏览次数：{{item.read_cnt}}</view>
+						<view class="product-cnt">在售商品：{{item.product_number}}</view>
+					</view>
+				</navigator>
+			</block>
+		</view>
+  </view>
+	
+	<view class="empty" hidden="{{!showEmpty}}">没有更多商户了</view>
+</view>

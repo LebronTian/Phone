@@ -1,0 +1,61 @@
+<view class="container">
+	<view class="header">
+		<!-- 搜索框 -->
+	  <navigator url="../../../index/pages/search/search" class="weui-search-bar">
+	    <view class="weui-search-bar__form">
+	      <view class="weui-search-bar__box">
+	        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+	        <input type="text" class="weui-search-bar__input" placeholder="搜索" />
+	      </view>
+	      <label class="weui-search-bar__label">
+	        <icon class="weui-icon-search" type="search" size="14"></icon>
+	        <view class="weui-search-bar__text">搜索</view>
+	      </label>
+	    </view>
+	  </navigator>
+	</view>
+	<view class="main">
+		<view class="main__left">
+			<scroll-view scroll-y enable-back-to-top style="height: {{windowHeight - 50}}px;">
+				<view class="class-box">
+					<block wx:for="{{tabs}}" wx:key="{{index}}">
+						<view id="{{item.uid}}" class="class-title {{item.uid == activeIndex ? 'class-title__selected' : ''}}" bindtap="tabClick" style="border-left-color: {{item.uid == activeIndex ? mainColor : 'inherit'}}; color: {{item.uid == activeIndex ? mainColor : 'inherit'}};" >{{item.title}}</view>
+					</block>
+				</view>
+			</scroll-view>
+		</view>
+		<view class="main__right">
+			<scroll-view scroll-y enable-back-to-top style="height: {{windowHeight - 50}}px;">
+				<view class="class-detail">
+					<image wx:if="{{classImg}}" mode="widthFix"  class="class-img" src="{{classImg}}"></image>
+					<!-- <view class="subClass-firstTitle"></view> -->
+					<view class="subClass-box" wx:if="{{subClassList.length}}">
+						<block wx:for="{{subClassList}}" wx:key="{{index}}">
+							<navigator url="../classGoods/classGoods?classId={{item.uid}}" class="subClass">
+								<image class="subClass-img" src="{{item.img}}"></image>
+								<text class="subClass-title">{{item.title}}</text>
+							</navigator>
+						</block>
+					</view>
+					<view class="body-good-subBox" wx:elif="{{goodsList.length}}">
+			  		<block wx:for="{{goodsList}}" wx:for-item="good" wx:key="{{*item}}">
+			  			<navigator class="body-good" url="../goodDetail/goodDetail?uid={{good.uid}}" >
+			  				<image class="body-goodImg" src="{{good.img}}"></image>
+			  				<text class="body-goodTitle">{{good.title}}</text>
+			  				<text class="body-goodPrice">¥ {{good.price}}</text>
+			  			</navigator>
+			  		</block>
+			  	</view>
+					<!-- <view class="subClass-box" wx:else="{{goodList.length}}">
+						<block wx:for="{{subClassList}}" wx:key="{{index}}">
+							<navigator url="../classGoods/classGoods?classId={{item.uid}}" class="subClass">
+								<image class="subClass-img" src="{{item.img}}"></image>
+								<text class="subClass-title">{{item.title}}</text>
+							</navigator>
+						</block>
+					</view> -->
+				</view>
+			</scroll-view>
+		</view>
+	</view>
+</view>

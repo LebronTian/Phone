@@ -1,0 +1,19 @@
+	.pic_swiper{left:0;width:100%;height:200px;}
+	.pic_swiper img{
+		width: 100%;height: 200px
+	}
+	.detail_box{
+		 width:100%;height: auto;margin-bottom: 50px;
+	}
+	.detail_content{
+		width:80%;height:auto;margin:0 0 0 10%;
+	}
+	.content_box{
+ 		position:relative;width:40%;margin:10px 5% 0 5%;float:left;
+	}
+	.content_box img{
+		 width:100%;
+	}
+	.content_box div{
+		position:absolute;width:100%;height:20px;bottom:0;left:0;opacity:0.5;color:white;text-align:center;background-color:black;
+	}

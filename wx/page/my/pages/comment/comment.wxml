@@ -1,0 +1,48 @@
+<view class="container">
+	<!-- <view class="body"> -->
+		<form bindsubmit="bindFormSubmit">
+			<!-- <block wx:for="{{order.products}}" wx:key="{{item.uid}}"> -->
+				<view class="product-info">
+	    		<image class="product-img" src="{{product.img}}"></image>
+	    		<text class="product-title">{{product.title}}</text>
+	    	</view>
+	    	<!-- 用户评分 -->
+	    	<view class="product-score">
+	    		<view class="score-box">
+		    		<view class="score-box__back">
+		    			<image wx:for="{{[1,2,3,4,5]}}" wx:key="{{index}}" data-id="{{index}}" bindtap="tapScore" class="score" src="../../../resources/pic/favorite.png"></image>
+		    		</view>
+		    		<view class="score-box__fill">
+		    			<image wx:for="{{scoreArr}}" wx:key="{{index}}" data-id="{{index}}" bindtap="tapScore" class="score score__fill" src="../../../resources/pic/favorites_fill.png"></image>
+		    		</view>	    		
+		    	</view>
+	    		<view class="score__title">评分：{{scoreArr.length}}</view>
+	    	</view>
+	    	
+		    <view class="body-postCont-box">
+		      <textarea class="weui-textarea" placeholder="输入您对该商品的评价，最多可输入150字，可插入图片" style="height: 6em; font-size: 0.9em" name="textarea" />
+		      <view class="weui-textarea-counter">0/150</view>
+		      <view class="weui-uploader">
+		        <view class="weui-uploader__hd">
+		          <view class="weui-uploader__title">上传商品图片</view>
+		        </view>
+		        <view class="weui-uploader__bd">
+		          <view class="weui-uploader__files">
+		            <block wx:for="{{imageList}}" wx:for-item="image" wx:key="{{index}}">
+		              <view class="weui-uploader__file">
+		                <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+		              </view>
+		            </block>
+		          </view>
+		          <view class="weui-uploader__input-box">
+		            <view class="weui-uploader__input" bindtap="chooseImage"></view>
+		          </view>
+		        </view>
+		      </view>
+		    </view>
+
+	    <!-- </block> -->
+		  <button class="footer-btn" style="color: #fff; background-color: {{mainColor}};" form-type="submit">提交评论</button>
+		</form>
+	<!-- </view> -->
+</view>

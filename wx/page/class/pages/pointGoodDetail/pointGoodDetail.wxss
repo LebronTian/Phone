@@ -1,0 +1,2 @@
+/* page/class/pages/pointGoodDetail/pointGoodDetail.wxss */
+@import "../goodDetail/goodDetail.wxss";

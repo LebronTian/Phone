@@ -1,0 +1,143 @@
+<import src="/page/common/indexNodes.wxml"/>
+
+<!--  -->
+<view class="container" hidden="{{nodes && nodes.length > 0}}"> 
+  <navigator url="/page/index/pages/search/search" class="weui-search-bar">
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" placeholder="搜索" />
+      </view>
+      <label class="weui-search-bar__label">
+        <icon class="weui-icon-search" type="search" size="14"></icon>
+        <view class="weui-search-bar__text">搜索</view>
+      </label>
+    </view>
+  </navigator>
+  <view class="header">
+    <!-- 商品轮播图 -->
+    <view class="header-swiper-box">
+      <swiper class="header-swiper" indicator-dots autoplay circular interval="{{3000}}" duration="{{300}}">
+        <block wx:for="{{background}}" wx:key="{{index}}">
+          <swiper-item>
+            <view class="swiper-item" data-link="{{item.link}}" bindtap="subNavTap">
+              <image class="header-swiperImg" src="{{item.image}}"></image>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+    <!-- 商城公告轮播 -->
+    <view class="placard-box" url="pages/placard/placard" hidden="{{!radioList}}">
+      <view class="placardImg-box">
+        <image class="placardImg" src="{{boardImg}}"></image>
+      </view>
+      <swiper class="swiperCont" autoplay circular vertical>
+        <block wx:for="{{radioList}}" wx:key="{{index}}">
+          <swiper-item class="swiperCont">
+            <navigator class="" url="pages/placard/placard?articleId={{item.uid}}">{{item.title}}</navigator>
+          </swiper-item>
+        </block>
+      </swiper>
+      <text class="rightBtn"></text>
+    </view>
+  </view>
+
+  <view class="body">
+    <form bindsubmit="subNavTap" report-submit>
+      <view class="body-subNavs-box">
+          <button wx:for="{{subNavs}}" id="123" wx:key="{{index}}" class="body-subNav" data-link="{{item.link}}" open-type="{{item.contact ? 'contact' : ''}}" formType="{{item.contact ? '' : 'submit'}}">
+            <image class="body-subNav-img" src="{{item.image}}"></image>
+            <text class="body-subNav-title">{{item.title}}</text>
+          </button>
+      </view>
+    </form>
+
+    <!-- 三列展示 -->
+    <view class="body-class-box" wx:if="{{index_style==3}}">
+      <block wx:for="{{catList}}" wx:key="{{item.uid}}">
+        <view class="body-class" wx:if="{{item.list.length}}">
+          <navigator class="body-classTitle" url="../class/pages/classGoods/classGoods?classId={{item.uid}}">{{item.title}}<text> </text></navigator>
+          <view class="body-classGoods-box">
+            <block wx:for="{{item.list}}" wx:for-item="good" wx:key="{{index}}">
+              <navigator url="../class/pages/goodDetail/goodDetail?uid={{good.uid}}" class="body-classGood">
+                <image class="body-goodImg" mode="aspectFit" src="{{good.main_img}}" />
+                <text class="body-goodTitle">{{good.title}} \n</text>
+                <view class="body-classGoods-footer">
+                  <text class="body-goodPrice">¥ {{good.price}}</text>
+                  <text class="body-goodSell">销量 {{good.sell_cnt}}</text>
+                </view>
+              </navigator>
+            </block>
+          </view>
+        </view>
+      </block>
+    </view> 
+
+    <!-- 两列展示 -->
+    <view class="good-box2" wx:elif="{{index_style==2}}">
+      <block wx:for="{{goods}}" wx:key="{{index}}">
+        <navigator url="../class/pages/goodDetail/goodDetail?uid={{item.uid}}" class="good2">
+          <image class="goodImg2" src="{{item.main_img}}"></image>
+          <view class="goodInfo-box2">
+            <view class="goodTitle2">{{item.title}}</view>
+            <view class="goodPrice-box2" style="color: {{mainColor}};">
+                ¥<text class="goodPrice-num2">{{item.price}}</text>
+              <text class="good-sellCnt2">{{item.sell_cnt}}人付款</text>
+            </view>
+          </view>          
+        </navigator>
+      </block>
+    </view>
+    
+    <!-- 一列展示 -->
+    <view class="good-box1" wx:else>
+      <block wx:for="{{goods}}" wx:key="{{index}}">
+        <navigator url="../class/pages/goodDetail/goodDetail?uid={{item.uid}}" class="good1">
+          <image class="goodImg1" src="{{item.main_img}}"></image>
+          <view class="goodInfo-box1">
+            <view class="goodTitle1">{{item.title}}</view>
+            <view class="good-otherInfo1">
+              <text class="originPrice">原价: {{item.oriPrice}}</text>
+              <text class="quantity">库存: {{item.quantity}}</text>
+            </view>
+            <view class="goodPrice-box1" style="color: {{mainColor}};">
+                ¥<text class="goodPrice-num1">{{item.price}}</text>
+              <text class="good-sellCnt1">{{item.sell_cnt}}人付款</text>
+            </view>
+          </view>
+        </navigator>
+      </block>
+    </view>
+
+    <view style="background-color:white;padding-top:15px;">
+    	<navigator class="button" style="background-color:{{mainColor}};margin:0px 75px 10px 75px;padding:5px;color:white;text-align:center;" 
+    		url="../class/pages/classGoods/classGoods">查看所有商品
+    	</navigator>
+    	<view style="height:5px;display:none1;"></view>
+    </view>
+
+  </view>
+
+  <view class="weui-footer" wx:if="{{company_name}}">    
+    <view class="weui-footer__links">
+      <navigator url="pages/company/company1" class="weui-footer__link">{{company_name}}</navigator>
+    </view>
+    <view style="display:none;" class="weui-footer__text">Copyright © 2016-2024 weixin.uctphp.com</view>
+  </view>
+</view>
+
+
+<!-- 模版生成页面 -->
+<view class="template-container" wx:if="{{nodes && nodes.length > 0}}">
+  <block wx:for="{{nodes}}" wx:for-item="item" wx:key="{{index}}">
+    <template is="{{item.component}}" data="{{...item.nodedata}}" />
+  </block>
+
+  <button wx:if="{{contactInfo.show}}" class="contactBtn" style="background-image: url({{contactInfo.imgUrl}});" open-type="{{contactInfo.link ? '' : 'contact'}}" bindtap="subNavTap" data-link="{{contactInfo.link}}"></button>
+</view>
+
+<view class="weui-footer" wx:if="{{supportData.title}}">
+  <view class="weui-footer__text">{{supportData.title}}</view>
+</view>

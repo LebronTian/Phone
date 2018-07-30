@@ -1,0 +1,249 @@
+body{
+	min-width: 1170px;
+}
+li{
+	list-style: none;
+}
+.admin-sidebar{
+width: 260px;
+max-height: 100%;
+border-right: 1px solid #cecece;
+    position: absolute;
+    left: 0;
+}
+
+.admin-content {
+width: 100%;
+height: 100%;
+background: #fff;
+    padding-left: 260px;
+    float: left;
+}
+
+.admin-sidebar-list li a {
+color: #5c5c5c;
+padding-left: 24px;
+}
+
+.admin-sidebar-sub li a {
+margin-top: 0;
+margin-bottom: 0;
+box-shadow: 0 16px 8px -15px #e2e2e2 inset;
+background: #ececec;
+padding-left: 48px;
+}
+
+.admin-content-list {
+border: 1px solid #e9ecf1;
+margin-top: 0;
+}
+
+.admin-content-list li {
+border: 1px solid #e9ecf1;
+border-width: 0 1px;
+margin-left: -1px;
+}
+.ChangeBar{
+	clear:both;
+	height: 105px;
+}
+.ChangeBar div{
+	height: 105px;
+	float: left;
+	/*line-height: 105px;*/
+}
+.ChangeBar .fans{
+	
+}
+.ChangeBar .word{
+	font-size: 28px;
+	/*display: inline-block;
+	height: 60px;
+	line-height: 60px;*/
+}
+.ChangeBar .num{
+	font-size: 58px;
+	/*font-weight: bold;*/
+	display: inline-block;
+	margin-left: 36px;
+	height: 60px;
+	line-height: 54px;
+}
+.ChangeBar .word,
+.ChangeBar .num{
+	vertical-align: middle;
+}
+/*.ChangeBar .num:hover{
+	transform:rotate(720deg);
+	-ms-transform:rotate(720deg); 
+	-moz-transform:rotate(720deg); 
+	-webkit-transform:rotate(720deg); 
+	-o-transform:rotate(720deg); 	
+	 transition: ease-out 0.4s;
+	 -ms-transition: ease-out 0.4s;
+	 -moz-transition: ease-out 0.4s;  
+	 -webkit-transition: ease-out 0.4s;      
+	 -o-transition: ease-out 0.4s;
+}*/
+.RegularlyBar{
+	clear: both;
+	/*height: 158px;*/
+}
+.RegularlyTit span{
+	padding: 0 10px;
+	font-size: 18px;
+	color: #0e90d2;
+	font-weight: bold;
+	border-left: 2px solid #0e90d2;
+}
+.RegularlyOption div{
+	height: 124px;
+	float: left;
+}
+.RegularlyOption div span{
+	display: inline-block;
+	width: 88px;
+	height: 88px;
+	margin-left: 70px;
+	position: relative;
+}
+.RegularlyOption a{
+	display: inline-block;
+	width: 88px;
+	height: 88px;
+	line-height: 88px;
+	text-align: center;
+	border-radius: 50%;
+	background: rgba(0,0,0,0.5);
+	color: #FFF;
+	font-style: normal;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+}
+.RegularlyCont{
+	padding: 0 81px;
+	clear: both;
+	min-height: 95px;
+}
+.RegularlyCont li{
+	width: 25%;
+	float: left;
+	/*text-align: center;*/
+	margin-bottom: 15px;
+	min-height: 88px;
+}
+.RegularlyCont li span{
+	position: relative;
+	width: 88px;
+	height: 88px;
+}
+.RegularlyCont li a{
+	display: inline-block;
+	width: 88px;
+	height: 88px;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.RegularlyCont .a_tit{
+	margin: 0;
+	width: 88px;
+	text-align: center;
+}
+.ApplyBar{
+	min-height: 368px;
+	clear: both;
+}
+.ApplyBar .ApplyCont{
+	margin: 0 0 20px 0;
+	width: 45%;
+	height: 168px;
+	border: 1px solid #DFDFDF;
+	float: left;
+	background-color: #F0F0F0;
+	position: relative;
+	overflow: hidden;
+}
+.ApplyCont .left,
+.ApplyCont .right{
+	width: 50%;
+	height: 168px;
+	float: left;
+}
+.ApplyCont .left{
+	padding: 40px 0 0 38px;
+}
+.ApplyCont .right{
+	padding-top: 20px;
+}
+.ApplyCont .right .title{
+	font-size: 28px;
+	margin-bottom: 10px;
+}
+.ApplyCont .right .content{
+	margin:0;
+}
+.MaskBar{
+	/*display: none;*/
+	z-index: 999;
+	width: 100%;
+	height: 168px;
+	position: absolute;
+	left: 0;
+	top: -168px;
+	padding: 25px 0 0 18px;
+}
+.Mask{
+	display: none;
+	width: 100%;
+	height: 168px;
+	z-index: 99;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: rgba(0,0,0,0.5);
+}
+.MaskBar .cont1,
+.MaskBar .cont2,
+.MaskBar .cont3,
+.MaskBar .cont4{
+	width: 25%;
+	height: 168px;
+	text-align: center;
+	float: left;
+	color: #FFF;
+}
+
+.MaskBar p{
+	margin: 0;
+}
+.MaskBar .word{
+	margin-top: 8px; 
+	text-align: center;
+}
+/*.hr_200{
+	height: 113px;
+	clear: both;
+}*/
+.NewsBar{
+	height: 26px;
+	overflow: hidden;
+}
+.NewsBar li{
+	height: 26px;
+	line-height: 26px;
+}
+
+#walkthrough-content{display:none} 
+#walkthrough-content h3{height:30px; line-height:30px}
+#walkthrough-content p{line-height:28px}
+
+.newPerson{
+	position: absolute;
+	top: 50px;
+	right: 10px;
+}
+.margin-10{left:32%;top:10%;}

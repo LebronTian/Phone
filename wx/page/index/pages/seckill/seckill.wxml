@@ -1,0 +1,42 @@
+<view class='container'>
+	<view class="main">
+		<view class="cluster-goods-box">
+			<block wx:for="{{goodList}}" wx:key="{{key}}">
+				<view class="cluster-good">
+					<image class="cluster-good-img" src="{{item.main_img}}"></image>
+					<view class="cluster-good-info">
+						<!-- <view class="cluster-good-title">{{item.title}}</view>
+						<text class="good-price" style="color: {{mainColor}}">
+							¥ <text class="cluster-good-priceNum">{{item.price}} </text>
+							<text class="cluster-good-originPrice"> ¥ {{item.ori_price}}</text>
+						</text> -->
+						<view class="goodInfo-header">
+							<view class="seckill-good-title">{{item.title}}</view>
+							<!-- <view class="good-price" style="color: {{mainColor}}">
+								<view class="cluster-good-priceNum">¥ {{item.price}} </view>
+								<view class="good-oriPrice"> ¥ {{item.ori_price}}</view>
+							</view> -->
+						</view>
+						<view class="cluster-good-price good-price" style="color: {{mainColor}}">
+							¥ <text class="cluster-good-priceNum">{{item.price}} </text>
+							<text class="cluster-good-originPrice"> ¥ {{item.ori_price}}</text>
+						</view>
+						<!-- <view class="good-price" style="color: {{mainColor}}">
+								<view class="cluster-good-priceNum">¥ {{item.price}} </view>
+								<view class="good-oriPrice"> ¥ {{item.ori_price}}</view>
+							</view> -->
+						<view class="goodInfo-footer">
+							<view class="seckill-time" wx:if="{{item.seckillStatus != 2}}">
+								<text>距离秒杀 <text class="seckill-time__title" style="color: {{mainColor}}">{{item.seckillStatus == 0 ? '开始' : '结束'}}</text> 还有: </text>
+								<view class="time" style="color: {{mainColor}};">{{item.seckillStatus == 0 ? item.startTime : item.endTime}}</view>
+							</view>
+							<navigator url="../../../class/pages/goodDetail/goodDetail?uid={{item.uid}}" hidden="{{item.seckillStatus != 1}}" class="cluster-good-btn" style="background-color: {{mainColor}}">去抢购</navigator>
+							<view class="cluster-good-btn" style="background-color: #ddd;" wx:if="{{item.seckillStatus == 2}}">秒杀已过期</view>
+					  </view>
+					</view>
+				</view>
+			</block>
+		</view>
+	</view>
+	<view class="footer" hidden="{{!showNoMore}}">-没有更多商品了-</view>
+</view>

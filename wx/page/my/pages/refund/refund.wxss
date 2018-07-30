@@ -1,0 +1,26 @@
+/* page/my/pages/refund/
+refund.wxss */
+
+@import '../orderDetail/orderDetail.wxss';
+
+
+.page-section-title {
+	line-height: 2.4em;
+	text-indent: 25rpx;
+}
+
+textarea {
+    width: 700rpx;
+    padding: 25rpx 0;
+}
+.textarea-wrp {
+    padding: 0 25rpx;
+    background-color: #fff;
+}
+
+.footer-btn {
+	position: fixed;
+	bottom: 30rpx;
+	width: calc(100% - 160rpx);
+	margin: 0 80rpx;
+}

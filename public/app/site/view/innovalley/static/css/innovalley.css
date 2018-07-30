@@ -1,0 +1,18 @@
+    .am-u-lg-7 > p{
+      font-weight:500;
+      margin: 0;
+    }
+    .content{height:970px}
+    .valley_detail {width:1170px;margin:0 auto;}
+    .valley_second {margin-top:30px;}
+    .left_pic{width:220px;height:150px;float:left;margin-right:100px}
+    .left_pic > img{width:220px;height:150px;}
+    .valley_intro{width:700px;float:left;}
+    .valley_title{width:700px;border-bottom:2px solid #ccc}
+    .valley_title > h1 {margin-bottom:30px}
+    .blog-content{padding-bottom:20px;padding-top:40px;}
+    .am-u-lg-5 > p{ width: 100%;}
+    .valley1{width:100%}
+    .valley2{width:100%;margin-top:100px}
+    .last_pic{float:right}
+    .last_pic > img{width:350px;height:200px}

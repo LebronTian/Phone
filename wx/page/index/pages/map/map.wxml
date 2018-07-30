@@ -1,0 +1,28 @@
+<view class="container">
+	<view class="map-box">
+		<map id="map" longitude="113.324520" latitude="23.099994" scale="14" controls bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" show-location style="width: 100%; height: 100%;"></map>
+	</view>
+	<view class="info-box">
+		<view class="info-item address">
+			<image class="info-icon" src="/page/resources/pic/location.png"></image>
+			<text class="info-cont">地址：广东省深圳市南山区科技园 xx大厦404</text>
+		</view>
+		<view class="info-item phone">
+			<image class="info-icon" src="/page/resources/pic/location.png"></image>
+			<text class="info-cont">电话：010-12341234</text>
+		</view>
+		<view class="info-item cellPhone">
+			<image class="info-icon" src="/page/resources/pic/location.png"></image>
+			<text class="info-cont">手机：13312341234</text>
+		</view>
+		<view class="info-item qq">
+			<image class="info-icon" src="/page/resources/pic/location.png"></image>
+			<text class="info-cont">Q Q：12345678</text>
+		</view>
+		<view class="info-item wechat">
+			<image class="info-icon" src="/page/resources/pic/location.png"></image>
+			<text class="info-cont">微信：abcde</text>
+		</view>
+	</view>
+	<button class="contact" open-type="contact">在线咨询</button>
+</view>

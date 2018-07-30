@@ -1,0 +1,29 @@
+.group {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid #ccc;
+	background-color: #fff;
+	padding: 20rpx;
+}
+.group__avatar {
+	width: 80rpx;
+	height: 80rpx;
+	border-radius: 50%;
+}
+.group__info {
+	width: 65%;
+}
+.group__num, .group__time {
+	font-size: 0.9em;
+	color: #8a8a8a;
+}
+.group__btn {
+	border-width: 1px;
+	border-style: solid;
+	text-align: center;
+	padding: 5rpx 15rpx;
+	border-radius: 3px;
+	font-size: 0.8em;
+}
+

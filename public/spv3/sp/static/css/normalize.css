@@ -1,0 +1,122 @@
+@charset "utf-8";
+/*---------------------------------------- css全局定义 ----------------------------------------*/
+body { 
+	margin: 0 auto;
+	line-height: 1;
+	-webkit-user-select: none; /*禁用长按空白后复制*/
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: inherit;
+	font-weight: normal;
+	color: inherit; 
+	margin-top: 0; 
+	margin-bottom: 0; 
+	font-size: inherit;
+}
+a, a:visited {
+	text-decoration: none;
+	background-color: transparent;
+}
+a, img { border: none;}
+a, input, button, textarea, select, .avkdot, li, img { -webkit-tap-highlight-color:rgba(0,0,0,0); }
+input:-webkit-autofill { 
+	-webkit-box-shadow: 0 0 0px 1000px white inset !important; 
+} 
+input, fieldset { 
+	padding-top: 0; 
+	padding-bottom: 0;
+	padding-left: 0;
+	padding-right: 0;
+}
+fieldset { 
+	margin-top: 0; 
+	margin-bottom: 0;
+	margin-left: 0;
+	margin-right: 0;
+}
+button { margin: 0;}
+input, textarea, select, button, a { outline: 0;}
+input{ line-height: normal !important;}
+textarea { resize: none;}
+dl, dd, input, select { margin: 0;}
+ul {
+	margin-top: 0; 
+	margin-bottom: 0; 
+	padding-left: 0 !important; 
+	padding-right: 0;
+	list-style-type: none; 
+}
+p, figure { margin: 0;}
+/*---------------------------------------- /css全局定义 ----------------------------------------*/
+
+/*---------------------------------------- css通用样式 ----------------------------------------*/
+/*字体风格*/
+body { font-family:"微软雅黑";}
+samp, input, button, textarea, select, tt, code, kbd {font: inherit;}
+/*字体颜色-默认*/
+body { color: #333;}
+a, a:focus, a:active, samp, input, button, textarea, select, tt, code, kbd { color: #FFF;} 
+a{ color: #FFF;}
+/*a:hover{color:#d0101b;}*/
+.color1 { color: #868686 !important;} /*白色*/
+.color2 { color: #333333 !important;} /*黑色*/
+
+/*a标签有下划线*/
+.a-hover:hover { text-decoration: underline;}
+/*字体大小*/
+body{ font-size:14px;}
+.font-size-0 { font-size: 0;}
+.font-size-12 { font-size: 12px;}
+.font-size-18 { font-size: 18px;}
+
+/*背景颜色-默认*/
+body { background-color: #FFF;}
+.background1 { background-color: #49E27F !important;} /*绿色*/
+
+/*背景颜色-鼠标经过*/
+.background1-hover:hover { background-color: #DDD;} 
+
+/*边框宽度*/
+.border-width1{ border-width: 1px;}
+/*边框形状*/
+.border-bottom-style1{ border-bottom-style:solid;}
+/*边框宽度、形状*/
+.border-width-style{border-width: 1px; border-style:solid;}
+/*边框颜色*/
+.border-color1 { border-color: #DBDBDB;}
+.border-color2 { border-color: #04BE02;}
+/*边框位置*/
+.border-left1 { border-width: 1px; border-left-style: solid;}
+.border-right1 { border-width: 1px; border-right-style: solid;}
+.border-bottom1 { border-width: 1px; border-bottom-style: solid;}
+.border-top1 { border-width: 1px; border-top-style: solid;}
+/*宽度*/
+.width-x { width: 100%; min-width:1200px;}
+.width-1200 { width: 1200px; margin: 0 auto;} 
+/*隐藏滚动条*/
+::-webkit-scrollbar{ 
+	width: 0; 
+	height: 0;
+}
+/*内边距*/
+.padding-lr1{ padding-left: 15px; padding-right: 15px;}
+.padding-l1{ padding-left: 15px;}
+/*外边距*/
+.margin-top1{margin-top:12px; }
+/*圆角*/
+.border-radius1{ border-radius: 4px;}
+/*其他*/
+.clear-both { clear: both;}
+.float-left { float: left;}
+.float-right { float: right;}
+.overflow-hidden { overflow: hidden;}
+.visibility-hidden { visibility: hidden;}
+.display-block { display: block;}
+.display-none { display: none;}
+.inline-block { display: inline-block;}
+.text-align-center { text-align: center;}
+.text-align-right { text-align: right;}
+.font-weight-normal { font-weight: normal;}
+.font-weight-bold { font-weight: bold;}
+.cursor-pointer { cursor: pointer}
+/* ----------------------------------------/css通用样式 ----------------------------------------*/

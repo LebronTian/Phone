@@ -1,0 +1,2 @@
+/* page/class/pages/pointGood/pointGood.wxss */
+@import '/page/index/pages/cluster/cluster.wxss';

@@ -1,0 +1,72 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+.header{
+		position:fixed;
+		width:100%;
+		height:40px;
+		background-color:#006699;
+		top:0;left:0;
+		z-index: 1000;
+	}
+	.company_name{
+		color:white;
+		font-size:16px;
+		margin:0 auto;
+		width:80%;
+		height:40px;
+		line-height:40px;
+		overflow:hidden;
+		text-align:center;
+	}
+	.classify_pic{
+		float:right;margin:10px 10px 0 0;
+	}
+	.classify_pic img{
+		width:25px;height:20px;
+	}
+	.classify_detail{
+		position:fixed;
+		z-index:555;
+		width:auto;
+		right:-200px;
+		top:40px;
+	}
+	.classify_detail ul{
+		list-style:none;margin-top:0px;text-align:center
+	}
+	.classify_detail ul li{
+				background-color:black;
+		opacity:0.6;border-bottom:1px solid #ccc;line-height:25px;color:white;font-weight:600;height:25px
+	}
+	.classify_detail ul li a{
+		text-decoration:none;color:white;
+	}
+	.footer{
+		 z-index: 1000;position:fixed;width:100%;height:50px;background-color:#006699;bottom:0;left:0;
+	}
+	.footer div{
+		 float:left;width:20%;text-align: center;
+	}
+	.footer div a{
+		width: 100%;
+		height:100%;
+	}
+	.footer div img{
+		margin-top: 5px;
+		 max-height: 40px;
+	}
+	.share_box{
+		position:fixed;bottom:50px;left:0;background-color:white;width:100%;height:250px;z-index:1000
+	}
+	.share_img{
+		width:25%;float:left;
+	}
+	.cancel_share{
+		position:absolute;height:50px;width:100%;left:0;bottom:0;background-color:#18B4E5;border:0;font-size:25px
+	}
+	.share_img img{
+		width: 50%;
+		margin: 0 25%;
+	}

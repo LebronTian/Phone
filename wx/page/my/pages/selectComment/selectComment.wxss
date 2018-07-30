@@ -1,0 +1,25 @@
+/* page/my/pages/selectComment/selectComment.wxss */
+
+@import '../orderDetail/orderDetail.wxss';
+
+.order-receiveTitle {
+	line-height: 2.4em;
+	border-bottom: none;
+}
+
+.order-goods-box {
+	margin-top: 0;
+}
+.order-goodPrice {
+	line-height: 3.6em;
+	color: #f80000;
+}
+.navToComment {
+	width: 30%;
+	border: 1px solid #666;
+	color: #666;
+	border-radius: 5px;
+	text-align: center;
+	margin-left: 60%;
+	line-height: 2em;
+}

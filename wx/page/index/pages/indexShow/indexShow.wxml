@@ -1,0 +1,104 @@
+<!--page/index/pages/indexShow/indexShow.wxml-->
+<view class="container">
+	<view class="header-box">
+		<image class="top-icon" src="{{shopInfo.logo}}"></image>
+	</view>
+
+	<!-- 商品轮播图 -->
+  <view class="header-swiper-box">
+    <swiper class="header-swiper" indicator-dots autoplay circular interval="{{3000}}" duration="{{300}}">
+      <block wx:for="{{background}}" wx:key="{{index}}">
+        <swiper-item>
+          <view class="swiper-item" data-set="{{item}}" bindtap="">
+            <image class="header-swiperImg" src="{{item.image}}"></image>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!-- 导航栏 -->
+  <view class="subNavs-box">
+    <button wx:for="{{subNavs}}" wx:key="{{index}}" class="body-subNav" data-id="{{item.uid}}" bindtap="subNavTap">
+      <image class="subNav-img" src="{{item.image}}"></image>
+      <text class="subNav-title">{{item.title}}</text>
+    </button>
+  </view>
+
+  <!-- 分类信息 -->
+  <view class="classic-case module-item" wx:for="{{subNavs}}" wx:key="{{index}}">
+  	<view class="header-title" style="color: {{mainColor}}">{{item.title}}</view>
+  	<view class="header-subtitle">{{item.title}}</view>
+  	<view class="module-main">
+  		<!-- 两列展示 -->
+	    <block wx:for="{{listByCat[item.uid]}}" wx:key="{{index}}" wx:for-item="article">
+	      <navigator url="../article/article?showId={{article.uid}}" class="case-item">
+	        <image class="case-img" src="{{article.img}}"></image>
+          <view class="case-title">{{article.title}}</view>
+	      </navigator>
+	    </block>
+  	</view>
+    <navigator class="footer-nav" url="../articleClass/articleClass?classId={{item.uid}}" style="color: {{mainColor}}; border-color: {{mainColor}};">所有案例展示</navigator>
+  </view>
+
+  <!-- 关于我们 -->
+  <!-- <view class="about-us module-item">
+		<view class="header-title" style="color: {{mainColor}}">关于我们</view>
+		<view class="header-subtitle">关于我们</view>
+		<view class="module-main"></view>
+    <navigator class="footer-nav" url="../article/article?showId={{item.uid}}" style="color: {{mainColor}}; border-color: {{mainColor}};">详细了解我们</navigator>
+  </view> -->
+
+  <!-- 新闻中心 -->
+  <!-- <view class="news-center good-box1 module-item">
+  	<view class="header-title" style="color: {{mainColor}}">新闻中心</view>
+		<view class="header-subtitle">新闻中心</view>
+		<view class="module-main good-box1">
+      <block wx:for="{{[1,2,3,4,5,6]}}" wx:key="{{index}}">
+        <view class="article-item good1">
+          <image class="goodImg1" src="/page/resources/pic/default.png"></image>
+          <view class="goodInfo-box1">
+            <view class="goodTitle1">店面形象店面形象店面形象</view>
+            <view class="good-otherInfo1">
+              <text class="originPrice">2017-12-12 13:32:30</text>
+            </view>
+          </view>
+        </view>
+      </block>  
+    </view>
+    <navigator class="footer-nav" url="../articleClass/articleClass?classId={{item.uid}}" style="color: {{mainColor}}; border-color: {{mainColor}};">详细了解我们</navigator>
+  </view> -->
+
+  <!-- 联系我们 -->
+  <view class="contact module-item">
+  	<view class="header-title" style="color: {{mainColor}}">联系我们</view>
+		<view class="header-subtitle">联系我们</view>
+		<view class="module-main">
+      <map id="map" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" bindregionchange="regionchange" show-location style="width: 100%; height: 300px;"></map>
+      <view class="shop-title">{{shopInfo.title}}</view>
+      <view class="contact-info">
+        <view class="contact-title">地址</view>
+        <view class="contact-content">{{shopInfo.location}}</view>
+      </view>
+      <view class="contact-info">
+        <view class="contact-title">电话</view>
+        <view class="contact-content">{{shopInfo.phone}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 留言板 -->
+  <view class="news-center module-item">
+  	<view class="header-title" style="color: {{mainColor}}">留言板</view>
+		<view class="header-subtitle">留言板</view>
+		<view class="module-main">
+      <form bindsubmit="submitInfo" class="msg-form">
+        <input name="phone" class="msg-input" placeholder="请输入电话"/>
+        <!-- <input name="email" class="msg-input" placeholder="请输入邮箱"/> -->
+        <textarea class="msg-textarea" name="textarea" placeholder="请输入您的建议" style="height: 6.6em" />
+        <button class="msg-btn" style="background-color: {{mainColor}}" form-type="submit">提交</button>
+      </form>  
+    </view>
+  </view>
+
+</view>

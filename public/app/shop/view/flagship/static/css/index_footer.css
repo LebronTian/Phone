@@ -1,0 +1,53 @@
+/*留言板*/
+.message-input{border-bottom: 1px solid  #aaa;}
+.message-input input{border: none;width: 88%;float: left;padding-left: 2%;outline: none;font-size: 0.8em;}
+.message-input i{width: 10%;background: #eee;font-size: 1.5em;text-align: center;display: flex;justify-content: center;align-items: center;border-left: 1px solid #aaa;box-sizing: border-box;}
+.message-input i:before{vertical-align: -webkit-baseline-middle;}
+.message-list{margin-bottom: 70px;}
+.message-list li{
+	border-top: 0.8rem #eee solid;
+	background: #fcfcfc;
+	padding: 1rem 2%;
+	font-size: 0.9em;
+}
+.message-list li .user-time{
+	font-size: 0.6em;
+}
+.message-list-content{
+	padding-top: 1em;
+	text-align: center;
+}
+	.banner img{
+		max-width: none;
+		width: 100%;
+	}
+	.message-list li{position: relative;}
+	.message-list-good{
+		position: absolute;top: 0;right: 0.5em;color: #999;font-size: 1.3em;
+	}
+	.message-list-good-num{color:#666;}
+	.index-section{background: #fff;font-size: 0;
+	margin-bottom: .4rem;}
+	.secondary-font{font-size: 1.7rem;}
+	.index-section-title {
+		white-space: nowrap;overflow: hidden;text-overflow: ellipsis;font-size: 1.3rem;
+    padding: 5px;
+    margin: 0 5px;
+}.index-section-footer {
+    padding: 5px;
+    position: relative;
+}
+	.flash-end-time{
+		float: right;color: #999;
+	}
+	.flash-end-time span{
+		color: #fff;padding: 0 3px;border-radius: 2px;background: #999;
+	}
+	.noflash{text-align: center;margin-top: 5em;}
+.swiper-pagination-bullet{text-align: center;border: 1px solid #fff;opacity: 1;background: rgba(0,0,0,0);}
+.swiper-pagination-bullet-active{background: #fff;}
+.hot-title{line-height: 3em;background: #fff;padding: 0 1%;}
+	.loading{
+		margin: 5em auto 0 auto;text-align: center;
+	}
+

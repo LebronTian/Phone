@@ -1,0 +1,51 @@
+.jvectormap-label {
+    position: absolute;
+    display: none;
+    border: 0;
+    -moz-border-radius: 3px;
+    color: #666666;
+    font-family: sans-serif, Verdana;
+    font-size: smaller;
+    line-height: 20px;
+    min-width: 88px;
+    z-index: 20;
+}
+.label_triangle{
+    float:right;margin-right:10px;
+    width:0px;height:0px;border:10px solid #ffffff; 
+    border-color:#ffffff #ffffff transparent transparent; 
+    border-style:solid solid dashed dashed;
+}
+.jvectormap-label a{
+    color:#666666;
+}
+.jvectormap-label>div:first-child{
+    border-radius: 5px;
+    background-color: white;
+    box-shadow:0px 5px 5px #888888; 
+    -moz-box-shadow:0px 5px 5px #888888;
+    -webkit-box-shadow:0px 5px 5px #888888;
+    padding: 3px;
+}
+.jvectormap-zoomin, .jvectormap-zoomout {
+    position: absolute;
+    -moz-border-radius: 3px;
+    background: #292929;
+    padding: 3px;
+    color: white;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    line-height: 10px;
+    text-align: center;
+}
+
+.jvectormap-zoomin {
+    left: 10px;
+    top: 10px;
+}
+
+.jvectormap-zoomout {
+    left: 10px;
+    top: 30px;
+}

@@ -1,0 +1,62 @@
+<!--page/class/pages/pointGoodDetail/pointGoodDetail.wxml-->
+<import src="../../../common/wxParse/wxParse.wxml"/>
+
+<view class="container">
+	<view class="weui-tab__panel" style="padding-top:0;">
+		<!-- 商品简介页面 -->
+    <view class="weui-tab__content">
+    	<view class="goodHeader-swiper-box">
+	      <swiper class="goodHeader-swiper" indicator-dots circular bindchange="swiperChange">
+	        <block wx:for="{{background}}" wx:key="*this">
+	          <swiper-item>
+	            <view class="swiper-item" wx:if="{{item.img}}">
+	              <image class="goodHeader-swiperImg" src="{{item.img}}"></image>
+	            </view>
+	            <view class="header-vedio" wx:else>
+								<video class="classVedio vedio__fixed" id="myVideo" src="{{item.vedio}}" poster="{{background[1].img}}" binderror="videoErrorCallback" bindended="videoPlayEnd" hidden="{{isSelect}}"></video>
+							</view>
+	          </swiper-item>
+	        </block>
+	      </swiper>
+	    </view>
+	    <view class="goodIntro-box">
+	    	<view class="goodIntro">
+	    		<view class="good-title">{{detail.title}}</view>
+		    	<text class="good-intro" hidden="{{!detail.title_second}}">{{detail.title_second}}</text>
+		    	<view class="good-price">
+		    		<text class="good-price-group">{{detail.point_price}} 积分</text>
+		    	</view>
+	    	</view>
+	    	<button open-type="share" class="good-shareBtn" style="color:{{mainColor}}">
+	    		<image class="good-shareBtn-img" src="../../../resources/pic/share.png"></image>
+	    		分享
+	    	</button>
+	    </view>
+	    <view class="goodSelect-box goodRight-box" hidden="{{!detail.bas_services || detail.bas_services.length == 0}}">
+	    	<block wx:for="{{detail.bas_services}}" wx:key="{{item}}">
+	    		<image class="rightIcon" src="../../../resources/pic/rightIcon.png"></image><text style="font-size: 0.8em;">{{item}}</text>
+	    	</block>
+	    </view>
+			<!-- 商品详情页面 -->
+	    <view class="weui-tab__content good-info">
+	    	<view class='detail-extraInfo' hidden="{{!detail.extra_info || detail.extra_info.length == 0}}">
+	    		<block wx:for="{{detail.extra_info}}" wx:key="{{index}}">
+	    			<view class="extraInfo-item">
+	    				<view class="extraInfo-item__title">{{item.ukey}}</view>
+	    				<view class="extraInfo-item__content">{{item.data}}</view>
+	    			</view>
+	    		</block>
+	    	</view>
+	    	<view class="detail-content-box">
+					<template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+	    	</view>
+	    </view>
+    </view>    
+	</view>
+	<!-- 底部购买操作菜单 -->
+	<view class="footer" bindtap="navToGroupJoin">
+		<view class="footer-buyBtn" style="background-color: {{mainColor}}; width: 100%; font-size: 1.2em;">
+			<text>立即兑换</text>
+		</view>
+	</view>
+</view>

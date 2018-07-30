@@ -1,0 +1,150 @@
+
+.media-nav{
+    margin-left: 1.6rem;
+    margin-top: 0;
+}
+.media-body{
+    margin-left: 1.6rem;
+}
+.media-page{
+    padding-left: 10px;
+    float: left;
+}
+.media-content{
+    overflow: hidden;
+}
+.add-box{
+    float: left;
+    border: thin solid #dcdcdc;
+    margin: 10px;
+    height: 62px;
+    width: 200px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 60px;
+}
+.text-box{
+    position: relative;
+    float: left;
+    border: thin solid #dcdcdc;
+    margin: 10px;
+    padding: 8px;
+    line-height: 44px;
+    min-width: 160px;
+}
+.text-delete{
+    position: absolute;
+    right: 0;
+    top: -2px;
+    line-height: 1;
+    color: #868682;
+    cursor: pointer;
+}
+.text-edit{
+    position: absolute;
+    left: 0;right: 0;top: 0;bottom: 0;
+    margin: 0;
+    display: none;
+    background-color:  rgba(180,180,180,.8);
+    text-align: center;
+}
+.text-edit img{
+    cursor: pointer;
+}
+
+#add-box-pic{
+    width: 280px;
+    line-height: 290px;
+    height: 310px;
+}
+#add-box-pics{
+    float: none;
+}
+.pic-box{
+    float: left;
+    border: thin solid #dcdcdc;
+    margin: 10px;
+    height: 310px;
+    width: 280px;
+}
+.pic-box-body{
+    padding: 15px;
+    border-bottom: solid thin #dcdcdc;
+    height: 266px;
+}
+.pic-box-body p{
+    margin:0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.pic-box-body img{
+    margin: 10px 0;
+}
+.pic-box-bottom{
+    background: #eee;
+    overflow: hidden;
+    height: 42px;
+    line-height: 42px;
+}
+.pic-box-bottom button{
+    height: 46px;
+    width: 139px;
+    line-height: 1;
+}
+.edit-button{
+}
+
+.pic-box-bottom div :first-child{
+    border-right: thin solid #dcdcdc;
+}
+/*编辑框*******/
+.zw-box label{
+    margin-bottom: 0;
+}
+.s_main_bd{
+    overflow: hidden;
+    padding: 0 10px;
+    margin: 10px 0;
+    width: 910px;
+    text-align: left;
+}
+.s_edit_area{
+    height: 500px;
+    overflow-y: scroll;
+}
+.save-button{
+    margin-right: 185px;
+}
+.pics-body-boxs{
+    overflow: hidden;
+    margin-left: 10px;
+}
+.pics-body-boxs a{
+    text-decoration: none;
+}
+.pics-box{
+    float: left;
+}
+/**/
+.small-msg{
+    border: 1px solid #DDD;
+}
+.pics-box-bottom{
+
+}
+.pics-box-bottom button{
+    width: 160px;
+ }
+.add-text{
+    min-width: 200px;
+}
+.text-save{
+    margin-top:10px;
+    margin-left: 64px;
+}
+.am-popover{
+    z-index: 2000;
+}
+a:hover {
+     text-decoration: none;
+}

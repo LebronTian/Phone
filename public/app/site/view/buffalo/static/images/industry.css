@@ -1,0 +1,26 @@
+.main_body{
+	width: 1080px;
+	margin: 0 auto;
+}
+
+.meeting{
+	width: 1080px;
+	height: 500px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.meeting_box{
+	width: 240px;
+	height: 410px;
+	float: left;
+	margin-top: 80px;
+}
+
+.meeting_title{
+	width: 240px;
+	height: 220px;
+	box-sizing: border-box;
+	padding: 85px 20px 0;
+	background: #16a6b6;
+}

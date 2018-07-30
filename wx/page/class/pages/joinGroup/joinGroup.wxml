@@ -1,0 +1,72 @@
+<view class="container">
+	<header class="header">
+		<image class="good-img" src="{{detail.img}}"></image>
+		<view class="good-info__box">
+			<view class="good-info__title">{{detail.title}}</view>
+			<view class="good-info__bottom">
+				<text class="good-info__num">{{detail.group_cnt}}人团 还差{{group.remain_cnt}}人\n</text>
+				<text class="good-info__price" style="color: {{mainColor}}">¥ {{detail.group_price/100}}</text>
+			</view>
+		</view>
+	</header>
+	<view class="main">
+		<view class="finder">
+			<image class="finder__avatar" src="{{group.user.avatar}}"></image>
+			<view class="">
+				<text class="finder__name">{{group.user.name}}</text>
+				<text class="finder__title" style="color: {{mainColor}}"> 团长\n</text>
+				<text class="finder__time">{{group.startTime}} 开团</text>
+			</view>
+		</view>
+		<view class="leftTime"><text style="color: {{mainColor}}">{{group.remainTime}}</text> {{group.leftTime > 0 ? "后结束" : ""}}</view>
+	</view>
+	<view class="footer">
+		<view class="join__btn" style="background-color: {{mainColor}}" bindtap="showSelect">一键参团</view>
+	</view>
+	<!-- 页面阴影视图层 -->
+	<view class="page-shadow {{isSelect ? 'page-shadow-show' : ''}}" bindtap="tapShadow"></view>
+	<!-- 选择商品规格页面 -->
+  <view class="selectSpecification {{isSelect ? 'selectSpecification-show' : ''}}" >
+  	<view class="select-main">
+	  	<view class="select-header">
+	  		<image class="select-goodImg" src="{{specialImg}}"></image>
+	  		<view class="select-header-content">
+	  			<view class="select-goodPrice">
+	  				<text class="select-goodPrice-group">团购价: ¥ {{detail.group_price/100}} </text>
+	  			</view>
+	  			<view class="select-goodStock">库存：{{quantity}}</view>
+	  			<view class="select-goodSpecial">已选择:
+						<text wx:for="{{specials}}" wx:key="{{index}}">{{item.list[item.selectedIndex] + ' '}}</text>
+						<text>{{selectedNum}}件</text>
+	  			</view>
+	  		</view>
+				<view class="select-cancelBtn">
+					<image class="select-cancelImg" src="../../../resources/pic/cancel.png" bindtap="tapShadow"></image>
+				</view>
+	  	</view>
+	  	<view class="select-body">
+	  		<view class="select-bodySpecial-box">
+					<block wx:for="{{specials}}" wx:for-item="special" wx:key="{{index}}">
+						<view class="select-bodySpecial">
+		  				<view class="select-bodySpecial-title">{{special.name}}</view>
+		  				<block wx:for="{{special.list}}" wx:key="{{index}}">
+			  				<view id="{{special.name + ' ' + index}}" class="select-bodySpecial-item {{special.selectedIndex == index ? 'select-bodySpecial-selected' : ''}}" bindtap="bindSelectSpecial">{{item}}</view>
+		  				</block>
+		  			</view>
+					</block>
+	  		</view>
+	  		<view class="select-bodyNum-box">
+	  			<text class="select-bodyNum-title">购买数量</text>
+	  			<view class="select-bodyNumChg-box">
+	  				<button disabled="{{selectedNum <= 1}}" class="select-bodyNumChg-btn select-numPlusBtn" bindtap="substractNum">-</button>
+	          <input class="select-bodyNum" type="number" value="{{selectedNum}}" disabled />
+	  				<button disabled="{{selectedNum >= quantity}}" class="select-bodyNumChg-btn select-numSunBtn" bindtap="addNum">+</button>
+	  			</view>
+	  		</view>
+	  	</view>
+	  </view>
+  	<view class="select-footer" hidden="{{detail.group_price == 0}}">
+  		<view class="select-footerBuy" style="background-color: {{mainColor}}" bindtap="joinGroup">立即参团</view>
+  	</view>
+  </view>
+</view>

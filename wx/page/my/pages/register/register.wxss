@@ -1,0 +1,11 @@
+/* page/my/pages/register/register.wxss */
+.register-btn {
+	margin: 100rpx auto;
+	width: 150rpx;
+	height: 150rpx;
+	line-height: 150rpx;
+	text-align: center;
+	color: #8a8a8a;
+	border-radius: 50%;
+	border: 1px solid #ccc;
+}

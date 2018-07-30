@@ -1,0 +1,53 @@
+    .am-form input[type=search]{
+        padding: 0.3em;
+        display: none;
+    }
+
+    .user-p{
+        cursor: pointer;
+        color: #ffffff;
+        padding: 0.5em;
+        width: 50%;
+        display: inline-block;
+        margin: 0.5em 0;
+    }
+    .active-p{
+        background: #5eb95e;!important;
+        border: 2px solid crimson;
+    }
+    .user-p:nth-child(odd){
+        background: #0e90d2;
+    }
+    .user-p:nth-child(even){
+        background: #3bb4f2;
+    }
+
+
+    .user-list-foot{
+        border-top: 1px solid #dedede;
+        width: 100%;
+        background: #ffffff;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 3em;
+        line-height: 3em;
+        color: #0e90d2;
+    }
+    .user-list-foot span{
+        width: 50%;
+        display: inline-block;
+        text-align: center;
+        cursor: pointer;
+    }
+    .user-list-foot span:first-child{
+        border-right: 1px solid #dedede;
+    }
+    .user-head{
+        width: 2em;
+        height: 2em;
+        background: url(/static/images/null_avatar.png);
+        background-size: 100% auto;
+        border-radius: 50%;
+        margin: 0 0.3em;
+    }

@@ -1,0 +1,70 @@
+.gallery{
+	width: 1080px;
+	height: 560px;
+}
+
+.gallery_cats{
+	width: 640px;
+	height: 80px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.gallery_cats li{
+	width: 90px;
+	height: 80px;
+	text-align: center;
+	font-size: 14px;
+	color: #333;
+	line-height: 80px;
+	float: left;
+}
+
+.navheader{width: 94%;padding:0 3%;height: 80px;border-bottom:1px solid #ccc;margin-bottom: 30px;}
+.Leftlogo{display: inline-block;position: relative;top: 40px;transform: translateY(-50%);font-size: 18px; }
+.iconContainer>div{float: right;}
+
+.iconContainer>div {
+    margin-right: 10px;
+    font-size: 18px;
+    line-height: 36px;
+}
+.iconContainer>div>hr{color: #3c3c3c;
+	display: block;
+	width: 30px;
+    height: 0px;
+    border: none;
+    border-bottom: 1px solid #3c3c3c;margin: 0; margin:4px 0;
+    margin-top: 4px;
+
+}
+.menuIcon{
+	margin-top: 10px;
+}
+
+.main_body{max-width: 1080px;margin: 0 auto;}
+/*导航*/
+.navheader{width: 94%;padding:0 3%;height: 80px;border-bottom:1px solid #ccc;}
+.Leftlogo{display: inline-block;position: relative;top: 40px;transform: translateY(-50%);font-size: 18px; }
+.iconContainer{
+	position: relative;
+    top: -30px;}
+.iconContainer>div{float: right;}
+
+.iconContainer>div {
+    margin-right: 10px;
+    font-size: 18px;
+    line-height: 36px;
+}
+.iconContainer>div>hr{color: #3c3c3c;
+	display: block;
+	width: 30px;
+    height: 0px;
+    border: none;
+    border-bottom: 1px solid #3c3c3c;margin: 0; margin:4px 0;
+    margin-top: 4px;
+
+}
+.menuIcon{
+	margin-top: 10px;
+}

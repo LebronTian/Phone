@@ -1,0 +1,199 @@
+
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: rgba(88,99,99,0.2);
+}
+li{
+	list-style-type: none;
+}
+.hide{
+	display: none;
+}
+.clearFix:after{
+	content: "";
+	height: 0;
+	clear: both;
+	display: block;
+	visibility: hidden;
+}
+.state1{
+    color:#aaa;
+}
+
+.state2{
+    color:red;
+}
+.state3{
+    color:green;
+}
+
+
+/*登陆页*/
+.header{
+	height: 25px;
+}
+.header a{
+	display: block;
+	width: 25%;
+	float: left;
+	text-align: center;
+	height: 25px;
+	line-height: 25px;
+}
+.header a:hover{
+	background: rgba(0,0,0,0.1);
+}
+.logo_box{
+	margin-top: 65px;
+}
+.logo_img,
+.logo_text{
+	text-align: center;
+}
+.hr_50{
+	height: 50px;
+}
+.form_cont{
+	width: 880px;
+	padding-left: 145px;
+}
+.user_pro,.pwd_pro,.idt_pro{
+	margin-left: 10px;
+	font-size: 12px;
+}
+#account,
+#password,
+#identify{
+	display: inline;
+	width: 590px;
+}
+.am-input-group-label{
+	width: 51px;
+	height: 43px;
+}
+.am-input-group{
+	width: 800px;
+}
+.checkbox input,
+.checkbox span{
+	vertical-align: middle;
+	margin-right: 5px;
+}
+.forget_pwd{
+	float: right;
+}
+.footer{
+	height: 20px;
+	margin-top: 180px;
+	font-size: 12px;
+	clear: both;
+}
+.footer_msg{
+	text-align: center;
+}
+
+/*忘记密码*/
+.find_pwd_box{
+	width: 400px;
+	clear: both;
+}
+.find_nav ul{
+	padding-left: 0;
+}
+.find_nav li{
+	width: 80px;
+	line-height: 40px;
+	height: 40px;
+	text-align: center;
+	background: rgba(0,0,0,0.1);
+	font-size: 16px;
+	color: #000;
+	cursor: pointer;
+	float: left;
+}
+.find_nav li.active{
+	background: #0E90D2;
+	color: #FFF;
+}
+.am-form-horizontal .am-form-label{
+	text-align: left;
+	float: left;
+}
+.am-u-sm-10,.am-u-sm-2{
+	width: auto;
+	margin: 0;
+}
+.am-form{
+	margin-left: -36px;
+}
+#doc-ipt-3,
+#doc-ipt-pwd-2{
+	width: 365px;
+	float: left;
+}
+
+.am-form-group{
+	width: 581px;
+}
+.tishi{
+	display:inline-block;
+	width:180px;
+	height:20px; 
+	margin-top:9px;
+	text-indent:10px;
+	visibility: hidden;
+	font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

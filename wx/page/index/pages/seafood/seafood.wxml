@@ -1,0 +1,64 @@
+<!--page/index/pages/seafood/seafood.wxml-->
+<view class="container">
+	<!-- 搜索框 -->
+  <navigator url="../search/search" class="search-bar">
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" placeholder="搜索" />
+      </view>
+      <label class="weui-search-bar__label">
+        <icon class="weui-icon-search" type="search" size="14"></icon>
+        <view class="weui-search-bar__text">搜索</view>
+      </label>
+    </view>
+  </navigator>
+
+  <image class="header-back" mode="widthFix" src="../../../resources/pic/newHeader.jpg"></image>
+
+  <view class="area-box">
+  	<navigator class='area-img-box' open-type='switchTab' url='/page/index/index'>
+      <image class="area-img" src="../../../resources/pic/newSec1.jpg"></image>
+    </navigator>
+  	<navigator class='area-img-box' url='/page/index/pages/preview/preview?catId=490'>
+      <image class="area-img" src="../../../resources/pic/newSec2.jpg"></image>
+    </navigator>
+  	<navigator class='area-img-box' url='/page/index/pages/preview/preview?catId=490'>
+      <image class="area-img" src="../../../resources/pic/newSec3.jpg"></image>
+    </navigator>
+  	<navigator class='area-img-box' url='/page/index/pages/preview/preview?catId=497'>
+      <image class="area-img" src="../../../resources/pic/newSec4.jpg"></image>
+    </navigator>
+  </view>
+
+	<image class="roof" mode="widthFix" src="../../../resources/pic/roof.jpg"></image>
+  <navigator class="goods-box" url="/page/class/pages/goodDetail/goodDetail?uid=3028">
+  	<image class="roof-aside" src="../../../resources/pic/roofLeft.jpg"></image>
+  	<image class="roof-aside" src="../../../resources/pic/good1left.jpg"></image>
+  	<image class="roof-aside" src="../../../resources/pic/good1right.jpg"></image>
+  	<image class="roof-aside" src="../../../resources/pic/roofRight.jpg"></image>
+  </navigator>
+  <navigator class="goods-box" url="/page/class/pages/goodDetail/goodDetail?uid=3015">
+  	<image class="roof-aside" src="../../../resources/pic/bodyLeft.jpg"></image>
+  	<image class="roof-aside" src="../../../resources/pic/good2left.jpg"></image>
+  	<image class="roof-aside" src="../../../resources/pic/good2right.jpg"></image>
+  	<image class="roof-aside" src="../../../resources/pic/bodyRight.jpg"></image>
+  </navigator>
+  <view class="goods-box">
+    <navigator class='goodHalf-box' url='/page/class/pages/goodDetail/goodDetail?uid=2999'>
+      <image class="goodHalf" src="../../../resources/pic/good3.jpg"></image>
+    </navigator>
+  	<navigator class='goodHalf-box' url='/page/class/pages/classGoods/classGoods'>
+      <image class="goodHalf" src="../../../resources/pic/good4.jpg"></image>
+    </navigator>
+  </view>
+  
+  <navigator url="/page/class/pages/goodDetail/goodDetail?uid=3003">
+    <image class="goodFull" mode="widthFix" src="../../../resources/pic/good5.jpg"></image>
+  </navigator>
+	<navigator url="/page/class/pages/goodDetail/goodDetail?uid=2982">
+    <image class="goodFull" mode="widthFix" src="../../../resources/pic/good6.jpg"></image>
+  </navigator>
+	
+	<image class="goodFull" mode="widthFix" src="../../../resources/pic/bottom.jpg"></image>
+</view>

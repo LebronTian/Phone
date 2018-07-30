@@ -1,0 +1,84 @@
+/*空订单页面*/
+.empty-page {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 300rpx;
+}
+.empty-img {
+	width: 200rpx;
+	height: 200rpx;
+}
+.empty-text {
+	color: #999;
+	line-height: 3.2em;
+}
+
+
+.order {
+	margin-top: 30rpx;
+	padding: 0 20rpx;
+	overflow: hidden;
+	background-color: #fff;
+}
+.order-header {
+	line-height: 2.4em;
+	border-bottom: 1px solid #efefef;
+	display: flex;
+	justify-content: space-between;
+}
+/*.order-class {
+	color: #7d4690;
+}*/
+.rightBtn {
+	color: #8a8a8a;
+}
+.order-body {
+	border-bottom: 1px solid #efefef;
+	display: flex;
+	align-items: center;
+	padding: 20rpx 0;
+	font-size: 0.8em;
+}
+.order-bodyImg {
+	width: 4.2em;
+	height: 4.2em;
+	border: 1px solid #efefef;
+	margin-right: 20rpx;
+}
+.order-subTitle {
+	color: #999;
+}
+
+
+.order-footer {
+	float: right;
+	display: flex;
+}
+.order-footerBtn {
+	margin: 20rpx;
+	/*padding: 6rpx 22rpx;*/
+	/*border: 1px solid #ccc;*/
+	color: #666;
+	border-radius: 3px;
+	/*position: relative;*/
+}
+.order-footerBtn-red {
+	background-color: #f80000;
+	border: none;
+	color: #fff;
+}
+.order-footerBtn-handle {
+	font-size: 1em;
+	/*line-height: */
+	background-color: inherit;
+	color: inherit;
+	line-height: 2em;
+}
+.order-footer-service {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}

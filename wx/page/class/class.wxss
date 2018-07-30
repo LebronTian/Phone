@@ -1,0 +1,83 @@
+.header {
+	background-color: #fff;
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+.header-btns-box {
+	display: flex;
+	background-color: #f4f5f5;
+	padding: 20rpx 0;
+	white-space: nowrap;
+}
+.header-btn {
+	/*color: #884898;*/
+	width: 120rpx;
+	padding: 0 15rpx;
+	display: inline-block;	
+}
+.header-btnTitle {
+	width: 120rpx;
+	/*border: 1px solid #884898;*/
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 1em;
+	font-size: 0.7em;
+	text-align: center;
+}
+.header-btn-selected {
+	/*color: #fff;*/
+	/*background-color: #884898;*/
+}
+
+
+
+/*商品列表样式*/
+.body {
+	/*margin-top: 90px;*/
+}
+.body-goodsTitle {
+	line-height: 3em;
+	color: #999;
+	text-align: center;
+}
+.body-good-subBox {
+	display: flex;
+	flex-wrap: wrap;
+}
+.body-good {
+	width: calc(50% - 8px);
+	margin: 4px;
+	padding-bottom: 20rpx;
+  padding-top:20rpx;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.body-goodImg {
+	width: 300rpx;
+	height: 300rpx;
+}
+.body-goodTitle {
+	font-size: 0.9em;
+	color: #666;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-indent: 10rpx;
+}
+.body-good-footer {
+	width: 80%;
+}
+.body-goodPrice {
+	float: left;
+	color: #f80000;
+}
+.body-goodSell {
+	float: right;
+	color: #8a8a8a;
+}

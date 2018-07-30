@@ -1,0 +1,96 @@
+.hidden {
+	display: none;
+}
+
+
+.body-postCont-box {
+	background-color: #fff;
+	padding: 10px 15px;
+	overflow: hidden;
+	margin-bottom: 20rpx;
+}
+
+.upload-box {
+	padding: 30rpx;
+	background-color: #fff;
+}
+
+
+.infoSection, .pickSection {
+	height: 3em;
+	line-height: 2.4em;
+	font-size: 0.9em;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	/*border-bottom: 1px solid #eee;*/
+}
+/*.infoSection:last-child {
+	border-bottom: none;
+}*/
+.pickSection {
+	justify-content: space-between;
+}
+.topBorder {
+	border-top: 1px solid #eee;
+}
+.infoIcon {
+	height: 30rpx;
+	width: 30rpx;
+	margin-right: 20rpx;
+}
+.location {
+	color: #ff4526;
+	width: 60%;
+}
+.rightIcon {
+	/*font-size: 0.8em;*/
+	color: #8a8a8a;
+}
+
+.upload-hint {
+	font-size: 0.9em;
+	color: #8a8a8a;
+	height: 2.4em;
+	line-height: 2.4em;
+	margin-bottom: 20rpx;
+	padding-left: 24rpx;
+}
+.section {
+	background-color: #fff;
+	padding: 0 30rpx;
+	margin-bottom: 20rpx;
+}
+.input__loc {
+	width: 90%;
+}
+.picker-btn {
+	width: 70%;
+	text-align: right;
+}
+
+.post-price {
+	margin-top: 40rpx;
+	font-size: 0.8em;
+	padding-right: 30rpx;
+	text-align: right;
+	color: #8a8a8a;
+}
+.price {
+	color: #f80000;
+}
+
+
+.body-postBtn {
+	width: 90%;
+	margin: 10rpx auto;
+	background-color: #ff4526;
+	line-height: 3em;
+	text-align: center;
+	border-radius: 8px;
+	color: #fff;
+}

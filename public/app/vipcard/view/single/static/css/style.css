@@ -1,0 +1,46 @@
+*,body,p,ul,ol,h1,h2,h3,h4,h5,h6,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}
+body{
+    font-family: "微软雅黑 Regular","微软雅黑";
+    font-size: 63%;                     /*1em=10px*/
+    color:#000;
+    font-weight: 400;
+    background: #efefef;
+}
+p{word-wrap:break-word}
+img{ border: 0;max-height: 100%;max-width: 100%}
+a:link{text-decoration:none;}       /* 指正常的未被访问过的链接*/
+a:visited{text-decoration:none;}    /*指已经访问过的链接*/
+a:hover{text-decoration:none;}      /*指鼠标在链接*/
+a:active{text-decoration:none;}     /* 指正在点的链接*/
+button{cursor: pointer}
+li{list-style:none}
+table{
+    border-collapse:collapse;   /*合并边框模型：*/
+    border-spacing:0;           /*边框间的距离*/
+}
+em{font-style:normal}           /*去除斜体*/
+.clearfix:after { content: ".";display: block;height: 0;clear: both;visibility: hidden; }
+.clearfix {*zoom:1;}
+.text-ellipsis{                     /*单行自动打点*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.border-box{                        /*计算边框的盒子*/
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;     /* Firefox */
+    -webkit-box-sizing:border-box;  /* Safari */
+}
+/*table布局*/
+.display-table{
+    display: table;
+    width: 100%;
+    text-align: center;
+}
+.display-table ul{
+    display: table-row;
+}
+.display-table ul li{
+    display: table-cell;
+    vertical-align: middle;
+}

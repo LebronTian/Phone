@@ -1,0 +1,86 @@
+.comWidth{
+	width: 1080px;
+	margin: 0 auto;
+}
+.partnership_bar{
+	margin: 52px auto 40px;
+}
+.partnership_cont{
+	margin-bottom: 40px;
+}
+#container {width:100%; height: 450px; }
+.partnership_cont p{
+	line-height: 28px;
+}
+
+.box{
+			width: 120px;
+			height: 120px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 10;
+		}
+
+		.box_w{
+			width: 120px;
+			height: 120px;
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 99;
+		}
+
+		@keyframes fillup {
+			to { stroke-dasharray: 100 900; }
+		}
+
+		@keyframes fillup_n {
+			to { stroke-dasharray: 200.5 900; }
+		}
+
+		.circle_1 {
+			fill: transparent;
+			stroke: #e43a72;
+			stroke-width: 3;
+			stroke-dasharray: 0 900;
+			animation: fillup_n 2s linear;
+			animation-fill-mode: forwards;
+		}
+
+		.circle{
+			fill: transparent;
+			stroke: #fff;
+			opacity: 0.4;
+			stroke-width: 56;
+			stroke-dasharray: 0 900;
+			animation: fillup 2s linear;
+			animation-fill-mode: forwards;
+		}
+
+		svg {
+			width: 120px;
+			height: 120px;
+			transform: rotate(-90deg);
+			background: transparent;
+			border-radius: 50%;
+		}
+
+		.center{
+			width: 80px;
+			height: 80px;
+			z-index: 1;
+			background-color: #e43a72;
+			border-radius: 50%;
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			color: #fff;
+			text-align: center;
+			line-height: 80px;
+			font-size: 20px;
+			font-weight: bold;
+			font-family: "Microsoft Yahei";
+		}
+
+	</style>

@@ -1,0 +1,57 @@
+<view class="container">
+  <view class="empty-page" hidden="{{!cartEmpty}}">
+    <image class="empty-img" src="../resources/pic/emptyCart.png"></image>
+    <text class="empty-text">购物车还是空的，赶紧买买买！</text>
+  </view>
+  <view class="cart-main" hidden="{{cartEmpty}}">
+    <view class="cart-goods-box">
+      <block wx:for="{{catList}}" wx:key="{{item.title}}">
+      	<view class="cart-goods">
+      	  <view class="cart-goodsClass">
+      	  	<view class=""><text class="cart-goodsClass-title" style="color: {{mainColor}}">{{item.title}}</text> 〉</view>
+    	  	  <view id="{{item.uid}}" class="cart-goodsEdit" bindtap="bindEdit">{{item.editStatus ? '完成' : '编辑'}}</view>
+      	  </view>
+          <block wx:for="{{item.list}}" wx:for-item="good" wx:for-index="subIdx" wx:key="{{good.detailData.uid}}">
+        	  <view class="cart-goodItem">
+        	  	<view id="{{index + '-' + subIdx}}" class="cart-selectedIcon-box" bindtap="bindSelect">
+        	  		<image hidden="{{!good.selected}}" class="cart-selectedIcon" src="{{selectedImg}}"></image>
+        	  	</view>
+        	  	<image class="cart-goodImg" src="{{good.img}}"></image>
+        	  	<navigator class="cart-goodInfo" url="/page/class/pages/goodDetail/goodDetail?uid={{good.detailData.uid}}" hidden="{{item.editStatus}}">
+        	  		<view class="cart-goodInfo-title">{{good.detailData.title}}</view>
+        	  		<view class="cart-goodInfo-special">
+                  <text wx:for="{{good.specials}}" wx:key="{{index + '-' + subIdx}}">{{item.list[item.selectedIndex] + ' '}}</text>   
+                </view>
+        	  		<text class="cart-goodInfo-price">¥ {{good.price}}</text>
+        	  		<text class="cart-goodInfo-num"> x {{good.selectedNum}}</text>
+        	  	</navigator>
+              <view class="cart-goodEdit-box" hidden="{{!item.editStatus}}">
+                <view class="cart-goodEditNum">
+                  <view id="sub-{{index + '-' + subIdx}}" bindtap="editNum" class="cart-goodSubtract">-</view>
+                  <text class="cart-goodNum">{{good.selectedNum}}</text>
+                  <view id="add-{{index + '-' + subIdx}}" bindtap="editNum" class="cart-goodAdd">+</view>
+                </view>
+                <view id="{{index + '-' + subIdx}}" bindtap="bindDelete" class="cart-goodDelete">
+                  <image class="cart-goodDelete-img" src="../resources/pic/delete_fff.png"></image>
+                </view>
+              </view>
+        	  </view>
+          </block>
+      	</view>
+      </block>
+    </view>
+  	<view class="cart-account" hidden="{{cartEmpty}}">
+  		<view class="cart-selectAll">
+	  		<view class="cart-selectedIcon-box" bindtap="bindSelectAll">
+		  		<image hidden="{{!selectedAll}}" class="cart-selectedIcon" src="{{selectedImg}}"></image>
+		  	</view>
+		  	<text class="cart-selectAll-title">全选</text>
+		  </view>
+			<view class="cart-accountBtn-box">
+				<text>合计：</text>
+				<text class="cart-accountPrice">¥ {{totalPrice}}</text>
+				<view class="cart-accountBtn {{selectedEmpty ? 'cart-accountBtn-disable' : ''}}" bindtap="navToOrder">结算</view>
+			</view>
+  	</view>
+  </view>
+</view>

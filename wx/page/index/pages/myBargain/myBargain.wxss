@@ -1,0 +1,12 @@
+@import '../seckill/seckill.wxss';
+
+.main {
+	padding-top: 100rpx;
+}
+
+.price-box {
+	font-size: 0.9em;
+}
+.remain-time {
+	text-align: right;
+}

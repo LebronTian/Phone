@@ -1,0 +1,4 @@
+<!--page/index/pages/vedioPage/vedioPage.wxml-->
+<view class="container">
+  <video class="vedio" src="{{options.src}}" initial-time="{{options.initial-time || 0}}" controls="{{options.controls || true}}" autoplay="{{options.autoplay || false}}" loop="{{options.loop || false}}" muted="{{options.muted || false}}" direction="{{options.direction || 0}}" objectFit="{{options.objectFit || 'contain'}}" poster="{{options.poster || ''}}"></video>
+</view>

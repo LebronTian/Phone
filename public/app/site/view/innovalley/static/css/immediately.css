@@ -1,0 +1,15 @@
+    .am-u-lg-7 > p{
+      margin: 0;
+    }
+    .content{height:950px;}
+    .founder_detail{width:1170px;margin:0 auto;margin-bottom: 30px}
+    .left_pic{width:220px;height:150px;float:left;margin-right:100px}
+    .left_pic > img {width:220px;height:150px;}
+    .immediately_content{width:600px;float:left;}
+    .immediately_title{width:600px;border-bottom:2px solid #ccc;}
+    .immediately_title > h1{margin-bottom:30px}
+    .immediately_brief{margin:40px 0;}
+    .immediately_brief > div{font-size:20px;color:#555555;font-weight:500}
+    .immediately_pic > img {width:600px}
+    .immediately_cube{float: right}
+    .immediately_cube > img{width:350px;height:200px;margin-top:30px}

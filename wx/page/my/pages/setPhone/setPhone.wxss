@@ -1,0 +1,13 @@
+.container {
+	padding: 80rpx 0;
+}
+.vcode-btn {
+	box-sizing: content-box;
+	width: 180rpx;
+	text-align: center;
+}
+.button {
+	width: 80%;
+	margin: 100rpx auto;
+	color: #fff;
+}

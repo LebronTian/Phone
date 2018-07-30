@@ -1,0 +1,61 @@
+/**app.wxss**/
+@import 'page/common/style/weui.wxss';
+page {
+	background-color: #f4f5f5;
+	color: #333;
+    font-size: 16px;
+    font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+}
+
+.header-navigator {
+	padding: 15rpx 0;
+	text-align: center;
+	color: #8a8a8a;
+}
+.header-navigator-on {
+	color: #884898;
+}
+.header-nav-box {
+	display: -webkit-flex;
+	display: flex;
+	position: relative;
+	border-bottom: 1rpx solid #CCCCCC;
+	text-align: center;
+}
+.header-navTitle {
+	font-size: 0.9em;
+	display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+.header-navbarSlider {
+	position: absolute;
+	height: 3px;
+	bottom: 0;
+	background-color: #884898;
+	-webkit-transition: -webkit-transform .3s;
+	transition: -webkit-transform .3s;
+	transition: transform .3s;
+	transition: transform .3s, -webkit-transform .3s;
+}
+
+
+.rightBtn {
+	padding-right: 26rpx;
+	position: relative;
+}
+.rightBtn:after {
+	content: " ";
+	display: inline-block;
+	height: 18rpx;
+	width: 18rpx;
+	border-width: 2rpx 2rpx 0 0;
+	border-color: #888888;
+	border-style: solid;
+	transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+	position: absolute;
+	top: 50%;
+	margin-top: -8rpx;
+	right: 28rpx;
+}

@@ -1,0 +1,188 @@
+/* page/my/pages/my_v1/my_v1.wxss */
+button {
+	margin: 0;
+	padding: 0;
+	border-radius: 0;
+	color: inherit;
+	background-color: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+button:after {
+	width: 0;
+	height: 0;
+}
+.container {
+	width: 750rpx;
+	overflow: hidden;
+}
+.header {
+	position: relative;
+	height: 108rpx;
+	padding: 60rpx 70rpx;
+	display:flex;
+	flex-wrap: wrap;
+	align-items:center;
+}
+.avatar-box {
+	position: relative;
+	height: 142rpx;
+}
+.header-avatar {
+	width: 130rpx;
+	height: 130rpx;
+	border-radius: 50%;
+	border: 6rpx solid #fff;
+}
+.vipTag-box {
+	position: absolute;
+	right: 0rpx;
+	bottom: 0rpx;
+	width: 32rpx;
+	height: 32rpx;
+	background-color: #fff;
+	border-radius: 50%;
+	color: #009966;
+}
+.header-userName {
+	font-size: 1.2em;
+	color: #fff;
+	margin: 0 30rpx;
+	width: 60%;
+
+	display: -webkit-box;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.vipTag {
+	font-size: 0.8em;
+	color: #fff;
+	border:1px solid #fff;
+	padding: 0 15rpx;
+	line-height: 1.4em;
+}
+.header-userWallet {
+	margin-left: 150rpx;
+	display: flex;
+}
+.header-userWallet-point {
+	color: #fff;
+	margin-right: 30rpx;
+}
+.setting-tag {
+	width: 42rpx;
+	height: 42rpx;
+	position: absolute;
+	top: 16rpx;
+	right: 36rpx;
+}
+
+
+
+.my-order, .my-setting-box {
+	background-color: #fff;
+	padding: 0 20rpx;
+}
+.my-order-title {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 30rpx;
+	padding-bottom: 10rpx;
+	border-bottom: 1px solid #eaeaea;
+	color: #565656;
+}
+.all-orders {
+	color: #8a8a8a;
+	font-size: 0.7em;
+	padding-top: 16rpx;
+	padding-right: 50rpx;
+	margin-right: -40rpx;
+}
+.my-subTitle {
+	display: flex;
+	justify-content: space-between;
+	padding: 24rpx 0;
+	font-size: 0.9em;
+	border-bottom: 1px solid #eaeaea;
+}
+.my-subTitle:last-child {
+	border-bottom: none;
+}
+.my-subTitle-left {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.my-subTitle-leftBox {
+	display: flex;
+	align-items: center;
+	color: #4a4a4a;
+}
+.my-subTitle-img {
+	width: 50rpx;
+	height: 50rpx;
+	margin-right: 20rpx;
+}
+.my-subTitle-content {
+	color: #8a8a8a;
+}
+.rightBtn {
+	color: #8a8a8a;
+}
+.my-orderStatus-box {
+	display: flex;
+	font-size: 0.8em;
+	padding: 20rpx 0;
+	border-bottom: 1px solid #eaeaea;
+}
+.my-orderStatus, .my-wallet-info {
+	width: 33%;
+	/*width: 25%;*/
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+}
+.my-orderStatus:after {
+	width: 0;
+	height: 0;
+}
+.my-orderStatus-img {
+	width: 60rpx;
+	height: 60rpx;
+	/*margin-bottom: 6rpx;*/
+}
+.my-orderStatus-title {
+	color: #4b4b4b;
+}
+.my-orderStatus-cnt {
+	width: 36rpx;
+	height: 36rpx;
+	line-height: 36rpx;
+	text-align: center;
+	color: #fff;
+	border: 1rpx solid #fff;
+	border-radius: 50%;
+	position: absolute;
+	right: 10%;
+	top: -10rpx;
+}
+.my-wallet-info {
+	border-right: 1px solid #eaeaea;
+}
+.my-wallet-info:last-child {
+	border-right: none;
+}
+.wallet-num {
+	font-size: 1.6em;
+	color: #414141;
+}
+
+
+.weui-footer {
+	margin-top: 60rpx;
+	margin-bottom: 100rpx;
+}

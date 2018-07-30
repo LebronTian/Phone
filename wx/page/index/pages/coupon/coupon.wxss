@@ -1,0 +1,112 @@
+/* pages/coupon/coupon.wxss */
+.header {
+	background-color: #cc4044;
+	overflow: hidden;
+	border-radius: 20rpx;
+	margin: 20rpx;
+}
+/*.header-had-coupon {
+	background-color: none;
+}*/
+.shop-img {
+	width: 120rpx;
+	height: 120rpx;
+	border-radius: 50%;
+	margin-top: 50rpx;
+}
+.header-info-box {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
+	-ms-align-items: center;
+	align-items: center;
+	background-color: #e64a4c;
+	color: #d6b37f;
+	border-bottom: 10rpx solid #ab3739;
+	border-bottom-right-radius: 45%;
+	border-bottom-left-radius: 45%;
+	padding-bottom: 100rpx;
+}
+.shop-title {
+	color: #f4d29c;
+	line-height: 2em;
+}
+.coupon-discount {
+	color: #f4d29c;
+	font-size: 1.2em;
+	padding: 0 20rpx;
+	text-align: center;
+}
+.open-img {
+	width: 160rpx;
+	height: 160rpx;
+	border-radius: 50%;
+	display: block;
+	margin: -80rpx auto 20rpx;
+	/*margin-top: -80rpx;*/
+	transition:transform 2s;
+	-moz-transition: -moz-transform 2s; /* Firefox 4 */
+	-webkit-transition: -webkit-transform 2s; /* Safari and Chrome */
+	-o-transition: -o-transform 2s; /* Opera */
+}
+.open-img-rotate {
+	transform:rotateY(360deg);
+	-moz-transform:rotateY(360deg); /* Firefox 4 */
+	-webkit-transform:rotateY(360deg); /* Safari and Chrome */
+	-o-transform:rotateY(360deg); /* Opera */
+}
+.qrcode-box {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
+	-ms-align-items: center;
+	align-items: center;
+	text-align: center;
+}
+.qrcode-title {
+	width: 100%;
+	line-height: 2em;
+}
+.qrcode-img {
+	width: 300rpx;
+	height: 330rpx;
+}
+
+
+
+.main {
+	color: #8a8a8a;
+	font-size: 0.8em;
+	padding: 30rpx;
+}
+.shop-info-box {
+	line-height: 2em;
+}
+.phone-img {
+	width: 30rpx;
+	height: 30rpx;
+	vertical-align: text-bottom;
+	margin-right: 10rpx;
+}
+
+.instruction-box {
+	margin-top: 30rpx;
+}
+.instruction-title {
+	font-size: 1.4em;
+	text-align: center;
+}

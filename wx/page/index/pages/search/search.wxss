@@ -1,0 +1,65 @@
+@import "../../index.wxss";
+
+.searchPage {
+	/*position: fixed;*/
+	width: 100%;
+	/*top: 48px;*/
+}
+
+.searchPage-goods-box {
+	display: flex;
+	flex-wrap: wrap;
+	padding-bottom: 200rpx;
+}
+.searchResult-good {
+	width: 355rpx;
+	text-align: center;
+	background-color: #fff;
+}
+.searchResult-goodImg {
+	height: 400rpx;
+}
+
+
+.history {
+	background-color: #fff;
+	margin-bottom: 30rpx;
+}
+.history__header {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: space-between;
+	line-height: 2.4em;
+	padding: 0 20rpx;
+	color: #8a8a8a;
+}
+.history__deleteImg {
+	width: 50rpx;
+	height: 50rpx;
+}
+.record-box {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-moz-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	-o-flex-wrap: wrap;
+	flex-wrap: wrap;
+	padding: 0 20rpx;
+	padding-bottom: 20rpx;
+}
+.record {
+	margin: 16rpx;
+	border: 1px solid #ccc;
+	border-radius: 8rpx;
+	font-size: 0.8em;
+	padding: 4rpx 12rpx;
+}

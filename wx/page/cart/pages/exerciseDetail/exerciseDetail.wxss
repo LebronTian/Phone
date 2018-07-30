@@ -1,0 +1,167 @@
+/*导入评论页的样式*/
+@import "../../../common/style/comment.wxss";
+
+page {
+	background-color: #2d3037;
+}
+
+.main {
+	padding-top: 50px;
+}
+.header {
+	/*border-bottom: 1px solid #d7d7d7;*/
+	padding: 20rpx;
+	background-color: #fff;
+}
+.header-exerPic {
+	width: 100%;
+	height: 400rpx;
+}
+.header-exerInfo-box {
+	display: flex;
+	align-items: center;
+}
+.header-exerTitle {
+	width: 90%;
+	font-size: 1.2em;
+	/*font-weight: bold;*/
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.header-exerTag-box {
+	width: 100px;
+	height: 30px;
+	font-size: 0.9em;
+	color: #fff;
+	text-align: center;
+	line-height: 30px;
+	position: relative;
+}
+.header-exerTag-backImg {
+	width: 100px;
+	height: 30px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.header-exerTag {
+	width: 100px;
+	position: absolute;
+}
+
+.header-exerFounder-box {
+	background-color: #c83b3b;
+	display: flex;
+	align-items: center;
+	padding: 20rpx 40rpx;
+	/*border-bottom: 1px solid #d7d7d7;*/
+}
+.header-exerFounder {
+	width: 75%;
+	color: #fefefe;
+	font-size: 1.1em;
+	/*font-weight: bold;*/
+	display: flex;
+	align-items: center;
+}
+.header-exerFounder-img {
+	height: 60rpx;
+	width: 60rpx;
+	margin-right: 20rpx;
+}
+.header-followBtn {
+	font-size:0.9em;
+	color:#fefefe;
+	border:1px solid #fefefe;
+	line-height:20px;
+	height:20px;
+	padding:0 30rpx;
+	border-radius:16rpx;
+}
+
+
+.body {
+	padding-bottom: 50px;
+	background-color: #fff;
+}
+.body-infoList {
+	margin-bottom: 50rpx;
+}
+.body-infoItem {
+	margin: 0 20rpx;
+	padding: 20rpx 10rpx;
+	border-bottom: 1px solid #d7d7d7;
+	font-size: 0.8em;
+	line-height: 50rpx;
+	overflow: hidden;
+}
+.body-itemPic {
+	width: 50rpx;
+	height: 50rpx;
+	float: left;
+}
+.body-itemCont {
+	text-indent: 20rpx;
+}
+.resetFont {
+	font-weight: bold;
+	color: #ff6600;
+}
+.item-title {
+	font-size: 1.2em;
+	color: #949494;
+	padding: 10rpx 0;
+}
+.item-headPic-box {
+	overflow: hidden;
+	height: 80rpx;
+	text-align: center;
+}
+.item-headPic {
+	width: 80rpx;
+	height: 80rpx;
+	margin-right: 10rpx;
+}
+.item-allPartnerBtn {
+	float:right;
+	font-size:1.2em;
+	line-height: 50rpx;
+	color:#949494;
+	margin:0 10rpx;
+	padding:0 20rpx;
+}
+
+/*活动介绍、活动评论*/
+.body-subPage {
+	position: relative;
+}
+
+/*活动介绍、报名须知*/
+.body-exerIntro {
+	padding: 20rpx;
+}
+.body-introTitle {
+	color: #fbf2f3;
+	background-color: #d7ad71;
+	padding: 5px 8px;
+}
+.body-intro-box {
+	border-bottom: 1px solid #bfbfbf;
+	overflow: hidden;
+}
+
+
+.footer-signBtn {
+	position: fixed;
+	bottom: 0;
+	height: 50px;
+	width: 100%;
+	color: #fff;
+	text-align: center;
+	font-size: 1.2em;
+	line-height: 50px;
+	background-color: #d7ad71;
+}
+

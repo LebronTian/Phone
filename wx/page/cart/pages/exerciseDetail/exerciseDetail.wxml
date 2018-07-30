@@ -1,0 +1,80 @@
+<import src="../../../common/wxParse/wxParse.wxml"/>
+
+<view class="page">
+  <!-- 活动详情页面头部 包括：活动图片、活动标题、活动标签 -->
+  <!-- 导入导航栏 -->
+  <include src="../../../common/we-navigation.wxml"/>
+  <view class="main">
+    <!-- 活动介绍、报名须知 -->
+    <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+      <!-- 活动详情 -->
+      <view class="header">
+        <view class="header-exerPic-box">
+          <image src="{{detailData.img}}" class="header-exerPic" />
+        </view>
+        <view class="header-exerInfo-box">
+          <view class="header-exerTitle">{{detailData.title}}</view>
+        </view>
+      </view>
+      <!-- 活动详情介绍 包括：人数限制、时间、地点、价格、参与人概览 -->
+      <view class="body">
+        <view class="body-infoList">
+          <!-- 活动时间 -->
+          <view class="body-infoItem">
+            <image src="../../../resources/pic/date.png" class="body-itemPic" />
+            <view class="body-itemCont">
+              {{detailData.startDate}}
+            </view>
+          </view>
+          <!-- 活动地点 -->
+          <view class="body-infoItem">
+            <image src="../../../resources/pic/exerLoc.png" class="body-itemPic" />
+            <view class="body-itemCont">
+              {{detailData.access_rule.address}}
+            </view>
+          </view>
+          <!-- 活动价格 -->
+          <view class="body-infoItem">
+            <image src="../../../resources/pic/rmb.png" class="body-itemPic" />
+            <view class="body-itemCont resetFont">
+              活动费用： {{detailData.price}}
+            </view>
+          </view>
+          <!-- 活动人数限制 -->
+          <view class="body-infoItem">
+            <image src="../../../resources/pic/numLimit.png" class="body-itemPic" />
+            <view class="body-itemCont resetFont">
+              人数限制： {{ detailData.numLimit }}
+            </view>
+          </view>
+          <!-- 参与人概览 -->
+          <view class="body-infoItem">
+            <view class="item-title">{{signedNum}}人已参与</view>
+            <navigator wx:if="{{signedNum>0}}" class="item-headPic-box rightBtn" url="../exercisePartner/exercisePartner?activityId={{resourceId}}&title={{detailData.title}}">
+              <image class="item-headPic" src="{{item.avatar}}" wx:for="{{signedList}}" wx:key="{{index}}" />
+            </navigator>
+          </view>
+        </view>
+        <!-- 活动介绍和活动评论 -->
+        <!-- 活动介绍 -->
+        <text class="body-introTitle" style="background-color: {{mainColor}}">活动介绍</text>
+        <view class="body-exerIntro">
+          <view class="body-intro-box">
+            <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+          </view>
+        </view>
+      </view>
+      <!-- 活动报名按钮 -->
+      <view class="footer">
+        <button id="{{detailData.signStatu}}" class="footer-signBtn" style="background-color: {{mainColor}}" disabled="{{!isAble2Tap}}" bindtap="signTap">
+            {{detailData.signStatu}}
+        </button>
+      </view>
+    </view>
+    <!-- 活动评论 -->
+    <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+      <!-- 评论列表 -->
+      <include src="../../../common/comment.wxml"/>
+    </view>
+  </view>
+</view>

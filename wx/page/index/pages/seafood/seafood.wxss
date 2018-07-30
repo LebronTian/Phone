@@ -1,0 +1,63 @@
+/* page/index/pages/seafood/seafood.wxss */
+page {
+	background-color: #d3182b;
+}
+
+.search-bar {
+	/*position: absolute;*/
+	width: 90%;
+	margin: 10rpx auto;
+	/*left: 5%;*/
+	/*top: 20rpx;*/
+	/*opacity: 0.6;*/
+	/*z-index: 99;*/
+}
+.header-back {
+	width: 100%;
+}
+
+.area-box {
+	display: flex;
+}
+.area-img-box {
+  width: 25%;
+  -ms-hyphenate-limit-lines: 366rpx
+}
+.area-img {
+  display: block;
+	width: 100%;
+	height: 366rpx;
+}
+
+
+.roof {
+	width: 100%;
+	display: block;
+}
+
+.goods-box {
+	display: flex;
+	justify-content: space-between;
+	background-color: #feeed5;
+}
+.roof-aside {
+	width: 25%;
+	height: 210rpx;
+}
+
+.goodHalf-box {
+  width: 50%;
+  height: 244rpx;
+}
+.goodHalf {
+  display: block;
+	width: 100%;
+	height: 244rpx;
+}
+.goodFull {
+	width: 100%;
+	display: block;
+}
+
+
+

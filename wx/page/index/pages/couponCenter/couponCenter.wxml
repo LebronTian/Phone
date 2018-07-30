@@ -1,0 +1,28 @@
+<view class="container">
+	<view class="couponList-box" hidden="{{couponList.length == 0}}">
+		<block wx:for="{{couponList}}" wx:key="{{index}}">
+			<view class="coupon">
+				<image class="coupon-img" src="{{item.img}}"></image>
+				<view class="coupon-content-box">
+					<view class="coupon-title">{{item.title}}</view>
+					<view class="coupon-time">{{item.brief}}</view>
+					<view class="coupon-time">
+						<text hidden="{{item.rule.max_cnt_day == 0}}">每天可领取{{item.rule.max_cnt_day}}张，</text>
+						<text hidden="{{item.rule.max_cnt == 0}}">最多可领取{{item.rule.max_cnt}}张</text>
+					</view>
+				</view>
+				<view class="coupon-price-box">¥<text class="coupon-discount">{{item.price}}</text></view>
+				<view id="{{item.uid}}" class="coupon-getBtn" style="background-color: {{mainColor}}" bindtap="getCouponTap">
+					<text class="coupon-getBtn-text">立</text>
+					<text class="coupon-getBtn-text">即</text>
+					<text class="coupon-getBtn-text">领</text>
+					<text class="coupon-getBtn-text">取</text>
+				</view>
+			</view>
+		</block>
+	</view>
+	<view class="couponList-empty" hidden="{{couponList.length > 0}}">
+		<image class="couponList-empty-img" src="../../../resources/pic/couponEmpty.png"></image>
+		<text class="couponList-empty-text">对不起，当前没有可领取的优惠券</text>
+	</view>
+</view>

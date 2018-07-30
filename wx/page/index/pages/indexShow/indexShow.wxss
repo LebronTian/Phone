@@ -1,0 +1,151 @@
+/* page/index/pages/indexShow/indexShow.wxss */
+@import '../../index.wxss';
+.container {
+	padding-top: 100rpx;
+}
+.header-box {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 99;
+	background-color: #fff;
+}
+.top-icon {
+	width: 100rpx;
+	height: 100rpx;
+	display: block;
+	margin: 0rpx auto;
+}
+
+.header-title {
+	text-align: center;
+	font-size: 1.6em;
+}
+.header-subtitle {
+	text-align: center;
+	color: #8a8a8a;
+}
+
+
+.subNavs-box {
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:flex;
+	background-color: #fff;
+	-webkit-flex-wrap: wrap;
+	-moz-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	-o-flex-wrap: wrap;
+	flex-wrap: wrap;
+	padding: 20rpx 0;
+}
+.subNav-img {
+	width: 100rpx;
+	height: 100rpx;
+}
+.subNav-title {
+	font-size: 0.8em;
+	line-height: 2.4em;
+	color: #707070;
+}
+
+.module-item {
+	padding: 30rpx 0;
+}
+.module-item:nth-child(odd) {
+	background-color: #fff;
+}
+
+.module-main {
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:flex;
+	-webkit-flex-wrap: wrap;
+	-moz-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	-o-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin: 30rpx 0;
+}
+
+.case-item {
+	width: 50%;
+	text-align: center;
+	margin-bottom: 20rpx;
+}
+.case-img {
+	width: 80%;
+	/*height: 200rpx;*/
+	height: 300rpx;
+	margin: 10rpx 0;
+}
+.case-title {
+	display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    width: 90%;
+    margin: 0 auto;
+    color: #707070;
+}
+
+
+.article-item {
+	background-color: inherit;
+}
+.footer-nav {
+	margin: 0 auto;
+	margin-bottom: 30rpx;
+	line-height: 2.4em;
+	padding: 0rpx 30rpx;
+	border-style: solid;
+	border-width: 1px;
+	text-align: center;
+	border-radius: 1.2em;
+	width: 40%;
+}
+
+
+.shop-title {
+	width: 100%;
+	font-size: 1.3em;
+	color: #707070;
+	text-indent: 0.6em;
+	margin-top: 10rpx;
+	margin-bottom: 30rpx;
+}
+.contact-info {
+	width: 100%;
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:flex;
+	color: #707070;
+}
+.contact-title {
+	width: 20%;
+	color: #8a8a8a;
+	text-indent: 0.6em;
+	margin-bottom: 20rpx;
+}
+.contact-content {
+	width: 80%;
+}
+
+
+
+.msg-form {
+	width: 100%;
+}
+.msg-input, .msg-textarea {
+	border: 1px solid #ccc;
+	margin: 20rpx 40rpx;
+	padding: 10rpx 20rpx;
+	width: calc(100% - 120rpx);
+	border-radius: 6rpx;
+}
+.msg-btn {
+	width: 80%;
+	color: #fff;
+	text-align: center;
+}

@@ -1,0 +1,22 @@
+/* page/my/pages/myvip/myvip.wxss */
+.vipCard {
+	width: 90%;
+	margin: 30rpx auto;
+	display: block;
+}
+.info-item {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	line-height: 2em;
+}
+.info__title {
+	width: 18%;
+	text-align: right;
+	margin: 20rpx;
+}
+.info__content {
+	margin: 20rpx;
+}

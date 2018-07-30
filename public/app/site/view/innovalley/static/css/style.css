@@ -1,0 +1,105 @@
+body{min-width:1170px;}
+    .top-img{
+      height:100px;
+    }
+    .logo{
+      float: left;
+      margin-left: 20px;
+    }
+    .logo > a > img{
+      height: 90px;
+      margin-top: 5px;
+    }
+    .erweima{
+      float: right;
+      margin-right: 20px;
+      height:100px;
+      width: 100px;
+    }
+    .erweima > img{
+      width: 100px;height: 100px;
+    }
+    .content{
+      min-height: 578px;
+      min-width: 1170px;
+      margin:0 auto;
+      position:relative;
+    }
+
+
+    .footer {
+      background: #322531;
+    }
+
+    .footer p {
+      color: #7f8c8d;
+      margin: 0;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    /* 禁用响应式*/
+    .am-topbar{background-color:#4B3849;height:48px;}
+    .am-container {
+      width: 1170px !important;
+      max-width: none;
+    }
+
+    .footer {
+      min-width: 1170px;
+    }
+
+    .am-topbar-collapse {
+      clear: none;
+      padding: 0 10px;
+    }
+
+    .am-topbar-nav {
+      margin: 0 auto;
+      width: 600px
+    }
+
+    .am-topbar-nav > li {
+      display: inline-block;
+      margin: 0!important;
+      text-align: center;
+      width: 120px
+    }
+    .am-topbar-collapse .am-dropdown.am-active .am-dropdown-content {
+      position: absolute;
+    }
+
+    .am-topbar-nav > li > a {
+      color:white;
+      position: relative;
+      line-height: 50px;
+      padding: 0 10px;
+    }
+    .am-topbar-nav > li > a:hover:after {
+      color:black;
+      border-bottom-color: #666666;
+    }
+    .am-topbar-nav > li.am-dropdown > a:after {
+      display: none;
+    }
+    .am-topbar-nav > li.am-active > a,
+    .am-topbar-nav > li.am-active > a:hover,
+    .am-topbar-nav > li.am-active > a:focus {
+      border-radius: 0;
+      background: none;
+      background-color: #e6e6e6;
+    }
+    .am-topbar-nav > li.am-active > a:after {
+      color: black;
+      border-bottom-color: #0e90d2;
+    }
+    .am-dropdown-content{
+      width: 120px;
+    }
+    .am-dropdown-content > li{
+      width: 120px; 
+      text-align: center;
+    }
+    .am-dropdown-toggle > img{
+       width:40px;height:40px;margin-top:-6px
+    }

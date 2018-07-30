@@ -1,0 +1,49 @@
+.cluster-good {
+	background-color: #fff;
+	padding: 20rpx 30rpx;
+	display: flex;
+	/*align-items: center;*/
+	border-bottom: 1px solid #ccc;
+}
+.cluster-good-img {
+	/*float: left;*/
+	width: 180rpx;
+	height: 180rpx;
+	margin-right: 30rpx;
+}
+.cluster-good-info {
+	width: calc(100% - 185rpx);
+}
+.cluster-good-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    min-height: 90rpx;
+}
+.cluster-good-num {
+	font-size: 0.8em;
+	line-height: 2.4em;
+	margin-bottom: -2em;
+}
+
+.cluster-good-priceNum {
+	font-size: 1.2em;
+}
+.cluster-good-originPrice {
+	color: #8a8a8a;
+	text-decoration: line-through;
+}
+.cluster-good-btn {
+	float: right;
+	color: #fff;
+	/*background-color: #eee;*/
+	border-radius: 5px;
+	font-size: 0.8em;
+	padding: 5rpx 20rpx;
+}
+.footer {
+	text-align: center;
+	color: #8a8a8a;
+	margin: 30rpx 0;
+}

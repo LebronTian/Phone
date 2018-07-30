@@ -1,0 +1,2 @@
+/* page/cart/pages/exerSigner/exerSigner.wxss */
+@import "../competionSign/competionSign.wxss";

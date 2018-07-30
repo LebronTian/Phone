@@ -1,0 +1,10 @@
+<!--page/menu/menu1/menu1.wxml-->
+<import src="/page/common/indexNodes.wxml"/>
+
+<view class="template-container" wx:if="{{nodes && nodes.length > 0}}">
+  <block wx:for="{{nodes}}" wx:for-item="item" wx:key="{{index}}">
+    <template is="{{item.component}}" data="{{...item.nodedata}}" />
+  </block>
+
+  <button wx:if="{{contactInfo.show}}" class="contactBtn" style="background-image: url({{contactInfo.imgUrl}});" open-type="{{contactInfo.link ? '' : 'contact'}}" bindtap="subNavTap" data-link="{{contactInfo.link}}"></button>
+</view>

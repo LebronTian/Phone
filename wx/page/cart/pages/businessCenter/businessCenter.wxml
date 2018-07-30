@@ -1,0 +1,66 @@
+<view class="container">
+	<view class="header" style="background-color: {{mainColor}}">
+		<text class="header-title">今日付款金额(元)</text>
+		<navigator url="../../../my/pages/pointDetail/pointDetail?from=cash" class="sum__today">{{bizData.today_orders_paid}}</navigator>
+		<view class="header-orderBox">
+			<view class="header-order">
+				<view class="header-order__title">待发货订单</view>
+				<view class="header-order__Num">{{bizData.wait_delivery_cnt}}</view>
+			</view>
+			<view class="header-order">
+				<view class="header-order__title">订单总数</view>
+				<view class="header-order__Num">{{bizData.total_orders_cnt}}</view>
+			</view>
+			<view class="header-order">
+				<view class="header-order__title" style="border-right: none;">订单总金额</view>
+				<view class="header-order__Num">{{bizData.total_orders_paid}}</view>
+			</view>
+		</view>
+	</view>
+	<view class="main">
+		<view class="data-box">
+			<view class="data-title">订单</view>
+			<view class="data-detail">
+				<view class="data-item">
+					<text class="data-num">{{bizData.yesterday_orders_paid_su_cnt}}</text>
+					<view class="data-subTitle">昨日成功支付用户数</view>
+				</view>
+				<view class="data-item">
+					<text class="data-num">{{bizData.yesterday_orders_recv_cnt}}</text>
+					<view class="data-subTitle">昨日成功订单数</view>
+				</view>
+				<view class="data-item">
+					<text class="data-num">{{bizData.yesterday_orders_create_paid}}</text>
+					<view class="data-subTitle">昨日成功下单金额</view>
+				</view>
+				<view class="data-item">
+					<text class="data-num">{{bizData.weekd_orders_create_paid}}</text>
+					<view class="data-subTitle">过去一周下单金额</view>
+				</view>
+			</view>
+		</view>
+		<view class="data-box">
+			<view class="data-title">商品</view>
+			<view class="data-detail">
+				<view class="data-item">
+					<text class="data-num">{{bizData.product_cnt}}</text>
+					<view class="data-subTitle">上架商品总数</view>
+				</view>
+				<view class="data-item">
+					<text class="data-num">{{bizData.product_sell_cnt}}</text>
+					<view class="data-subTitle">上架商品月销售量</view>
+				</view>
+				<view class="data-item">
+					<text class="data-num">{{bizData.product_quantity_cnt}}</text>
+					<view class="data-subTitle">上架商品库存量</view>
+				</view>
+				<view class="data-item">
+					<text class="data-num">{{bizData.stock_low_cnt}}</text>
+					<view class="data-subTitle">库存报警数</view>
+				</view>
+			</view>
+		</view>
+		<!-- <navigator class="postMsg" url="/page/index/pages/edit/edit" style="background-color: {{mainColor}};">发布商家信息</navigator> -->
+	</view>
+	<view class="footer">订单操作请登陆PC端后台进行</view>
+</view>

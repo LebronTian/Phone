@@ -1,0 +1,94 @@
+<!--page/cart/pages/reward/reward.wxml-->
+<import src="../../../common/wxParse/wxParse.wxml"/>
+
+<view class="container">
+	<view class="swiper-box">
+		<swiper class="header-swiperCont" autoplay circular vertical>
+	    <block wx:for="{{userList}}" wx:key="{{index}}">
+	      <swiper-item class="header-swiperCont">
+	        <view class="">幸运用户<text class="user-name" style="color: {{mainColor}};">{{item.name}}</text>抽中了<text class="user-name" style="color: {{mainColor}};">{{item.item.title}}</text></view>
+	      </swiper-item>
+	    </block>
+	  </swiper>
+	</view>
+	
+	<view class="container-out">
+	  <view class="circle" wx:for="{{circleList}}" wx:key="{{index}}" style="top:{{item.topCircle}}rpx;left:{{item.leftCircle}}rpx;background-color: {{(index%2==0)?colorCircleFirst:colorCircleSecond}};"></view>
+	  <view class="container-in">
+		  <view class="content-out" wx:for="{{awardList}}" wx:key="{{index}}" style="top:{{item.topAward}}rpx; left:{{item.leftAward}}rpx; background-color: {{(index==indexSelect)?colorAwardSelect:colorAwardDefault}};">
+		    <image wx:if="{{item.img}}" class="award-image" src="{{item.img}}"></image>
+		    <text wx:else class="noAward">谢谢参与</text>
+		  </view>
+		  <!-- 抽奖按钮 -->
+		  <view class="start-btn" bindtap="doreward" style="background-color:{{isRunning?'#e7930a':'#ffe400'}}">START</view>
+	  </view>
+	</view>
+	<button open-type="share" class="share-btn" style="background-color: {{mainColor}};">分享给好友</button>
+	<view class="footer">
+		<view class="footer-btn" style="background-color: {{mainColor}};" bindtap="showRule">活动介绍</view>
+		<view class="footer-btn" style="background-color: {{mainColor}};" bindtap="showIntro">商家介绍</view>
+		<view class="footer-btn" style="background-color: {{mainColor}};" bindtap="showMyAward">我的奖品</view>
+	</view>
+
+	<!-- 页面阴影 -->
+	<view class="page-shadow {{showShadow ? 'page-shadow-show' : ''}}" bindtap=""></view>
+
+	<view class="rule-modal {{showRule ? 'rule-modal-show' : ''}}">
+		<view class="quit-btn" bindtap="tapQuit">x</view>
+		<view class="rule" style="background-color: {{mainColor}};">
+			<view class="title">{{award.title}}</view>
+			<view class="time-title">活动介绍：</view>
+			<view class="time">
+				<template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+			</view>
+
+			<view class="time-title">活动时间：</view>
+			<view class="time">{{award.startTime}} - {{award.endTime}}</view>
+			<view class="award-list">
+				<view class="award-list-title">奖品: </view>
+				<block wx:for="{{award.items.list}}" wx:key="{{index}}">
+					<view class="award-item" wx:if="{{item.uid}}">
+						<text class="awardItem-title">{{item.title}} </text>
+						<text>{{item.total_cnt}}名</text>
+					</view>
+				</block>
+			</view>
+			<view class="ruleInfo-box">
+				<view class="rule-title">活动规则: </view>
+				<view class="rule-content">
+					<view wx:if="{{award.access_rule.max_cnt_day}}">每天可抽奖{{award.access_rule.max_cnt_day}}次</view>
+					<view wx:if="{{award.access_rule.max_cnt}}">总共可抽奖{{award.access_rule.max_cnt}}次</view>
+					<view wx:if="{{award.access_rule.max_item}}">每位用户最多可以抽中{{award.access_rule.max_item}}次</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- 商家介绍 -->
+	<view class="rule-modal {{showIntro ? 'rule-modal-show' : ''}}">
+		<view class="quit-btn" bindtap="tapQuit">x</view>
+		<view class="rule" style="background-color: {{mainColor}};">
+			<view class="title">商家介绍：</view>
+			<view class="shop-intro">{{award.win_rule.info}}</view>
+			<view class="empty-tips" hidden="{{award.win_rule.info}}">（无）</view>
+		</view>
+	</view>
+	<!-- 我的奖品 -->
+	<view class="rule-modal {{showMyAward ? 'rule-modal-show' : ''}}">
+		<view class="quit-btn" bindtap="tapQuit">x</view>
+		<view class="rule" style="background-color: {{mainColor}};">
+			<view class="title">我的奖品</view>
+			<view class="shop-intro">
+				<block wx:for="{{myAwardList}}" wx:key="{{index}}">
+					<view class="my-award">
+						<view class="my-award-info">
+							<text class="my-award-title">{{item.item.title}}</text>
+							<image class="my-award-img" src="{{item.img}}"></image>
+						</view>
+						<view class="my-award-time">{{item.time}}</view>
+					</view>
+				</block>
+				<view class="empty-tips" hidden="{{myAwardList.length}}">您还没有抽到奖品，快去抽奖吧！</view>
+			</view>			
+		</view>
+	</view>
+</view>

@@ -1,0 +1,45 @@
+<view class="mess-bodyList">
+  <view class="mess-listTitle-box">
+    <view class="mess-listTitle">精选评论</view>
+    <view class="mess-listSubTitle" hidden="{{!isReceiver}}">点击评论回复</view>
+  </view>
+  <!-- 评论列表 -->
+  <block wx:for="{{commentList}}" wx:key="{{item.uid}}">
+    <view id="{{item.uid}}" class="mess-listItem {{item.isContact ? 'mess-listItem-admin' : ''}}" bindtap="receiveCommentTap">
+      <!-- 评论人头像 -->
+      <view class="mess-itemAvatar-box">
+        <image class="mess-itemAvatar" src="{{item.img}}"></image>
+      </view>
+      <!-- 评论人信息 -->
+      <view class="mess-itemInfo-box">
+        <view class="mess-itemName">{{item.name}}</view>
+        <view class="mess-like-box">
+          <text class="mess-likeNum">{{item.like_cnt}}</text>
+          <!-- <image id="{{item.uid}}" class="mess-likeBtn" src="../../resources/pic/{{item.isLiked ? 'like20selected.png' : 'like20.png'}}" catchtap="likeCommentTap"></image> -->
+        </view>
+        <!-- <view id="{{item.uid}}" hidden="{{!item.isMine}}" class="mess-delete-box" catchtap="removeCommentTap">
+          <image class="mess-deleteBtn" src="/page/resources/pic/delete_8e.png"></image>
+        </view> -->
+        <view class="mess-itemContent">{{item.content}}</view>
+      </view>
+    </view>
+  </block>
+</view>
+<!-- 写评论按钮 -->
+<view class="message-footer" hidden="{{hideComment}}">
+  <button class="weui-btn message-footerBtn" bindtap="writeCommentTap" style="background-color: {{mainColor}}; color: #fff;">写评论</button>
+</view>
+<!-- 填写评论弹窗 -->
+<view class="modal-writeConment" hidden="{{!isWriteComment}}">
+  <view class="modal-title">我要提问</view>
+  <form bindsubmit="bindFormSubmit">
+    <view class="modal-textarea-box">
+      <textarea class="modal-textarea" placeholder="请输入提问内容" name="textarea"/>
+    </view>
+    <view class="modal-prompt">评论将由管理员筛选后显示，对所有人可见。</view>
+    <view class="modal-btnBox">
+      <button class="modal-cancelBtn" bindtap="quitCommentTap">取消</button>
+      <button class="modal-correctBtn" form-type="submit">评论</button>
+    </view>
+  </form>
+</view>

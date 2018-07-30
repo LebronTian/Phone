@@ -1,0 +1,94 @@
+<view class="container">
+	<view class="header" hidden="{{!businessData}}">
+		<image class="header-img" src="{{businessData.main_img}}"></image>
+		<view class="header-title" style="color: {{mainColor}}">{{businessData.title}}</view>
+		<view class="header-goodsNum-box">
+			<text class="header-goodsNum" style="color: {{mainColor}}">{{goods.length}}</text>
+			<text class="header-goodsNum-title">在售商品</text>
+		</view>
+	</view>
+	<view class="main">
+		<view class="main__left">
+			<scroll-view scroll-y enable-back-to-top style="height: {{businessData ? scrollHeight : (scrollHeight+100)}}px;">
+				<view class="class-box">
+					<block wx:for="{{catList}}" wx:key="{{index}}">
+						<view id="{{item.id}}" class="class-title {{item.id == activeIndex ? 'class-title__selected' : ''}}" bindtap="tabClick" style="border-left-color: {{item.id == activeIndex ? mainColor : 'inherit'}}; color: {{item.id == activeIndex ? mainColor : 'inherit'}};" >{{item.title}}</view>
+					</block>
+				</view>
+			</scroll-view>
+		</view>
+		<view class="main__right">
+			<scroll-view scroll-y enable-back-to-top style="height: {{businessData ? scrollHeight : (scrollHeight+100)}}px;" scroll-into-view="{{subClassId}}" bindscroll="bindScroll">
+				<block wx:for="{{catList}}" wx:key="{{item.id}}">
+	        <view id="{{item.id}}" class="body-class">
+	          <view class="classTitle" url="../class/pages/classGoods/classGoods?classId={{item.uid}}">{{item.title}}<text> </text></view>
+	          <view class="body-classGoods-box">
+	            <block wx:for="{{item.list}}" wx:for-item="good" wx:for-index="subIndex" wx:key="{{index}}">
+	              <view class="subClass">
+	              	<navigator url="../../../class/pages/goodDetail/goodDetail?uid={{good.uid}}" >
+		                <image class="subClass-img" src="{{good.main_img}}"></image>
+	              	</navigator>
+									<view class="subClass-title">{{good.title}}</view>
+									<view class="subClass-price">¥ {{good.price}}</view>
+									<view class="selectNum-box" hidden="{{good.specials}}">
+										<view id="{{index + '-' + subIndex + '-' + 'sub'}}" hidden="{{good.selectedNum == 0}}" class="selectBtn" catchtap="selectedNumTap" style="background-color: {{mainColor}};">-</view>
+										<view hidden="{{good.selectedNum == 0}}" class="selectedNum">{{good.selectedNum}}</view>
+										<view id="{{index + '-' + subIndex + '-' + 'add'}}" class="selectBtn" catchtap="selectedNumTap" style="background-color: {{mainColor}};">+</view>
+									</view>
+									<view id="{{index + '-' + subIndex}}" class="selectSpecials" style="background-color: {{mainColor}};" catchtap="showSpecials" hidden="{{!good.specials}}">
+										<text>选规格</text>
+                    <view class="weui-badge" hidden="{{good.selectedNum == 0}}" style="position: absolute;top: -.8em;right: -.4em;">{{good.selectedNum}}</view>
+									</view>
+	              </view>
+	            </block>
+	          </view>
+	        </view>
+	      </block>
+			</scroll-view>
+		</view>
+	</view>
+	<view class="footer">
+		<view class="price-box">
+			<text>合计：</text>
+			<text class="cart-accountPrice">¥ {{totalPrice}}</text>
+		</view>
+		<view class="cart-accountBtn {{selectedEmpty ? 'cart-accountBtn-disable' : ''}}" style="background-color: {{totalNum == 0 ? '#8a8a8a' : mainColor}};" bindtap="navToOrder">
+			去结算
+      <view class="weui-badge" hidden="{{totalNum == 0}}" style="position: absolute;top: -.4em;left: -.4em; font-size: 0.9em;">{{totalNum}}</view>
+		</view>
+	</view>
+	<!-- 页面阴影 -->
+	<view class="shadow {{showSpecialsModal ? 'shadow-show' : ''}}" bindtap="tapShadow"></view>
+	<!-- 规格选择模块 -->
+	<view class="specials-modal" hidden="{{!showSpecialsModal}}">
+		<view class="modal-header">
+			<view class="modal-title">已选择:
+				<text wx:for="{{specials}}" wx:key="{{index}}">{{item.list[item.selectedIndex] + ' '}}</text>
+				<text>{{selectedGood.selectedNum}}件</text>
+			</view>
+			<view class="modal-quitBtn">
+				<image class="select-cancelImg" src="../../../resources/pic/cancel.png" bindtap="tapShadow"></image>
+			</view>
+		</view>
+		<view class="selectSpecials-box">
+			<!-- <view class="select-bodySpecial-box"> -->
+				<block wx:for="{{specials}}" wx:for-item="special" wx:key="{{index}}">
+					<view class="select-bodySpecial">
+	  				<view class="select-bodySpecial-title">{{special.name}}</view>
+	  				<block wx:for="{{special.list}}" wx:key="{{index}}">
+		  				<view id="{{special.name + ' ' + index}}" class="select-bodySpecial-item {{special.selectedIndex == index ? 'select-bodySpecial-selected' : ''}}" style="border-color: {{mainColor}}; background-color: {{special.selectedIndex == index ? mainColor : 'inherit'}}; " bindtap="bindSelectSpecial">{{item}}</view>
+	  				</block>
+	  			</view>
+				</block>
+  		<!-- </view> -->
+		</view>
+		<view class="addBtn-box">
+			<view class="special-price">¥ {{selectedGood.price}}</view>
+			<view class="selectNum-box">
+				<view id="sub" hidden="{{selectedGood.selectedNum == 0}}" class="selectBtn" catchtap="selectedSpecialNumTap" style="background-color: {{mainColor}};">-</view>
+				<view hidden="{{selectedGood.selectedNum == 0}}" class="selectedNum">{{selectedGood.selectedNum}}</view>
+				<view id="add" class="selectBtn" catchtap="selectedSpecialNumTap" style="background-color: {{mainColor}};">+</view>
+			</view>
+		</view>
+	</view>
+</view>

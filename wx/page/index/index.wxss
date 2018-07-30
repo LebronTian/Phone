@@ -1,0 +1,207 @@
+.header {
+	margin-bottom: 30rpx;
+	/*margin-top: 48px;*/
+}
+.search-bar {
+	position: absolute;
+	width: 90%;
+	left: 5%;
+	top: 20rpx;
+	opacity: 0.6;
+	z-index: 99;
+}
+.header-swiper-box {
+	height: 300rpx;
+}
+.swiper-item{
+  display: block;
+  height: 100%;
+}
+.header-swiper {
+	height: 100%;
+}
+.header-swiperImg {
+	width: 100%;
+	height: 100%;
+}
+.header-title-box {
+	text-align: center;
+	background-color: #fff;
+	height: 90rpx;
+	line-height: 90rpx;
+	margin-bottom: 10px;
+}
+
+
+
+.body-subNavs-box {
+	background-color: #fff;
+	display: flex;
+	/*justify-content: space-around;*/
+	flex-wrap: wrap;
+	/* margin-bottom: 30rpx; */
+}
+.body-subNav {
+	background-color: inherit;
+	width: 120rpx;
+	margin: 15rpx;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.body-subNav::after {
+	width: 0;
+	height: 0;
+}
+.body-subNav-fei {
+	width: 25%;
+	margin: 15rpx 0 15rpx 0;
+}
+.body-subNav-fei image{
+	width: 60rpx;
+	height: 60rpx;
+}
+.body-subNav-img2 {
+	width: 96rpx;
+	height: 96rpx;
+}
+.body-subNav-img {
+	width: 56rpx;
+	height: 56rpx;
+}
+.body-subNav-title {
+	font-size: 0.7em;
+  line-height: 1.8em;
+}
+
+.body-class {
+	margin-bottom: 30rpx;
+	background-color: #fff;
+	text-align: center;
+}
+.body-classTitle {
+  padding: 1em 0;
+  color:#333;
+  text-align:center;
+  margin-left:5px;
+}
+.body-classPoster-box {
+	width: 100%;
+	height: 300rpx;
+	background-image: url("http://placekitten.com/375/150");
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.body-classIntro-box {
+	width: 50%;
+	padding: 20rpx 0;
+	font-size: 0.8em;
+	line-height: 2em;
+	background: rgba(255,255,255,0.5)
+}
+
+
+.body-classGoods-box {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-moz-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	-o-flex-wrap: wrap;
+	flex-wrap: wrap;
+	background-color: #fff;
+}
+.body-classGood {
+	width: 230rpx;
+	font-size: 0.8em;
+	margin: 10rpx;
+}
+.body-goodImg {
+	width: 100%;
+	height: 230rpx;
+}
+.body-goodTitle {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+    overflow: hidden;
+}
+.body-goodPrice {
+	color: #f80000;
+	float: left;
+	text-indent: 0.6em;
+}
+.body-goodSell {
+	font-size: 0.9em;
+	color: #8a8a8a;
+	float: right;
+}
+
+
+
+
+
+/*两列商品展示*/
+.good-box2 {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-moz-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	-o-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+.good2 {
+	width: 49%;
+	margin-bottom: 15rpx;
+	background-color: #fff;
+}
+.good2:nth-child(odd) {
+	margin-right: 2%;
+}
+.goodImg2 {
+	width: 100%;
+	height: 370rpx;
+}
+.goodInfo-box2 {
+	padding: 10rpx 20rpx;
+}
+.goodTitle2 {
+	font-size: 0.9em;
+	min-height: 50px;
+	display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.goodPrice-num2 {
+	font-size: 1.4em;
+}
+.good-sellCnt2 {
+	float: right;
+	margin-top: 20rpx;
+	font-size: 0.8em;
+	color: #8a8a8a;
+}
+
+
+.weui-footer {
+	margin-top: 60rpx;
+	margin-bottom: 100rpx;
+}
+
+.hr {
+	height: 30rpx;
+}
+
+
+@import "/page/class/pages/custom/custom.wxss";

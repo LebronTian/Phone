@@ -1,0 +1,31 @@
+<view class="container">
+	<view class="vipInfo" hidden="{{!imgUrl}}">
+		<image class="vipCard" mode="widthFix" src="{{imgUrl}}"></image>
+		<view class="info-box">
+			<block wx:for="{{infoList}}" wx:key="{{index}}">
+				<view class="info-item">
+					<text class="info__title">{{item.title}}:</text>
+					<text class="info__content">{{item.value}}</text>
+				</view>
+			</block>
+		</view>
+	</view>
+	<view class="apply-form" hidden="{{imgUrl}}">
+    <view class="weui-cells__title">vip申请表单</view>
+		<view class="weui-cells weui-cells_after-title">
+			<block wx:for="{{formList}}" wx:key="{{index}}">
+				<view class="weui-cell weui-cell_input">
+	        <view class="weui-cell__hd">
+            <view class="weui-label">{{item.title}}</view>
+	        </view>
+	        <view class="weui-cell__bd">
+            <input id="{{index}}" bindinput="userInput" class="weui-input" placeholder="{{item.placeholder}}"/>
+	        </view>
+	      </view>
+			</block>
+		</view>
+		<view class="weui-btn-area">
+      <button bindtap="submit" class="weui-btn" type="primary" style="background-color: {{mainColor}}">申请</button>
+    </view>
+	</view>
+</view>

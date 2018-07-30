@@ -1,0 +1,151 @@
+ 
+.clearfix:after {
+visibility: hidden;
+display: block;
+font-size: 0;
+content: " ";
+clear: both;
+height: 0;
+}
+ .profile-tit{ border-top: 1px solid #ddd;}
+     .pro-form{ width: 1000px;}
+     .a_btn{
+        display: inline-block;
+        width: 40px;
+        height: 24px;
+        line-height: 24px;
+        text-align: center;
+        background-color: #0E90D2;
+        color: #FFF;
+     }
+     .a_btn:hover{
+        color: #FFF;
+     }
+     .btn{
+      margin-left: 12px;
+     }
+     .header{ margin-left: -200px;}
+   
+    #sendAddress select{
+    width:115px;
+    height: 28px;
+    text-indent: 10px;
+    margin-right: 1px;
+    margin-top: 6px;
+  }
+  #sendAddress span,
+  #sendAddress select{
+    vertical-align: middle;
+  }
+  #sendAddress span{
+    margin-right: 1px;
+    margin-left: 2px;
+  }
+  .textarea{
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+
+   .uploadify-button {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+    }
+    .uploadify:hover .uploadify-button {
+        background-color: transparent;
+    }
+
+ .my-editor{
+    border:1px solid #AAA; 
+    width:512px; 
+    height:100px; 
+    margin-left:265px;
+
+ }
+ 
+ .editor-info{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: #C00;
+    position: absolute;
+    left: 0;
+    bottom: 18px;
+ }
+
+ .trumbowyg-box{
+    width: 714px;
+    height: 150px;
+    margin-left: 264px;
+    border-color: #aaa;
+ }
+ 
+ 
+.wysiwyg-toolbar-icon{
+    position: absolute;
+    left: 400px;
+    bottom: 20px;
+}
+.efoot{
+    display: none;
+}
+
+/**/
+.jcrop-holder #preview-pane {
+  display: block;
+  position: absolute;
+  z-index: 2000;
+  top: 0;
+  right: -280px;
+  padding: 6px;
+  border: 1px rgba(0,0,0,.4) solid;
+  background-color: white;
+
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+
+  -webkit-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+/*
+.jc-demo-box{
+  width: 600px;
+  height: 450px;
+}*/
+
+
+
+#preview-pane .preview-container {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+/*
+
+.jc-demo-box img{
+  height: 450px;
+}*/
+
+
+
+.brief{ position: absolute; display: inline-block; left: -84px; top: 84px; font-weight: bold;}
+.err_info{ display: none; position: fixed; left: 633px; top: 0px; width: 300px; height: 28px; line-height: 28px; text-align: center; background-color: orange; color: #FFF;}
+
+#btn21{ margin-top: 10px; margin-left: 0; border: 1px solid #CCC; width:130px; height: 32px; background-color: #0E90D2; color: #FFF; font-size: 14px;}
+#btn22{ margin-top: 10px; margin-left: 0; border: 1px solid #CCC; width:130px; height: 32px; background-color: #0E90D2; color: #FFF; font-size: 14px;}
+
+#fullname,#email,#phone,#QQ,#address,#p_lng,#p_lat{ padding: .625em; width: 100%; border: 1px solid #CCC;}
+
+
+
+
+
+
+
+
+

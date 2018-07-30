@@ -1,0 +1,75 @@
+.header {
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	padding: 30rpx 0;
+}
+.header-title {
+	margin-top: 30rpx;
+	font-size: 1.2em;
+}
+.sum__today {
+	font-size: 2.4em;
+	line-height: 2em;
+}
+.header-orderBox {
+	display: flex;
+}
+.header-order {
+	width: 33%;
+	font-size: 0.9em;
+}
+.header-order__title {
+	border-right: 1px solid #fff;
+	margin: 10rpx 0;
+}
+
+
+.data-box {
+	margin: 30rpx;
+	border-bottom: 1px solid #bfbfbf;
+}
+.data-title {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+.data-detail {
+	display: flex;
+}
+.data-item {
+	width: 25%;
+	text-align: center;
+	padding-bottom: 30rpx;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
+}
+.data-subTitle {
+	font-size: 0.8em;
+	color: #bfbfbf;
+	max-width: 85%;
+	margin: 0 auto;
+}
+
+.postMsg {
+	width: 80%;
+	margin: 50rpx auto;
+	border-radius: 24rpx;
+	text-align: center;
+	font-size: 1.2em;
+	color: #fff;
+	line-height: 2.4em;
+}
+
+.footer {
+	text-align: center;
+	color: #8a8a8a;
+}

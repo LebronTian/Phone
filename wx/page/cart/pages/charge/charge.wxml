@@ -1,0 +1,41 @@
+<!--pages/my/pages/myWallet/myWallet.wxml-->
+<view class="container">
+  <view class="title-box">
+    <view class="title-pic-box">
+      <image src="../../../resources/pic/u60.png" class="title-pic"></image>
+    </view>
+    <text>余额 \n</text>
+    <text class="money">¥ {{showCash ? showCash : 0.00}}</text>
+  </view>
+  <view class="charge-box">
+    <block wx:for="{{rules}}" wx:key="{{index}}">
+      <view class="charge-item" data-id="{{index}}" bindtap="selectPrice">
+        <view class="charge-btn" style="border-color: {{selectedIndex == index ? mainColor : '#ccc'}}; color: {{selectedIndex == index ? mainColor : '#000'}};">
+          <text class="charge-price">
+            <text>{{item[0]}}元</text>
+          </text>
+          <text class="charge">赠送：{{item[1]}}元</text>
+        </view>
+      </view>
+    </block>
+    <view class="charge-item" data-id="custom" bindtap="selectPrice">
+      <view class="charge-btn" style="border-color: {{selectedIndex == 'custom' ? mainColor : '#ccc'}};">
+        <text class="charge-price" style="color: {{selectedIndex == 'custom' ? mainColor : '#000'}};">自定义金额</text>
+        <!-- <text class="charge"></text> -->
+      </view>
+    </view>
+  </view>
+  <button type="primary" style="background-color: {{selectedIndex == -1 ? '#ccc' : mainColor}};" class="withdrawBtn" bindtap="charge" disabled="{{selectedIndex == -1}}">充值</button>
+  <view class="modal" hidden="{{!showCharge}}">
+    <view class="modal__title">请输入充值金额</view>
+    <view class="modal__input-box">
+      <text class="">¥</text>
+      <input class="modal__input" type="digit" focus="{{showCharge}}" bindinput="inputMoney" />
+    </view>
+    <view class="modal__btns">
+      <view class="modal__btn" bindtap="hideModal">取消</view>
+      <view class="modal__btn modal__btn-confirm" style="background-color: {{mainColor}}" bindtap="charge">确认</view>
+    </view>
+  </view>
+  <view class="page-shadow {{(showWithdraw || showCharge) ? 'page-shadow-show' : ''}}" bindtap="hideModal"></view>
+</view>

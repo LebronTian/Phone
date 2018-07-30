@@ -1,0 +1,16 @@
+<view class="container">
+  <view class="header" style="background-color: {{mainColor}}">
+  	<image class="avatar" src="{{userAvatar}}"></image>
+  	<view class="userInfo">
+  		<text class="userName">我是{{userName}}\n</text>
+	  	<text class="userIntro">这是我的专属二维码</text>
+  	</view>
+  </view>
+	<view class="main">
+		<image class="main-qrcode" src="{{qrcode}}" bindtap="previewImage"></image>
+	</view>
+	<view class="footer">
+		分享给朋友，扫码后立即成为您的推荐用户！\n
+		(点击图片长按保存)
+	</view>
+</view>

@@ -1,0 +1,43 @@
+
+.right-box{
+    /*-webkit-animation: moveUp 1s;*/
+}
+
+@media screen and (max-width:500px) {
+    body{
+        min-width: 1px;
+    }
+    .wxjs-box{
+        font-size: 1.3rem;
+    }
+    .left-box{
+        width: auto;
+    }
+    .right-box{
+        float: left !important;
+        position: relative;
+        width: auto;
+        /*-webkit-animation: moveDown 1s;*/
+    }
+}
+
+@-webkit-keyframes moveDown {
+    from {
+        top: -328px;
+        left: 382px;
+    }
+    to {
+        top: 0;
+        left: 0;
+    }
+}
+@-webkit-keyframes moveUp {
+    from {
+        top: 328px;
+        left:-382px;
+    }
+    to {
+        top: 0;
+        left: 0;
+    }
+}

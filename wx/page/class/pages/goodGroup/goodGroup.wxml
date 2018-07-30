@@ -1,0 +1,21 @@
+<view class="container">
+	<view class="main">
+		<view class="group-list__empty" hidden="{{groupList.length > 0}}">
+			<text>当前还没有人开团</text>
+			<view class="">去开团</view>
+		</view>
+		<view class="group-list">
+			<block wx:for="{{groupList}}" wx:key="{{index}}">
+				<view class="group">
+					<image class="group__avatar" src="{{item.user.avatar}}"></image>
+					<view class="group__info">
+						<text class="group__name">{{item.user.name}} </text>
+						<text class="group__num"> 还差{{item.remain_cnt}}人\n</text>
+						<text class="group__time">{{item.remainTime == "团购已过期" ? "" : "剩余 "}}{{item.remainTime}}</text>
+					</view>
+					<view data-group="{{item}}" bindtap="navToGroupJoin" class="group__btn" style="color: {{mainColor}}; border-color: {{mainColor}};">去参团</view>
+				</view>
+			</block>
+		</view>
+	</view>
+</view>

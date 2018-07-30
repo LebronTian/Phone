@@ -1,0 +1,40 @@
+.index_box{display: none;position: absolute;border: thin solid #E5EAF0;width: 1120px;height: 566px;z-index: 10;background-color: white;}
+.index_box>div{cursor: pointer;}
+.topic_box{position: absolute;left: 10px;top: 10px;width: 360px;height:547px;overflow: hidden;}
+.topic{position: absolute;z-index: 10;width:360px;height:547px;}
+.eyeis_pic{position: absolute;width: 360px;height: 129px;left: 380px;top: 10px}
+.business_pic{position: absolute;width: 360px;height: 129px;left: 380px;top: 149px}
+.talent_pic{position: absolute;width: 360px;height: 129px;left: 380px;top: 288px}
+.community_pic{position: absolute;width: 360px;height: 129px;left: 380px;top: 427px}
+.news_pic{position: absolute;width: 360px;height: 129px;left: 750px;top: 10px}
+.service_pic{position: absolute;width: 360px;height: 129px;left: 750px;top: 149px}
+.respon_pic{position: absolute;width: 360px;height: 129px;left: 750px;top: 288px}
+.usercenter_pic{position: absolute;width: 360px;height: 129px;left: 750px;top: 427px}
+
+
+
+
+  .list_box_style{position: absolute;left: 0;top:0;width: 358px;height: 544px;border:1px solid #C1D1E0;background-color: white;z-index: 5}
+  .list_box_header{height:40px;border-bottom: thin solid #c1d1e0;line-height: 40px;background-color: #EFF3F6;}
+  .list_box_title{font-weight: 600;margin-left: 10px;}
+  .list_box_title_en{font-size: 14px;color:#C3C7C8;margin-left: 10px;}
+  .list_box_list{font-weight: 600;margin: 10px;width: 340px;overflow-x:hidden;overflow-y:auto;height:442px;line-height: 30px;}
+  .list_page_nav{height: 41px;border-top: 1px solid #C1D1E0 }
+
+
+.culture_pic{position: absolute;width: 360px;height: 176px;left: 10px;top: 10px}
+.survey_pic{position: absolute;width: 360px;height: 360px;left: 10px;top:196px;}
+.team_pic{position: absolute;width: 360px;height:360px;left: 380px;top: 10px; }
+.percept_pic{position:absolute;width: 360px;height: 176px;left: 380px;top: 380px;}
+.duty_pic{position: absolute;width: 360px;height:360px;left: 750px;top: 10px}
+.honor_pic{position: absolute;width: 360px;height: 176px;left: 750px;top: 380px;}
+.close_index{position: absolute; top: 0;right: -35px;padding: 0;border: 0;height: 35px;width: 34px}
+.second_nav{margin: 0;background-color:#EDEEF2;font-size: 15px;border-bottom: 1px solid #E0DFDD;display: none}
+.second_list{width:1200px;margin:0 auto;height:175px;}
+.second_ul{height: 175px}
+.second_li{height: 175px;float:left;border-left:thin solid #E0DFDD;width: 118px;min-height: 100px;text-align: center;}
+.third_ul{height: 175px;margin-top: 12px}
+.third_ul>li{cursor: pointer;padding: 5px 0;font-size: 13px;}
+
+
+

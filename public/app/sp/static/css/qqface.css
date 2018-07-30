@@ -1,0 +1,24 @@
+
+.com_form{width:100%; position:relative}
+.input{width:99%; height:60px; border:1px solid #DDD};
+#show:focus{ outline: none;}
+.com_form p{ margin-bottom: 300px; height:35px; width: 783px; margin: 0px auto; line-height:35px; border: 1px solid #DDD; border-top: none; padding-left: 20px; position: relative;}
+/*span.emotion{width:42px; height:20px; background:url(/app/sp/static/images/qqfaceicon.png) no-repeat; padding-left:20px; cursor:pointer}*/
+/*span.emotion:hover{background-position:2px -28px}*/
+span.emotion{ cursor: pointer;}
+.qqFace{margin-top:4px;background:#fff;padding:2px;border:1px #dfe6f6 solid;}
+.qqFace table td{padding:0px;}
+.qqFace table td img{cursor:pointer;border:1px #fff solid;}
+.qqFace table td img:hover{border:1px #0066cc solid;}
+#show{width:782px; height: 253px; margin:20px auto 0px; background:#fff; padding:14px 20px; border:1px solid #DDD; vertical-align:top; position: relative; overflow: scroll}
+
+
+
+
+
+
+
+
+
+
+

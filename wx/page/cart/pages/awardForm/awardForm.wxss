@@ -1,0 +1,11 @@
+/* page/cart/pages/awardForm/awardForm.wxss */
+.page__bd {
+	/*padding-top: 60rpx;*/
+}
+
+.postBtn {
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 80rpx;
+	color: #fff;
+}

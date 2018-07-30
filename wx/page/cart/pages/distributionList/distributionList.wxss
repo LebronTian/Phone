@@ -1,0 +1,43 @@
+/* page/cart/pages/distributionList/distributionList.wxss */
+.noMore {
+	line-height: 3em;
+	color: #8a8a8a;
+	text-align: center;
+}
+
+
+.order {
+	margin-top: 30rpx;
+	padding: 0 20rpx;
+	overflow: hidden;
+	background-color: #fff;
+}
+.order-header {
+	line-height: 2.4em;
+	/*border-bottom: 1px solid #efefef;*/
+	display: flex;
+	justify-content: space-between;
+}
+.rightBtn {
+	color: #8a8a8a;
+}
+.order-body {
+	border-bottom: 1px solid #efefef;
+	display: flex;
+	/*align-items: center;*/
+	padding: 20rpx 0;
+	font-size: 0.8em;
+}
+.order-bodyImg {
+	width: 4.2em;
+	height: 4.2em;
+	border: 1px solid #efefef;
+	margin-right: 20rpx;
+}
+.order-bodyInfo-box {
+	flex: 1;
+}
+.order-subTitle {
+	color: #999;
+}
+

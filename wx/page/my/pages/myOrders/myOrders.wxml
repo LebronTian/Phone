@@ -1,0 +1,62 @@
+<view class="container">
+  <view class="header">
+  	<view class="weui-navbar" style="background-color: #fff">
+    <block wx:for-items="{{tabs}}" wx:key="{{index}}">
+      <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" style="color: {{activeIndex == index ? mainColor : '#8a8a8a'}};" bindtap="tabClick">
+          <view class="weui-navbar__title">{{item}}</view>
+      </view>
+    </block>
+    <view class="weui-navbar__slider" style="background-color: {{mainColor}}; left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px); width: 4em"></view>
+		</view>
+  </view>
+	<view class="weui-tab__panel">
+    <!-- 订单为空页面 -->
+    <view class="empty-page" hidden="{{!orderEmpty}}">
+      <image class="empty-img" src="../../../resources/pic/orderEmpty.png"></image>
+      <text class="empty-text">您没有相关订单 去逛逛</text>
+    </view>
+		<!-- 商品简介页面 -->
+    <view class="weui-tab__content" hidden="{{orderEmpty}}">
+      <block wx:for="{{orderList}}" wx:key="{{item.uid}}">
+        <view class="order">
+          <navigator url="../orderDetail/orderDetail?uid={{item.uid}}">
+            <view class="order-header">
+              <!-- <view hidden class="order-class" style="color: {{mainColor}}">
+                休闲鞋
+                <text class="rightBtn"> 〉</text>
+              </view> -->
+              <view class="order-date">{{item.date}}</view>
+            </view>
+            <view class="order-body">
+              <image class="order-bodyImg" src="{{item.img}}"></image>
+              <view class="order-bodyInfo-box">
+                <view class="order-id-box">
+                  <text class="order-subTitle">订单编号：</text>
+                  <text class="order-id"> {{item.uid}}</text>
+                </view>
+                <view class="order-price-box">
+                  <text class="order-subTitle">订单金额：</text>
+                  <text class="order-price"> {{item.price}}</text>
+                </view>
+                <view class="order-status-box">
+                  <text class="order-subTitle">订单状态：</text>
+                  <text class="order-status"> {{item.status}}</text>
+                </view>
+              </view>
+            </view>
+          </navigator>
+          <view class="order-footer">
+            <!-- <view id="{{handle + ' ' + item.uid}}" class="order-footerBtn {{handle == '去付款' ? 'order-footerBtn-red' : ''}}" wx:for="{{item.handles}}" wx:key="{{index}}" wx:for-item="handle" bindtap="handleOrder">{{handle}}
+              <contact-button wx:if="{{handle == '联系发货'}}" type="default-dark" size="20" session-from="weapp"></contact-button>
+            </view> -->
+            <view class="order-footerBtn {{handle == '去付款' ? 'order-footerBtn-red' : ''}}" wx:for="{{item.handles}}" wx:key="{{index}}" wx:for-item="handle">
+              <button class="order-footerBtn-handle" wx:if="{{handle == '联系发货'}}" open-type="contact">联系发货</button>
+              <button id="{{item.uid}}" class="order-footerBtn-handle" wx:elif="{{handle == '分享好友参团'}}" open-type="share">分享好友参团</button>
+              <button id="{{handle + ' ' + item.uid}}" class="order-footerBtn-handle" wx:else bindtap="handleOrder">{{handle}}</button>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+	</view>
+</view>

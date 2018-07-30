@@ -1,0 +1,111 @@
+<!--page/class/pages/biddingList/biddingList.wxml-->
+<view class="container">
+	<view class="header-btns">
+		<view class="sortBtn-box">
+			<view id="0" class="sortBtn" bindtap="siftTap" style="color: {{selectedIndex == 1 ? mainColor : '#8a8a8a'}};">全部</view>
+			<view id="1" class="sortBtn" bindtap="siftTap" style="color: {{selectedIndex == 2 ? mainColor : '#8a8a8a'}};">即将起拍</view>
+			<view id="2" class="sortBtn" bindtap="siftTap" style="color: {{selectedIndex == 3 ? mainColor : '#8a8a8a'}};">即将结束</view>
+			<view class="sortBtn" bindtap="moreSift">筛选</view>
+		</view>
+	</view>
+	<!-- 更多筛选 -->
+	<view class="aside-sort {{showMoreSort ? 'aside-srot__show' : ''}}" catchtouchmove="ture">
+		<scroll-view scroll-y style="height: {{asideHeight}}px;">
+			<!-- <view class="aside-sort-section">
+				<view class="sortSection-header">
+					<view class="sortSection-title">类型</view>
+					<view class="sortSection-moreIcon"></view>
+				</view>
+				<view class="sortSection-box">
+					<navigator url="../classGoods/classGoods" class="sortSection-item" open-type="redirect">
+						<text class="sortSection-item-text">普通</text>
+					</navigator>
+					<view class="sortSection-item sortSection-item__selected" style="background-color: {{mainColor}}">
+						<text class="sortSection-item-text">竞价</text>
+					</view>
+				</view>
+			</view> -->
+			<!-- <view class="aside-sort-section" hidden="{{allBrands.length == 0}}">
+				<view class="sortSection-header">
+					<view class="sortSection-title">品牌</view>
+					<view class="sortSection-moreIcon"></view>
+				</view>
+				<view class="sortSection-box">
+					<view class="sortSection-item" style="background-color: {{selectBrandId == item.uid ? mainColor : '#efefef'}}; color: {{selectBrandId == item.uid ? '#fff' : '#333'}}" wx:for="{{allBrands}}" wx:key="{{item.uid}}" data-id="{{item.uid}}" bindtap="selectBrand">
+						<text class="sortSection-item-text">{{item.title}}</text>
+					</view>
+				</view>
+			</view> -->
+			<view class="aside-sort-section">
+				<view class="sortSection-header">
+					<view class="sortSection-title">分类</view>
+					<view class="sortSection-moreIcon"></view>
+				</view>
+				<view class="sortSection-box">
+					<view class="sortSection-item" style="background-color: {{selectClassId == item.uid ? mainColor : '#efefef'}}; color: {{selectClassId == item.uid ? '#fff' : '#333'}}" wx:for="{{allCats}}" wx:key="{{item.uid}}" data-id="{{item.uid}}" bindtap="selectClass">
+						<text class="sortSection-item-text">{{item.title}}</text>
+					</view>
+				</view>
+			</view>
+			<view class="aside-sort-section" hidden="{{allSubCats.length == 0}}">
+				<view class="sortSection-header">
+					<view class="sortSection-title">品种</view>
+					<view class="sortSection-moreIcon"></view>
+				</view>
+				<view class="sortSection-box">
+					<view class="sortSection-item" data-id="{{item.uid}}"  style="background-color: {{selectSubClassId == item.uid ? mainColor : '#efefef'}}; color: {{selectSubClassId == item.uid ? '#fff' : '#333'}}" wx:for="{{allSubCats}}" wx:key="{{item.uid}}" bindtap="selectSubClass">
+						<text class="sortSection-item-text">{{item.title}}</text>
+					</view>
+				</view>
+			</view>
+			<!-- <view class="aside-sort-section">
+				<view class="sortSection-header">
+					<view class="sortSection-title">区域</view>
+					<view class="sortSection-moreIcon"></view>
+				</view>
+				<view class="sortSection-box">
+					<picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="全部">
+				    <view class="picker">
+				      当前选择：{{region[0]}}，{{region[1]}}，{{region[2]}}
+				    </view>
+				  </picker>
+				</view>
+			</view> -->
+		</scroll-view>
+		
+		<view class="aside-footer">
+			<view class="aside-footerBtn-box">
+				<view class="aside-btn" style="background-color: {{mainColor}}" bindtap="resetSort">重置</view>
+				<view class="aside-btn" style="background-color: {{mainColor}}" bindtap="tapShadow">确定</view>
+			</view>
+		</view>
+	</view>
+
+	<!-- 商品列表 -->
+	<view class="body main">
+  	<view class="body-good-box">
+  		<view class="good-box1">
+	  		<block wx:for="{{goodsList}}" wx:for-item="good" wx:key="{{good.uid}}">
+	  			<navigator url="/page/class/pages/biddingDetail/biddingDetail?uid={{good.uid}}" class="good1 biddingGood">
+		        <image class="goodImg1" mode="widthFix" src="{{good.img}}"></image>
+		        <view class="goodInfo-box1 biddingGood-box">
+		          <view class="goodTitle1">{{good.ap.title}}</view>
+		          <view class="biddingInfo-box">
+		            <view class="bidding-info">
+			          	当前价格：￥<text class="goodPrice-num1">{{good.last_price}}</text>
+			          </view>
+			          <view class="bidding-info" wx:if="{{good.hasStart}}">截止日期：{{good.last_time}}</view>
+			          <view class="bidding-info" wx:else>开始时间：{{good.startTime}}</view>
+			          <view class="bidding-info">已出价：{{good.record_cnt}}次</view>
+		          </view>
+		        </view>
+		        <view class="navBtn" style="background-color: {{mainColor}}">{{good.hasStart ? '查 看' : '未开始'}}</view>
+		      </navigator>
+	  		</block>
+	  	</view>
+	  </view>
+		<view class="empty-info" hidden="{{!showEmpty}}">-没有更多商品了-</view>
+		<view class="shadow {{showShadow ? 'shadow-show' : ''}}" bindtap="tapShadow"></view>
+  </view>
+	<view class="bigShadow {{showBigShadow ? 'bigShadow-show' : ''}}" bindtap="tapShadow"></view>
+</view>

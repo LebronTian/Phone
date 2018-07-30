@@ -1,0 +1,72 @@
+#main-img{
+    max-width: 700px;
+}
+.more-img{
+    width: 100px;
+    height: 100px;
+}
+.more-img-content{
+    padding: 10px 10px 26px;
+    border: thin solid #ddd;
+    float: left;
+    margin-right: 10px;
+    position: relative;
+}
+.more-img-content:last-child{
+    margin-right: 0;
+}
+.price-yuan{
+    width: 20%;
+    float:left;
+    font-size: large;
+    padding-left: 20px;
+    height: 43px;
+    line-height: 38px;
+}
+.sku-table-head{
+    text-align:center;
+    vertical-align: middle;
+}
+.sku-btn-up{
+    background: white;
+    border: 0;
+    width: 100%;
+}
+.disable-btn{
+    opacity: 0.5;
+}
+.firstTd{
+    vertical-align: middle!important
+}
+.price-in-table{
+    text-align: center;
+}
+.sku-icon{
+    width: 43px;
+    height: 43px;
+}
+.margin-top{
+    margin-top: 2rem;
+}
+.template-left{
+    float: left;
+    width: 200px;
+}
+.add-template{
+    margin-left: 5px;
+    height: 43px;
+}
+.refresh-template{
+    height: 43px;
+}
+.sel-addr{
+    width: 140px;
+    float: left;
+}
+.del-img{
+    position: absolute;
+    bottom: 0;
+    left: 54px;
+    cursor: pointer;
+}
+/**/

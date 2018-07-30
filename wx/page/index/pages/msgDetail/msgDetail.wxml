@@ -1,0 +1,68 @@
+<view class="container">
+	<view class="header">
+		<view class="posterInfo">
+			<view class="info__left">
+				<image class="avatar" src="{{msgData.biz.main_img}}"></image>
+				<view class="name">{{msgData.biz.title}}</view>
+			</view>
+			<text class="time">{{msgData.time}}</text>
+		</view>
+		<view class="locInfo">
+			<view class="info__left">
+				<image class="locIcon" src="../../../resources/pic/location.png"></image>
+				<view class="locTitle">{{msgData.address}}</view>
+			</view>
+			<text class="distance">{{msgData.distance}}</text>
+		</view>
+	</view>
+	<view class="main">
+		<view class="content__text">
+			{{msgData.brief}}
+		</view>
+		<view class="content__images">
+			<image wx:for="{{msgData.images}}" wx:key="{{index}}" id="{{index}}" class="content__img" src="{{item}}" mode="widthFix" bindtap="previewImg"></image>
+		</view>
+		<view class="quesItem-footer">
+      <view class="footer-info-box">
+        <view class="footer-time">{{msgData.time}}</view>
+        <view class="footer-btnArr">
+          <view class="footer-btn">
+            <image class="footer-btnIcon" style="width: 38rpx;" src="../../../resources/pic/view.png"></image>
+            <text>{{msgData.read_cnt}}</text>
+          </view>
+          <view id="{{msgData.uid}}" class="footer-btn" bindtap="commentTap">
+            <image class="footer-btnIcon" src="../../../resources/pic/comment.png"></image>
+            <text>{{msgData.comments.length}}</text>
+          </view>
+          <view id="{{msgData.uid}}" class="footer-btn" bindtap="likeTap">
+            <image class="footer-btnIcon" src="../../../resources/pic/{{msgData.su_good ? 'liked.png' : 'like.png'}}"></image>
+            <text>{{msgData.good_cnt}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="quesitem-comments" hidden="{{msgData.comments.length == 0}}">
+      <block wx:for="{{msgData.comments}}" wx:for-item="comment" wx:key="{{index}}">
+        <view class="comment-item">
+          <text class="observer">{{comment.su.name}}：</text>
+          <text class="">{{comment.content}}</text>
+        </view>
+      </block>
+    </view>
+	</view>
+	<!-- 评论框 -->
+  <view class="shadow {{showCommentModal ? 'shadow-show' : ''}}"></view>
+  <view class="modal-writeConment" hidden="{{!showCommentModal}}">
+    <view class="modal-title">评论</view>
+    <form bindsubmit="bindFormSubmit">
+      <view class="modal-textarea-box">
+        <textarea class="modal-textarea" placeholder="请输入提问内容" name="textarea"/>
+      </view>
+      <view class="modal-btnBox">
+        <button class="modal-cancelBtn" bindtap="quitCommentTap">取消</button>
+        <button class="modal-correctBtn" form-type="submit">评论</button>
+      </view>
+    </form>
+  </view>
+	<view class="footer" bindtap="makePhoneCall">联系ta</view>
+</view>
