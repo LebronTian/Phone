@@ -44,8 +44,8 @@ define('USE_V3_TPL', 1);
 define('DEBUG_ERROR_POS', true);
 
 //短信宝账号密码
-define('SMSBAO_ACCOUNT', 'xxxxx');
-define('SMSBAO_PASSWORD', 'xxxxxxxxxx');
+define('SMSBAO_ACCOUNT', 'gagaliang');
+define('SMSBAO_PASSWORD', '123qwe');
 
 //smtp ssl邮箱
 define('SMTP_HOST', 'smtp.exmail.qq.com');

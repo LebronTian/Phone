@@ -1,8 +1,8 @@
-<?php 
+<?php
         	$f_cats = ProductMod::get_product_cats(array('shop_uid' => $shop['uid'], 'status'=>0,'parent_uid'=>0));
         ?>
 <?php include $tpl_path.'/header.tpl';	?>
-	
+
 
 
 <!-- 使用了模块的样式 -->
@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="<?php echo $static_path;?>/css/swiper/swiper.min.css">
 <link rel="stylesheet" href="<?php echo $static_path;?>/css/index2.css">
 <link rel="stylesheet" href="<?php echo $static_path;?>/css/goodlist.css">
-<link rel="stylesheet" href="<?php echo $static_path;?>/css/font/index-font.css"> 
+<link rel="stylesheet" href="<?php echo $static_path;?>/css/font/index-font.css">
 <link rel="stylesheet" href="<?php echo $static_path;?>/css/font/footer-font.css">
 <link rel="stylesheet" href="<?php echo $static_path;?>/css/fonts.css">
 <link rel="stylesheet" href="<?php echo $static_path;?>/css/coupon.css">
@@ -29,10 +29,10 @@
 	<div class="flex cart b-main" onclick="location.href='?_a=shop&_u=index.cart'">
 		<img src="<?php echo $static_path?>/images/cart.png" alt="" />
 	</div>
-	
+
 <header class="bg-primary search-header hide">
     <div class="header-search border-box vertical-box">
-        <input class="border-box" <?php if(!empty($option['key'])) echo ' value="'.$option['key'].'"';?> 
+        <input class="border-box" <?php if(!empty($option['key'])) echo ' value="'.$option['key'].'"';?>
 	id="search" type="text" placeholder="请输入关键字">
         <div class="search-btn-container vertical-box"><i class="search-btn vertical-middle border-box index-icon icon-search"></i></div>
     </div>
@@ -64,9 +64,9 @@ echo $html;
             <div class="swiper-pagination" style="float: right">
 	    </div>
 	</section>
-	
+
 <div class="index-coupon" style="font-size: 0;">
-<?php 
+<?php
 	$c = $coupons['list'];
 	$a;
 	$cnt =count($c);
@@ -144,7 +144,7 @@ echo $html;
 	                </div>
 	            </section>
 	<?php }	} }?>
-		
+
 	<?php if($cnt!=0){ ?>
     <p class="list-bottom-tips margin-bottom tips-font" style="font-size: 1.3rem;margin-top: 1rem" onclick="window.location.href='?_a=shop&_u=index.get_coupon'">
     	<?php echo '更多优惠券，点击这里'; ?>
@@ -160,7 +160,7 @@ echo $html;
 		</p>
 	</div>
 	<ul style="overflow: hidden;">
-        <?php 
+        <?php
                 $html = '';
                 foreach ($f_cats as $v) {
                     $html='<li class="hand" data-uid="'.$v['uid'].'"><img src="'.$v['image'].'" alt="" /><p class="index-classify-title">'.$v['title'].'</p></li>';
@@ -196,7 +196,7 @@ echo $html;
 <nav class="goodlist-nav">
     <div class="nav-left clearfix">
         <span class="show-nav-select text-active left-2 border-box">综合排序<i class="triangle-icon"></i></span>
-        <span data-id='12' class="left-2 sell_cnt border-box">销量优先</span> 
+        <span data-id='12' class="left-2 sell_cnt border-box">销量优先</span>
     </div>
    <!--  <div class="nav-right border-box" onclick="window.location.replace('?_a=shop&_u=index.goodlist2')">
         <img src="<?php echo $static_path?>/images/list_good.png">
@@ -208,7 +208,7 @@ echo $html;
     </ul>
 </nav>
 <div class="goodlist-nav-mask" style="display: none"></div>
-<article class="goodlist-article" style="font-size: 0;"> 
+<article class="goodlist-article" style="font-size: 0;">
     <?php
     if(!empty($products['list'])){
         foreach($products['list'] as $p){
@@ -260,17 +260,17 @@ echo $html;
 			热门活动
 		</p>
 	</div>
-<!--	 
+<!--
 <div class="swiper-container remenhuodong-content bor-e5">
     <div class="swiper-wrapper">
-    </div>  
+    </div>
 </div> -->
-	
-	
+
+
 
 </div>
 <?php include $tpl_path.'/footer2.tpl';?>
-	
+
 
 <script src="<?php echo $static_path;?>/c_js/public/sea.js"></script>
 <script src="<?php echo $static_path;?>/c_js/public/seajs-css.js"></script>
@@ -285,7 +285,7 @@ echo $html;
 	$('.swiper-container').height($('.swiper-container').width()/2);
 	$('.index-content.classify ul li img').height($('.index-content.classify ul li img').width());
 	$('.index-section-pic-img').height($('.index-section-pic-img').width());
-	
+
 	$('.index-notice').on('click','li',function(){
 		location.href='?_a=shop&_u=index.noticedetail&uid='+$(this).data('uid');
 	})
@@ -295,18 +295,18 @@ echo $html;
 	$('.index-content.flash').on('click','li',function(){
 		location.href='?_a=shop&_u=index.product&uid='+$(this).data('uid');
 	})
-	
+
 //	swiper
 
-	    var mySwiper = new Swiper(".swiper-container",{  
-	        direction:"horizontal",/*横向滑动*/  
-	        loop:true,/*形成环路（即：可以从最后一张图跳转到第一张图*/  
-	        pagination:".swiper-pagination",/*分页器*/  
-	        prevButton:".swiper-button-prev",/*前进按钮*/  
-	        nextButton:".swiper-button-next",/*后退按钮*/  
-	        autoplay:3000/*每隔3秒自动播放*/  
-	    }) 
-	    
+	    var mySwiper = new Swiper(".swiper-container",{
+	        direction:"horizontal",/*横向滑动*/
+	        loop:true,/*形成环路（即：可以从最后一张图跳转到第一张图*/
+	        pagination:".swiper-pagination",/*分页器*/
+	        prevButton:".swiper-button-prev",/*前进按钮*/
+	        nextButton:".swiper-button-next",/*后退按钮*/
+	        autoplay:3000/*每隔3秒自动播放*/
+	    })
+
 /*公告滚动*/
 //	$.post('?_a=shop&_u=ajax.get_document_all',function(str){
 //		str=JSON.parse(str);
@@ -314,19 +314,19 @@ echo $html;
 //			$('.index-notice ul').append('<li data-uid="'+i.uid+'">'+i.title+'</li>');
 //		})
 //	})
-					var scroll_area=$(".index-notice ul");    
-					var timespan=3000;    
+					var scroll_area=$(".index-notice ul");
+					var timespan=3000;
 					var timeID;
 					scroll_area.hover(function(){
-						clearInterval(timeID);        
-					},function(){        
+						clearInterval(timeID);
+					},function(){
 						timeID=setInterval(function(){
 							var moveline=scroll_area.find('li:first');
 							var lineheight=moveline.height();            moveline.animate({marginTop:-lineheight+'px'},500,function(){                moveline.css('marginTop',0).appendTo(scroll_area);
-							});            
-						},timespan);        
+							});
+						},timespan);
 					}).trigger('mouseleave');
-	
+
 /*普通活动*/
 //$.post('?_a=shop&_u=ajax.get_activity_by_type&type=0',function(ret){
 //	ret=JSON.parse(ret);
@@ -337,49 +337,49 @@ echo $html;
 //		})
 //		$('.remenhuodong-content>div').html(html);
 //		var mySwiper = new Swiper(".swiper-container",{
-//      direction:"horizontal",/*横向滑动*/  
-//      loop:true,/*形成环路（即：可以从最后一张图跳转到第一张图*/  
-//      pagination:".swiper-pagination",/*分页器*/  
-//      prevButton:".swiper-button-prev",/*前进按钮*/  
-//      nextButton:".swiper-button-next",/*后退按钮*/  
-//      autoplay:3000/*每隔3秒自动播放*/  
-//  }) 
+//      direction:"horizontal",/*横向滑动*/
+//      loop:true,/*形成环路（即：可以从最后一张图跳转到第一张图*/
+//      pagination:".swiper-pagination",/*分页器*/
+//      prevButton:".swiper-button-prev",/*前进按钮*/
+//      nextButton:".swiper-button-next",/*后退按钮*/
+//      autoplay:3000/*每隔3秒自动播放*/
+//  })
 //	}
 //})
 
-	
-    seajs.use(['zepto'], function () { 
+
+    seajs.use(['zepto'], function () {
         seajs.use('fastclick', function () {
             FastClick.attach(document.body);
             /*关键字搜索功能*/
             $('#trigger').click(function(){
                 var searchContent=$('#search').val();
                 if (!searchContent=="") {
-//                var url='?_a=shop&key='+searchContent;  
-                  var url='?_a=shop&_u=index.products&key='+searchContent;  
+//                var url='?_a=shop&key='+searchContent;
+                  var url='?_a=shop&_u=index.products&key='+searchContent;
                   window.location.href=url;
-                }else{alert('请输入您要搜索的内容...');}  
-            }); 
+                }else{alert('请输入您要搜索的内容...');}
+            });
             /*导航*/
             $('.show-nav-select').click(function () {
                 $('.goodlist-nav-select').toggle();
                 $('.goodlist-nav-mask').toggle()
-            }); 
+            });
             $('.sell_cnt').click(function () {
-                // $(this).addClass('text-active').siblings().removeClass('text-active');     
+                // $(this).addClass('text-active').siblings().removeClass('text-active');
                 var url='?_a=shop&sort='+$(this).attr('data-id');
-                window.location.href=url; 
-                $('.goodlist-nav-select li').removeClass('text-active'); 
-               
+                window.location.href=url;
+                $('.goodlist-nav-select li').removeClass('text-active');
+
             });
             $('.goodlist-nav-select li').click(function(){
-                // $(this).addClass('text-active').siblings().removeClass('text-active'); 
+                // $(this).addClass('text-active').siblings().removeClass('text-active');
                 $('.goodlist-nav-mask').hide();
-                $(this).parent().hide(); 
+                $(this).parent().hide();
                 var url='?_a=shop&sort='+$(this).attr('data-id');
-                window.location.href=url; 
-                html=$(this).html()+'<i class="triangle-icon">'; 
-                localStorage.htmlcontent=html; 
+                window.location.href=url;
+                html=$(this).html()+'<i class="triangle-icon">';
+                localStorage.htmlcontent=html;
             });
 
             $('.goodlist-nav-mask').click(function () {
@@ -397,15 +397,15 @@ echo $html;
          $('.show-nav-select').html(localStorage.htmlcontent);
         }
     });
-    //获取url中的参数  
-    function getUrlParam(name) {  
-       var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象  
-       var r = window.location.search.substr(1).match(reg);  //匹配目标参数  
-       if (r != null) return unescape(r[2]); return null; //返回参数值  
-    } 
-    
+    //获取url中的参数
+    function getUrlParam(name) {
+       var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+       var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+       if (r != null) return unescape(r[2]); return null; //返回参数值
+    }
+
     seajs.use(['jquery'], function () {
-        $(document).ready(function () { 
+        $(document).ready(function () {
             seajs.use('transit',function () {
                 /*公告滚动效果*/
                 var scroll_speed = 60;//平均速度，px/秒

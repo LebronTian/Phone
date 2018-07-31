@@ -17,13 +17,13 @@
   <link rel="stylesheet" type="text/css" href="/static/css/reset.css">
   <!-- <link rel="stylesheet" type="text/css" href="/app/web/static/css/jquery.fullPage.css"> -->
   <link rel="stylesheet" type="text/css" href="/app/web/static/css/index.css">
- 
+
 </head>
 <body style="min-width:1170px">
-    <?php 
+    <?php
       include $tpl_path.'/header_index.tpl';
     ?>
-    
+
 <!--     <div class="mouse"></div>
     <div class="mouse_t"></div> -->
 
@@ -129,7 +129,7 @@
     </div>
 
 
-    
+
 
 
 <script src="/static/js/jquery2.1.min.js"></script>
@@ -194,7 +194,7 @@
 });
 </script>
 <script>
-var _hmt = _hmt || []; (function() { var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?0a71c1ded60c38f42604df66543ff764"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script> 
+var _hmt = _hmt || []; (function() { var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?0a71c1ded60c38f42604df66543ff764"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
 
 <!--
 <script type="text/javascript" src="/static/js/login.js"></script>

@@ -16,7 +16,7 @@ class IndexCtl
 		//3层返利 下级用户进入时判断
 		if(isset($_REQUEST['parent_su_uid']) &&
 			($parent_su_uid = requestInt('parent_su_uid')) &&
-			($parent_su = AccountMod::get_service_user_by_uid($parent_su_uid)) && 
+			($parent_su = AccountMod::get_service_user_by_uid($parent_su_uid)) &&
 			($parent_su['sp_uid'] == $shop['sp_uid'] )) {
 			$_SESSION['parent_su_uid'] = $parent_su_uid;
 			if($su = AccountMod::get_current_service_user()) {
@@ -114,7 +114,7 @@ class IndexCtl
 	if($shop['sp_uid'] == 1054) {
 		//$GLOBALS['_UCT']['ACT'] = 'index_'.$shop['sp_uid'];
 	}
-        render_fg('', $params);
+       render_fg('', $params);
     }
 
 
@@ -193,7 +193,7 @@ class IndexCtl
     /*
         商品列表页
         todo 评论列表
-    */ 
+    */
     public function products()
     {
         $shop = $this->init_shop();
@@ -207,19 +207,19 @@ class IndexCtl
         $option['status'] = 0; //只要上架的商品
         $products = ProductMod::get_shop_products($option);
 
-        $cats = ProductMod::get_product_cats(array('shop_uid' => $shop['uid'])); 
+        $cats = ProductMod::get_product_cats(array('shop_uid' => $shop['uid']));
 
         $params = array('shop' => $shop, 'option' => $option, 'products' => $products ,'cats' => $cats);
         render_fg('', $params);
     }
-   
+
 
     /*
         商品详情
     */
     public function product()
     {
-        
+
 		uct_use_app('sp');
         $shop = $this->init_shop();
 		$sp = SpMod::get_sp_profile($shop['sp_uid']);
@@ -250,7 +250,7 @@ class IndexCtl
     */
     public function photo()
     {
-        
+
         $shop = $this->init_shop();
 
         if (!($uid = requestInt('uid')) ||
@@ -285,16 +285,16 @@ class IndexCtl
 
         $f_cats = ProductMod::get_product_cats(array('shop_uid' => $shop['uid'], 'status'=>0,'parent_uid'=>0));
         $parent_uid = requestInt('parent_uid', (empty($f_cats['0']['uid'])?0:$f_cats['0']['uid']) );
-        $s_cats =array();   
+        $s_cats =array();
         if(!empty($parent_uid))
         {
-            $s_cats = ProductMod::get_product_cats(array('shop_uid' => $shop['uid'],'parent_uid'=>$parent_uid));    
+            $s_cats = ProductMod::get_product_cats(array('shop_uid' => $shop['uid'],'parent_uid'=>$parent_uid));
         }
-    
+
         $params = array('shop'=>$shop,'f_cats' => $f_cats,'s_cats'=>$s_cats, 'products' => $products, 'parent_uid' => $parent_uid);
         //var_dump($f_cats['0']['uid'],$s_cats);
         render_fg('', $params);
-    }   
+    }
 
     /*
         商品分类详情
@@ -313,11 +313,11 @@ class IndexCtl
         $option['sort'] = requestInt('sort');
         $option['status'] = 0; //只要上架的商品
         $products = ProductMod::get_shop_products($option);
-    
+
         $params = array('products' => $products);
         render_fg('', $params);
     }
-      
+
     /*
         购物车
     */
